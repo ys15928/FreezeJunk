@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.care.dare.mybatis.JoinMapper"> 
+<mapper namespace="com.care.root.mybatis.MemberMapper"> 
 
 	<resultMap id="member" type="com.care.root.member.dto.MemberDTO">
 		<id property="id" column="id"></id>
@@ -12,8 +12,15 @@
 		<result property="email" column="email"/>
 	</resultMap>
 
+	<select id="idcheck" resultMap="member">
+		select * from JUNK_USER where id=#{id}
+	</select>
+	<select id="emailcheck" resultMap="member">
+		select * from JUNK_USER where email=#{email}
+	</select>
+
 <insert id="register">
-	insert into junk_user values(#{id}, #{pwd}, #{name}, #{email})
+	insert into JUNK_USER values(#{id}, #{pwd}, #{name}, #{email})
 </insert>
 
 

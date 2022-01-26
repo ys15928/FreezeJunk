@@ -24,7 +24,7 @@
 
 .trnum{ height: 15px; }
 
-.member-comment{ font-size: 10px; color: red; font-weight: bold; display: none;}
+.member-comment{ font-size: 10px; color: red; font-weight: bold; visibility: hidden;}
 
 </style>
 <meta charset="UTF-8">
@@ -33,7 +33,7 @@
 <body style="background-color: white;">
 <jsp:include page="../default/header.jsp"/>
 	<div class="join-box" id="join-member" style="margin: auto; margin-top: 0px;">
-			<form action="membership" method="post" id="form">
+			<form action="memberSuc" method="post" id="form">
 				
 				<div style="background-color: #EAEAEA; padding: 33px 8px; border-radius: 27px; width: 770px; margin: auto; margin-top:65px;">
 				
@@ -45,13 +45,17 @@
 					<th class="th">아이디</th>
 					</tr>
 					<tr>
-					<th><input class="input" type="text" name="id" id="id" onchange="memberIdChange();" placeholder="아이디"/></th>
-					<td><button class="chkbtn" type="button" onclick="idCheck();">중복확인</button></td>
+					<th><input class="input" type="text" name="id" id="id" onchange="memberIdChange();" placeholder="아이디"/>
+					<input type="hidden" value="" id="idcheck"/>
+								<input type="hidden" value="" id="idCk"/>
+					</th>
+					<td>
+					<button class="chkbtn" type="button" onclick="idCheck();">중복확인</button>
+					</td>
 					</tr>
 					<tr class="trnum">
 					<td><div class="member-comment" id="id-comment">아이디를 입력해주세요.</div>
-								<input type="hidden" value="" id="idcheck"/>
-								<input type="hidden" value="" id="idCk"/>
+					
 					</td>
 					
 					
@@ -106,8 +110,8 @@
 					<th class="th">인증번호</th>
 					</tr>
 					<tr>
-					<th><input class="input" type="text" name="email-num" id="email-num" placeholder="인증번호"/></th>
-					<td><button class="chkbtn" type="button" onclick="emailNum();">인증번호 전송</button></td>
+					<th><input class="input" type="text" name="emailnum" id="emailnum" placeholder="인증번호"/></th>
+					<td><button class="chkbtn" type="button" onclick="emailgoNum();">인증번호 전송</button></td>
 					</tr>
 					<tr class="trnum">
 					<td><div class="member-comment" id="email-num-comment">인증번호 입력해주세요.</div></td>
@@ -126,6 +130,9 @@
 			</form>
 		</div>
 	</div>
+	
+	
+		
 	<jsp:include page="../default/footer.jsp"/>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -137,23 +144,20 @@ function idCheck() {
 	if(document.getElementById("id").value == "" || document.getElementById("id").value.replace(blank_pattern1, '') == "") {
 			//alert("아이디를 입력해 주세요.");
 			document.getElementById("id-comment").innerText = "아이디를 입력해 주세요.";
-			document.getElementById("id-comment").style.display='revert';
-	//		$("#id-comment").css("visibility", "visible");
+			$("#id-comment").css("visibility", "visible");
 			document.getElementById("id").focus();
 			return;
 		}
 		
 		if(document.getElementById("id").value.length > 8 || 4 > document.getElementById("id").value.length) {
 			document.getElementById("id-comment").innerText = "아이디는 4~8글자 사이로 입력해 주세요.";
-			document.getElementById("id-comment").style.display='revert';
-		//	$("#id-comment").css("visibility", "visible");
+			$("#id-comment").css("visibility", "visible");
 			document.getElementById("id").focus();
 			return;
 		} 
 		if(!(regType1.test(document.getElementById("id").value))) {
 			document.getElementById("id-comment").innerText = "아이디에 한글, 특수문자는 입력하실 수 없습니다.";
-			document.getElementById("id-comment").style.display='revert';
-	//		$("#id-comment").css("visibility", "visible");
+			$("#id-comment").css("visibility", "visible");
 			document.getElementById("id").focus();
 			return;
 		}
@@ -165,15 +169,12 @@ function idCheck() {
 				if (map.idcheck!= null){
 					alert("중복된 ID입니다.");
 					document.getElementById("id-comment").innerText = "중복된 ID입니다.";
-					document.getElementById("id-comment").style.display='revert';
-				//	$("#id-comment").css("visibility", "visible");
+					$("#id-comment").css("visibility", "visible");
 				}else{
 					alert("사용 가능한 ID입니다.");
 					document.getElementById("id-comment").innerText = "사용 가능한 ID입니다.";
-					document.getElementById("id-comment").style.display='revert';
-					document.getElementById("id-comment").style.color='blue';
-				//	$("#id-comment").css("visibility", "visible");
-				//	$("#id-comment").css("color", "blue");
+					$("#id-comment").css("visibility", "visible");
+					$("#id-comment").css("color", "blue");
 					document.getElementById("idcheck").value = document.getElementById("id").value
 					document.getElementById("idCk").value = "1";
 				}
@@ -186,8 +187,7 @@ function idCheck() {
 
 function memberIdChange() {
 	document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
-	document.getElementById("id-comment").style.display='revert';
-//	$("#id-comment").css("visibility", "visible");
+	$("#id-comment").css("visibility", "visible");
 	$("#id-comment").css("color", "red");
 	document.getElementById("idCk").value = "";
 }
@@ -237,7 +237,24 @@ function emailCheck() {
 			}
 			
 		})
-		
+}
+var certifiedNum = null;
+
+function emailgoNum(){
+	
+	var email= document.getElementById("email").value
+	var form={email:email}
+	$.ajax({
+		url: "emailgoNum", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
+		success: function(map){
+				alert("인증번호가 전송되었습니다.");
+				document.getElementById("email-num-comment").innerText = "인증번호를 입력하세요";
+				$("#email-num-comment").css("visibility", "visible");
+				certifiedNum = map.certified
+		}, error: function(){
+			alert("error")
+		}
+})
 }
 
 function emailChange() {
@@ -247,11 +264,12 @@ function emailChange() {
 	document.getElementById("emailCk").value = "";
 }	
 
+
+
 function register() {
 	if(document.getElementById("idCk").value != "1") {
 		document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
-		document.getElementById("id-comment").style.display='revert';
-	//	$("#id-comment").css("visibility", "visible");
+		$("#id-comment").css("visibility", "visible");
 		$("#id-comment").css("color", "red");
 		document.getElementById("id").focus();
 		return;
@@ -301,13 +319,6 @@ function register() {
 		return;
 	}
 	$("#name-comment").css("visibility", "hidden");
-	if(document.getElementById("department").value == "") {
-		$("#department-comment").css("visibility", "visible");
-		$("#department-comment").css("color", "red");
-		document.getElementById("department").focus();
-		return;
-	}
-	$("#department-comment").css("visibility", "hidden");
 	if(document.getElementById("emailCk").value == "") {
 		document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
 		$("#email-comment").css("visibility", "visible");
@@ -315,7 +326,14 @@ function register() {
 		document.getElementById("email").focus();
 		return;
 	}
-	$("#email-comment").css("visibility", "hidden");
+	if(document.getElementById("emailnum").value != certifiedNum){
+		document.getElementById("email-num-comment").innerText = "인증번호를 올바르게 입력하세요.";
+		$("#email-comment").css("visibility", "visible");
+		$("#email-num-comment").css("color", "red");
+		document.getElementById("emailnum").focus();
+		return;
+	}
+	$("#email-num-comment").css("visibility", "hidden");
 	document.getElementById("form").submit();
 }
 </script>	
