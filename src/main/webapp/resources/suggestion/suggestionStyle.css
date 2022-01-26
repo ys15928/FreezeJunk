@@ -1,4 +1,180 @@
+a {
+	text-decoration: none;
+}
+/* ------------------------- write.jsp ----------------------------- */
 .wrap {
 	width: 1080px;
 	margin: 0 auto;
+}
+.ck-editor__editable {
+	min-height: 300px;
+}
+#editor {
+	width: 100%;
+}
+#title {
+	width: 1072px;
+    height: 30px;
+    font-size: 18px;
+    color: gray;
+}
+.note-editor {
+	margin-top: 50px;
+}
+.write-btn-box {
+	margin-top: 20px;
+    float: right;
+}
+#write-btn {
+	width: 100px;
+    height: 35px;
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid #D1B2FF;
+    color: #9B7CC9;
+}
+button:hover {
+	cursor: pointer;
+}
+.status-box {
+	margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.status-comment {
+	color: #9B7CC9;
+    font-weight: bold;
+    margin-right: 5px;
+}
+#status {
+	width: 17px;
+    height: 17px;
+}
+
+/* --------------------- list.jsp --------------------------- */
+.sugg-line {
+	display: flex;
+    align-items: center;
+	height: 50px;
+    border-top: 1px solid #A566FF;
+    color: gray;
+}
+.sugg-line:hover {
+	background-color: #EAEAEA;
+}
+.all-line {
+	background-color: #FFA7A7;
+}
+.all-line:hover {
+	background-color: #FFD8D8;
+}
+.sugg-line a {
+	color: gray;
+}
+.sugg-line:last-child {
+	border-bottom: 1px solid #A566FF;
+}
+.sugg-search-box {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+.search-comment {
+	font-size: 20px;
+    color: #9B7CC9;
+    font-weight: bold;
+    margin-right: 20px;
+}
+#search {
+	width: 200px;
+    height: 17px;
+    margin-right: 10px;
+    background-color: #F6F6F6;
+    border: 1px solid #A6A6A6;
+}
+.search-btn {
+	background: #fff;
+    border: 1px solid #9B7CC9;
+    width: 60px;
+    height: 23px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D1B2FF;
+}
+.pageing-box {
+	margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.pageing-box a {
+	color: gray;
+}
+.current-page {
+	color: #000 !important;
+}
+.list-write-btn-box {
+	margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+.list-write-btn {
+	background-color: #fff;
+    color: #D1B2FF;
+    border: 1px solid #9B7CC9;
+    width: 70px;
+    height: 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* -------------------------- info.jsp -------------------------------- */
+.info-head-title {
+	display: flex;
+    padding: 10px 0;
+}
+.info-title {
+	font-size: 22px;
+    color: gray;
+}
+.info-head-sub {
+	display: flex;
+    font-size: 16px;
+    color: gray;
+    border-top: 1px solid #A566FF;
+    border-bottom: 1px solid #A566FF;
+    padding: 10px 0;
+}
+.info-sub {
+	width: 4%;
+    text-align: center;
+}
+.info-content {
+	min-height: 300px;
+}
+.info-btn-box {
+	margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+.info-btn-box>button {
+	width: 100px;
+    height: 35px;
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid #D1B2FF;
+    color: #9B7CC9;
+	margin: 0 10px;
+}
+.info-btn-box>button:last-child {
+	margin-right: 0;
 }
