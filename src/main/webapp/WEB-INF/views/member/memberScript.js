@@ -5,27 +5,7 @@ var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; 
 
 
 /* ------------------------ membership.jsp -------------------------------------- */
-function next() {
-	var check1_stat = document.getElementById('option1').checked;
-	var check2_stat = document.getElementById('option2').checked;
-	if(!(check1_stat)) {
-		alert("약관에 동의해주세요.")
-		return;
-	}
-	if(!(check2_stat)) {
-		alert("약관에 동의해주세요.");
-		return;
-	}
-	$("#join-box").css('display', 'none');
-	$("#join-member").css("display", "block");
-}
 
-function memberBack() {
-	$("#option1").prop("checked", false);
-	$("#option2").prop("checked", false);
-	$("#join-member").css("display", "none");
-	$("#join-box").css('display', 'block');
-}
 
 function idCheck() {
 	if(document.getElementById("id").value == "" || document.getElementById("id").value.replace(blank_pattern1, '') == "") {

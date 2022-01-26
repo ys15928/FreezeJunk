@@ -8,103 +8,112 @@
 <style type="text/css">
 .join-wrap {display: flex;	justify-content: center; }
 
-.join-header {	text-align: center;	font-size: 24px; color: gray; margin-left: 320px;}
+.join-header {	text-align: center;	font-size: 24px; color: gray; margin-bottom: 15px; font-weight: bold;}
 
 .join-box {	width: 1000px; height: 600px;}
 
 .freeze{ text-align: center;    font-size: 30px;    color: white;    padding-bottom: 10px;    margin-bottom: 25px; }
 
-.input{ background-color: white; width: 300px; height: 25px; border: 1px solid white; border-bottom: 2px solid red; }
+.input{ background-color: white; width: 300px; height: 25px; border: 1px solid white; border-bottom: 2px solid gainsboro; }
 
 .th{ color:gray; }
 
-.chkbtn{ border: 1px solid red; height: 30px; border-radius: 15px; }
+.chkbtn{ border: 1px solid white; height: 30px; border-radius: 15px; margin-left: 10px; background-color: white; }
 
-.memberbtn{ border: 1px solid red; width: 313px; margin-left: 50px; height: 40px; border-radius: 7px;}
+.memberbtn{ border: 1px solid white; width: 313px; height: 40px; border-radius: 15px; margin-top: 10px; background-color: white;}
 
 .trnum{ height: 15px; }
 
-
+.member-comment{ font-size: 10px; color: red; font-weight: bold; display: none;}
 
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="background-color: black;">
+<body style="background-color: white;">
+<jsp:include page="../default/header.jsp"/>
 	<div class="join-box" id="join-member" style="margin: auto; margin-top: 0px;">
 			<form action="membership" method="post" id="form">
-				<div class="freeze">FreezeJunk</div>
-				<div style="background-color: #EAEAEA; padding: 33px 8px; border-radius: 27px; width: 770px; margin: auto;">
-				<div style="display: flex;  align-items: center;">
-				<div><img style="width: 20px;" src="${contextPath }/resources/login/back.jpg"></div>
+				
+				<div style="background-color: #EAEAEA; padding: 33px 8px; border-radius: 27px; width: 770px; margin: auto; margin-top:65px;">
+				
 				<div class="join-header">회원가입</div>
-				</div>
-				<table border="1px" style="margin:auto; text-align:left;">
+				
+				<table style="margin:auto; text-align:left; margin-left: 225px;">
+				
 					<tr style="height: 45px;">
 					<th class="th">아이디</th>
 					</tr>
-					
 					<tr>
 					<th><input class="input" type="text" name="id" id="id" onchange="memberIdChange();" placeholder="아이디"/></th>
 					<td><button class="chkbtn" type="button" onclick="idCheck();">중복확인</button></td>
 					</tr>
+					<tr class="trnum">
+					<td><div class="member-comment" id="id-comment">아이디를 입력해주세요.</div>
+								<input type="hidden" value="" id="idcheck"/>
+								<input type="hidden" value="" id="idCk"/>
+					</td>
 					
-					<tr class="trnum"></tr>
 					
+					</tr>
 					<tr style="height: 45px;">
 					<th class="th">비밀번호</th>
 					</tr>
-					
 					<tr>
 					<th><input class="input" type="password" name="pwd" id="pwd" placeholder="비밀번호"/></th>
 					<td></td>
 					</tr>
+					<tr class="trnum"><td><div class="member-comment" id="pwd-comment">비밀번호를 입력해주세요.</div></td></tr>
 					
-					<tr class="trnum"></tr>
 					
 					<tr style="height: 45px;">
 					<th class="th">비밀번호 확인</th>
 					</tr>
-					
 					<tr>
 					<th><input class="input" type="password" id="repwd" placeholder="비밀번호 확인"/></th>
 					<td></td>
 					</tr>
+					<tr class="trnum"><td><div class="member-comment" id="repwd-comment">비밀번호를 입력해주세요.</div></td></tr>
 					
-					<tr class="trnum"></tr>
 					
 					<tr style="height: 45px;">
 					<th class="th">이름</th>
 					</tr>
-					
 					<tr>
 					<th><input class="input" type="text" name="name" id="name" placeholder="이름"/></th>
 					<td></td>
 					</tr>
+					<tr class="trnum"><td><div class="member-comment" id="name-comment">이름을 입력해주세요.</div></td></tr>
 					
-					<tr class="trnum"></tr>
 					
 					<tr style="height: 45px;">
 					<th class="th">이메일</th>
 					</tr>
-					
 					<tr>
 					<th><input class="input" type="text" onchange="emailChange();" name="email" id="email" placeholder="이메일"/></th>
 					<td><button class="chkbtn" type="button" onclick="emailCheck();">중복확인</button></td>
 					</tr>
+					<tr class="trnum">
+					<td>	
+						<div class="member-comment" id="email-comment">이메일을 입력해주세요.</div>
+								<input type="hidden" id="emailcheck" value=""/>
+								<input type="hidden" id="emailCk" value=""/>
+					</td>
+					</tr>
 					
-					<tr class="trnum"></tr>
 					
 					<tr style="height: 45px;">
 					<th class="th">인증번호</th>
 					</tr>
-					
 					<tr>
-					<th><input class="input" type="text" name="" id="" placeholder="인증번호"/></th>
-					<td><button class="chkbtn" type="button" onclick="emailCheck();">인증번호 전송</button></td>
+					<th><input class="input" type="text" name="email-num" id="email-num" placeholder="인증번호"/></th>
+					<td><button class="chkbtn" type="button" onclick="emailNum();">인증번호 전송</button></td>
+					</tr>
+					<tr class="trnum">
+					<td><div class="member-comment" id="email-num-comment">인증번호 입력해주세요.</div></td>
 					</tr>
 					
-					<tr class="trnum"></tr>
+					
 					
 					<tr>
 					<td colspan="2">
@@ -114,133 +123,201 @@
 					</tr>
 					
 				</table>
-				
-		<!--  		
-				<div class="member-body">
-					<div>
-						<div class="member-input-box">
-							<div class="member-input-flex">
-								<div class="member-input-comment">아이디</div>
-								<div class="member-input"><input type="text" name="id" id="id" onchange="memberIdChange();"/></div>
-								<input type="hidden" value="" id="idcheck"/>
-								<input type="hidden" value="" id="idCk"/>
-							</div>
-							<div class="member-input-check">
-								<button type="button" onclick="idCheck();">중복확인</button>
-							</div>
-						</div>
-						<div class="member-comment" id="id-comment">아이디를 입력해주세요.</div>
-						
-						
-						<div class="member-input-box">
-							<div class="member-input-comment">비밀번호</div>
-							<div class="member-input"><input type="password" name="pwd" id="pwd"/></div>
-						</div>
-						<div class="member-comment" id="pwd-comment">비밀번호를 입력해주세요.</div>
-						<div class="member-input-box">
-							<div class="member-input-comment">비밀번호 확인</div>
-							<div class="member-input"><input type="password" id="repwd"/></div>
-						</div>
-						<div class="member-comment" id="repwd-comment">비밀번호를 입력해주세요.</div>
-						
-						
-						<div class="member-input-box">
-							<div class="member-input-comment">이름</div>
-							<div class="member-input"><input type="text" name="name" id="name"/></div>
-						</div>
-						<div class="member-comment" id="name-comment">이름을 입력해주세요.</div>
-						
-						
-						<div class="member-input-box">
-							<div class="member-input-flex">
-								<div class="member-input-comment">이메일</div>
-								<div class="member-input"><input type="text" onchange="emailChange();" name="email" id="email"/></div>
-								<input type="hidden" id="emailcheck" value=""/>
-								<input type="hidden" id="emailCk" value=""/>
-							</div>
-							<div class="member-input-check">
-								<button type="button" onclick="emailCheck();">중복확인</button>
-							</div>
-						</div>
-						<div class="member-comment" id="email-comment">이메일을 입력해주세요.</div>
-						
-						
-						<div class="member-input-box">
-							<div class="member-input-flex">
-								<div class="member-input-comment">인증번호</div>
-								<div class="member-input"><input type="text" name="" id=""/></div>
-							</div>
-							<div class="member-input-check">
-								<button type="button" onclick="emailCheck();">인증번호 전송</button>
-							</div>
-						</div>
-						<div class="member-comment" id="email-num-comment">인증번호 입력해주세요.</div>
-					</div>
-				</div>
-				<div class="join-footer">
-					<button type="button" onclick="memberBack();">이전</button>
-					<button type="button" style="width: 261px; margin-left: 50px;"onclick="register();">회원가입</button>
-				</div>
-				 -->
 			</form>
 		</div>
 	</div>
+	<jsp:include page="../default/footer.jsp"/>
+	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-function login() {
-	if(document.getElementById("login-id").value == "" || document.getElementById("login-id").value.replace(blank_pattern1, '') == "") {
-		alert("아이디를 입력해 주세요.");
-		document.getElementById("login-id").focus();
-		return;
-	}
-	if(document.getElementById("login-id").value.length > 12 || 4 > document.getElementById("login-id").value.length) {
-		alert("아이디는 4~12자 사이로 입력해 주세요.");
-		document.getElementById("login-id").focus();
-		return;
-	}
-	if(!(regType1.test(document.getElementById("login-id").value))) {
-		alert("아이디에 한글, 특수문자는 입력하실 수 없습니다.");
-		document.getElementById("login-id").focus();
-		return;
-	}
-	if(document.getElementById("login-pwd").value == "") {
-		alert("비밀번호를 입력해 주세요.");
-		document.getElementById("login-pwd").focus();
-		return;
-	}
-	if(document.getElementById("login-pwd").value.length > 16 || document.getElementById("login-pwd").value.length < 8) {
-		alert("비밀번호는 8~16사 사이로 입력해 주세요.");
-		document.getElementById("login-pwd").focus();
-		return;
-	}
-	// document.getElementById("login-form").submit();
-	
-	var loginId = document.getElementById("login-id").value;
-	var loginPwd = document.getElementById("login-pwd").value;
-	var form = {id:loginId, pwd:loginPwd};
-	$.ajax({
-		url: "login/1", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
-		success: function(map) {
-			if(map.login == 0) {
-				// alert("아이디 또는 비밀번호를 확인해 주세요.");
-				$("#login-input-comment").css("visibility", "visible");
-			} else if(map.login == 1) {
-				$("#login-input-comment").css("visibility", "hidden");
-				alert("가입 승인까지 기달려주세요 !");
-			} else if(map.login == 2) {
-				alert("로그인 되었습니다.");
-				location.href="user/home";
-			}else if(map.login == 3) {
-				alert("관리가 계정 로그인입니다.");
-				location.href="admin/userlist";
-			} else {
-				alert("에러 발생");
-			}
-		}, error : function() {
-			alert("에러 발생");
+var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
+var regType1 = /^[A-Za-z0-9+]*$/;
+var regType2 = /^[A-Za-z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣+]*$/;
+var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+function idCheck() {
+	if(document.getElementById("id").value == "" || document.getElementById("id").value.replace(blank_pattern1, '') == "") {
+			//alert("아이디를 입력해 주세요.");
+			document.getElementById("id-comment").innerText = "아이디를 입력해 주세요.";
+			document.getElementById("id-comment").style.display='revert';
+	//		$("#id-comment").css("visibility", "visible");
+			document.getElementById("id").focus();
+			return;
 		}
-	});
+		
+		if(document.getElementById("id").value.length > 8 || 4 > document.getElementById("id").value.length) {
+			document.getElementById("id-comment").innerText = "아이디는 4~8글자 사이로 입력해 주세요.";
+			document.getElementById("id-comment").style.display='revert';
+		//	$("#id-comment").css("visibility", "visible");
+			document.getElementById("id").focus();
+			return;
+		} 
+		if(!(regType1.test(document.getElementById("id").value))) {
+			document.getElementById("id-comment").innerText = "아이디에 한글, 특수문자는 입력하실 수 없습니다.";
+			document.getElementById("id-comment").style.display='revert';
+	//		$("#id-comment").css("visibility", "visible");
+			document.getElementById("id").focus();
+			return;
+		}
+		var id= document.getElementById("id").value
+		var form={id:id}
+		$.ajax({
+			url: "idcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
+			success: function(map){
+				if (map.idcheck!= null){
+					alert("중복된 ID입니다.");
+					document.getElementById("id-comment").innerText = "중복된 ID입니다.";
+					document.getElementById("id-comment").style.display='revert';
+				//	$("#id-comment").css("visibility", "visible");
+				}else{
+					alert("사용 가능한 ID입니다.");
+					document.getElementById("id-comment").innerText = "사용 가능한 ID입니다.";
+					document.getElementById("id-comment").style.display='revert';
+					document.getElementById("id-comment").style.color='blue';
+				//	$("#id-comment").css("visibility", "visible");
+				//	$("#id-comment").css("color", "blue");
+					document.getElementById("idcheck").value = document.getElementById("id").value
+					document.getElementById("idCk").value = "1";
+				}
+			}, error: function(){
+				alert("error")
+			}
+			
+		})
 }
 
+function memberIdChange() {
+	document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
+	document.getElementById("id-comment").style.display='revert';
+//	$("#id-comment").css("visibility", "visible");
+	$("#id-comment").css("color", "red");
+	document.getElementById("idCk").value = "";
+}
+
+function emailCheck() {
+		if(document.getElementById("email").value == "" || document.getElementById("email").value.replace(blank_pattern1, '') == "") {
+			document.getElementById("email-comment").innerText = "이메일을 입력해 주세요.";
+			$("#email-comment").css("visibility", "visible");
+			document.getElementById("email").focus();
+			return;
+		}
+		
+		if(!(reg_email.test(document.getElementById("email").value))) {
+			document.getElementById("email-comment").innerText = "이메일 형식에 맞게 입력해 주세요.";
+			$("#email-comment").css("visibility", "visible");
+			document.getElementById("email").focus();
+			return;
+		}
+		
+		
+		if(document.getElementById("email").value.length > 30 || 10 > document.getElementById("email").value.length) {
+			document.getElementById("email-comment").innerText = "이메일은 10~30글자 사이로 입력해 주세요.";
+			$("#email-comment").css("visibility", "visible");
+			document.getElementById("email").focus();
+			return;
+		}
+		
+		var email= document.getElementById("email").value
+		var form={email:email}
+		$.ajax({
+			url: "emailcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
+			success: function(map){
+				if (map.emailcheck!= null){
+					alert("중복된 이메일입니다.");
+					document.getElementById("email-comment").innerText = "중복된 이메일입니다.";
+					$("#email-comment").css("visibility", "visible");
+				}else{
+					alert("사용 가능한 이메일입니다.");
+					document.getElementById("email-comment").innerText = "사용 가능한 이메일입니다.";
+					$("#email-comment").css("visibility", "visible");
+					$("#email-comment").css("color", "blue");
+					document.getElementById("emailcheck").value = document.getElementById("email").value
+					document.getElementById("emailCk").value = "1";
+				}
+			}, error: function(){
+				alert("error")
+			}
+			
+		})
+		
+}
+
+function emailChange() {
+	document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
+	$("#email-comment").css("visibility", "visible");
+	$("#email-comment").css("color", "red");
+	document.getElementById("emailCk").value = "";
+}	
+
+function register() {
+	if(document.getElementById("idCk").value != "1") {
+		document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
+		document.getElementById("id-comment").style.display='revert';
+	//	$("#id-comment").css("visibility", "visible");
+		$("#id-comment").css("color", "red");
+		document.getElementById("id").focus();
+		return;
+	}
+	if(document.getElementById("pwd").value == "") {
+		document.getElementById("pwd-comment").innerText = "비밀번호를 입력해 주세요.";
+		$("#pwd-comment").css("visibility", "visible");
+		$("#pwd-comment").css("color", "red");
+		document.getElementById("pwd").focus();
+		return;
+	}
+	if(document.getElementById("pwd").value.length > 16 || document.getElementById("pwd").value.length < 8) {
+		document.getElementById("pwd-comment").innerText = "비밀번호는 8~16자 사이로 주세요.";
+		$("#pwd-comment").css("visibility", "visible");
+		$("#pwd-comment").css("color", "red");
+		document.getElementById("pwd").focus();
+		return;
+	}
+	$("#pwd-comment").css("visibility", "hidden");
+	if(document.getElementById("pwd").value != document.getElementById("repwd").value) {
+		document.getElementById("repwd-comment").innerText = "비밀번호가 일치하지 않습니다.";
+		$("#repwd-comment").css("visibility", "visible");
+		$("#repwd-comment").css("color", "red");
+		document.getElementById("repwd").focus();
+		return;
+	}
+	$("#repwd-comment").css("visibility", "hidden");
+	if(document.getElementById("name").value == "" || document.getElementById("name").value.replace(blank_pattern1, '') == "") {
+		document.getElementById("name-comment").innerText = "이름을 입력해 주세요.";
+		$("#name-comment").css("visibility", "visible");
+		$("#name-comment").css("color", "red");
+		document.getElementById("name").focus();
+		return;
+	}
+	if(document.getElementById("name").value.length > 10 || 2 > document.getElementById("name").value.length) {
+		document.getElementById("name-comment").innerText = "이름은 2 ~ 10자 사이로 입력해 주세요.";
+		$("#name-comment").css("visibility", "visible");
+		$("#name-comment").css("color", "red");
+		document.getElementById("name").focus();
+		return;
+	}
+	if(!(regType2.test(document.getElementById("name").value))) {
+		document.getElementById("name-comment").innerText = "이름에 특수문자는 입력하실 수 없습니다.";
+		$("#name-comment").css("visibility", "visible");
+		$("#name-comment").css("color", "red");
+		document.getElementById("name").focus();
+		return;
+	}
+	$("#name-comment").css("visibility", "hidden");
+	if(document.getElementById("department").value == "") {
+		$("#department-comment").css("visibility", "visible");
+		$("#department-comment").css("color", "red");
+		document.getElementById("department").focus();
+		return;
+	}
+	$("#department-comment").css("visibility", "hidden");
+	if(document.getElementById("emailCk").value == "") {
+		document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
+		$("#email-comment").css("visibility", "visible");
+		$("#email-comment").css("color", "red");
+		document.getElementById("email").focus();
+		return;
+	}
+	$("#email-comment").css("visibility", "hidden");
+	document.getElementById("form").submit();
+}
 </script>	
 	
 </body>
