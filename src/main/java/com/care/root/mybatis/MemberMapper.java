@@ -8,4 +8,5 @@ public interface MemberMapper {
 	public MemberDTO idcheck(String id);
 	public MemberDTO emailcheck(String email);
 	public int register(MemberDTO dto);
+	public MemberDTO loginChk(MemberDTO dto);
 }
