@@ -33,3 +33,27 @@ function search() {
 	}
 	location.href="suggestion-3?search="+search;
 }
+
+function suggestionAnswerWrite() {
+	var text = document.getElementById("editor").value;
+	text = text.replace(/<br\/>/ig, "");
+	text = text.replace(/<p>/ig, "");
+	text = text.replace(/<br\>/ig, "");
+	text = text.replace(/<\/p>/ig, "");
+	text = text.replace(/&nbsp;/gi,"");
+	
+	if(text == "" || text.replace(blank_pattern1, '') == "") {
+		alert("내용을 입력해 주세요.");
+		document.getElementById("editor").focus();
+		return;
+	}
+	
+	document.getElementById("form").submit();
+	
+}
+
+function deleteCheck() {
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		document.getElementById("delete-form").submit();
+	}
+}

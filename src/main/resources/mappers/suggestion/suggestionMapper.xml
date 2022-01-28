@@ -26,4 +26,13 @@
 	<select id="info" resultMap="suggestion">
 		select * from junk_suggestion where num = #{num}
 	</select>
+	<update id="answer">
+		update junk_suggestion set answContent = #{answContent}, answTime = sysdate where num = #{num}
+	</update>
+	<update id="update">
+		update junk_suggestion set suggTitle=#{suggTitle}, suggContent=#{suggContent}, suggStatus=#{suggStatus} where num=#{num}
+	</update>
+	<delete id="delete">
+		delete from junk_suggestion where num=#{num}
+	</delete>
 </mapper>

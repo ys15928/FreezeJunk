@@ -1,6 +1,7 @@
 package com.care.root.suggestion;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,5 +54,32 @@ public class SuggestionService {
 		int num = Integer.parseInt(req.getParameter("num"));
 		SuggestionDTO dto = mapper.info(num);
 		model.addAttribute("dto", dto);
+	}
+	public int answer(HttpServletRequest req) {
+		SuggestionDTO dto = new SuggestionDTO();
+		dto.setNum(Integer.parseInt(req.getParameter("num")));
+		dto.setAnswContent(req.getParameter("content"));
+		return mapper.answer(dto);
+	}
+	
+	public int update(HttpServletRequest req) {
+		SuggestionDTO dto = new SuggestionDTO();
+		dto.setNum(Integer.parseInt(req.getParameter("num")));
+		dto.setSuggId("wnsgh9978");
+		dto.setSuggTitle(req.getParameter("title"));
+		dto.setSuggContent(req.getParameter("content"));
+		if(req.getParameterValues("status") == null) {
+			dto.setSuggStatus("0");
+		} else {
+			dto.setSuggStatus("1");
+		}
+		dto.setAnswContent(null);
+		dto.setAnswTime(null);
+		return mapper.update(dto);
+	}
+	
+	public int delete(HttpServletRequest req) {
+		int num = Integer.parseInt(req.getParameter("num"));
+		return mapper.delete(num);
 	}
 }

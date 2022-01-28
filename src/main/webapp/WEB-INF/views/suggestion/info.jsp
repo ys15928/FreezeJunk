@@ -62,15 +62,51 @@
 			%>
 			</div>
 		</div>
-		<div class="info-content" style="background: aliceblue;">
+		<div class="info-content">
 			${dto.suggContent }
 		</div>
+		<%
+			if(answer != null) {
+		%>
+		<div class="info-head-sub" style="border-top: none;">
+			<div>관리자</div>
+			<div class="info-sub">|</div>
+			<div>
+			<%
+			Date sys2 = new Date();
+			String sysStr2 = sd.format(sys);
+			sys = sd.parse(sysStr);
+			String dateStr2 = sd.format(dto.getAnswTime().getTime());
+			Date date2 = sd.parse(dateStr);
+			if(date.before(sys)) {
+			%>
+				<%=sdf1.format(dto.getAnswTime())%>
+			<%
+			} else {
+			%>
+				<%=sdf2.format(dto.getAnswTime())%>
+			<%
+			}
+			%>
+			</div>
+		</div>
+		<div class="info-content">
+			${dto.answContent }
+		</div>
+		<%
+			}
+		%>
 		<div class="info-btn-box">
 			<button type="button" onclick="location.href='suggestion-3'">목록으로</button>
-			<button type="button">수정</button>
-			<button type="button">삭제</button>
-			<button type="button">답변</button>
+			<button type="button" onclick="location.href='suggestion-5?num=${dto.num}'">수정</button>
+			<button type="button" onclick="deleteCheck();">삭제</button>
+			<c:if test="${dto.answContent == null }">
+			<button type="button" onclick="location.href='admin/suggestion-4?num=${dto.num}'">답변</button>
+			</c:if>
 		</div>
+		<form action="suggestion-7" method="post" style="display: none;" id="delete-form">
+			<input type="hidden" name="num" value="${dto.num }"/>
+		</form>
 	</div>
 
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
