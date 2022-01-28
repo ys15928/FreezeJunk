@@ -34,6 +34,7 @@
 		endPage = pageCount;
 	}
 %>
+	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/><button type="button" class="search-btn" onclick="search();">검색</button>
@@ -132,6 +133,8 @@
 			%>
 		</div>
 	</div>
+	
+	<jsp:include page="../default/footer.jsp"/>
 	
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
