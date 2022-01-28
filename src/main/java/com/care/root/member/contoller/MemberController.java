@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,16 +93,27 @@ public class MemberController {
 	@RequestMapping(value="loginChk", method=RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map loginChk(@RequestBody Map dto, HttpServletRequest req) {
-		
 		String id = (String)dto.get("id");
 		String pwd = (String)dto.get("pwd");
 		Map map = new HashMap();
 		int result = service.loginChk(id,pwd,req);
-
 		map.put("login", result);
 		return map;
 	}
 	
 	
+	@RequestMapping(value="logout")
+	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException{
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		HttpSession session = req.getSession();
+		session.invalidate();
+		out.print("<script>alert('로그아웃 완료');location.href='main';</script>");
+	}
+	
+	
 	
 }
+
+
+

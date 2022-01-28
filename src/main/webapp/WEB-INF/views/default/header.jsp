@@ -9,7 +9,7 @@
 <title>header</title>
 <style type="text/css">
 	*{margin: 0;}
-	.wrap{width: 100%; background-color: white;}
+	.wrap1{width: 100%; background-color: white;}
 	.header{display: flex; justify-content: space-between;}
 	nav ul {list-style: none; display: flex; justify-content: flex-end;}
 	nav ul li { margin: 0 3px; padding: 10px 10px;}
@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-	<div class="wrap" style="width: 1180px;
+	<div class="wrap1" style="width: 1180px;
     margin: auto;
     background: white;
     display: flex;
@@ -35,9 +35,20 @@
 		<div>
 			<nav style="">
 				<ul>
+				<c:if test="${sessionScope.loginUser.id == null }">
 					<li><a href="login" class="ad" style="font-size: 10px;">로그인</a></li>
 					<span style="margin-top: 10px;">|</span>
+				</c:if>
+				<c:if test="${sessionScope.loginUser.id != null }">
+					<li><a href="login" class="ad" style="font-size: 10px;">${loginUser.name }님 환영합니다.</a></li>
+					<span style="margin-top: 10px;">|</span>
+				</c:if>
+				<c:if test="${sessionScope.loginUser.id == null }">
 					<li><a href="membership" class="ad" style="font-size: 10px;">회원가입</a></li>
+				</c:if>
+				<c:if test="${sessionScope.loginUser.id != null }">
+					<li><a href="logout" class="ad" style="font-size: 10px;">로그아웃</a></li>
+				</c:if>
 				</ul>
 			</nav>
 		</div>
@@ -47,7 +58,7 @@
 					<li><a href="#" class="ab">키워드 추천</a></li>
 					<li><a href="#" class="ab">건의사항</a></li>
 					<li><a href="#" class="ab">마이페이지</a></li>
-			<!-- 	<c:if test="${sessionScope.loginUser.id eq '3333'}">
+			<!-- 	<c:if test="${sessionScope.login.id eq '3333'}">
 						<li><a href="memberList" class="ab">MemberList</a></li>
 					</c:if>	 -->
 				</ul>
