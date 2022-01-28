@@ -29,6 +29,10 @@ public class MemberController {
 	public String header() {
 		return "default/header";
 	}
+	@RequestMapping("main")
+	public String main() {
+		return "member/main";
+	}
 	@RequestMapping("footer")
 	public String footer() {
 		return "default/footer";
@@ -82,6 +86,19 @@ public class MemberController {
 		Map map = new HashMap();
 		service.emailgoNum(email,model);
 		map.put("certified", model.getAttribute("certified"));
+		return map;
+	}
+	
+	@RequestMapping(value="loginChk", method=RequestMethod.POST, produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public Map loginChk(@RequestBody Map dto, HttpServletRequest req) {
+		
+		String id = (String)dto.get("id");
+		String pwd = (String)dto.get("pwd");
+		Map map = new HashMap();
+		int result = service.loginChk(id,pwd,req);
+
+		map.put("login", result);
 		return map;
 	}
 	

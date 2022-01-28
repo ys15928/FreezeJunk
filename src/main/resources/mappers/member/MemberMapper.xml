@@ -23,5 +23,9 @@
 	insert into JUNK_USER values(#{id}, #{pwd}, #{name}, #{email})
 </insert>
 
+<select id="loginChk" resultMap="member">
+	select * from JUNK_USER where id=#{id} and pwd=#{pwd}
+</select>
+
 
 </mapper>

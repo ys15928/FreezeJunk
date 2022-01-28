@@ -3,6 +3,7 @@ package com.care.root.member.service;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -15,8 +16,7 @@ import com.care.root.mybatis.MemberMapper;
 
 @Service
 public class MemberService {
-	@Autowired
-	MemberMapper mapper;
+	@Autowired	MemberMapper mapper;
 	@Autowired JavaMailSender mailSender;
 	
 	public MemberDTO idcheck(String id) {
@@ -64,4 +64,25 @@ public class MemberService {
 			e.printStackTrace();
 		}
 	}
+	
+
+	public int loginChk(String id, String pwd, HttpServletRequest req) {
+		
+		MemberDTO dto = new MemberDTO();
+		HttpSession session = req.getSession();
+		dto.setId(id);
+		dto.setPwd(pwd);
+		MemberDTO loDto = mapper.loginChk(dto);
+		if(loDto == null) {
+			return 0;
+		}if(loDto.getId().equals(dto.getId()) && loDto.getPwd().equals(dto.getPwd())) {
+			session.setAttribute("loginUser", loDto);
+			return 1;
+		}
+		return 2;
+	}
+	
+	
+	
+	
 }
