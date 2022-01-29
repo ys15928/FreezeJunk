@@ -21,6 +21,7 @@
 	SimpleDateFormat sdf2 = new SimpleDateFormat("a hh:mm");
 	
 %>
+	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<div class="info-head-title">
 			<div class="info-title">${dto.suggTitle }</div>
@@ -64,6 +65,7 @@
 			<button type="button" id="write-btn" onclick="suggestionAnswerWrite();">등록</button>
 		</div>
 	</div>
+	<jsp:include page="../default/footer.jsp"/>
 
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/bootstrap.js"></script>

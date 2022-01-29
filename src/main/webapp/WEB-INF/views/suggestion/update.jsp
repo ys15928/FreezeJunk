@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
 <body>
+	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<form action="suggestion-6" method="post" id="form">
 			<input type="hidden" name="num" value="${dto.num }"/>
@@ -33,6 +34,7 @@
 			</div>
 		</form>
 	</div>
+	<jsp:include page="../default/footer.jsp"/>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/bootstrap.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>

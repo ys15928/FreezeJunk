@@ -56,7 +56,7 @@
 			<nav style="">
 				<ul>
 					<li><a href="#" class="ab">키워드 추천</a></li>
-					<li><a href="#" class="ab">건의사항</a></li>
+					<li><a href="main/suggestion-3" class="ab">건의사항</a></li>
 					<li><a href="#" class="ab">마이페이지</a></li>
 			<!-- 	<c:if test="${sessionScope.login.id eq '3333'}">
 						<li><a href="memberList" class="ab">MemberList</a></li>
