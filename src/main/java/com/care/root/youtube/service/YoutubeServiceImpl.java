@@ -1,5 +1,5 @@
 package com.care.root.youtube.service;
 
 public interface YoutubeServiceImpl {
-	public void youtubeService();
+	public void runCrawling();
 }
