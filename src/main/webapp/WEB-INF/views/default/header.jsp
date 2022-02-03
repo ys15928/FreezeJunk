@@ -28,7 +28,7 @@
     align-items: center;">
 		<nav>
 			<ul>
-				<li><a href="#"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a></li>
+				<li><a href="main"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a></li>
 			</ul>
 		</nav>
 	<div>
