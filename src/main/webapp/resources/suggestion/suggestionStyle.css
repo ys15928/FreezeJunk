@@ -159,7 +159,9 @@ button:hover {
     text-align: center;
 }
 .info-content {
-	min-height: 300px;
+	min-height: 350px;
+	padding: 5px 0;
+	border-bottom: 1px solid #A566FF;
 }
 .info-btn-box {
 	margin-top: 20px;
@@ -177,4 +179,11 @@ button:hover {
 }
 .info-btn-box>button:last-child {
 	margin-right: 0;
+}
+.answer-title {
+	font-size: 32px;
+    font-weight: bold;
+    color: #9B7CC9;
+    margin-bottom: -15px;
+    margin-top: 15px;
 }

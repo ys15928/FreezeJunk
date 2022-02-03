@@ -29,6 +29,26 @@
 	
 	<context:component-scan base-package="com.care.root" />
 	
+	<beans:bean id="interceptor"
+		class="com.care.root.interceptor.Interceptor" />
+	<interceptors>
+		<interceptor>
+			<!-- <mapping path="/index"/> -->
+			<mapping path="/main/*" />
+			<beans:ref bean="interceptor" />
+		</interceptor>
+	</interceptors>
+	
+	<beans:bean id="adminInterceptor"
+		class="com.care.root.interceptor.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+			<!-- <mapping path="/index"/> -->
+			<mapping path="/main/admin/*" />
+			<beans:ref bean="adminInterceptor" />
+		</interceptor>
+	</interceptors>
+	
 	
 	
 </beans:beans>

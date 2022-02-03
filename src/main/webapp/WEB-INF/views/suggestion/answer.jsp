@@ -1,3 +1,6 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.care.root.suggestion.SuggestionDTO"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,21 +14,59 @@
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
 <body>
+<%
+	SuggestionDTO dto = (SuggestionDTO) request.getAttribute("dto");
+	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");
+	SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd");
+	SimpleDateFormat sdf2 = new SimpleDateFormat("a hh:mm");
+	
+%>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
-		<form action="suggestion-2" method="post" id="form">
-			<input type="text" id="title" name="title" placeholder="제목"/>
-			<textarea id="editor" name="content"></textarea>
-			<div class="status-box">
-				<span class="status-comment">전체 공개 여부</span><input type="checkbox" name="status" value="1" id="status"/>
+		<div class="info-head-title">
+			<div class="info-title">${dto.suggTitle }</div>
+		</div>
+		<div class="info-head-sub">
+			<div>${dto.suggId }</div>
+			<div class="info-sub">|</div>
+			<div>
+			<%
+			Date sys = new Date();
+			String sysStr = sd.format(sys);
+			sys = sd.parse(sysStr);
+			String dateStr = sd.format(dto.getSuggTime().getTime());
+			Date date = sd.parse(dateStr);
+			if(date.before(sys)) {
+			%>
+				<%=sdf1.format(dto.getSuggTime())%>
+			<%
+			} else {
+			%>
+				<%=sdf2.format(dto.getSuggTime())%>
+			<%
+			}
+			%>
 			</div>
-			<div class="write-btn-box">
-				<button type="button" id="write-btn" onclick="location.href='suggestion-3'" style="margin-right: 15px;">목록으로</button>
-				<button type="button" id="write-btn" onclick="suggestionWrite();">작성</button>
-			</div>
-		</form>
+		</div>
+		<div class="info-content">
+			${dto.suggContent }
+		</div>
+		<div class="answer-title">
+		Answer
+		</div>
+		<div>
+			<form action="suggestion-5" method="post" id="form">
+				<input type="hidden" name="num" value="<%=dto.getNum() %>"/>
+				<textarea name="content" id="editor"></textarea>
+			</form>
+		</div>
+		<div class="write-btn-box">
+			<button type="button" id="write-btn" onclick="history.back();" style="margin-right: 15px;">이전으로</button>
+			<button type="button" id="write-btn" onclick="suggestionAnswerWrite();">등록</button>
+		</div>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
+
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/bootstrap.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>

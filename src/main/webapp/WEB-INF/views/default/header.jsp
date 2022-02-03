@@ -20,12 +20,7 @@
 </style>
 </head>
 <body>
-	<div class="wrap1" style="width: 1180px;
-    margin: auto;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;">
+	<div class="wrap1" style="width: 1180px; margin: auto; background: white; display: flex; justify-content: space-between; align-items: center;">
 		<nav>
 			<ul>
 				<li><a href="main"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a></li>
@@ -56,7 +51,7 @@
 			<nav style="">
 				<ul>
 					<li><a href="#" class="ab">키워드 추천</a></li>
-					<li><a href="#" class="ab">건의사항</a></li>
+					<li><a href="main/suggestion-3" class="ab">건의사항</a></li>
 					<li><a href="#" class="ab">마이페이지</a></li>
 			<!-- 	<c:if test="${sessionScope.login.id eq '3333'}">
 						<li><a href="memberList" class="ab">MemberList</a></li>

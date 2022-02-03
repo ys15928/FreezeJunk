@@ -13,15 +13,24 @@
 <body>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
-		<form action="suggestion-2" method="post" id="form">
-			<input type="text" id="title" name="title" placeholder="제목"/>
-			<textarea id="editor" name="content"></textarea>
+		<form action="suggestion-6" method="post" id="form">
+			<input type="hidden" name="num" value="${dto.num }"/>
+			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
+			<textarea id="editor" name="content">${dto.suggContent }</textarea>
 			<div class="status-box">
-				<span class="status-comment">전체 공개 여부</span><input type="checkbox" name="status" value="1" id="status"/>
+				<span class="status-comment">전체 공개 여부</span>
+				<c:choose>
+					<c:when test="${dto.suggStatus == 0}">
+						<input type="checkbox" name="status" value="1" id="status"/>
+					</c:when>
+					<c:otherwise>
+						<input type="checkbox" name="status" value="1" id="status" checked/>
+					</c:otherwise>
+				</c:choose>
 			</div>
 			<div class="write-btn-box">
-				<button type="button" id="write-btn" onclick="location.href='suggestion-3'" style="margin-right: 15px;">목록으로</button>
-				<button type="button" id="write-btn" onclick="suggestionWrite();">작성</button>
+				<button type="button" id="write-btn" onclick="history.back();" style="margin-right: 15px;">뒤로가기</button>
+				<button type="button" id="write-btn" onclick="suggestionWrite();">수정</button>
 			</div>
 		</form>
 	</div>

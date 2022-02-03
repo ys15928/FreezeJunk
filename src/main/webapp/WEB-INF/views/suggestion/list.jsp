@@ -1,3 +1,4 @@
+<%@page import="com.care.root.member.dto.MemberDTO"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.care.root.suggestion.SuggestionDTO"%>
@@ -16,6 +17,8 @@
 </head>
 <body>
 <%
+	HttpSession se = request.getSession();
+	MemberDTO loginUser = (MemberDTO) se.getAttribute("loginUser");
 	List<SuggestionDTO> list= (List<SuggestionDTO>) request.getAttribute("list");
 	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");
 	SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd");
@@ -34,6 +37,7 @@
 		endPage = pageCount;
 	}
 %>
+	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/><button type="button" class="search-btn" onclick="search();">검색</button>
@@ -48,13 +52,19 @@
 		<div class="sugg-line">
 		<%
 			} else {
+				if(loginUser.getId().equals("team03")) {
+		%>
+		<div class="sugg-line">
+		<%
+				} else {
 		%>
 		<div class="sugg-line all-line">
 		<%
+				}
 			}
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%"><a href="suggestion-4?num=<%=dto.getNum()%>"><%=dto.getSuggTitle() %></a></div>
+			<div style="width: 40%; cursor: pointer;" id="<%=dto.getSuggId()%>" class="<%=dto.getNum() %>" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></div>
 			<div style="width: 15%"><%=dto.getSuggId() %></div>
 		<%
 			Date sys = new Date();
@@ -133,7 +143,22 @@
 		</div>
 	</div>
 	
+	<jsp:include page="../default/footer.jsp"/>
+	
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
+<script>
+	function info(info, infoStatus) {
+		var infoId = info.id;
+		var infoNum = info.className;
+		var loginId = "<%=loginUser.getId() %>";
+		var status = infoStatus;
+		if(status == 1 || loginId == "team03" || loginId == infoId) {
+			location.href="suggestion-4?num=" + infoNum;
+		} else {
+			alert("비공개 글입니다.")
+		}
+	}
+</script>
 </body>
 </html>

@@ -1,11 +1,14 @@
 package com.care.root.suggestion;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.care.root.member.dto.MemberDTO;
 import com.care.root.mybatis.SuggestionMapper;
 
 @Service
@@ -15,7 +18,9 @@ public class SuggestionService {
 	
 	public int write(HttpServletRequest req) {
 		SuggestionDTO dto = new SuggestionDTO();
-		dto.setSuggId("wnsgh9978");
+		HttpSession session = req.getSession();
+		MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
+		dto.setSuggId(loginUser.getId());
 		dto.setSuggTitle(req.getParameter("title"));
 		dto.setSuggContent(req.getParameter("content"));
 		if(req.getParameterValues("status") == null) {
@@ -53,5 +58,34 @@ public class SuggestionService {
 		int num = Integer.parseInt(req.getParameter("num"));
 		SuggestionDTO dto = mapper.info(num);
 		model.addAttribute("dto", dto);
+	}
+	public int answer(HttpServletRequest req) {
+		SuggestionDTO dto = new SuggestionDTO();
+		dto.setNum(Integer.parseInt(req.getParameter("num")));
+		dto.setAnswContent(req.getParameter("content"));
+		return mapper.answer(dto);
+	}
+	
+	public int update(HttpServletRequest req) {
+		SuggestionDTO dto = new SuggestionDTO();
+		HttpSession session = req.getSession();
+		MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
+		dto.setNum(Integer.parseInt(req.getParameter("num")));
+		dto.setSuggId(loginUser.getId());
+		dto.setSuggTitle(req.getParameter("title"));
+		dto.setSuggContent(req.getParameter("content"));
+		if(req.getParameterValues("status") == null) {
+			dto.setSuggStatus("0");
+		} else {
+			dto.setSuggStatus("1");
+		}
+		dto.setAnswContent(null);
+		dto.setAnswTime(null);
+		return mapper.update(dto);
+	}
+	
+	public int delete(HttpServletRequest req) {
+		int num = Integer.parseInt(req.getParameter("num"));
+		return mapper.delete(num);
 	}
 }
