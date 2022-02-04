@@ -30,7 +30,7 @@ public class MemberController {
 	public String header() {
 		return "default/header";
 	}
-	@RequestMapping("main/main")
+	@RequestMapping("main")
 	public String main() {
 		return "member/main";
 	}
@@ -113,7 +113,7 @@ public class MemberController {
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='main';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
 	}
 	
 	
