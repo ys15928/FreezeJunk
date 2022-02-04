@@ -24,14 +24,19 @@ function suggestionWrite() {
 	
 }
 
-function search() {
+function search(num) {
 	var search = document.getElementById("search").value.replace(blank_pattern1, '');
 	if(search != "") {
 		search = document.getElementById("search").value;
 	} else {
 		search = "";
 	}
-	location.href="suggestion-3?search="+search;
+	if(num == 1) {
+		location.href="suggestion-3?search="+search;
+	} else if(num == 2) {
+		location.href="suggestion-4?search="+search;
+	}
+	
 }
 
 function suggestionAnswerWrite() {

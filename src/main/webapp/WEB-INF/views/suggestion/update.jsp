@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
-		<form action="suggestion-6" method="post" id="form">
+		<form action="suggestion-7" method="post" id="form">
 			<input type="hidden" name="num" value="${dto.num }"/>
 			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
 			<textarea id="editor" name="content">${dto.suggContent }</textarea>

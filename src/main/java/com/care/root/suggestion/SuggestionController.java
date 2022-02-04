@@ -50,11 +50,17 @@ public class SuggestionController {
 	
 	@RequestMapping(value="main/suggestion-3")
 	public String list(HttpServletRequest req, Model model) {
-		service.allList(req, model);
-		return "suggestion/list";
+		service.list(req, model, 1);
+		return "suggestion/allList";
 	}
 	
 	@RequestMapping(value="main/suggestion-4")
+	public String myList(HttpServletRequest req, Model model) {
+		service.list(req, model, 2);
+		return "suggestion/myList";
+	}
+	
+	@RequestMapping(value="main/suggestion-5")
 	public String info(HttpServletRequest req, Model model) {
 		service.info(req, model);
 		return "suggestion/info";
@@ -77,13 +83,13 @@ public class SuggestionController {
 		}
 	}
 	
-	@RequestMapping(value="main/suggestion-5")
+	@RequestMapping(value="main/suggestion-6")
 	public String updateForm(HttpServletRequest req, Model model) {
 		service.info(req, model);
 		return "suggestion/update";
 	}
 	
-	@RequestMapping(value="main/suggestion-6", method=RequestMethod.POST)
+	@RequestMapping(value="main/suggestion-7", method=RequestMethod.POST)
 	public void update(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();
@@ -95,7 +101,7 @@ public class SuggestionController {
 		}
 	}
 	
-	@RequestMapping(value="main/suggestion-7", method=RequestMethod.POST)
+	@RequestMapping(value="main/suggestion-8", method=RequestMethod.POST)
 	public void delete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/html; charset=utf-8");
 		PrintWriter out = resp.getWriter();

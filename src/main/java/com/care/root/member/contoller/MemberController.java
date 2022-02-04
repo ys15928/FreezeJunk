@@ -30,7 +30,7 @@ public class MemberController {
 	public String header() {
 		return "default/header";
 	}
-	@RequestMapping("main")
+	@RequestMapping("main/main")
 	public String main() {
 		return "member/main";
 	}
@@ -107,13 +107,13 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping(value="/main/logout")
+	@RequestMapping(value="main/logout")
 	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='../';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='main';</script>");
 	}
 	
 	

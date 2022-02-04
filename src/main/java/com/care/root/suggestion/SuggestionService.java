@@ -33,7 +33,9 @@ public class SuggestionService {
 		return mapper.write(dto);
 	}
 	
-	public void allList(HttpServletRequest req, Model model) {
+	public void list(HttpServletRequest req, Model model, int num) {
+		HttpSession session = req.getSession();
+		MemberDTO userDto = (MemberDTO) session.getAttribute("loginUser");
 		String search = req.getParameter("search");
 		int pageSize = 10;
 		if(search == null) {
@@ -44,11 +46,21 @@ public class SuggestionService {
 			currentPage = "1";
 		}
 		int pageNum = Integer.parseInt(currentPage);
-		int count = mapper.allListCount(search);
+		int count = 0;
+		if(num == 1) {
+			count = mapper.allListCount(search);
+		} else {
+			count = mapper.myListCount(userDto.getId(), search);
+		}
+		
 		int startRow = (pageNum - 1) * pageSize + 1;
 		int endRow = pageNum * pageSize;
 		
-		model.addAttribute("list", mapper.allList(startRow, endRow, search));
+		if(num == 1) {
+			model.addAttribute("list", mapper.allList(startRow, endRow, search));
+		} else {
+			model.addAttribute("list", mapper.myList(startRow, endRow, search, userDto.getId()));
+		}
 		model.addAttribute("count", count);
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("search", search);

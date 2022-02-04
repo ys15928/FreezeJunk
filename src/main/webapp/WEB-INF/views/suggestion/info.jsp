@@ -105,7 +105,7 @@
 		<%
 			if(dto.getSuggId().equals(loginUser.getId()) && dto.getAnswContent() == null) {
 		%>
-			<button type="button" onclick="location.href='suggestion-5?num=${dto.num}'">수정</button>
+			<button type="button" onclick="location.href='suggestion-6?num=${dto.num}'">수정</button>
 		<%
 			}
 			if(loginUser.getId().equals("team03") || (dto.getSuggId().equals(loginUser.getId()) && dto.getAnswContent() == null)) {
@@ -120,7 +120,7 @@
 			}
 		%>
 		</div>
-		<form action="suggestion-7" method="post" style="display: none;" id="delete-form">
+		<form action="suggestion-8" method="post" style="display: none;" id="delete-form">
 			<input type="hidden" name="num" value="${dto.num }"/>
 		</form>
 	</div>

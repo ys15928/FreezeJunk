@@ -39,8 +39,12 @@
 %>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
+		<div class="list-head-box">
+			<div class="list-select">전체리스트</div>
+			<div class="non-list-select" style="border-left: none;"><a href="suggestion-4">내가 작성한 건의사항</a></div>
+		</div>
 		<div class="sugg-search-box">
-			<span class="search-comment">제목</span><input type="text" id="search" name="search"/><button type="button" class="search-btn" onclick="search();">검색</button>
+			<span class="search-comment">제목</span><input type="text" id="search" name="search"/><button type="button" class="search-btn" onclick="search(1);">검색</button>
 		</div>
 		<div style="margin-top: 20px;">
 		<%
@@ -58,7 +62,7 @@
 		<%
 				} else {
 		%>
-		<div class="sugg-line all-line">
+		<div class="sugg-line non-line">
 		<%
 				}
 			}
@@ -154,7 +158,7 @@
 		var loginId = "<%=loginUser.getId() %>";
 		var status = infoStatus;
 		if(status == 1 || loginId == "team03" || loginId == infoId) {
-			location.href="suggestion-4?num=" + infoNum;
+			location.href="suggestion-5?num=" + infoNum;
 		} else {
 			alert("비공개 글입니다.")
 		}
