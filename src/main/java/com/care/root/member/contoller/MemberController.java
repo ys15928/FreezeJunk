@@ -49,6 +49,11 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping("idpwsearch")
+	public String idpwsearch() {
+		return "member/idpw_search";
+	}
+	
 	@RequestMapping(value="memberSuc", method=RequestMethod.POST)
 	public void resister(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8"); // 응답 설정 변경
@@ -102,13 +107,13 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping(value="logout")
+	@RequestMapping(value="/main/logout")
 	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='main';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='../';</script>");
 	}
 	
 	

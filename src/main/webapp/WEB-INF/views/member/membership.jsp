@@ -28,7 +28,7 @@
 
 </style>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
 </head>
 <body style="background-color: white;">
 <jsp:include page="../default/header.jsp"/>
@@ -247,7 +247,6 @@ function emailgoNum(){
 	$.ajax({
 		url: "emailgoNum", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
 		success: function(map){
-				alert("인증번호가 전송되었습니다.");
 				document.getElementById("email-num-comment").innerText = "인증번호를 입력하세요";
 				$("#email-num-comment").css("visibility", "visible");
 				certifiedNum = map.certified

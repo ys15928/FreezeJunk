@@ -57,7 +57,7 @@ button:hover { cursor: pointer; }
 			</div>
 		<!-- </form> -->
 		</div>
-		<a href="#">
+		<a href="idpwsearch">
 			<span class="login-option">아이디/비밀번호 찾기</span>
 		</a>
 		<a href="membership">
