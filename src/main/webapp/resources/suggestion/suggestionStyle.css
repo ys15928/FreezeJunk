@@ -1,6 +1,10 @@
 a {
 	text-decoration: none;
 }
+body {
+	width: 1920px;
+	overflow-x: hidden;
+}
 /* ------------------------- write.jsp ----------------------------- */
 .wrap {
 	width: 1080px;
@@ -63,10 +67,10 @@ button:hover {
 .sugg-line:hover {
 	background-color: #EAEAEA;
 }
-.all-line {
+.non-line {
 	background-color: #FFA7A7;
 }
-.all-line:hover {
+.non-line:hover {
 	background-color: #FFD8D8;
 }
 .sugg-line a {
@@ -136,6 +140,38 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.list-head-box {
+	display: flex;
+	margin-top: 50px;
+}
+.list-head-box>div:hover {
+	cursor: pointer;
+}
+.non-list-select {
+	width: 200px;
+    height: 50px;
+    border: 1px solid gray;
+    font-size: 17px;
+}
+.non-list-select>a {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkblue;
+}
+.list-select {
+	width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    font-size: 17px;
+	background-color: darkblue;
+    color: #fff;
 }
 /* -------------------------- info.jsp -------------------------------- */
 .info-head-title {

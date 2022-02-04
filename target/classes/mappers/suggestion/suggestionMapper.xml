@@ -20,8 +20,15 @@
 		select B.* from(select rownum rn, A.* from
         (select * from junk_suggestion where suggTitle like '%' || #{search} || '%' order by num desc)A)B where rn between #{s} and #{e}
 	</select>
+	<select id="myList" resultMap="suggestion">
+		select B.* from(select rownum rn, A.* from
+        (select * from junk_suggestion where suggId = #{id} AND suggTitle like '%' || #{search} || '%' order by num desc)A)B where rn between #{s} and #{e}
+	</select>
 	<select id="allListCount" resultType="Integer">
 		select count(*) from junk_suggestion where suggTitle like '%' || #{search} || '%'
+	</select>
+	<select id="myListCount" resultType="Integer">
+		select count(*) from junk_suggestion where suggId = #{id} AND suggTitle like '%' || #{search} || '%'
 	</select>
 	<select id="info" resultMap="suggestion">
 		select * from junk_suggestion where num = #{num}
