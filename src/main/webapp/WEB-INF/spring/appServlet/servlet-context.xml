@@ -21,7 +21,33 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="52428800" />
+        <beans:property name="defaultEncoding" value="utf-8" />
+    </beans:bean>
+	
 	<context:component-scan base-package="com.care.root" />
+	
+	<beans:bean id="interceptor"
+		class="com.care.root.interceptor.Interceptor" />
+	<interceptors>
+		<interceptor>
+			<!-- <mapping path="/index"/> -->
+			<mapping path="/main/*" />
+			<beans:ref bean="interceptor" />
+		</interceptor>
+	</interceptors>
+	
+	<beans:bean id="adminInterceptor"
+		class="com.care.root.interceptor.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+			<!-- <mapping path="/index"/> -->
+			<mapping path="/main/admin/*" />
+			<beans:ref bean="adminInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 	
 	
