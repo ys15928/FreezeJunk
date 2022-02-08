@@ -6,18 +6,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>아이디/비밀번호 찾기</title>
 </head>
-<body>
-
-<div id="background_modal" class="" style="background-color: pink;">
-	<div class="" style="display:block;">
+<body style="width: 1920px; overflow-x: hidden;">
+<div id="background_modal" style="display: block">
+	<div class="">
 		<h4>
-			<b>아이디는?</b><span class=""></span>
+			<b>손님 아이디는?</b><span class="">&times;</span>
 		</h4><br>
 			<h2 id="id_value"></h2>
 		<br>
-		<button type="button" id="pwSearch_btn" class=""><i class=""></i>비밀번호 찾기</button>
+		<button type="button" id="pwSearch_btn" class="btn peach-gradient btn-rounded waves-effect">
+		<i class=""></i>비밀번호 찾기</button>
 	</div>
 </div>
 
@@ -53,13 +53,13 @@
 						</div>
 					</div>
 					<div class="">
-						<label class="" for="inputPhone_1">이메일</label>
+						<label class="" for="inputEmail_1">이메일</label>
 						<div>
-							<input type="text" class="" id="inputPhone_1" name="inputPhone_1" placeholder="ex) E-mail@gmail.com">
+							<input type="text" class="" id="inputEmail_1" name="inputEmail_1" placeholder="ex) E-mail@gmail.com">
 						</div>
 					</div>
 					
-					<div class="form-group">
+					<div class="">
 						<button id="searchBtn" type="button" onclick="idSearch_click()" class="">확인</button>
 					<a class=""	href="${pageContext.request.contextPath}">취소</a>
 					</div>
@@ -69,21 +69,21 @@
 				
 				<div id="searchP" style="display: none;">
 					<div class="">
-						<label class="" for="inputId">아이디</label>
+						<label class="" for="inputId_2">아이디</label>
 						<div>
-							<input type="text" class="form-control" id="inputId" name="inputId_2" placeholder="ex) freeze">
+							<input type="text" class="" id="inputId_2" name="inputId_2" placeholder="ex) freeze">
 						</div>
 					</div>
 					
 					<div class="">
 						<label class="" for="inputEmail_2">이메일</label>
 						<div>
-							<input type="email" class="form-control" id="inputEmail_2"	name="inputEmail_2" placeholder="ex) E-mail@gmail.com">
+							<input type="email" class="" id="inputEmail_2"	name="inputEmail_2" placeholder="ex) E-mail@gmail.com">
 						</div>
 					</div>
 					
 					<div class="">
-						<button id="searchBtn2" type="button" class="">확인</button>
+						<button id="searchBtn2" type="button" class="" onclick="">확인</button>
 					<a class=""	href="${pageContext.request.contextPath}">취소</a>
 				</div>
 				</div>
@@ -97,41 +97,52 @@
 <script type="text/javascript">
 function search_check1(){
 	document.getElementById("searchP").style.display="none";
-	document.getElementById("searchI").style.dispaly="block";
+	document.getElementById("searchI").style.display="block";
 }
 
 function search_check2(){
-	document.getElementById("searchP").style.dispaly="block";
-	document.getElementById("searchI").style.dispaly="none";
+	document.getElementById("searchP").style.display="block";
+	document.getElementById("searchI").style.display="none";
+}
+
+var idV = "";
+function idSearch_click(){
+	$.ajax({
+		type:"POST",
+		url:"searchId?inputName_1="+$('#inputName_1').val()+"&inputEmail_1="+$('#inputEmail_1').val(),
+		success:function(data){
+			if(data == 0){
+				$('#id_value').text("회원 정보를 확인해주세요!");	
+			} else {
+				$('#id_value').text(data);
+				idV = data;
+			}
+		}
+	});
 }
 
 
-$(document).ready(function() {
-	// 1. 모달창 히든 불러오기
-	$('#searchBtn').click(function() {
-		$('#background_modal').show();
+$(function(){
+	$("#searchBtn2").click(function(){
+		$.ajax({
+			url : "searchPwd",
+			type : "POST",
+			data : {
+				id : $("#inputId_2").val(),
+				email : $("#inputEmail_2").val()
+			},
+			success : function(result) {
+				if(result == 0){
+					$('#id_value').text("회원 정보를 확인해주세요!");	
+				} else {
+					$('#id_value').text("이메일을 확인하세요");
+				}
+			},
+			
+		})
 	});
-	// 2. 모달창 닫기 버튼
-	$('.close').on('click', function() {
-		$('#background_modal').hide();
-	});
-	// 3. 모달창 윈도우 클릭 시 닫기
-	$(window).on('click', function() {
-		if (event.target == $('#background_modal').get(0)) {
-            $('#background_modal').hide();
-         }
-	});
-});
+})
 
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

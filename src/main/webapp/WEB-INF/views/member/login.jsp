@@ -34,7 +34,7 @@ button:hover { cursor: pointer; }
 .login-comment {	font-weight: bold;	color: red;	visibility: hidden; font-size: 5px; text-align: left;}
 </style>
 </head>
-<body>
+<body style="width: 1920px; overflow-x: hidden;">
 <jsp:include page="../default/header.jsp"/>
 	<div style="text-align: center; background-color: #EAEAEA;width: 563px;
     height: 301px;

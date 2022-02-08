@@ -30,7 +30,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body style="background-color: white;">
+<body style="background-color: white; width: 1920px; overflow-x: hidden;">
 <jsp:include page="../default/header.jsp"/>
 	<div class="join-box" id="join-member" style="margin: auto; margin-top: 0px;">
 			<form action="memberSuc" method="post" id="form">

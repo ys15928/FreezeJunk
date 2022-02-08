@@ -35,7 +35,7 @@
 					<span style="margin-top: 10px;">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id != null }">
-					<li><a href="#" class="ad" style="font-size: 10px;">${loginUser.name }님 환영합니다.</a></li>
+					<li><a href="mypage" class="ad" style="font-size: 10px;">${loginUser.name }님 환영합니다.</a></li>
 					<span style="margin-top: 10px;">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id == null }">
@@ -52,7 +52,7 @@
 				<ul>
 					<li><a href="#" class="ab">키워드 추천</a></li>
 					<li><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
-					<li><a href="#" class="ab">마이페이지</a></li>
+					<li><a href="mypage" class="ab">마이페이지</a></li>
 			<!-- 	<c:if test="${sessionScope.login.id eq '3333'}">
 						<li><a href="memberList" class="ab">MemberList</a></li>
 					</c:if>	 -->

@@ -12,10 +12,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.root.member.dto.MemberDTO;
@@ -116,8 +118,54 @@ public class MemberController {
 		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
 	}
 	
+	@RequestMapping(value="searchId", method = RequestMethod.POST)
+	@ResponseBody
+	public String searchId(@RequestParam("inputName_1") String name,@RequestParam("inputEmail_1")String email) {
+		String result = service.searchId(name, email);
+		return result;
+	}
+	
+	@RequestMapping(value = "searchPwd", method = RequestMethod.POST)
+	@ResponseBody
+	public String searchPwd(@RequestParam("id")String id, @RequestParam("email")String email, HttpServletRequest req) {
+		service.searchPwd(id, email, req);
+		return "searchPwd";
+	}
 	
 	
+	
+	@RequestMapping("mypage")
+	public String mypage(Model model, HttpServletRequest req) {
+		HttpSession se = req.getSession();
+		if(se.getAttribute("loginUser")==null) {
+			return "redirect:login";
+		}else {
+			MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+			service.mypage(model,dto.getId());
+		}
+		return "member/mypage";
+	}
+	
+	@PostMapping("myupdate")
+	public void myupdate(HttpServletRequest req, HttpServletResponse res, Model model) throws IOException {
+		HttpSession se = req.getSession();
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		if(dto==null) {
+			out.print("<script> locetion.href='login';</script>");
+		}else {
+			int result = service.myupdate(req,dto.getId());
+			if(result == 0) {
+				out.print("<script> alert('회원 정보 수정을 실패했습니다');location.href='mypage';</script>");
+			}else {
+				out.print("<script> alert('회원 정보 수정이 완료되었습니다');location.href='mypage';</script>");
+			}
+		}
+	}
+	
+	
+		
 }
 
 
