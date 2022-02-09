@@ -2,6 +2,7 @@ package com.care.root.member.contoller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -165,7 +166,39 @@ public class MemberController {
 	}
 	
 	
+	
+	@RequestMapping(value = "iddelete", method=RequestMethod.POST)
+	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		HttpSession se = req.getSession();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		int result = service.iddelete(dto.getId());
+		if(result == 0) {
+			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
+		} else {
+			se.invalidate();
+			out.print("<script> alert('탈퇴되었습니다.');location.href='main';</script>");
+		}
+	}
 		
+	@RequestMapping("emaildel")
+	@ResponseBody
+	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
+		ArrayList list = new ArrayList();
+		
+		HttpSession se = req.getSession();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		service.emaildel(dto, model, res);
+		return list;
+		
+	}
+	
+	
+	
+	
+	
+	
 }
 
 

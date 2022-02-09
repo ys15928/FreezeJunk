@@ -36,9 +36,20 @@
 		<tr><td><input type="text" id="email" name="email" class="input" value="${loginUser.email }" readonly="readonly"></td></tr>
 		<tr><td><div class="comment">비밀번호를 입력해 주세요.</div></td></tr>
 		<tr><td><button type="button" class="btn" onClick="modify()">회원정보수정</button></td></tr>
-		<tr><td><button type="button" class="btn" onClick="">회원탈퇴</button></td></tr>
+		<tr><td><button type="button" class="btn" onClick="emaildel()">회원탈퇴</button></td></tr>
 	</table>
 	</form>
+</div>
+
+<div style="" id="email-modal">
+<div>로고</div>
+<div>등록된 회원 이메일로 인증번호를 보냈습니다.<br>인증번호를 입력하시고 탈퇴 버튼을 누르면 탈퇴가 완료됩니다.</div><br>
+<div style="display: flex;">
+<div>인증번호 : <input type="text" id="" name=""></div>
+<div><span id="time">&nbsp;&nbsp;3 : 0&nbsp;&nbsp;</span><button type="button" onclick="iddelete()">탈퇴하기</button></div>
+</div>
+<div><br>*인증번호를 받지 못했다면 이메일주소를 확인하세요.</div>
+<div>*또는 관리자에게 문의 바랍니다.</div>
 </div>
 
 <jsp:include page="../default/footer.jsp"/>
@@ -46,6 +57,22 @@
 <script type="text/javascript">
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
 var regType1 = /^[A-Za-z0-9+]*$/;
+
+var certifiedNum = "";
+function iddelete(){
+	if(confirm("회원탈퇴를 진행하시겠습니까?")){
+		$.ajax({
+			url : "iddelete", type : "GET", dataType : "json",
+			success : function(list){
+				$("#email-modal").css('display', 'block');
+				certifiedNum = list[0];
+				TimerStart();
+			}, error : function(){
+				alert("문제 발생");
+			}
+		})
+	}
+}
 
 function modify(){
 	if(document.getElementById("pwd").value == "" || document.getElementById("pwd").value.replace(blank_pattern1, '') == "") {

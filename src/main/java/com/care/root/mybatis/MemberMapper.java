@@ -19,5 +19,5 @@ public interface MemberMapper {
 	public int myupdate(MemberDTO dto);
 	public String getName(String id);
 	public ArrayList<MemberDTO> userList(String search);
-
+	public int iddelete(String id);
 }

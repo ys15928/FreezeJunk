@@ -137,4 +137,35 @@ public class MemberService {
 		return result;
 	}
 	
+	public int iddelete(String id) {
+		return mapper.iddelete(id);
+	}
+	
+	public void emaildel(MemberDTO dto,Model model, HttpServletResponse res) {
+		String Certified = "";
+		for(int i=1; i<=6; i++) {
+			int num = (int)(Math.random()*9)+1;
+			Certified += String.valueOf(num);
+		}
+		MimeMessage message = mailSender.createMimeMessage();
+		try {
+			MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+			helper.setTo(dto.getEmail());
+			helper.setFrom("freezejunk@gmail.com", "관리자");
+			helper.setSubject(" FreezeJunk 회원 탈퇴 이메일 인증번호입니다.");
+			StringBuffer sb = new StringBuffer();
+			sb.append("안녕하세요 FreezeJunk입니다.<br>");
+			sb.append("<p>회원탈퇴를 신청해주셔서 탈퇴 인증번호를 발급해드렸습니다.</p><br>");
+			sb.append("웹 화면에 해당 인증번호를 입력하고 탈퇴버튼을 클릭해야 탈퇴가 완료됩니다.<br/>");
+			sb.append("인증 번호 : ");
+			sb.append("<h2 style='color : blue'>'  "+ Certified +"  '</h2>");
+			helper.setText(sb.toString(), true);
+			mailSender.send(message);
+			model.addAttribute("certified", Certified);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }
