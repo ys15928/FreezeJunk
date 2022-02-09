@@ -11,7 +11,14 @@ public class SuggestionDTO {
 	private String suggStatus;
 	private String answContent;
 	private Timestamp answTime;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getNum() {
 		return num;
 	}

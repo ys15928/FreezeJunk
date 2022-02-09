@@ -1,5 +1,7 @@
 package com.care.root.mybatis;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
@@ -15,4 +17,7 @@ public interface MemberMapper {
 	public void searchPwd(@Param("id")String id, @Param("email")String email, @Param("key")String key);
 	public MemberDTO mypage(String id);
 	public int myupdate(MemberDTO dto);
+	public String getName(String id);
+	public ArrayList<MemberDTO> userList(String search);
+
 }

@@ -48,7 +48,10 @@
 		</div>
 		<div style="margin-top: 20px;">
 		<%
-			for(SuggestionDTO dto : list) {	
+			for(SuggestionDTO dto : list) {
+				String id = dto.getSuggId().substring(0, 4);
+				id += "****";
+				dto.setSuggId(id);
 		%>
 		<%
 			if(dto.getSuggStatus().equals("1")) {
@@ -68,8 +71,8 @@
 			}
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%; cursor: pointer;" id="<%=dto.getSuggId()%>" class="<%=dto.getNum() %>" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></div>
-			<div style="width: 15%"><%=dto.getSuggId() %></div>
+			<div style="width: 40%;" id="<%=dto.getSuggId()%>" class="<%=dto.getNum() %>"><span style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
+			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
@@ -78,11 +81,11 @@
 			Date date = sd.parse(dateStr);
 			if(date.before(sys)) {
 		%>
-			<div style="width: 15%"><%=sdf1.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%"><%=sdf1.format(dto.getSuggTime()) %></div>
 		<%
 			} else {
 		%>
-			<div style="width: 15%"><%=sdf2.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%"><%=sdf2.format(dto.getSuggTime()) %></div>
 		<%
 			}
 			

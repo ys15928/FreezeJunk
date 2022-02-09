@@ -24,8 +24,8 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 		}
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.print("<script>alert('로그인 후 이용해주세요.');"
-				+ "location.href = '"+request.getContextPath() + "/login';</script>");
+		out.print("<script>alert('잘못된 접근입니다');"
+				+ "location.href = '"+request.getContextPath() + "/main';</script>");
 		return false;
 	}
 

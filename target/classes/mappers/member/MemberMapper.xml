@@ -43,9 +43,15 @@
 	update JUNK_USER set pwd = #{pwd,jdbcType=VARCHAR}, name = #{name,jdbcType=VARCHAR}, email = #{email,jdbcType=VARCHAR} where id = #{id,jdbcType=VARCHAR}
 </update>
 
+<select id="getName" resultType="string">
+	select name from JUNK_USER where id=#{id}
+</select>
+
+<select id="userList" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%'
+</select>
+
 </mapper>
-
-
 
 
 
