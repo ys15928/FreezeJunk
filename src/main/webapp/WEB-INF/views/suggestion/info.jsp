@@ -15,6 +15,10 @@
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 <%
 	SuggestionDTO dto = (SuggestionDTO) request.getAttribute("dto");
+	String id = dto.getSuggId().substring(0, 4);
+	id += "****";
+	dto.setSuggId(id);
+	
 	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");
 	SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd");
 	SimpleDateFormat sdf2 = new SimpleDateFormat("a hh:mm");
@@ -31,7 +35,7 @@
 			<div class="info-title">${dto.suggTitle }</div>
 		</div>
 		<div class="info-head-sub">
-			<div>${dto.suggId }</div>
+			<div>${dto.name }(${dto.suggId })</div>
 			<div class="info-sub">|</div>
 			<div>
 			<%
