@@ -54,7 +54,7 @@
 					<li><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
 					<li><a href="${contextPath }/mypage" class="ab">마이페이지</a></li>
 				<c:if test="${sessionScope.loginUser.id eq 'team03'}">
-						<li><a href="#" class="ab">회원목록</a></li>
+						<li><a href="${contextPath }/main/admin/admin-1" class="ab">회원목록</a></li>
 					</c:if>
 				</ul>
 			</nav>
