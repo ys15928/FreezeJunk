@@ -47,9 +47,18 @@
 	select name from JUNK_USER where id=#{id}
 </select>
 
-<select id="userList" resultMap="member">
+<select id="userListId" resultMap="member">
 	select * from JUNK_USER where id like '%' || #{search} || '%'
 </select>
+
+<select id="userListName" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%'
+</select>
+
+<select id="userListEmail" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%'
+</select>
+
 
 <delete id="iddelete">
 	delete * from JUNK_USER where id=#{id}

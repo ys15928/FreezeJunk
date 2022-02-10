@@ -21,8 +21,22 @@ public class AdminService {
 		if(search == null) {
 			search = "";
 		}
-		List<MemberDTO> list = mapper.userList(search);
+		String option = req.getParameter("option");
+		if(option == null) {
+			option = "1";
+		}
+		List<MemberDTO> list = null;
+		
+		if(option.equals("1")) {
+			list = mapper.userListId(search);
+		} else if(option.equals("2")) {
+			list = mapper.userListName(search);
+		} else if(option.equals("3")) {
+			list = mapper.userListEmail(search);
+		}
+		
 		model.addAttribute("list", list);
 		model.addAttribute("search", search);
+		model.addAttribute("option", option);
 	}
 }

@@ -74,7 +74,7 @@
 			}
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%;" id="<%=dto.getSuggId()%>" class="<%=dto.getNum() %>"><span style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
+			<div style="width: 40%;"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
 			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
