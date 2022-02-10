@@ -18,7 +18,7 @@
 			<div class="user-list-head-search-box">
 				<input type="text" class="search-input" name="search" id="search" value="${search }" placeholder="아이디 검색"/>
 				<span onclick="search();">
-					<img src="${contextPath }/resources/image/search.png" class="search-img""/>
+					<img src="${contextPath }/resources/image/search.png" class="search-img"/>
 				</span>
 			</div>
 		</div>
