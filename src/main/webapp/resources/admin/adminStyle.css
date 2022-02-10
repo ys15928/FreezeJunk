@@ -17,6 +17,12 @@ body {
 	display: flex;
     align-items: center;
 }
+#search-select {
+	height: 32px;
+    width: 85px;
+    margin-right: 20px;
+    font-size: 18px;
+}
 .search-input {
 	width: 235px;
     height: 26px;
@@ -25,6 +31,9 @@ body {
 }
 .search-img {
 	width: 30px;
+}
+.search-img:hover {
+	cursor: pointer;
 }
 .user-list-line {
 	display: flex;
