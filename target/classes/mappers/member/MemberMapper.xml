@@ -27,6 +27,22 @@
 	select * from JUNK_USER where id=#{id} and pwd=#{pwd}
 </select>
 
+<select id="searchId" resultType="String">
+	select * from JUNK_USER where name = #{name} and email = #{email}
+</select>
+
+<update id="searchPwd">
+	update JUNK_USER set pwd = #{key} where id = #{id} and email = #{email}
+</update>
+
+<select id="mypage" resultMap="member">
+	select * from JUNK_USER where id=#{id}
+</select>
+
+<update id="myupdate">
+	update JUNK_USER set pwd = #{pwd,jdbcType=VARCHAR}, name = #{name,jdbcType=VARCHAR}, email = #{email,jdbcType=VARCHAR} where id = #{id,jdbcType=VARCHAR}
+</update>
+
 <select id="getName" resultType="string">
 	select name from JUNK_USER where id=#{id}
 </select>
@@ -35,5 +51,12 @@
 	select * from JUNK_USER where id like '%' || #{search} || '%'
 </select>
 
+<delete id="iddelete">
+	delete * from JUNK_USER where id=#{id}
+</delete>
 
 </mapper>
+
+
+
+
