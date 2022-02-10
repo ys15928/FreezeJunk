@@ -25,14 +25,106 @@ public class AdminService {
 		if(option == null) {
 			option = "1";
 		}
+		
+		String column = req.getParameter("column");
+		String sort = req.getParameter("sort");
+		
+		
 		List<MemberDTO> list = null;
 		
 		if(option.equals("1")) {
-			list = mapper.userListId(search);
+			if(column == null) {
+				list = mapper.userListId(search);
+			} else {
+				if(column.equals("id")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListIdDescId(search);
+						model.addAttribute("idSort", "desc");
+					} else {
+						list = mapper.userListIdAscId(search);
+						model.addAttribute("idSort", "asc");
+					}
+				} else if(column.equals("name")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListIdDescName(search);
+						model.addAttribute("nameSort", "desc");
+					} else {
+						list = mapper.userListIdAscName(search);
+						model.addAttribute("nameSort", "asc");
+					}
+				} else if(column.equals("email")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListIdDescEmail(search);
+						model.addAttribute("emailSort", "desc");
+					} else {
+						list = mapper.userListIdAscEmail(search);
+						model.addAttribute("emailSort", "asc");
+					}
+				}
+			}
+			
 		} else if(option.equals("2")) {
-			list = mapper.userListName(search);
+			if(column == null) {
+				list = mapper.userListName(search);
+			} else {
+				if(column.equals("id")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListNameDescId(search);
+						model.addAttribute("idSort", "desc");
+					} else {
+						list = mapper.userListNameAscId(search);
+						model.addAttribute("idSort", "asc");
+					}
+				} else if(column.equals("name")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListNameDescName(search);
+						model.addAttribute("nameSort", "desc");
+					} else {
+						list = mapper.userListNameAscName(search);
+						model.addAttribute("nameSort", "asc");
+					}
+				} else if(column.equals("email")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListNameDescEmail(search);
+						model.addAttribute("emailSort", "desc");
+					} else {
+						list = mapper.userListNameAscEmail(search);
+						model.addAttribute("emailSort", "asc");
+					}
+				}
+			}
+			
 		} else if(option.equals("3")) {
-			list = mapper.userListEmail(search);
+			if(column == null) {
+				list = mapper.userListEmail(search);
+			} else {
+				if(column.equals("id")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListEmailDescId(search);
+						model.addAttribute("idSort", "desc");
+					} else {
+						list = mapper.userListEmailAscId(search);
+						model.addAttribute("idSort", "asc");
+					}
+				} else if(column.equals("name")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListEmailDescName(search);
+						model.addAttribute("nameSort", "desc");
+					} else {
+						list = mapper.userListEmailAscName(search);
+						model.addAttribute("nameSort", "asc");
+					}
+				} else if(column.equals("email")) {
+					if(sort.equals("desc")) {
+						list = mapper.userListEmailDescEmail(search);
+						model.addAttribute("emailSort", "desc");
+					} else {
+						list = mapper.userListEmailAscEmail(search);
+						model.addAttribute("emailSort", "asc");
+					}
+				}
+			}
+			
 		}
 		
 		model.addAttribute("list", list);

@@ -42,6 +42,34 @@ body {
     align-items: center;
     font-size: 18px;
 }
+.none-line {
+	margin-bottom: 15px;
+    font-size: 18px;
+}
+.user-head-line {
+	display: flex;
+	font-size: 18px;
+	margin: 15px 0;
+}
+.user-head-line>div {
+	display: flex;
+}
+.user-head-line>div:hover {
+	cursor: pointer;
+}
+.user-head-line>div:nth-child(1) {
+	width: 23%;
+    padding-left: 95px;
+}
+.user-head-line>div:nth-child(2) {
+	width: 15%;
+}
+.user-head-line>div:nth-child(3) {
+	width: 20%;
+}
+.user-head-line>div:nth-child(4) {
+	width: 40%;
+}
 .user-list-line:hover {
 	background-color: #EAEAEA !important;
 }
@@ -68,4 +96,5 @@ body {
 .user-list-box {
 	margin-top: 50px;
 	border-bottom: 1px solid black;
+	border-top: 1px solid black;
 }
