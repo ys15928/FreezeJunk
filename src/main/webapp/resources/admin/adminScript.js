@@ -6,5 +6,7 @@ function search() {
 	} else {
 		search = "";
 	}
-	location.href="admin-1?search="+search;
+	var select = $("#search-select option:selected").val();
+	location.href="admin-1?search="+search+"&option="+select;
 }
+
