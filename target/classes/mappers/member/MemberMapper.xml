@@ -61,7 +61,7 @@
 
 
 <delete id="iddelete">
-	delete * from JUNK_USER where id=#{id}
+	delete from JUNK_USER where id=#{id}
 </delete>
 
 </mapper>

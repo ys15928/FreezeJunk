@@ -63,9 +63,9 @@ public class MemberController {
         PrintWriter out = res.getWriter(); // 화면 출력용 객체
         int result= service.register(req);
         if(result==0) {
-        	out.print("<script> alert('회원가입 실패.');location.href='membership';</script>");    	
+        	out.print("<script> alert('회원가입에 실패하셨습니다.');location.href='membership';</script>");    	
         }else {
-        	out.print("<script> alert('회원가입 성공.');location.href='login';</script>");
+        	out.print("<script> alert('회원가입이 완료되었습니다.');location.href='login';</script>");
         }
 	}
 	
@@ -166,6 +166,18 @@ public class MemberController {
 	}
 	
 	
+		
+	@RequestMapping("emaildel")
+	@ResponseBody
+	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
+		ArrayList list = new ArrayList();
+		
+		HttpSession se = req.getSession();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		service.emaildel(dto, model, res);
+		list.add(model.getAttribute("certified"));
+		return list;
+	}
 	
 	@RequestMapping(value = "iddelete", method=RequestMethod.POST)
 	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -180,18 +192,6 @@ public class MemberController {
 			se.invalidate();
 			out.print("<script> alert('탈퇴되었습니다.');location.href='main';</script>");
 		}
-	}
-		
-	@RequestMapping("emaildel")
-	@ResponseBody
-	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
-		ArrayList list = new ArrayList();
-		
-		HttpSession se = req.getSession();
-		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
-		service.emaildel(dto, model, res);
-		return list;
-		
 	}
 	
 	
