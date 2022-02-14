@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.ListIterator;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import com.care.root.mybatis.YoutubeMapper;
@@ -70,10 +71,10 @@ public class youtubeService {
 			e.printStackTrace();
 		}
 
-		ArrayList<ArrayList<String>> commentArray = new ArrayList<ArrayList<String>>();
+		commentArray = new ArrayList<ArrayList<String>>();
 
 		while (true) {
-			
+
 			for (int i = 0; i < response.getItems().size(); i++) {
 				Comment comment = response.getItems().get(i).getSnippet().getTopLevelComment();
 				CommentSnippet snippet = comment.getSnippet();
@@ -141,6 +142,17 @@ public class youtubeService {
 			file.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	public void filter(String keywords) {
+		System.out.println(commentArray);
+
+		ListIterator<ArrayList<String>> iterator = commentArray.listIterator();
+
+		while (iterator.hasNext()) {
+			System.out.println(commentArray.indexOf("테스트테스트"));
+			System.out.println(iterator.next());
 		}
 	}
 

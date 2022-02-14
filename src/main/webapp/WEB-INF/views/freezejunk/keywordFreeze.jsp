@@ -19,7 +19,7 @@
 			size="50px"> <br><br>  
 			
 		== Input Keyowrds==<br>
-		<textarea name="keyword" id="keyword" rows="5" cols="50"> </textarea>
+		<textarea name="keywords" id="keywords" rows="5" cols="50"> </textarea>
 		<input type='submit' value='Freeze'>
 	</form><br><br>
 	
