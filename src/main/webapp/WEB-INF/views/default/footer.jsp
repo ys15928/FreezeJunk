@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<hr style="margin-top: 220px; border: 1px solid gainsboro;">
-<div style="background-color: white;">
+<hr style="margin-top: 20px; border: 1px solid gainsboro;">
+<div style="background-color: black;">
 <table  style="display: flex; justify-content: center; align-items: center; height: 280px; color:gray; width:1080px; margin:auto; font-size: 15px;">
 
 	<tr>
@@ -21,7 +21,7 @@
 	
 	<tr>
 	<td>사업자 등록 번호 : 123-45-67890</td><td style="width:430px; text-align: center;"rowspan="5">
-					<img style="height: 95px;" src="${contextPath}/resources/login/logo.png"></td>
+					<img style="height: 95px;" src="${contextPath}/resources/login/logoblack.png"></td>
 	</tr>
 	
 	<tr>

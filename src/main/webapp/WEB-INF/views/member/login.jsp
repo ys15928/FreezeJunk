@@ -34,8 +34,9 @@ button:hover { cursor: pointer; }
 .login-comment {	font-weight: bold;	color: red;	visibility: hidden; font-size: 5px; text-align: left;}
 </style>
 </head>
-<body style="width: 1920px; overflow-x: hidden;">
+<body style="width: 1920px; overflow-x: hidden; background-color: black;">
 <jsp:include page="../default/header.jsp"/>
+<div style="height: 512px;">
 	<div style="text-align: center; background-color: #EAEAEA;width: 563px;
     height: 301px;
     margin: auto;
@@ -57,13 +58,20 @@ button:hover { cursor: pointer; }
 			</div>
 		<!-- </form> -->
 		</div>
+		<div>
+		<div>
 		<a href="idpwsearch">
 			<span class="login-option">아이디/비밀번호 찾기</span>
 		</a>
+		</div>
+		<div>
 		<a href="membership">
 			 <span class="login-option ml-15">회원가입</span>
 		</a>
+		</div>
+		</div>
 		
+		</div>
 	</div>
 	<div style="height: 95px;"></div>
 	<jsp:include page="../default/footer.jsp"/>
