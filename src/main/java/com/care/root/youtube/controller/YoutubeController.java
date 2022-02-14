@@ -27,7 +27,7 @@ public class YoutubeController {
 		String keywords = request.getParameter("keywords");
 		try {
 			service.crawling(videoUrl);
-			service.filter(keywords);
+			//service.filter(keywords);
 			//service.setMarkSpam("UCIySAp3z5U12HR-50Lsc6qA");
 			//service.setDelete("UgzNYQVb3VUga1Tk7Sl4AaABAg.9YAdBHn9IZw9YAdBi6kUM4");
 		} catch (GeneralSecurityException | IOException e) {

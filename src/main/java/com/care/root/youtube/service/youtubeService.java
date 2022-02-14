@@ -1,5 +1,7 @@
 package com.care.root.youtube.service;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +26,10 @@ import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import com.care.root.mybatis.YoutubeMapper;
@@ -39,7 +40,8 @@ public class youtubeService {
 	@Autowired
 	YoutubeMapper mapper;
 	YoutubeDTO dto = new YoutubeDTO();
-	ArrayList<ArrayList<String>> commentArray;
+	
+	JSONObject allCommentData;
 
 	// Crawling Comments(동영상 URL의 vidoeID를 이용)
 	private static final String DEVELOPER_KEY = "AIzaSyBQyyjxukCf2vzb0tDe1ILeemhFlv1fHzs";
@@ -71,7 +73,8 @@ public class youtubeService {
 			e.printStackTrace();
 		}
 
-		commentArray = new ArrayList<ArrayList<String>>();
+		int commentCount = 0;
+		allCommentData = new JSONObject();
 
 		while (true) {
 
@@ -88,13 +91,17 @@ public class youtubeService {
 				long dateToSec = publishedAt.getValue() / 1000;
 				String strDateToSec = String.valueOf(dateToSec);
 
-				ArrayList<String> commentList = new ArrayList<String>();
-				commentList.add(commentId);
-				commentList.add(authorName);
-				commentList.add(authorChannelUrl);
-				commentList.add(strDateToSec);
-				commentList.add(text);
-				commentArray.add(commentList);
+				JSONObject data = new JSONObject();
+				data.put("commentId", commentId);
+				data.put("authorName", authorName);
+				data.put("authorChannelUrl", authorChannelUrl);
+				data.put("strDateToSec", strDateToSec);
+				data.put("text", text);
+
+				JSONArray commentArray = new JSONArray();
+				commentArray.add(data);
+				commentCount++;
+				allCommentData.put("commentArray" + commentCount, commentArray);
 
 				if (response.getItems().get(i).getReplies() != null) {
 					List<Comment> replies = response.getItems().get(i).getReplies().getComments();
@@ -112,13 +119,17 @@ public class youtubeService {
 						long replyDateToSec = replyPublishedAt.getValue() / 1000;
 						String strReplyDateToSec = String.valueOf(replyDateToSec);
 
-						commentList = new ArrayList<String>();
-						commentList.add(replyId);
-						commentList.add(replyAuthorName);
-						commentList.add(replyAuthorChannelUrl);
-						commentList.add(strReplyDateToSec);
-						commentList.add(replyText);
-						commentArray.add(commentList);
+						data = new JSONObject();
+						data.put("commentId", replyId);
+						data.put("authorName", replyAuthorName);
+						data.put("authorChannelUrl", replyAuthorChannelUrl);
+						data.put("strDateToSec", strReplyDateToSec);
+						data.put("text", replyText);
+
+						commentArray = new JSONArray();
+						commentArray.add(data);
+						commentCount++;
+						allCommentData.put("commentArray" + commentCount, commentArray);
 					}
 				}
 			}
@@ -134,27 +145,33 @@ public class youtubeService {
 		// commentArray을 확인하기 위한 commentArray.json 파일 생성
 		try {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
-			String jsonCommentArray = gson.toJson(commentArray);
+			String strAllCommentData = gson.toJson(allCommentData);
 			FileWriter file = new FileWriter(
-					"E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\commentArray.json");
-			file.write(jsonCommentArray);
+					"E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\allCommentData.json");
+			file.write(strAllCommentData);
 			file.flush();
 			file.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
 
-	public void filter(String keywords) {
-		System.out.println(commentArray);
+		for (int i=1 ; i <= allCommentData.size() ; i++) {
+			//JSONObject commentArrayData = (JSONObject) allCommentData.get("commentArray" + i);
+			//System.out.println(commentArrayData.get("text"));
 
-		ListIterator<ArrayList<String>> iterator = commentArray.listIterator();
-
-		while (iterator.hasNext()) {
-			System.out.println(commentArray.indexOf("테스트테스트"));
-			System.out.println(iterator.next());
 		}
+		
 	}
+
+	/*
+	 * public void filter(String keywords) { System.out.println(commentArray);
+	 * 
+	 * ListIterator<ArrayList<String>> iterator = commentArray.listIterator();
+	 * 
+	 * while (iterator.hasNext()) {
+	 * System.out.println(commentArray.indexOf("테스트테스트"));
+	 * System.out.println(iterator.next()); } }
+	 */
 
 	// 댓글 삭제 및 스팸계정 등록 준비
 	private static final String CLIENT_SECRETS = "client_secret.json";
