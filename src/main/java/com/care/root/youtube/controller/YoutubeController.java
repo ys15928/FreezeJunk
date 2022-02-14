@@ -25,11 +25,13 @@ public class YoutubeController {
 	public String KeywordFreezeResult(HttpServletRequest request) {
 		String videoUrl = request.getParameter("videoUrl");
 		String keywords = request.getParameter("keywords");
+		String accounts = request.getParameter("accounts");
+		
 		try {
 			service.crawling(videoUrl);
-			//service.filter(keywords);
-			//service.setMarkSpam("UCIySAp3z5U12HR-50Lsc6qA");
-			//service.setDelete("UgzNYQVb3VUga1Tk7Sl4AaABAg.9YAdBHn9IZw9YAdBi6kUM4");
+			service.filterForDelete(keywords); 
+			//service.filterForSpamAccount(accounts);
+			
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

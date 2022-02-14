@@ -1,5 +1,5 @@
 {
-  "etag": "E-kYlOubt0K00gOAI7EJdTx_88I",
+  "etag": "5zN9XyfCldnycp6jyCMXOJkVGE8",
   "items": [
     {
       "etag": "-8uoWBsdFot1dVlsy6W8O2jcb4M",
@@ -82,46 +82,6 @@
       }
     },
     {
-      "etag": "gEsLgWsiZva_sm0FVcdNv5HW3Hc",
-      "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
-      "kind": "youtube#commentThread",
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "b9GKB4m1G9BmWjiO7wI2I0e3B_M",
-          "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCLZB6UlTWzPC05fKPswsO5g"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-            "authorDisplayName": "김준호",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814651000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
-            "textOriginal": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
-            "updatedAt": {
-              "value": 1644814651000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 0,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
       "etag": "6WIAqMXtqWJUE4jizKvG0uLLUAM",
       "id": "UgxTNST2LWdgT1MUI3h4AaABAg",
       "kind": "youtube#commentThread",
@@ -162,6 +122,46 @@
       }
     },
     {
+      "etag": "gEsLgWsiZva_sm0FVcdNv5HW3Hc",
+      "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
+      "kind": "youtube#commentThread",
+      "snippet": {
+        "canReply": true,
+        "isPublic": true,
+        "topLevelComment": {
+          "etag": "b9GKB4m1G9BmWjiO7wI2I0e3B_M",
+          "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
+          "kind": "youtube#comment",
+          "snippet": {
+            "authorChannelId": {
+              "value": "UCLZB6UlTWzPC05fKPswsO5g"
+            },
+            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
+            "authorDisplayName": "김준호",
+            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
+            "canRate": true,
+            "likeCount": 0,
+            "publishedAt": {
+              "value": 1644814651000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "textDisplay": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
+            "textOriginal": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
+            "updatedAt": {
+              "value": 1644814651000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "videoId": "IFppA1QyUJw",
+            "viewerRating": "none"
+          }
+        },
+        "totalReplyCount": 0,
+        "videoId": "IFppA1QyUJw"
+      }
+    },
+    {
       "etag": "Fih4gWnoavmbJOfUYEK7ZTiuhzE",
       "id": "UgzCTqGQMkxX32HKmAh4AaABAg",
       "kind": "youtube#commentThread",
@@ -190,46 +190,6 @@
             "textOriginal": "와 실화야?",
             "updatedAt": {
               "value": 1644814488000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 0,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "tcwXfHenq02KyPpXAmzq5os7TsM",
-      "id": "UgyheiuFVV4vrkxT2I94AaABAg",
-      "kind": "youtube#commentThread",
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "YY8nCKMMaDEGSsn9GrcNDK1SfYQ",
-          "id": "UgyheiuFVV4vrkxT2I94AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCLZB6UlTWzPC05fKPswsO5g"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-            "authorDisplayName": "김준호",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814640000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "중국 싫어 코로나 싫어 군대 싫어",
-            "textOriginal": "중국 싫어 코로나 싫어 군대 싫어",
-            "updatedAt": {
-              "value": 1644814640000,
               "dateOnly": false,
               "tzShift": 0
             },
@@ -312,6 +272,141 @@
           }
         },
         "totalReplyCount": 1,
+        "videoId": "IFppA1QyUJw"
+      }
+    },
+    {
+      "etag": "-GpotQLVR5acVe1Ft38MIjMUx2w",
+      "id": "UgzYHilCoKnu087eEQB4AaABAg",
+      "kind": "youtube#commentThread",
+      "replies": {
+        "comments": [
+          {
+            "etag": "Va5-F2E1GjMsMr7FLEiMbXKEh5g",
+            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPzqfd54K4",
+            "kind": "youtube#comment",
+            "snippet": {
+              "authorChannelId": {
+                "value": "UCLZB6UlTWzPC05fKPswsO5g"
+              },
+              "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
+              "authorDisplayName": "김준호",
+              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
+              "canRate": true,
+              "likeCount": 0,
+              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
+              "publishedAt": {
+                "value": 1644814527000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "textDisplay": "@신윤수 맛난육수수수수수",
+              "textOriginal": "@신윤수 맛난육수수수수수",
+              "updatedAt": {
+                "value": 1644814527000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "videoId": "IFppA1QyUJw",
+              "viewerRating": "none"
+            }
+          },
+          {
+            "etag": "O_3_bxCTv3t_Y4RfzT2Xe52ZV-A",
+            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPznEq6eN6",
+            "kind": "youtube#comment",
+            "snippet": {
+              "authorChannelId": {
+                "value": "UCgWKvUVhB49E91satZOkGiA"
+              },
+              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
+              "authorDisplayName": "김진성",
+              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
+              "canRate": true,
+              "likeCount": 0,
+              "moderationStatus": "likelySpam",
+              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
+              "publishedAt": {
+                "value": 1644814499000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "textDisplay": "이건 좀..???",
+              "textOriginal": "이건 좀..???",
+              "updatedAt": {
+                "value": 1644814499000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "videoId": "IFppA1QyUJw",
+              "viewerRating": "none"
+            }
+          },
+          {
+            "etag": "JwhPUZI9dINO7i8yacGAlrbdHi4",
+            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPzguZWswR",
+            "kind": "youtube#comment",
+            "snippet": {
+              "authorChannelId": {
+                "value": "UCIySAp3z5U12HR-50Lsc6qA"
+              },
+              "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+              "authorDisplayName": "신윤수",
+              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
+              "canRate": true,
+              "likeCount": 0,
+              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
+              "publishedAt": {
+                "value": 1644814447000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "textDisplay": "캐리캐리",
+              "textOriginal": "캐리캐리",
+              "updatedAt": {
+                "value": 1644814447000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "videoId": "IFppA1QyUJw",
+              "viewerRating": "none"
+            }
+          }
+        ]
+      },
+      "snippet": {
+        "canReply": true,
+        "isPublic": true,
+        "topLevelComment": {
+          "etag": "XG1q8fUi_GUwcD6AWw0Y91_BKiw",
+          "id": "UgzYHilCoKnu087eEQB4AaABAg",
+          "kind": "youtube#comment",
+          "snippet": {
+            "authorChannelId": {
+              "value": "UCIySAp3z5U12HR-50Lsc6qA"
+            },
+            "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+            "authorDisplayName": "신윤수",
+            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
+            "canRate": true,
+            "likeCount": 0,
+            "publishedAt": {
+              "value": 1644814424000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "textDisplay": "맛난육수의 베인",
+            "textOriginal": "맛난육수의 베인",
+            "updatedAt": {
+              "value": 1644814424000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "videoId": "IFppA1QyUJw",
+            "viewerRating": "none"
+          }
+        },
+        "totalReplyCount": 3,
         "videoId": "IFppA1QyUJw"
       }
     },
@@ -457,141 +552,6 @@
           }
         },
         "totalReplyCount": 2,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "-GpotQLVR5acVe1Ft38MIjMUx2w",
-      "id": "UgzYHilCoKnu087eEQB4AaABAg",
-      "kind": "youtube#commentThread",
-      "replies": {
-        "comments": [
-          {
-            "etag": "Va5-F2E1GjMsMr7FLEiMbXKEh5g",
-            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPzqfd54K4",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCLZB6UlTWzPC05fKPswsO5g"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-              "authorDisplayName": "김준호",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
-              "publishedAt": {
-                "value": 1644814527000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "@신윤수 맛난육수수수수수",
-              "textOriginal": "@신윤수 맛난육수수수수수",
-              "updatedAt": {
-                "value": 1644814527000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          },
-          {
-            "etag": "O_3_bxCTv3t_Y4RfzT2Xe52ZV-A",
-            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPznEq6eN6",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCgWKvUVhB49E91satZOkGiA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
-              "authorDisplayName": "김진성",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "moderationStatus": "likelySpam",
-              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
-              "publishedAt": {
-                "value": 1644814499000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "이건 좀..???",
-              "textOriginal": "이건 좀..???",
-              "updatedAt": {
-                "value": 1644814499000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          },
-          {
-            "etag": "JwhPUZI9dINO7i8yacGAlrbdHi4",
-            "id": "UgzYHilCoKnu087eEQB4AaABAg.9YPze3U8WdR9YPzguZWswR",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCIySAp3z5U12HR-50Lsc6qA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
-              "authorDisplayName": "신윤수",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "parentId": "UgzYHilCoKnu087eEQB4AaABAg",
-              "publishedAt": {
-                "value": 1644814447000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "캐리캐리",
-              "textOriginal": "캐리캐리",
-              "updatedAt": {
-                "value": 1644814447000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          }
-        ]
-      },
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "XG1q8fUi_GUwcD6AWw0Y91_BKiw",
-          "id": "UgzYHilCoKnu087eEQB4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCIySAp3z5U12HR-50Lsc6qA"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
-            "authorDisplayName": "신윤수",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814424000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "맛난육수의 베인",
-            "textOriginal": "맛난육수의 베인",
-            "updatedAt": {
-              "value": 1644814424000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 3,
         "videoId": "IFppA1QyUJw"
       }
     },
@@ -761,195 +721,6 @@
       }
     },
     {
-      "etag": "76oIHmX2XCFfnRsJ8A-WkosEm3g",
-      "id": "UgzCQTRNuAVpH-GOm3J4AaABAg",
-      "kind": "youtube#commentThread",
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "7b36R3t0wYWW403hfXNUrLvs_yE",
-          "id": "UgzCQTRNuAVpH-GOm3J4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCLZB6UlTWzPC05fKPswsO5g"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-            "authorDisplayName": "김준호",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814789000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "군대 시1발 시1발",
-            "textOriginal": "군대 시1발 시1발",
-            "updatedAt": {
-              "value": 1644814789000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 0,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "OsxydwaRcFvxU1JXMMfe5QwsKnA",
-      "id": "Ugzp-V8Cd_mmHRvCIHB4AaABAg",
-      "kind": "youtube#commentThread",
-      "replies": {
-        "comments": [
-          {
-            "etag": "aqmFsxw7Eaj4-F8LW6z7pPTi7YY",
-            "id": "Ugzp-V8Cd_mmHRvCIHB4AaABAg.9YPzl9ZoTu89YQ-0PuPXas",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCLZB6UlTWzPC05fKPswsO5g"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-              "authorDisplayName": "김준호",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "parentId": "Ugzp-V8Cd_mmHRvCIHB4AaABAg",
-              "publishedAt": {
-                "value": 1644814615000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "루시안 ㄹㅇ 웃음벨 ㅋㅋㅋㅋㅋㅋㅋㅋ",
-              "textOriginal": "루시안 ㄹㅇ 웃음벨 ㅋㅋㅋㅋㅋㅋㅋㅋ",
-              "updatedAt": {
-                "value": 1644814615000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          }
-        ]
-      },
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "H2AP4BkVzS8gnI57mYbFjhmKfU4",
-          "id": "Ugzp-V8Cd_mmHRvCIHB4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCgWKvUVhB49E91satZOkGiA"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
-            "authorDisplayName": "김진성",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814482000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "개그맨들이 많네",
-            "textOriginal": "개그맨들이 많네",
-            "updatedAt": {
-              "value": 1644814482000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 1,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "I-epkAHk_IYjQN0lxLsKp0GrgzU",
-      "id": "UgyaNJCKojWbEOUX2xZ4AaABAg",
-      "kind": "youtube#commentThread",
-      "replies": {
-        "comments": [
-          {
-            "etag": "qH1U7ZH4dy8enDEg_pzsZeCJKUo",
-            "id": "UgyaNJCKojWbEOUX2xZ4AaABAg.9YPzn6G_96i9YPzz1-thhf",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCgWKvUVhB49E91satZOkGiA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
-              "authorDisplayName": "김진성",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "moderationStatus": "likelySpam",
-              "parentId": "UgyaNJCKojWbEOUX2xZ4AaABAg",
-              "publishedAt": {
-                "value": 1644814596000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "고만 차단해라 싸움 잘해?",
-              "textOriginal": "고만 차단해라 싸움 잘해?",
-              "updatedAt": {
-                "value": 1644814596000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          }
-        ]
-      },
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "Fxac6MTsagqCjC1v_8MtZoyBB8M",
-          "id": "UgyaNJCKojWbEOUX2xZ4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCIySAp3z5U12HR-50Lsc6qA"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
-            "authorDisplayName": "신윤수",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814498000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "니 싸움 잘하나",
-            "textOriginal": "니 싸움 잘하나",
-            "updatedAt": {
-              "value": 1644814498000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 1,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
       "etag": "Bl-008wipetZY8zNNjHEuYko9Pk",
       "id": "Ugwj6rpNyLwwwEC3AbR4AaABAg",
       "kind": "youtube#commentThread",
@@ -1028,6 +799,6 @@
   "kind": "youtube#commentThreadListResponse",
   "pageInfo": {
     "resultsPerPage": 100,
-    "totalResults": 15
+    "totalResults": 11
   }
 }

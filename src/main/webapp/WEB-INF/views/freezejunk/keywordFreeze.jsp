@@ -20,7 +20,11 @@
 			
 		== Input Keyowrds==<br>
 		<textarea name="keywords" id="keywords" rows="5" cols="50"> </textarea>
-		<input type='submit' value='Freeze'>
+		<input type='submit' value='Freeze'><br><br>
+		
+		== Input accounts==<br>
+		<textarea name="accounts" id="accounts" rows="5" cols="50"> </textarea>
+		<input type='submit' value='Freeze'><br><br>
 	</form><br><br>
 	
 </body>
