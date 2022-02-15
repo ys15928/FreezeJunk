@@ -54,7 +54,7 @@
 			for(SuggestionDTO dto : list) {
 				String id = dto.getSuggId().substring(0, 4);
 				id += "****";
-				dto.setSuggId(id);
+				//dto.setSuggId(id);
 		%>
 		<%
 			if(dto.getSuggStatus().equals("1")) {
@@ -75,7 +75,7 @@
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
 			<div style="width: 40%;"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
-			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
+			<div style="width: 20%"><%=dto.getName() %>(<%=id%>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
