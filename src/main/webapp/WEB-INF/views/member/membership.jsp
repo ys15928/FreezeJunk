@@ -33,14 +33,16 @@ color: white; font-size: 15px;}
 <title>회원가입</title>
 </head>
 <body style="background-color: black; width: 1920px; overflow-x: hidden;">
-<jsp:include page="../default/header.jsp"/>
+
 <div style="height: 800px;">
 	<div class="join-box" id="join-member" style="margin: auto; margin-top: 0px;">
 			<form action="memberSuc" method="post" id="form">
 				
-				<div style="background-color: white; padding: 33px 8px; border-radius: 10px; width: 770px; margin: auto; margin-top:65px;">
+				<div style="background-color: white; padding: 33px 8px; border-radius: 10px; width: 770px; margin: auto; margin-top:100px;">
 				
-				<div class="join-header">회원가입</div>
+				<div class="join-header">
+				<a href="${contextPath }/main"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a>
+				</div>
 				
 				<table style="margin:auto; text-align:left; margin-left: 225px;">
 				
@@ -134,7 +136,6 @@ color: white; font-size: 15px;}
 	</div>
 	
 		
-	<jsp:include page="../default/footer.jsp"/>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
