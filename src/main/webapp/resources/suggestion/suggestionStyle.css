@@ -62,19 +62,23 @@ button:hover {
     align-items: center;
 	height: 50px;
     border-top: 1px solid #A566FF;
-    color: gray;
+    color: #D5D5D5;
 }
 .sugg-line:hover {
-	background-color: #EAEAEA;
+	background-color: #BDBDBD;
+	color: #4C4C4C;
+}
+.sugg-line:hover a {
+	color: #4C4C4C !important;
+}
+.sugg-line-a {
+	color: #D5D5D5 !important;
 }
 .non-line {
-	background-color: #FFA7A7;
+	background-color: #D14F4F;
 }
 .non-line:hover {
 	background-color: #FFD8D8;
-}
-.sugg-line a {
-	color: gray;
 }
 .sugg-line:last-child {
 	border-bottom: 1px solid #A566FF;
@@ -95,6 +99,7 @@ button:hover {
     height: 17px;
     margin-right: 10px;
     border: 1px solid #A6A6A6;
+    background-color: #F6F6F6;
 }
 /*
 .search-btn {
@@ -128,7 +133,7 @@ button:hover {
 	color: gray;
 }
 .current-page {
-	color: #000 !important;
+	color: #F6F6F6 !important;
 }
 .list-write-btn-box {
 	margin-top: 20px;
@@ -137,11 +142,11 @@ button:hover {
 }
 .list-write-btn {
 	background-color: #fff;
-    color: #D1B2FF;
+    color: #A566FF;
     border: 1px solid #9B7CC9;
-    width: 70px;
+    width: 80px;
     height: 28px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     border-radius: 5px;
     display: flex;
@@ -183,19 +188,19 @@ button:hover {
 /* -------------------------- info.jsp -------------------------------- */
 .info-head-title {
 	display: flex;
-    padding: 10px 0;
+    padding: 15px 0 15px 5px;
 }
 .info-title {
 	font-size: 22px;
-    color: gray;
+    color: #F6F6F6;
 }
 .info-head-sub {
 	display: flex;
     font-size: 16px;
-    color: gray;
+    color: #F6F6F6;
     border-top: 1px solid #A566FF;
     border-bottom: 1px solid #A566FF;
-    padding: 10px 0;
+	padding: 15px 0 10px 5px;
 }
 .info-sub {
 	width: 4%;
@@ -203,8 +208,9 @@ button:hover {
 }
 .info-content {
 	min-height: 350px;
-	padding: 15px 0;
+	padding: 15px 10px;
 	border-bottom: 1px solid #A566FF;
+	background-color: #EAEAEA;
 }
 .info-btn-box {
 	margin-top: 20px;
@@ -215,6 +221,7 @@ button:hover {
 	width: 100px;
     height: 35px;
     font-size: 20px;
+    font-weight: bold;
     background-color: #fff;
     border: 1px solid #D1B2FF;
     color: #9B7CC9;

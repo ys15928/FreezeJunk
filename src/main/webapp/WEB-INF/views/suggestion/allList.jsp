@@ -46,7 +46,7 @@
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
 			<span class="search-btn-box" onclick="search(1);">
-				<img src="${contextPath }/resources/image/search.png" class="search-img"/>
+				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
 		<div style="margin-top: 20px;">
