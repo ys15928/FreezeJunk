@@ -118,7 +118,7 @@
 		
 			if(count == 0) {
 		%>
-			<div class="sugg-line" style="border-bottom: none;">검색된 결과가 없습니다.</div>
+			<div class="sugg-line-non" style="border-bottom: none;">검색된 결과가 없습니다.</div>
 		<%
 			}
 		%>

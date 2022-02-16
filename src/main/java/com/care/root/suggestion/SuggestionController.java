@@ -42,7 +42,7 @@ public class SuggestionController {
 		PrintWriter out = resp.getWriter();
 		int result = service.write(req);
 		if(result == 1) {
-			out.print("<script>alert('건의사항이 작정되었습니다.');location.href='suggestion-3';</script>");
+			out.print("<script>alert('건의사항이 작성되었습니다.');location.href='suggestion-3';</script>");
 		} else {
 			out.print("<script>alert('에러가 발생했습니다.');location.href='suggestion-3';</script>");
 		}
