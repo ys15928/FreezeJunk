@@ -29,8 +29,8 @@ public class YoutubeController {
 		
 		try {
 			service.crawling(videoUrl);
-			service.filterForDelete(keywords); 
-			//service.filterForSpamAccount(accounts);
+			//service.filterForDelete(keywords); 
+			service.filterForSpamAccount(accounts);
 			
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block

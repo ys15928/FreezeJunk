@@ -1,16 +1,16 @@
 {
-  "etag": "5zN9XyfCldnycp6jyCMXOJkVGE8",
+  "etag": "z7UfrFXSPgBXxMdrDQGjzGxjZho",
   "items": [
     {
-      "etag": "-8uoWBsdFot1dVlsy6W8O2jcb4M",
-      "id": "UgyXUk6zHeXAgB64xxN4AaABAg",
+      "etag": "gEsLgWsiZva_sm0FVcdNv5HW3Hc",
+      "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
       "kind": "youtube#commentThread",
       "snippet": {
         "canReply": true,
         "isPublic": true,
         "topLevelComment": {
-          "etag": "MVSSeYvbKWUMxi1PKCh18VUGP0c",
-          "id": "UgyXUk6zHeXAgB64xxN4AaABAg",
+          "etag": "b9GKB4m1G9BmWjiO7wI2I0e3B_M",
+          "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
           "kind": "youtube#comment",
           "snippet": {
             "authorChannelId": {
@@ -22,54 +22,14 @@
             "canRate": true,
             "likeCount": 0,
             "publishedAt": {
-              "value": 1644814608000,
+              "value": 1644814651000,
               "dateOnly": false,
               "tzShift": 0
             },
-            "textDisplay": "근데 루시안 진짜 심각하긴하네",
-            "textOriginal": "근데 루시안 진짜 심각하긴하네",
+            "textDisplay": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
+            "textOriginal": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
             "updatedAt": {
-              "value": 1644814608000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 0,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "KE4JkxISveBiGG0IVbtHuuUCJ0w",
-      "id": "UgxygKhj_AAIL6KGsHN4AaABAg",
-      "kind": "youtube#commentThread",
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "AJQYJRdMMI4Srmn2KWm-dwGLp8w",
-          "id": "UgxygKhj_AAIL6KGsHN4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCLZB6UlTWzPC05fKPswsO5g"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-            "authorDisplayName": "김준호",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814510000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "루시안 개그맨인가 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-            "textOriginal": "루시안 개그맨인가 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
-            "updatedAt": {
-              "value": 1644814510000,
+              "value": 1644814651000,
               "dateOnly": false,
               "tzShift": 0
             },
@@ -122,46 +82,6 @@
       }
     },
     {
-      "etag": "gEsLgWsiZva_sm0FVcdNv5HW3Hc",
-      "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
-      "kind": "youtube#commentThread",
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "b9GKB4m1G9BmWjiO7wI2I0e3B_M",
-          "id": "UgyWsuqNmrLJH6RUIAB4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCLZB6UlTWzPC05fKPswsO5g"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-            "authorDisplayName": "김준호",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814651000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
-            "textOriginal": "나에게 힘을 줘 ㅇㅁㄴㅇㅁㄴㅇㄴㅂㄱㄹㄴ",
-            "updatedAt": {
-              "value": 1644814651000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 0,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
       "etag": "Fih4gWnoavmbJOfUYEK7ZTiuhzE",
       "id": "UgzCTqGQMkxX32HKmAh4AaABAg",
       "kind": "youtube#commentThread",
@@ -202,34 +122,65 @@
       }
     },
     {
-      "etag": "ut5QAeQdOH_34BjzoByr0oIFy8M",
-      "id": "UgwwzwtWVGh0FGWVmxd4AaABAg",
+      "etag": "M5Wi13ZzfxtMsNZCmBGU_KiWxhk",
+      "id": "Ugx8DoCWMv07eky9YlJ4AaABAg",
       "kind": "youtube#commentThread",
       "replies": {
         "comments": [
           {
-            "etag": "JBugPp0XRVIyz7IvoXd7NhUH3OI",
-            "id": "UgwwzwtWVGh0FGWVmxd4AaABAg.9YPzkVSK3iI9YQ-1nELgWk",
+            "etag": "bULomVVzVt8HrkW3MbEDf_lzFes",
+            "id": "Ugx8DoCWMv07eky9YlJ4AaABAg.9YPzfmrOdrD9YPzpRAOMNv",
             "kind": "youtube#comment",
             "snippet": {
               "authorChannelId": {
-                "value": "UCLZB6UlTWzPC05fKPswsO5g"
+                "value": "UCgWKvUVhB49E91satZOkGiA"
               },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCLZB6UlTWzPC05fKPswsO5g",
-              "authorDisplayName": "김준호",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTLkZo99-yohvT_PGGHhXLpbGZuKL9U8xualQ\u003ds48-c-k-c0x00ffffff-no-rj",
+              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
+              "authorDisplayName": "김진성",
+              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
               "canRate": true,
               "likeCount": 0,
-              "parentId": "UgwwzwtWVGh0FGWVmxd4AaABAg",
+              "moderationStatus": "likelySpam",
+              "parentId": "Ugx8DoCWMv07eky9YlJ4AaABAg",
               "publishedAt": {
-                "value": 1644814627000,
+                "value": 1644814517000,
                 "dateOnly": false,
                 "tzShift": 0
               },
-              "textDisplay": "루시안은 아이언이라 해도 믿겠는디",
-              "textOriginal": "루시안은 아이언이라 해도 믿겠는디",
+              "textDisplay": "펜타 추카",
+              "textOriginal": "펜타 추카",
               "updatedAt": {
-                "value": 1644814627000,
+                "value": 1644814517000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "videoId": "IFppA1QyUJw",
+              "viewerRating": "none"
+            }
+          },
+          {
+            "etag": "R5aD60cYSymTl6QRLdid0lfSj8c",
+            "id": "Ugx8DoCWMv07eky9YlJ4AaABAg.9YPzfmrOdrD9YPzl-20rZg",
+            "kind": "youtube#comment",
+            "snippet": {
+              "authorChannelId": {
+                "value": "UCIySAp3z5U12HR-50Lsc6qA"
+              },
+              "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+              "authorDisplayName": "신윤수",
+              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
+              "canRate": true,
+              "likeCount": 0,
+              "parentId": "Ugx8DoCWMv07eky9YlJ4AaABAg",
+              "publishedAt": {
+                "value": 1644814481000,
+                "dateOnly": false,
+                "tzShift": 0
+              },
+              "textDisplay": "펜타입니다",
+              "textOriginal": "펜타입니다",
+              "updatedAt": {
+                "value": 1644814481000,
                 "dateOnly": false,
                 "tzShift": 0
               },
@@ -243,8 +194,48 @@
         "canReply": true,
         "isPublic": true,
         "topLevelComment": {
-          "etag": "wV5qGGS3AkAliEsi87rqFKSlpxs",
-          "id": "UgwwzwtWVGh0FGWVmxd4AaABAg",
+          "etag": "d3edRSpeFRohm1mkQfP0fY69bgA",
+          "id": "Ugx8DoCWMv07eky9YlJ4AaABAg",
+          "kind": "youtube#comment",
+          "snippet": {
+            "authorChannelId": {
+              "value": "UCIySAp3z5U12HR-50Lsc6qA"
+            },
+            "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+            "authorDisplayName": "신윤수",
+            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
+            "canRate": true,
+            "likeCount": 0,
+            "publishedAt": {
+              "value": 1644814438000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "textDisplay": "아주 좋아여",
+            "textOriginal": "아주 좋아여",
+            "updatedAt": {
+              "value": 1644814438000,
+              "dateOnly": false,
+              "tzShift": 0
+            },
+            "videoId": "IFppA1QyUJw",
+            "viewerRating": "none"
+          }
+        },
+        "totalReplyCount": 2,
+        "videoId": "IFppA1QyUJw"
+      }
+    },
+    {
+      "etag": "K9HordKYC6dI6MhHRr_w5SCN5aM",
+      "id": "Ugzb3A40bV2GJFqYiAl4AaABAg",
+      "kind": "youtube#commentThread",
+      "snippet": {
+        "canReply": true,
+        "isPublic": true,
+        "topLevelComment": {
+          "etag": "PiCPyINiYMZTUPHgMBfZzeISLas",
+          "id": "Ugzb3A40bV2GJFqYiAl4AaABAg",
           "kind": "youtube#comment",
           "snippet": {
             "authorChannelId": {
@@ -256,14 +247,14 @@
             "canRate": true,
             "likeCount": 0,
             "publishedAt": {
-              "value": 1644814477000,
+              "value": 1644814465000,
               "dateOnly": false,
               "tzShift": 0
             },
-            "textDisplay": "혹시 여기 브론즈?",
-            "textOriginal": "혹시 여기 브론즈?",
+            "textDisplay": "이건 좀..",
+            "textOriginal": "이건 좀..",
             "updatedAt": {
-              "value": 1644814477000,
+              "value": 1644814465000,
               "dateOnly": false,
               "tzShift": 0
             },
@@ -271,7 +262,7 @@
             "viewerRating": "none"
           }
         },
-        "totalReplyCount": 1,
+        "totalReplyCount": 0,
         "videoId": "IFppA1QyUJw"
       }
     },
@@ -411,15 +402,15 @@
       }
     },
     {
-      "etag": "K9HordKYC6dI6MhHRr_w5SCN5aM",
-      "id": "Ugzb3A40bV2GJFqYiAl4AaABAg",
+      "etag": "Tux-8c6_LAY_LQwyKuJ8AmP-4SA",
+      "id": "UgwwzwtWVGh0FGWVmxd4AaABAg",
       "kind": "youtube#commentThread",
       "snippet": {
         "canReply": true,
         "isPublic": true,
         "topLevelComment": {
-          "etag": "PiCPyINiYMZTUPHgMBfZzeISLas",
-          "id": "Ugzb3A40bV2GJFqYiAl4AaABAg",
+          "etag": "wV5qGGS3AkAliEsi87rqFKSlpxs",
+          "id": "UgwwzwtWVGh0FGWVmxd4AaABAg",
           "kind": "youtube#comment",
           "snippet": {
             "authorChannelId": {
@@ -431,14 +422,14 @@
             "canRate": true,
             "likeCount": 0,
             "publishedAt": {
-              "value": 1644814465000,
+              "value": 1644814477000,
               "dateOnly": false,
               "tzShift": 0
             },
-            "textDisplay": "이건 좀..",
-            "textOriginal": "이건 좀..",
+            "textDisplay": "혹시 여기 브론즈?",
+            "textOriginal": "혹시 여기 브론즈?",
             "updatedAt": {
-              "value": 1644814465000,
+              "value": 1644814477000,
               "dateOnly": false,
               "tzShift": 0
             },
@@ -451,112 +442,7 @@
       }
     },
     {
-      "etag": "M5Wi13ZzfxtMsNZCmBGU_KiWxhk",
-      "id": "Ugx8DoCWMv07eky9YlJ4AaABAg",
-      "kind": "youtube#commentThread",
-      "replies": {
-        "comments": [
-          {
-            "etag": "bULomVVzVt8HrkW3MbEDf_lzFes",
-            "id": "Ugx8DoCWMv07eky9YlJ4AaABAg.9YPzfmrOdrD9YPzpRAOMNv",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCgWKvUVhB49E91satZOkGiA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
-              "authorDisplayName": "김진성",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "moderationStatus": "likelySpam",
-              "parentId": "Ugx8DoCWMv07eky9YlJ4AaABAg",
-              "publishedAt": {
-                "value": 1644814517000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "펜타 추카",
-              "textOriginal": "펜타 추카",
-              "updatedAt": {
-                "value": 1644814517000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          },
-          {
-            "etag": "R5aD60cYSymTl6QRLdid0lfSj8c",
-            "id": "Ugx8DoCWMv07eky9YlJ4AaABAg.9YPzfmrOdrD9YPzl-20rZg",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCIySAp3z5U12HR-50Lsc6qA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
-              "authorDisplayName": "신윤수",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "parentId": "Ugx8DoCWMv07eky9YlJ4AaABAg",
-              "publishedAt": {
-                "value": 1644814481000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "펜타입니다",
-              "textOriginal": "펜타입니다",
-              "updatedAt": {
-                "value": 1644814481000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          }
-        ]
-      },
-      "snippet": {
-        "canReply": true,
-        "isPublic": true,
-        "topLevelComment": {
-          "etag": "d3edRSpeFRohm1mkQfP0fY69bgA",
-          "id": "Ugx8DoCWMv07eky9YlJ4AaABAg",
-          "kind": "youtube#comment",
-          "snippet": {
-            "authorChannelId": {
-              "value": "UCIySAp3z5U12HR-50Lsc6qA"
-            },
-            "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
-            "authorDisplayName": "신윤수",
-            "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLSuXoIR_Iixqd9udTiVM8cFSmvaCq6X_hg_qA\u003ds48-c-k-c0x00ffffff-no-rj",
-            "canRate": true,
-            "likeCount": 0,
-            "publishedAt": {
-              "value": 1644814438000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "textDisplay": "아주 좋아여",
-            "textOriginal": "아주 좋아여",
-            "updatedAt": {
-              "value": 1644814438000,
-              "dateOnly": false,
-              "tzShift": 0
-            },
-            "videoId": "IFppA1QyUJw",
-            "viewerRating": "none"
-          }
-        },
-        "totalReplyCount": 2,
-        "videoId": "IFppA1QyUJw"
-      }
-    },
-    {
-      "etag": "F8jH4YgLXuE_q_eBbcvmLven4xQ",
+      "etag": "WZ82kckesdwUSHUWtlRacOrFvJc",
       "id": "UgwKAq_2zfAjv-JOeJB4AaABAg",
       "kind": "youtube#commentThread",
       "replies": {
@@ -584,37 +470,6 @@
               "textOriginal": "으흐흐흫",
               "updatedAt": {
                 "value": 1644814681000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "videoId": "IFppA1QyUJw",
-              "viewerRating": "none"
-            }
-          },
-          {
-            "etag": "WcSM0hKNmFYU8ToR20Yrc4NKBvk",
-            "id": "UgwKAq_2zfAjv-JOeJB4AaABAg.9YPzemNLN8e9YPzoSz_tdd",
-            "kind": "youtube#comment",
-            "snippet": {
-              "authorChannelId": {
-                "value": "UCgWKvUVhB49E91satZOkGiA"
-              },
-              "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
-              "authorDisplayName": "김진성",
-              "authorProfileImageUrl": "https://yt3.ggpht.com/ytc/AKedOLTji9WhTxsKr1pwOv2ujoCRY2fttDS-KRAtsvAHP5wkug\u003ds48-c-k-c0x00ffffff-no-rj",
-              "canRate": true,
-              "likeCount": 0,
-              "moderationStatus": "likelySpam",
-              "parentId": "UgwKAq_2zfAjv-JOeJB4AaABAg",
-              "publishedAt": {
-                "value": 1644814509000,
-                "dateOnly": false,
-                "tzShift": 0
-              },
-              "textDisplay": "루시안 오바지",
-              "textOriginal": "루시안 오바지",
-              "updatedAt": {
-                "value": 1644814509000,
                 "dateOnly": false,
                 "tzShift": 0
               },
@@ -716,7 +571,7 @@
             "viewerRating": "none"
           }
         },
-        "totalReplyCount": 4,
+        "totalReplyCount": 3,
         "videoId": "IFppA1QyUJw"
       }
     },
@@ -799,6 +654,6 @@
   "kind": "youtube#commentThreadListResponse",
   "pageInfo": {
     "resultsPerPage": 100,
-    "totalResults": 11
+    "totalResults": 9
   }
 }

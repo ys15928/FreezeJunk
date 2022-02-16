@@ -185,7 +185,7 @@ public class youtubeService {
 	}
 
 	// setModerationStatus (댓글 드래그 해서 바로 넣으면 들어가는 채널 id로 비교 후 해당 댓글의 commentId를 이용)
-	public void filterForSpamAccount(String inputAccounts) {
+	public void filterForSpamAccount(String inputAccounts) throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 		String listCommentId = new String();
 		String accountList[] = inputAccounts.split(",");
 		System.out.println("inputAccounts = " + inputAccounts);
@@ -209,7 +209,7 @@ public class youtubeService {
 			listCommentId = listCommentId.substring(0, listCommentId.length() - 2);
 		
 		System.out.println("스팸 등록할 계정의 댓글 Id = " + listCommentId);
-		// setSpamAndDelete(listCommentId, true);
+		setSpamAndDelete(listCommentId, true);
 	}
 
 	// 댓글 삭제 및 스팸계정 등록 준비
@@ -234,14 +234,13 @@ public class youtubeService {
 				.build();
 	}
 
-	public void setSpamAndDelete(String channelId, boolean setBanAuthor)
+	public void setSpamAndDelete(String commentId, boolean setBanAuthor)
 			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
 		System.out.println("setSpamAndDelete 실행");
 		YouTube youtubeService = getService();
 
-		// "rejected" setBanAuthor(true) => 차단 및 삭제 / "rejected" setBanAuthor(false) =>
-		// 삭제만
-		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(channelId,
+		// "rejected" setBanAuthor(true) => 차단 및 삭제 / "rejected" setBanAuthor(false) => 삭제만
+		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(commentId,
 				"rejected");
 		request.setBanAuthor(setBanAuthor).execute();
 
