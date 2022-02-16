@@ -46,7 +46,7 @@
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
 			<span class="search-btn-box" onclick="search(2);">
-				<img src="${contextPath }/resources/image/search.png" class="search-img"/>
+				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
 		<div style="margin-top: 20px;">
@@ -58,7 +58,7 @@
 		%>
 		<div class="sugg-line">
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%;"><a href="suggestion-5?num=<%=dto.getNum()%>"><%=dto.getSuggTitle() %></a></div>
+			<div style="width: 40%;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
 			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();

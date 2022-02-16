@@ -46,7 +46,7 @@
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
 			<span class="search-btn-box" onclick="search(1);">
-				<img src="${contextPath }/resources/image/search.png" class="search-img"/>
+				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
 		<div style="margin-top: 20px;">
@@ -54,7 +54,7 @@
 			for(SuggestionDTO dto : list) {
 				String id = dto.getSuggId().substring(0, 4);
 				id += "****";
-				dto.setSuggId(id);
+				//dto.setSuggId(id);
 		%>
 		<%
 			if(dto.getSuggStatus().equals("1")) {
@@ -75,7 +75,7 @@
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
 			<div style="width: 40%;"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
-			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
+			<div style="width: 20%"><%=dto.getName() %>(<%=id%>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);

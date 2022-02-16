@@ -17,7 +17,7 @@
 	SuggestionDTO dto = (SuggestionDTO) request.getAttribute("dto");
 	String id = dto.getSuggId().substring(0, 4);
 	id += "****";
-	dto.setSuggId(id);
+	// dto.setSuggId(id);
 	
 	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");
 	SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd");
@@ -35,7 +35,7 @@
 			<div class="info-title">${dto.suggTitle }</div>
 		</div>
 		<div class="info-head-sub">
-			<div>${dto.name }(${dto.suggId })</div>
+			<div>${dto.name }(<%=id %>)</div>
 			<div class="info-sub">|</div>
 			<div>
 			<%
@@ -76,7 +76,7 @@
 		<%
 			if(answer != null) {
 		%>
-		<div class="info-head-sub" style="border-top: none;">
+		<div class="info-head-sub" style="margin: 25px 0;">
 			<div>관리자</div>
 			<div class="info-sub">|</div>
 			<div>
