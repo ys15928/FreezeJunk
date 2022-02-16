@@ -8,56 +8,29 @@
 <meta charset="UTF-8">
 <title>아이디/비밀번호 찾기</title>
 <style type="text/css">
- .modal{ position: fixed; top: 50%; left: 50%;	-webkit-transform: translate(-50%, -50%);
-		-moz-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%); 
-		display: block; background-color: pink; width: 410px; height: 200px; border-radius: 6px;
-		}
 		
-	.modal1{ background-color: white;
-    width: 410px;
-    height: 165px;
-    border-radius: 6px;}
+	.modal1{ background-color: white; width: 410px; height: 165px; border-radius: 6px;}
 		
- 	.searchbtn{height: 30px;
-    width: 154px;
-    background-color: white;
-    font-weight: bold;
-    border: none; }
+ 	.searchbtn{height: 30px; width: 154px; background-color: white; font-weight: bold; border: none; }
     .pwsearchbtn{  border-top-right-radius: 4px;    border-bottom-right-radius: 4px; }
     .idsearchbtn{ border-top-left-radius: 4px;    border-bottom-left-radius: 4px; }
     
     .idsearchbtn:hover { color:white; background-color: #368AFF;  }
     .pwsearchbtn:hover { color:white; background-color: #368AFF; }
     
- 	.yesbtn{ width: 308px;
-    height: 40px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #368AFF;
-    border: 1px solid #368AFF;
-    border-radius: 4px; color:white; 
-    }
+ 	.yesbtn{ width: 308px; height: 40px; font-size: 20px; font-weight: bold; background-color: #368AFF;
+ 	   		 border: 1px solid #368AFF; border-radius: 4px; color:white; }
  	
- 	.chkbtn{  }
+ 	.chkbtn{ border: none; font-weight: bold; background: white; }
  	
  
  	
- 	.label{ font-weight: bold; color: white;
-    font-size: 18px; }
+ 	.label{ font-weight: bold; color: white; font-size: 18px; }
     
- 	.input{ width: 300px;
-    height: 40px;
-    font-weight: bold;
-    color: white;
-    background: black;
-    border: none;
-    border-bottom: 1px solid white;
-} 
+ 	.input{ width: 300px; height: 40px; font-weight: bold; color: white; background: black;
+   			 border: none; border-bottom: 1px solid white;} 
 	
-	.search{ text-align: center; color: white;
-    font-size: 25px;
-    font-weight: bold; }
+	.search{ text-align: center; color: white; font-size: 25px; font-weight: bold; }
 
 </style>
 </head>
@@ -139,7 +112,7 @@
 	<div style="display: block; justify-content: center; align-items: center; text-align: center;">
 		<div>
 		<h4>
-			<b>아이디 찾기 결과</b>
+			<b>찾기 결과</b>
 		</h4>
 		</div>
 		<div style="height: 70px; display: flex; justify-content: center; align-items: center;">
@@ -147,7 +120,9 @@
 		</div>
 		
 		<div style="margin-top: 20px;">
-		<div><input type="button" id="close" name="close" class="chkbtn" onclick="close();" value="확인"/></div>
+		<div><input type="button" id="clo" class="chkbtn" onclick="clo();" value="확인"/>
+		
+		</div>
 		</div>
 	</div>
 </div>
@@ -205,7 +180,7 @@ $(function(){
 					$('#id_value').text("회원 정보를 확인해주세요!");	
 				} else {
 					$("#background_modal").css('display', 'block');
-					$('#id_value').text("이메일을 확인하세요");
+					$('#id_value').text("이메일을 확인하세요!");
 				}
 			},
 			
@@ -213,11 +188,12 @@ $(function(){
 	});
 })
 
-function close(){
+function clo(){
 	document.getElementById("background_modal").style.display="none";
 	document.getElementById("inputName_1").value = "";
 	document.getElementById("inputEmail_1").value = "";
 }
+
 
 
 </script>
