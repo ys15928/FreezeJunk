@@ -93,11 +93,18 @@ public class MemberService {
 	}
 	
 	
-	public void searchPwd(String id,String email, HttpServletRequest req) {	// 이메일로 인증번호 보내기
+	public int searchPwd(String id,String email, HttpServletRequest req) {	// 이메일로 인증번호 보내기
 		String key = "";
 		for(int i=1; i<=8; i++) {
 			int num = (int)(Math.random()*9)+1;
 			key += String.valueOf(num);
+		}
+		MemberDTO dto = mapper.mypage(id);
+		if(dto == null) {
+			return 0;
+		}
+		if(!(dto.getEmail().equals(email))) {
+			return 0;
 		}
 		MimeMessage message = mailSender.createMimeMessage();
 		try {
@@ -112,6 +119,7 @@ public class MemberService {
 			sb.append("<p>임시로 발급 드린 비밀번호는 <h2 style='color : blue'>'  "+ key +"  '</h2>이며 로그인 후 마이페이지에서 비밀번호를 변경해주시면 됩니다.</p><br>");
 			sb.append("(혹시 잘못 전달된 메일이라면 이 이메일을 무시하셔도 됩니다)");
 			helper.setText(sb.toString(), true);
+			
 			mailSender.send(message);
 			
 		} catch (Exception e) {
@@ -119,6 +127,7 @@ public class MemberService {
 			e.printStackTrace();
 		}
 		mapper.searchPwd(id,email,key);
+		return 1;
 	}
 	
 	public void mypage(Model model, String id) {

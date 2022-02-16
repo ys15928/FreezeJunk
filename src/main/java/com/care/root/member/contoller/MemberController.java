@@ -128,9 +128,9 @@ public class MemberController {
 	
 	@RequestMapping(value = "searchPwd", method = RequestMethod.POST)
 	@ResponseBody
-	public String searchPwd(@RequestParam("id")String id, @RequestParam("email")String email, HttpServletRequest req) {
-		service.searchPwd(id, email, req);
-		return "searchPwd";
+	public int searchPwd(@RequestParam("id")String id, @RequestParam("email")String email, HttpServletRequest req) {
+		int result = service.searchPwd(id, email, req);
+		return result;
 	}
 	
 	
