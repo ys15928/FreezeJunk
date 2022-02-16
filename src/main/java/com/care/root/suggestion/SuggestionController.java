@@ -24,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import jdk.internal.org.jline.utils.Log;
 
 @Controller
 public class SuggestionController {
