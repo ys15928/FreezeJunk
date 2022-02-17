@@ -12,18 +12,20 @@
 </head>
 <body>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap" style="margin-top: 50px;">
+	<div style="height: 805px;">
+	<div class="wrap" style="margin-top: 75px;">
 		<form action="suggestion-2" method="post" id="form">
 			<input type="text" id="title" name="title" placeholder="제목"/>
 			<textarea id="editor" name="content"></textarea>
 			<div class="status-box">
-				<span class="status-comment">전체 공개 여부</span><input type="checkbox" name="status" value="1" id="status"/>
+				<span class="status-comment">비공개</span><input type="checkbox" name="status" value="1" id="status"/>
 			</div>
 			<div class="write-btn-box">
 				<button type="button" id="write-btn" onclick="location.href='suggestion-3'" style="margin-right: 15px;">목록으로</button>
 				<button type="button" id="write-btn" onclick="suggestionWrite();">작성</button>
 			</div>
 		</form>
+	</div>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
@@ -33,7 +35,7 @@
 <script src="${contextPath }/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script>
 $('#editor').summernote({
-	  height: 350,
+	  height: 550,
 	  // 에디터 한글 설정
 	  lang: "ko-KR",
 	  focus : false,

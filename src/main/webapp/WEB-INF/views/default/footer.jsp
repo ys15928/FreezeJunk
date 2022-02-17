@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<hr style="margin-top: 20px; border: 1px solid gainsboro;">
+<hr style="margin-top: 20px; border: 1px solid #353535;">
 <div style="background-color: black;">
 <table  style="display: flex; justify-content: center; align-items: center; height: 280px; color:gray; width:1080px; margin:auto; font-size: 15px;">
 

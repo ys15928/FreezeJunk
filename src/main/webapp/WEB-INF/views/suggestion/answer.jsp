@@ -22,7 +22,7 @@
 	
 %>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap">
+	<div class="wrap" style="height: 1030px;">
 		<div class="info-head-title">
 			<div class="info-title">${dto.suggTitle }</div>
 		</div>

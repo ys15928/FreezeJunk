@@ -38,7 +38,7 @@
 	}
 %>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap">
+	<div class="wrap" style="height: 780px; margin-top: 90px;">
 		<div class="list-head-box">
 			<div class="list-select">전체리스트</div>
 			<div class="non-list-select" style="border-left: none;"><a href="suggestion-4">내가 작성한 건의사항</a></div>
@@ -49,7 +49,7 @@
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
-		<div style="margin-top: 20px;">
+		<div style="margin-top: 25px; width: 1080px; height: 510px;">
 		<%
 			for(SuggestionDTO dto : list) {
 				String id = dto.getSuggId().substring(0, 4);
@@ -74,8 +74,8 @@
 			}
 		%>
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%;"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
-			<div style="width: 20%"><%=dto.getName() %>(<%=id%>)</div>
+			<div style="width: 40%; text-align: center;"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
+			<div style="width: 20%; text-align: center;"><%=dto.getName() %>(<%=id%>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
@@ -84,31 +84,44 @@
 			Date date = sd.parse(dateStr);
 			if(date.before(sys)) {
 		%>
-			<div style="width: 10%"><%=sdf1.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%; text-align: center;"><%=sdf1.format(dto.getSuggTime()) %></div>
 		<%
 			} else {
 		%>
-			<div style="width: 10%"><%=sdf2.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%; text-align: center;"><%=sdf2.format(dto.getSuggTime()) %></div>
 		<%
 			}
 			
 			if(dto.getAnswContent() == null) {
 		%>
-			<div style="width: 10%">답변대기</div>
+			<div style="width: 10%;
+    text-align: center;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;">답변대기</div>
 		<%
 			} else{
 		%>
-			<div style="width: 10%">답변완료</div>
+			<div style="width: 10%; border-radius: 4px;
+    text-align: center;
+    background: #EAEAEA;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-weight: bold;">답변완료</div>
 		<%
 			}
 			
 			if(dto.getSuggStatus().equals("1")) {	
 		%>
-			<div style="width: 10%">전체공개</div>
+			<div style="width: 10%; text-align: center;">전체공개</div>
 		<%
 			} else {
 		%>
-			<div style="width: 10%">비공개</div>
+			<div style="width: 10%; text-align: center; color: #368AFF;">비공개</div>
 		<%
 			}
 		%>
@@ -130,23 +143,23 @@
 			<%
 			if(startPage > 10) {
 			%>
-			<a href="suggestion-3?currentPage=<%=startPage - 10 %>&search=<%=search%>">[이전]</a>
+			<a href="suggestion-3?currentPage=<%=startPage - 10 %>&search=<%=search%>">이전</a>
 			<%
 			}
 			for(int i=startPage; i<=endPage; i++) {
 				if(i == pageNum) {
 			%>
-			<a href="#" class="current-page">[<%=i %>]</a>
+			<a href="#" class="current-page"><%=i %>&nbsp;</a>
 			<%
 			} else {
 			%>
-				<a href="suggestion-3?currentPage=<%=i %>&search=<%=search%>">[<%=i %>]</a>
+				<a href="suggestion-3?currentPage=<%=i %>&search=<%=search%>"><%=i %>&nbsp;</a>
 			<%
 				}
 			}
 			if(endPage < pageCount) {
 			%>
-				<a href="suggestion-3?currentPage=<%=startPage + 10 %>&search=<%=search%>">[다음]</a>
+				<a href="suggestion-3?currentPage=<%=startPage + 10 %>&search=<%=search%>">다음</a>
 			<%
 			}
 			%>

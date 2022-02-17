@@ -14,8 +14,10 @@
 	nav ul {list-style: none; display: flex; justify-content: flex-end;}
 	nav ul li { margin: 0 3px; padding: 10px 10px;}
 	nav ul li a { text-decoration: none; color: white; font-weight: bold; font-size: 15px; }
-	.ab:hover { color: #6E94CC; padding-bottom: 3px; border-bottom: 1px solid #6E94CC; transition: all 0.25s;}
-	.ad:hover { color: gray; padding-bottom: 3px; border-bottom: 1px solid gray;}
+	.ab:hover { color: #BDBDBD; padding-bottom: 3px; border-bottom: 1px solid #BDBDBD; transition: all 0.25s;}
+	.ad:hover { color: gray; padding-bottom: 3px;}
+	.li{ background-color: black;}
+	.li:hover{ background-color: #353535; }
 	
 </style>
 </head>
@@ -50,17 +52,17 @@
 		<div>
 			<nav style="">
 				<ul>
-					<li><a href="#" class="ab">키워드 추천</a></li>
-					<li><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
-					<li><a href="${contextPath }/mypage" class="ab">마이페이지</a></li>
+					<li class="li"><a href="#" class="ab">키워드 추천</a></li>
+					<li class="li"><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
+					<li class="li"><a href="${contextPath }/mypage" class="ab">마이페이지</a></li>
 				<c:if test="${sessionScope.loginUser.id eq 'team03'}">
-						<li><a href="${contextPath }/main/admin/admin-1" class="ab">회원목록</a></li>
+						<li class="li"><a href="${contextPath }/main/admin/admin-1" class="ab">회원목록</a></li>
 					</c:if>
 				</ul>
 			</nav>
 		</div>
 	</div>
 	</div>
-	<hr style="border: 1px solid gainsboro;">
+	<hr style="border: 1px solid #353535;">
 </body>
 </html>
