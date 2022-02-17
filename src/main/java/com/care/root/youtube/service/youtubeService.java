@@ -209,35 +209,36 @@ public class youtubeService {
 	public void filterForDelete(String videoUrl, String inputKeywords)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
-		if ((!inputKeywords.equals(" ")) && (!inputKeywords.equals(""))) {
-			crawlingAll(videoUrl);
-			junkCommentIdList = new String();
-			keywordList = inputKeywords.split(",");
+		crawlingAll(videoUrl);
+		junkCommentIdList = new String();
+		keywordList = inputKeywords.split(",");
 
-			for (int i = 1; i <= resultCommentData.size(); i++) {
-				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
-				commentArrayData = (JSONObject) commentArray.get(0);
-				commentId = (String) commentArrayData.get("commentId");
-				commentText = (String) commentArrayData.get("text");
+		for(int k=0 ; k<keywordList.length; k++) {
+			
+			if(keywordList[k].startsWith(" ")) 
+				keywordList[k] = keywordList[k].substring(1);
+			keywordList[k] = "(.*)" + keywordList[k] + "(.*)";
+		}
+		
+		for (int i = 1; i <= resultCommentData.size(); i++) {
+			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+			commentArrayData = (JSONObject) commentArray.get(0);
+			commentId = (String) commentArrayData.get("commentId");
+			commentText = (String) commentArrayData.get("text");
 
-				for (int j = 0; j < keywordList.length; j++) {
-
-					if (commentText.contains(keywordList[j])) {
-						junkCommentIdList += commentId + ", ";
-					}
+			for (int j = 0; j < keywordList.length; j++) {
+					
+				if (commentText.matches(keywordList[j])) {
+					junkCommentIdList += commentId + ", ";
 				}
-			}
-
-			if (junkCommentIdList.length() >= 2) {
-				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-				setSpamAndDelete(junkCommentIdList, false);
-			} else {
-				System.out.println("NO TARGET HERE");
 			}
 		}
 
-		else {
-			System.out.println("NO KEYOWRDS INPUT");
+		if (junkCommentIdList.length() >= 2) {
+			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+			setSpamAndDelete(junkCommentIdList, false);
+		} else {
+			System.out.println("NO TARGET HERE");
 		}
 	}
 
@@ -245,35 +246,30 @@ public class youtubeService {
 	public void filterForSpamAccount(String videoUrl, String inputAccounts)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
-		if ((!inputAccounts.equals(" ")) && (!inputAccounts.equals(""))) {
-			crawlingAll(videoUrl);
-			junkCommentIdList = new String();
-			accountList = inputAccounts.split(",");
+		crawlingAll(videoUrl);
+		junkCommentIdList = new String();
+		accountList = inputAccounts.split(",");
 
-			for (int i = 1; i <= resultCommentData.size(); i++) {
-				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
-				commentArrayData = (JSONObject) commentArray.get(0);
-				authorChannelUrl = (String) commentArrayData.get("authorChannelUrl");
-				authorChannelId = authorChannelUrl.split("channel/");
-				commentId = (String) commentArrayData.get("commentId");
+		for (int i = 1; i <= resultCommentData.size(); i++) {
+			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+			commentArrayData = (JSONObject) commentArray.get(0);
+			authorChannelUrl = (String) commentArrayData.get("authorChannelUrl");
+			authorChannelId = authorChannelUrl.split("channel/");
+			commentId = (String) commentArrayData.get("commentId");
 
-				for (int j = 0; j < accountList.length; j++) {
+			for (int j = 0; j < accountList.length; j++) {
 
-					if (accountList[j].contains(authorChannelId[1])) {
-						junkCommentIdList += commentId + ", ";
-					}
+				if (accountList[j].contains(authorChannelId[1])) {
+					junkCommentIdList += commentId + ", ";
 				}
 			}
-
-			if (junkCommentIdList.length() >= 2) {
-				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-				setSpamAndDelete(junkCommentIdList, true);
-			} else {
-				System.out.println("NO TARGET HERE");
-			}
 		}
-		else {
-			System.out.println("NO ACCOUNT INPUT");
+
+		if (junkCommentIdList.length() >= 2) {
+			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+			setSpamAndDelete(junkCommentIdList, true);
+		} else {
+			System.out.println("NO TARGET HERE");
 		}
 	}
 
