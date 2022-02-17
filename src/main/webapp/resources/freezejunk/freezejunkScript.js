@@ -8,5 +8,19 @@ function keywordCheck() {
 		alert("키워드를 입력해주세요.");
 		return;
 	}
+	document.getElementById("keywords").value = document.getElementById("keywords").value.replace(blank_pattern1, '');
+	document.getElementById("form").submit();
+}
+
+function userCheck() {
+	if(document.getElementById("url").value == "" || document.getElementById("url").value.replace(blank_pattern1, '') == "") {
+		alert("유튜브 url을 입력해주세요.");
+		return;
+	}
+	if(document.getElementById("users").value == "" || document.getElementById("users").value.replace(blank_pattern1, '') == "") {
+		alert("계정명을 입력해주세요.");
+		return;
+	}
+	document.getElementById("users").value = document.getElementById("users").value.replace(blank_pattern1, '');
 	document.getElementById("form").submit();
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.care.root.youtube.service.YoutubeService;
 
@@ -16,16 +17,18 @@ public class YoutubeController {
 	@Autowired
 	YoutubeService service;
 
-	@RequestMapping("/keywordFreeze")
+	@RequestMapping("/mkeywordFreeze")
 	public String keywordFreeze() {
 		return "freezejunk/keywordFreeze";
 	}
 	
-	@RequestMapping("/keywordFreezeResult")
+	@RequestMapping(value="/main/keywordFreezeResult", method=RequestMethod.POST)
 	public String KeywordFreezeResult(HttpServletRequest request) {
 		String videoUrl = request.getParameter("videoUrl");
 		String keywords = request.getParameter("keywords");
 		String accounts = request.getParameter("accounts");
+		
+		System.out.println(keywords);
 		
 		try {
 			//service.filterForcopyBot(videoUrl);
@@ -38,6 +41,14 @@ public class YoutubeController {
 		}
 		
 		return "freezejunk/keywordFreezeResult";
+	}
+	
+	@RequestMapping(value="/main/userFreezeResult", method=RequestMethod.POST)
+	public String userFreezeResult(HttpServletRequest request) {
+		String videoUrl = request.getParameter("videoUrl");
+		String users = request.getParameter("users");
+		System.out.println(users);
+		return "";
 	}
 	
 	

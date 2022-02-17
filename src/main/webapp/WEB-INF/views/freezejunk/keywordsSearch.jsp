@@ -27,5 +27,7 @@
 		</form>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
+<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+<script src="${contextPath }/resources/freezejunk/freezejunkScript.js"></script>
 </body>
 </html>

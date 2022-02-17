@@ -18,15 +18,16 @@
 				<div class="head-text2">해당 영상에서 스팸계정들이 작성한 댓글 삭제 및 계정 차단을 해드립니다</div>
 			</div>
 			<div class="search-box">
-				<input type="text" class="search" name="url" placeholder="URL 입력"/>
-				<span class="search-img-box"><img src="${contextPath }/resources/image/search.png" width="30px"/></span>
+				<input type="text" class="search" id="url" name="videoUrl" placeholder="URL 입력"/>
+				<span class="search-img-box"><img src="${contextPath }/resources/image/search_white.png" width="30px" onclick="userCheck();"/></span>
 			</div>
 			<div class="keywords-box">
-				<textarea name="user" class="keywords-search" placeholder="계정명 입력(계정이 여러개일시 ,로 구분)"></textarea>
+				<textarea name="users" class="keywords-search" id="users" placeholder="계정명 입력(계정이 여러개일시 ,로 구분)"></textarea>
 			</div>
 		</form>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
-<script src="${contextPath }/resources/freezejunk/freezejunkScript.js"></script>
+<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+<script src="${contextPath }/resources/freezejunk/freezejunkScript.js?ver=2"></script>
 </body>
 </html>
