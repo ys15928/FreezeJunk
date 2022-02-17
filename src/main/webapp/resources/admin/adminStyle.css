@@ -41,15 +41,20 @@ body {
 	height: 50px;
     align-items: center;
     font-size: 18px;
+    background-color: white;
 }
 .none-line {
 	margin-bottom: 15px;
     font-size: 18px;
+    color: white;
+    width: 250px;
+    margin: 15px auto 0 auto;
 }
 .user-head-line {
 	display: flex;
 	font-size: 18px;
-	margin: 15px 0;
+	padding: 15px 0;
+	background-color: white;
 }
 .user-head-line>div {
 	display: flex;
@@ -71,7 +76,8 @@ body {
 	width: 40%;
 }
 .user-list-line:hover {
-	background-color: #EAEAEA !important;
+	background-color: #4C4C4C !important;
+	color: white;
 }
 .user-list-line:nth-child(even) {
 	background-color: #D5D5D5;
@@ -92,6 +98,7 @@ body {
 .user-list-title {
 	font-size: 28px;
     font-weight: bold;
+    color: white;
 }
 .user-list-box {
 	margin-top: 50px;

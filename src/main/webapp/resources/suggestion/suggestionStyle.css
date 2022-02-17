@@ -76,6 +76,15 @@ button:hover {
 .sugg-line:hover a {
 	color: #4C4C4C !important;
 }
+.sugg-line-non {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top: 1px solid #A566FF;
+    color: #D5D5D5;
+    font-size: 18px;
+}
 .sugg-line-a {
 	color: #D5D5D5 !important;
 }

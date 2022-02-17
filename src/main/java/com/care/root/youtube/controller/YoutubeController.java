@@ -1,32 +1,68 @@
 package com.care.root.youtube.controller;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.care.root.youtube.service.YoutubeService;
+import com.care.root.youtube.service.youtubeService;
 
 @Controller
 public class YoutubeController {
 	@Autowired
-	YoutubeService service;
+	youtubeService service;
 
-	@RequestMapping("/insertURL")
-	public String viewMain() {
-		return "freezejunk/insertUrl";
+	@RequestMapping("/keywordFreeze")
+	public String keywordFreeze() {
+		return "freezejunk/keywordFreeze";
+	}
+	
+	@RequestMapping("/keywordFreezeResult")
+	public String KeywordFreezeResult(HttpServletRequest request) {
+		String videoUrl = request.getParameter("videoUrl");
+		String keywords = request.getParameter("keywords");
+		String accounts = request.getParameter("accounts");
+		
+		try {
+			//service.filterForcopyBot(videoUrl);
+			service.filterForDelete(videoUrl, keywords); 
+			//service.filterForSpamAccount(accounts);
+			
+		} catch (GeneralSecurityException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "freezejunk/keywordFreezeResult";
 	}
 	
 	
-	@RequestMapping("/junkResult")
-	public String viewResult(HttpServletRequest request) {
+	/*@RequestMapping("/accountFreeze")
+	public String accountFreeze() {
+		return "freezejunk/accountFreeze";
+	}
+	
+	@RequestMapping("/accountFreezeResult")
+	public String accountFreezeResult(HttpServletRequest request) {
 		String url = request.getParameter("url");
-		System.out.println("입력된 URL : " + url);
-		
-		service.makeURLtxt(url);
-		service.runCrawling();
-		
-		return "freezejunk/junkResult";
+		//service.setMarkSpam();
+		return "freezejunk/accountFreezeResult";
 	}
+	
+	
+	@RequestMapping("/copyCommentFreeze")
+	public String copyCommentFreeze() {
+		return "freezejunk/copyCommentFreeze";
+	}
+	
+	@RequestMapping("/copyCommentFreezeResult")
+	public String copyCommentFreezeResult(HttpServletRequest request) {
+		String url = request.getParameter("url");
+		
+		return "freezejunk/copyCommentFreezeResult";
+	}*/
 }
