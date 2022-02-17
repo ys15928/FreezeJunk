@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
-		<form action="" method="post "id="form">
+		<form action="" method="post"id="form">
 			<div class="head-box">
 				<div class="head-text1">유튜브 URL과 키워드를 입력해주세요 !</div>
 				<div class="head-text2">해당 영상의 입력하신 키워드를 포함하는 모든 댓글들을 삭제해드립니다</div>
