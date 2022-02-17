@@ -26,7 +26,6 @@ import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -41,95 +40,94 @@ public class youtubeService {
 	YoutubeMapper mapper;
 	YoutubeDTO dto = new YoutubeDTO();
 
-	// Crawling Comments(동영상 URL의 vidoeID를 이용)
+	Gson gson;
+	FileWriter file;
+	JSONObject commentJsonObj, resultCommentData, commentArrayData, commentArrayDataTarget;
+	JSONArray commentArray, commentArrayTarget;
+	String[] videoId, keywordList, accountList, authorChannelId;
+	String commentId, authorName, authorChannelUrl, commentText, strDateToSec, strResultCommentData, junkCommentIdList,
+			authorNameTarget, strDateToSecTarget, commentTextTarget, commentIdTarget;
+	Comment comment, reply;
+	CommentSnippet snippet, replySnippet;
+	DateTime publishedAt, replyPublishedAt;
+	int commentCount;
+	long dateToSec, replyDateToSec;
+
 	private static final String DEVELOPER_KEY = "AIzaSyBQyyjxukCf2vzb0tDe1ILeemhFlv1fHzs";
 	private static final String APPLICATION_NAME = "FreezeJunk";
 	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
+	// 크롤링 하기 위한 Service 준비
 	public static YouTube getServiceCrawling() throws GeneralSecurityException, IOException {
 		final NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 		return new YouTube.Builder(httpTransport, JSON_FACTORY, null).setApplicationName(APPLICATION_NAME).build();
 	}
 
-	JSONObject allCommentData;
-
-	public void crawling(String videoUrl) throws GeneralSecurityException, IOException, GoogleJsonResponseException {
-		String[] videoId = videoUrl.split("\\?v=");
+	// 전체 댓글 크롤링
+	public void crawlingAll(String videoUrl) throws GeneralSecurityException, IOException, GoogleJsonResponseException {
+		videoId = videoUrl.split("\\?v=");
 		YouTube youtubeService = getServiceCrawling();
 		YouTube.CommentThreads.List request = youtubeService.commentThreads().list("snippet,replies");
 		CommentThreadListResponse response = request.setKey(DEVELOPER_KEY).setMaxResults(100L).setOrder("relevance")
 				.setTextFormat("plainText").setVideoId(videoId[1]).setPrettyPrint(true).execute();
 
-		// 크롷링 결과를 확인하기 위한 crawlingResult.json 파일 생성
-		try {
-			Gson gson = new GsonBuilder().setPrettyPrinting().create();
-			String prettyResponse = gson.toJson(response);
-			FileWriter file = new FileWriter(
-					"E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\crawlingResult.json");
-			file.write(prettyResponse);
-			file.flush();
-			file.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		int commentCount = 0;
-		allCommentData = new JSONObject();
+		commentCount = 0;
+		resultCommentData = new JSONObject();
 
 		while (true) {
 
 			for (int i = 0; i < response.getItems().size(); i++) {
-				Comment comment = response.getItems().get(i).getSnippet().getTopLevelComment();
-				CommentSnippet snippet = comment.getSnippet();
+				comment = response.getItems().get(i).getSnippet().getTopLevelComment();
+				snippet = comment.getSnippet();
 
-				String commentId = comment.getId();
-				String authorName = snippet.getAuthorDisplayName();
-				String authorChannelUrl = snippet.getAuthorChannelUrl();
-				String text = snippet.getTextOriginal();
+				commentId = comment.getId();
+				authorName = snippet.getAuthorDisplayName();
+				authorChannelUrl = snippet.getAuthorChannelUrl();
+				commentText = snippet.getTextOriginal();
 
-				DateTime publishedAt = snippet.getPublishedAt();
-				long dateToSec = publishedAt.getValue() / 1000;
-				String strDateToSec = String.valueOf(dateToSec);
+				publishedAt = snippet.getPublishedAt();
+				dateToSec = publishedAt.getValue() / 1000;
+				strDateToSec = String.valueOf(dateToSec);
 
-				JSONObject data = new JSONObject();
-				data.put("commentId", commentId);
-				data.put("authorName", authorName);
-				data.put("authorChannelUrl", authorChannelUrl);
-				data.put("strDateToSec", strDateToSec);
-				data.put("text", text);
+				commentJsonObj = new JSONObject();
+				commentJsonObj.put("commentId", commentId);
+				commentJsonObj.put("authorName", authorName);
+				commentJsonObj.put("authorChannelUrl", authorChannelUrl);
+				commentJsonObj.put("strDateToSec", strDateToSec);
+				commentJsonObj.put("text", commentText);
 
-				JSONArray commentArray = new JSONArray();
-				commentArray.add(data);
+				commentArray = new JSONArray();
+				commentArray.add(commentJsonObj);
 				commentCount++;
-				allCommentData.put("commentArray" + commentCount, commentArray);
+				resultCommentData.put("commentArray" + commentCount, commentArray);
 
 				if (response.getItems().get(i).getReplies() != null) {
 					List<Comment> replies = response.getItems().get(i).getReplies().getComments();
 
 					for (int j = 0; j < replies.size(); j++) {
-						Comment reply = replies.get(j);
-						CommentSnippet replySnippet = reply.getSnippet();
+						reply = replies.get(j);
+						replySnippet = reply.getSnippet();
 
-						String replyId = reply.getId();
-						String replyAuthorName = replySnippet.getAuthorDisplayName();
-						String replyAuthorChannelUrl = replySnippet.getAuthorChannelUrl();
-						String replyText = replySnippet.getTextOriginal();
+						commentId = reply.getId();
+						authorName = replySnippet.getAuthorDisplayName();
+						authorChannelUrl = replySnippet.getAuthorChannelUrl();
+						commentText = replySnippet.getTextOriginal();
 
-						DateTime replyPublishedAt = replySnippet.getPublishedAt();
-						long replyDateToSec = replyPublishedAt.getValue() / 1000;
-						String strReplyDateToSec = String.valueOf(replyDateToSec);
+						publishedAt = replySnippet.getPublishedAt();
+						dateToSec = publishedAt.getValue() / 1000;
+						strDateToSec = String.valueOf(dateToSec);
 
-						data = new JSONObject();
-						data.put("commentId", replyId);
-						data.put("authorName", replyAuthorName);
-						data.put("authorChannelUrl", replyAuthorChannelUrl);
-						data.put("strDateToSec", strReplyDateToSec);
-						data.put("text", replyText);
+						commentJsonObj = new JSONObject();
+						commentJsonObj.put("commentId", commentId);
+						commentJsonObj.put("authorName", authorName);
+						commentJsonObj.put("authorChannelUrl", authorChannelUrl);
+						commentJsonObj.put("strDateToSec", strDateToSec);
+						commentJsonObj.put("text", commentText);
 
 						commentArray = new JSONArray();
-						commentArray.add(data);
+						commentArray.add(commentJsonObj);
 						commentCount++;
-						allCommentData.put("commentArray" + commentCount, commentArray);
+						resultCommentData.put("commentArray" + commentCount, commentArray);
 					}
 				}
 			}
@@ -144,11 +142,10 @@ public class youtubeService {
 
 		// commentArray을 확인하기 위한 commentArray.json 파일 생성
 		try {
-			Gson gson = new GsonBuilder().setPrettyPrinting().create();
-			String strAllCommentData = gson.toJson(allCommentData);
-			FileWriter file = new FileWriter(
-					"E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\allCommentData.json");
-			file.write(strAllCommentData);
+			gson = new GsonBuilder().setPrettyPrinting().create();
+			strResultCommentData = gson.toJson(resultCommentData);
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\allCommentData.json");
+			file.write(strResultCommentData);
 			file.flush();
 			file.close();
 		} catch (IOException e) {
@@ -156,63 +153,178 @@ public class youtubeService {
 		}
 	}
 
-	public void filterForDelete(String inputKeywords)
+	// 카피 댓글을 찾기 위한 인기순 상위 50개 댓글 크롤링
+	public void crawlingTop50(String videoUrl)
+			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
+
+		videoId = videoUrl.split("\\?v=");
+		YouTube youtubeService = getServiceCrawling();
+		YouTube.CommentThreads.List request = youtubeService.commentThreads().list("snippet");
+		CommentThreadListResponse response = request.setKey(DEVELOPER_KEY).setMaxResults(50L).setOrder("relevance")
+				.setTextFormat("plainText").setVideoId(videoId[1]).setPrettyPrint(true).execute();
+
+		commentCount = 0;
+		resultCommentData = new JSONObject();
+
+		for (int i = 0; i < response.getItems().size(); i++) {
+			comment = response.getItems().get(i).getSnippet().getTopLevelComment();
+			snippet = comment.getSnippet();
+
+			commentId = comment.getId();
+			authorName = snippet.getAuthorDisplayName();
+			authorChannelUrl = snippet.getAuthorChannelUrl();
+			commentText = snippet.getTextOriginal();
+
+			publishedAt = snippet.getPublishedAt();
+			dateToSec = publishedAt.getValue() / 1000;
+			strDateToSec = String.valueOf(dateToSec);
+
+			commentJsonObj = new JSONObject();
+			commentJsonObj.put("commentId", commentId);
+			commentJsonObj.put("authorName", authorName);
+			commentJsonObj.put("authorChannelUrl", authorChannelUrl);
+			commentJsonObj.put("strDateToSec", strDateToSec);
+			commentJsonObj.put("text", commentText);
+
+			commentArray = new JSONArray();
+			commentArray.add(commentJsonObj);
+			commentCount++;
+			resultCommentData.put("commentArray" + commentCount, commentArray);
+		}
+
+		// commentArray을 확인하기 위한 commentArray.json 파일 생성
+		try {
+			gson = new GsonBuilder().setPrettyPrinting().create();
+			strResultCommentData = gson.toJson(resultCommentData);
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\top50CommentData.json");
+			file.write(strResultCommentData);
+			file.flush();
+			file.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// keywords 포함한 댓글의 comment id 추출
+	public void filterForDelete(String videoUrl, String inputKeywords)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
-		String listCommentId = new String();
-		String keywordList[] = inputKeywords.split(",");
-		System.out.println("inputKeywords = " + inputKeywords);
 
-		for (int i = 1; i <= allCommentData.size(); i++) {
-			JSONArray commentArrayData = (JSONArray) allCommentData.get("commentArray" + i);
-			JSONObject obj = (JSONObject) commentArrayData.get(0);
-			String commentId = (String) obj.get("commentId");
-			String text = (String) obj.get("text");
+		if ((!inputKeywords.equals(" ")) && (!inputKeywords.equals(""))) {
+			crawlingAll(videoUrl);
+			junkCommentIdList = new String();
+			keywordList = inputKeywords.split(",");
 
-			// filtering to Delete Keywords
-			for (int j = 0; j < keywordList.length; j++) {
+			for (int i = 1; i <= resultCommentData.size(); i++) {
+				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+				commentArrayData = (JSONObject) commentArray.get(0);
+				commentId = (String) commentArrayData.get("commentId");
+				commentText = (String) commentArrayData.get("text");
 
-				if (text.contains(keywordList[j])) {
-					listCommentId += commentId + ", ";
+				for (int j = 0; j < keywordList.length; j++) {
+
+					if (commentText.contains(keywordList[j])) {
+						junkCommentIdList += commentId + ", ";
+					}
+				}
+			}
+
+			if (junkCommentIdList.length() >= 2) {
+				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+				setSpamAndDelete(junkCommentIdList, false);
+			} else {
+				System.out.println("NO TARGET HERE");
+			}
+		}
+
+		else {
+			System.out.println("NO KEYOWRDS INPUT");
+		}
+	}
+
+	// 차단하고자하는 계정의 모든 댓글 comment id 추출
+	public void filterForSpamAccount(String videoUrl, String inputAccounts)
+			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
+
+		if ((!inputAccounts.equals(" ")) && (!inputAccounts.equals(""))) {
+			crawlingAll(videoUrl);
+			junkCommentIdList = new String();
+			accountList = inputAccounts.split(",");
+
+			for (int i = 1; i <= resultCommentData.size(); i++) {
+				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+				commentArrayData = (JSONObject) commentArray.get(0);
+				authorChannelUrl = (String) commentArrayData.get("authorChannelUrl");
+				authorChannelId = authorChannelUrl.split("channel/");
+				commentId = (String) commentArrayData.get("commentId");
+
+				for (int j = 0; j < accountList.length; j++) {
+
+					if (accountList[j].contains(authorChannelId[1])) {
+						junkCommentIdList += commentId + ", ";
+					}
+				}
+			}
+
+			if (junkCommentIdList.length() >= 2) {
+				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+				setSpamAndDelete(junkCommentIdList, true);
+			} else {
+				System.out.println("NO TARGET HERE");
+			}
+		}
+		else {
+			System.out.println("NO ACCOUNT INPUT");
+		}
+	}
+
+	// 같은 내용, 더 늦게 달린 댓글의 comment id 추출
+	public void filterForcopyBot(String videoUrl)
+			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
+
+		crawlingTop50(videoUrl);
+		junkCommentIdList = new String();
+
+		for (int i = 1; i <= resultCommentData.size(); i++) {
+			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+			commentArrayData = (JSONObject) commentArray.get(0);
+			authorName = (String) commentArrayData.get("authorName");
+			strDateToSec = (String) commentArrayData.get("strDateToSec");
+			commentText = (String) commentArrayData.get("text");
+			commentId = (String) commentArrayData.get("commentId");
+
+			for (int j = i; j < resultCommentData.size(); j++) {
+
+				commentArrayTarget = (JSONArray) resultCommentData.get("commentArray" + j);
+				commentArrayDataTarget = (JSONObject) commentArrayTarget.get(0);
+				authorNameTarget = (String) commentArrayDataTarget.get("authorName");
+				strDateToSecTarget = (String) commentArrayDataTarget.get("strDateToSec");
+				commentTextTarget = (String) commentArrayDataTarget.get("text");
+				commentIdTarget = (String) commentArrayDataTarget.get("commentId");
+
+				if ((commentText.equals(commentTextTarget)) && (!commentId.equals(commentIdTarget))) {
+
+					if (Integer.parseInt(strDateToSec) > Integer.parseInt(strDateToSecTarget)) {
+						if (!junkCommentIdList.contains(commentId))
+							junkCommentIdList += commentId + ", ";
+					}
+
+					else {
+						if (!junkCommentIdList.contains(commentIdTarget))
+							junkCommentIdList += commentIdTarget + ", ";
+					}
 				}
 			}
 		}
 
-		if (listCommentId.length() >= 2)
-			listCommentId = listCommentId.substring(0, listCommentId.length() - 2);
-		
-		System.out.println("삭제해야할 댓글 Id = " + listCommentId);
-		setSpamAndDelete(listCommentId, false);
-	}
-
-	// setModerationStatus (댓글 드래그 해서 바로 넣으면 들어가는 채널 id로 비교 후 해당 댓글의 commentId를 이용)
-	public void filterForSpamAccount(String inputAccounts) throws GoogleJsonResponseException, GeneralSecurityException, IOException {
-		String listCommentId = new String();
-		String accountList[] = inputAccounts.split(",");
-		System.out.println("inputAccounts = " + inputAccounts);
-
-		for (int i = 1; i <= allCommentData.size(); i++) {
-			JSONArray commentArrayData = (JSONArray) allCommentData.get("commentArray" + i);
-			JSONObject obj = (JSONObject) commentArrayData.get(0);
-			String authorChannelUrl = (String) obj.get("authorChannelUrl");
-			String[] authorChannelId = authorChannelUrl.split("channel/");
-			String commentId = (String) obj.get("commentId");
-
-			for (int j = 0; j < accountList.length; j++) {
-
-				if (accountList[j].contains(authorChannelId[1])) {
-					listCommentId += commentId + ", ";
-				}
-			}
+		if (junkCommentIdList.length() >= 2) {
+			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+			setSpamAndDelete(junkCommentIdList, true);
+		} else {
+			System.out.println("NO BOT HERE");
 		}
-		
-		if (listCommentId.length() >= 2)
-			listCommentId = listCommentId.substring(0, listCommentId.length() - 2);
-		
-		System.out.println("스팸 등록할 계정의 댓글 Id = " + listCommentId);
-		setSpamAndDelete(listCommentId, true);
+
 	}
 
-	// 댓글 삭제 및 스팸계정 등록 준비
 	private static final String CLIENT_SECRETS = "client_secret.json";
 	private static final Collection<String> SCOPES = Arrays.asList("https://www.googleapis.com/auth/youtube.force-ssl");
 
@@ -226,6 +338,7 @@ public class youtubeService {
 		return credential;
 	}
 
+	// 삭제 및 스팸 설정 하기 위한 Service 준비
 	public static YouTube getService() throws GeneralSecurityException, IOException {
 		final NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 		Credential credential = authorize(httpTransport);
@@ -234,12 +347,11 @@ public class youtubeService {
 				.build();
 	}
 
+	// 삭제 및 스팸 설정 실행
 	public void setSpamAndDelete(String commentId, boolean setBanAuthor)
 			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
-		System.out.println("setSpamAndDelete 실행");
 		YouTube youtubeService = getService();
 
-		// "rejected" setBanAuthor(true) => 차단 및 삭제 / "rejected" setBanAuthor(false) => 삭제만
 		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(commentId,
 				"rejected");
 		request.setBanAuthor(setBanAuthor).execute();

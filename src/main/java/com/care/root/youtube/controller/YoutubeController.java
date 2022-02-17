@@ -28,9 +28,9 @@ public class YoutubeController {
 		String accounts = request.getParameter("accounts");
 		
 		try {
-			service.crawling(videoUrl);
-			//service.filterForDelete(keywords); 
-			service.filterForSpamAccount(accounts);
+			//service.filterForcopyBot(videoUrl);
+			service.filterForDelete(videoUrl, keywords); 
+			//service.filterForSpamAccount(accounts);
 			
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
