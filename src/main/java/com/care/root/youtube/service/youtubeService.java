@@ -144,7 +144,7 @@ public class youtubeService {
 		try {
 			gson = new GsonBuilder().setPrettyPrinting().create();
 			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\allCommentData.json");
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\allCommentData.json");
 			file.write(strResultCommentData);
 			file.flush();
 			file.close();
@@ -196,7 +196,7 @@ public class youtubeService {
 		try {
 			gson = new GsonBuilder().setPrettyPrinting().create();
 			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\top50CommentData.json");
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\top50CommentData.json");
 			file.write(strResultCommentData);
 			file.flush();
 			file.close();
@@ -213,13 +213,13 @@ public class youtubeService {
 		junkCommentIdList = new String();
 		keywordList = inputKeywords.split(",");
 
-		for(int k=0 ; k<keywordList.length; k++) {
-			
-			if(keywordList[k].startsWith(" ")) 
+		for (int k = 0; k < keywordList.length; k++) {
+
+			if (keywordList[k].startsWith(" "))
 				keywordList[k] = keywordList[k].substring(1);
 			keywordList[k] = "(.*)" + keywordList[k] + "(.*)";
 		}
-		
+
 		for (int i = 1; i <= resultCommentData.size(); i++) {
 			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
 			commentArrayData = (JSONObject) commentArray.get(0);
@@ -227,7 +227,7 @@ public class youtubeService {
 			commentText = (String) commentArrayData.get("text");
 
 			for (int j = 0; j < keywordList.length; j++) {
-					
+
 				if (commentText.matches(keywordList[j])) {
 					junkCommentIdList += commentId + ", ";
 				}
