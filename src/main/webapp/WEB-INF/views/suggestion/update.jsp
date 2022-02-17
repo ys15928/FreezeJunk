@@ -12,13 +12,13 @@
 </head>
 <body>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap">
+	<div class="wrap" style="margin-top: 35px; height: 548px;">
 		<form action="suggestion-7" method="post" id="form">
 			<input type="hidden" name="num" value="${dto.num }"/>
 			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
 			<textarea id="editor" name="content">${dto.suggContent }</textarea>
 			<div class="status-box">
-				<span class="status-comment">전체 공개 여부</span>
+				<span class="status-comment">비공개</span>
 				<c:choose>
 					<c:when test="${dto.suggStatus == 0}">
 						<input type="checkbox" name="status" value="1" id="status"/>
