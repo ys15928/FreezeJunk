@@ -35,7 +35,7 @@ import com.care.root.mybatis.YoutubeMapper;
 import com.care.root.youtube.dto.YoutubeDTO;
 
 @Service
-public class youtubeService {
+public class YoutubeService {
 	@Autowired
 	YoutubeMapper mapper;
 	YoutubeDTO dto = new YoutubeDTO();
