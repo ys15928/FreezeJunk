@@ -8,7 +8,7 @@
 <style type="text/css">
 .join-wrap {display: flex;	justify-content: center; }
 
-.join-header {	text-align: center;	font-size: 24px; color: gray; margin-bottom: 15px; font-weight: bold;}
+.join-header {	text-align: center;	font-size: 24px; color: black; margin-bottom: 15px; font-weight: bold;}
 
 .join-box {	width: 1000px; height: 600px;}
 
@@ -16,11 +16,13 @@
 
 .input{ background-color: white; width: 300px; height: 25px; border: 1px solid white; border-bottom: 2px solid gainsboro; }
 
-.th{ color:gray; }
+.th{ color:black; }
 
-.chkbtn{ border: 1px solid white; height: 30px; border-radius: 15px; margin-left: 10px; background-color: white; }
+.chkbtn{ border: none; border-bottom: 1px solid black; height: 30px; margin-left: 10px; background-color: white; font-weight: bold; }
 
-.memberbtn{ border: 1px solid white; width: 313px; height: 40px; border-radius: 15px; margin-top: 10px; background-color: white;}
+.memberbtn{ 
+border: 1px solid white; width: 313px; height: 40px; border-radius: 4px; margin-top: 10px; background-color: #368AFF; font-weight: bold;
+color: white; font-size: 15px;}
 
 .trnum{ height: 15px; }
 
@@ -30,14 +32,17 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body style="background-color: white;">
-<jsp:include page="../default/header.jsp"/>
+<body style="background-color: black; width: 1920px; overflow-x: hidden;">
+
+<div style="height: 800px;">
 	<div class="join-box" id="join-member" style="margin: auto; margin-top: 0px;">
 			<form action="memberSuc" method="post" id="form">
 				
-				<div style="background-color: #EAEAEA; padding: 33px 8px; border-radius: 27px; width: 770px; margin: auto; margin-top:65px;">
+				<div style="background-color: white; padding: 33px 8px; border-radius: 10px; width: 770px; margin: auto; margin-top:100px;">
 				
-				<div class="join-header">회원가입</div>
+				<div class="join-header">
+				<a href="${contextPath }/main"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a>
+				</div>
 				
 				<table style="margin:auto; text-align:left; margin-left: 225px;">
 				
@@ -54,11 +59,9 @@
 					</td>
 					</tr>
 					<tr class="trnum">
-					<td><div class="member-comment" id="id-comment">아이디를 입력해주세요.</div>
-					
+					<td><div class="member-comment" id="id-comment">아이디를 입력해주세요.</div>			
 					</td>
-					
-					
+									
 					</tr>
 					<tr style="height: 45px;">
 					<th class="th">비밀번호</th>
@@ -130,10 +133,9 @@
 			</form>
 		</div>
 	</div>
-	
+	</div>
 	
 		
-	<jsp:include page="../default/footer.jsp"/>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
@@ -243,6 +245,11 @@ var certifiedNum = null;
 function emailgoNum(){
 	
 	var email= document.getElementById("email").value
+	if(document.getElementById("email").value == ""){
+		document.getElementById("email-num-comment").innerText = "이메일을 올바르게 입력하세요";
+		$("#email-num-comment").css("visibility", "visible");
+		return;
+	}
 	var form={email:email}
 	$.ajax({
 		url: "emailgoNum", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",

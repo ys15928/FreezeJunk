@@ -2,6 +2,7 @@ package com.care.root.member.contoller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,10 +13,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.root.member.dto.MemberDTO;
@@ -60,9 +63,9 @@ public class MemberController {
         PrintWriter out = res.getWriter(); // 화면 출력용 객체
         int result= service.register(req);
         if(result==0) {
-        	out.print("<script> alert('회원가입 실패.');location.href='membership';</script>");    	
+        	out.print("<script> alert('회원가입에 실패하셨습니다.');location.href='membership';</script>");    	
         }else {
-        	out.print("<script> alert('회원가입 성공.');location.href='login';</script>");
+        	out.print("<script> alert('회원가입이 완료되었습니다.');location.href='login';</script>");
         }
 	}
 	
@@ -115,6 +118,84 @@ public class MemberController {
 		session.invalidate();
 		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
 	}
+	
+	@RequestMapping(value="searchId", method = RequestMethod.POST)
+	@ResponseBody
+	public String searchId(@RequestParam("inputName_1") String name,@RequestParam("inputEmail_1")String email) {
+		String result = service.searchId(name, email);
+		return result;
+	}
+	
+	@RequestMapping(value = "searchPwd", method = RequestMethod.POST)
+	@ResponseBody
+	public int searchPwd(@RequestParam("id")String id, @RequestParam("email")String email, HttpServletRequest req) {
+		int result = service.searchPwd(id, email, req);
+		return result;
+	}
+	
+	
+	
+	@RequestMapping("mypage")
+	public String mypage(Model model, HttpServletRequest req) {
+		HttpSession se = req.getSession();
+		if(se.getAttribute("loginUser")==null) {
+			return "redirect:login";
+		}else {
+			MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+			service.mypage(model,dto.getId());
+		}
+		return "member/mypage";
+	}
+	
+	@PostMapping("myupdate")
+	public void myupdate(HttpServletRequest req, HttpServletResponse res, Model model) throws IOException {
+		HttpSession se = req.getSession();
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		if(dto==null) {
+			out.print("<script> locetion.href='login';</script>");
+		}else {
+			int result = service.myupdate(req,dto.getId());
+			if(result == 0) {
+				out.print("<script> alert('회원 정보 수정을 실패했습니다');location.href='mypage';</script>");
+			}else {
+				out.print("<script> alert('회원 정보 수정이 완료되었습니다');location.href='mypage';</script>");
+			}
+		}
+	}
+	
+	
+		
+	@RequestMapping("emaildel")
+	@ResponseBody
+	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
+		ArrayList list = new ArrayList();
+		
+		HttpSession se = req.getSession();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		service.emaildel(dto, model, res);
+		list.add(model.getAttribute("certified"));
+		return list;
+	}
+	
+	@RequestMapping(value = "iddelete", method=RequestMethod.POST)
+	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		HttpSession se = req.getSession();
+		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		int result = service.iddelete(dto.getId());
+		if(result == 0) {
+			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
+		} else {
+			se.invalidate();
+			out.print("<script> alert('탈퇴되었습니다.');location.href='main';</script>");
+		}
+	}
+	
+	
+	
 	
 	
 	

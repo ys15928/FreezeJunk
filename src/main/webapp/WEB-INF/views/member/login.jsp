@@ -15,14 +15,13 @@ button:hover { cursor: pointer; }
 
 .login-input-box {	display: grid;	height: 145px;}
 
-.login-input-box>input {width: 300px; height: 40px;	border: 1px solid white;	border-radius: 8px;	font-size: 15px; color:gray;}
+.login-input-box>input {width: 320px; height: 40px;	border: 1px solid white;	border-radius: 4px;	color:gray;}
 
 .login-input-box>input:last-child {	margin-top: 10px; }
 
-.login-btn-box { margin-left: 20px; }
 
-#login-btn { width: 100px; height: 102px; border: 1px solid white; border-radius: 14px; 
-			background-color: #fff; color: gray; font-size: 17px; font-weight: bold;}
+#login-btn { width: 326px; height: 40px; border: 1px solid #368AFF; border-radius: 4px; 
+			background-color: #368AFF; color: white; font-size: 17px; font-weight: bold;}
 
 #login-btn:hover { cursor: pointer; }
 
@@ -34,16 +33,17 @@ button:hover { cursor: pointer; }
 .login-comment {	font-weight: bold;	color: red;	visibility: hidden; font-size: 5px; text-align: left;}
 </style>
 </head>
-<body>
-<jsp:include page="../default/header.jsp"/>
-	<div style="text-align: center; background-color: #EAEAEA;width: 563px;
+<body style="width: 1920px; overflow-x: hidden; background-color: black;">
+
+<div style="">
+	<div style="text-align: center; background-color: black;width: 563px;
     height: 301px;
     margin: auto;
     margin-top: 270px;
     border-radius: 20px;">
     <div style="height: 30px;"></div>
 		<div class="login">
-			로그인
+			<a href="${contextPath }/main"><img style="height: 60px;" src="${contextPath }/resources/login/logoblack.png"></a>
 		</div>
 		<!--  <form action="login/1" method="post" id="login-form"> -->
 		<div id="login-form">
@@ -52,21 +52,27 @@ button:hover { cursor: pointer; }
 				<input type="password" id="logPwd" name="pwd" placeholder="비밀번호" />
 				<span class="login-comment" id="login-comment">아이디 또는 비밀번호를 확인해 주세요.</span>
 			</div>
-			<div class="login-btn-box">
+		</div>
+		<div class="login-btn-box">
 				<button type="button" onclick="login();" id="login-btn">로그인</button>
 			</div>
-		<!-- </form> -->
-		</div>
+			
+		<div style="margin-top: 20px; display: flex; justify-content: center;">
+		<div >
 		<a href="idpwsearch">
 			<span class="login-option">아이디/비밀번호 찾기</span>
 		</a>
+		</div>
+		<span style="color:gray; margin-left:15px;">|</span>
+		<div>
 		<a href="membership">
 			 <span class="login-option ml-15">회원가입</span>
 		</a>
-		
+		</div>
+		</div>
+		</div>
 	</div>
-	<div style="height: 95px;"></div>
-	<jsp:include page="../default/footer.jsp"/>
+
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우

@@ -27,5 +27,117 @@
 	select * from JUNK_USER where id=#{id} and pwd=#{pwd}
 </select>
 
+<select id="searchId" resultType="String">
+	select * from JUNK_USER where name = #{name} and email = #{email}
+</select>
+
+<update id="searchPwd">
+	update JUNK_USER set pwd = #{key} where id = #{id} and email = #{email}
+</update>
+
+<select id="mypage" resultMap="member">
+	select * from JUNK_USER where id=#{id}
+</select>
+
+<update id="myupdate">
+	update JUNK_USER set pwd = #{pwd,jdbcType=VARCHAR}, name = #{name,jdbcType=VARCHAR}, email = #{email,jdbcType=VARCHAR} where id = #{id,jdbcType=VARCHAR}
+</update>
+
+<select id="getName" resultType="string">
+	select name from JUNK_USER where id=#{id}
+</select>
+
+<select id="userListId" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%'
+</select>
+
+<select id="userListIdDescId" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by id desc
+</select>
+
+<select id="userListIdAscId" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by id asc
+</select>
+
+<select id="userListIdDescName" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by name desc
+</select>
+
+<select id="userListIdAscName" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by name asc
+</select>
+
+<select id="userListIdDescEmail" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by email desc
+</select>
+
+<select id="userListIdAscEmail" resultMap="member">
+	select * from JUNK_USER where id like '%' || #{search} || '%' order by email asc
+</select>
+
+<select id="userListNameDescId" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by id desc
+</select>
+
+<select id="userListNameAscId" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by id asc
+</select>
+
+<select id="userListNameDescName" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by name desc
+</select>
+
+<select id="userListNameAscName" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by name asc
+</select>
+
+<select id="userListNameDescEmail" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by email desc
+</select>
+
+<select id="userListNameAscEmail" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%' order by email asc
+</select>
+
+<select id="userListEmailDescId" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by id desc
+</select>
+
+<select id="userListEmailAscId" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by id asc
+</select>
+
+<select id="userListEmailDescName" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by name desc
+</select>
+
+<select id="userListEmailAscName" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by name asc
+</select>
+
+<select id="userListEmailDescEmail" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by email desc
+</select>
+
+<select id="userListEmailAscEmail" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%' order by email asc
+</select>
+
+<select id="userListName" resultMap="member">
+	select * from JUNK_USER where name like '%' || #{search} || '%'
+</select>
+
+<select id="userListEmail" resultMap="member">
+	select * from JUNK_USER where email like '%' || #{search} || '%'
+</select>
+
+
+<delete id="iddelete">
+	delete from JUNK_USER where id=#{id}
+</delete>
 
 </mapper>
+
+
+
+

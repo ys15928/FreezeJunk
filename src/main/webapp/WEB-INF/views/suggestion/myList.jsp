@@ -44,16 +44,22 @@
 			<div class="list-select" style="border-left: none;">내가 작성한 건의사항</div>
 		</div>
 		<div class="sugg-search-box">
-			<span class="search-comment">제목</span><input type="text" id="search" name="search"/><button type="button" class="search-btn" onclick="search(2);">검색</button>
+			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
+			<span class="search-btn-box" onclick="search(2);">
+				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
+			</span>
 		</div>
 		<div style="margin-top: 20px;">
 		<%
 			for(SuggestionDTO dto : list) {	
+				String id = dto.getSuggId().substring(0, 4);
+				id += "****";
+				dto.setSuggId(id);
 		%>
 		<div class="sugg-line">
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%; cursor: pointer;"><a href="suggestion-5?num=<%=dto.getNum()%>"><%=dto.getSuggTitle() %></a></div>
-			<div style="width: 15%"><%=dto.getSuggId() %></div>
+			<div style="width: 40%;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
+			<div style="width: 20%"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
@@ -62,11 +68,11 @@
 			Date date = sd.parse(dateStr);
 			if(date.before(sys)) {
 		%>
-			<div style="width: 15%"><%=sdf1.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%"><%=sdf1.format(dto.getSuggTime()) %></div>
 		<%
 			} else {
 		%>
-			<div style="width: 15%"><%=sdf2.format(dto.getSuggTime()) %></div>
+			<div style="width: 10%"><%=sdf2.format(dto.getSuggTime()) %></div>
 		<%
 			}
 			
@@ -96,7 +102,7 @@
 		
 			if(count == 0) {
 		%>
-			<div class="sugg-line" style="border-bottom: none;">검색된 결과가 없습니다.</div>
+			<div class="sugg-line-non" style="border-bottom: none;">검색된 결과가 없습니다.</div>
 		<%
 			}
 		%>

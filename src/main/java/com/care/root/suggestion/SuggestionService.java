@@ -1,5 +1,7 @@
 package com.care.root.suggestion;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,12 +11,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.care.root.member.dto.MemberDTO;
+import com.care.root.mybatis.MemberMapper;
 import com.care.root.mybatis.SuggestionMapper;
 
 @Service
 public class SuggestionService {
 	@Autowired
 	SuggestionMapper mapper;
+	
+	@Autowired
+	MemberMapper memberMapper;
 	
 	public int write(HttpServletRequest req) {
 		SuggestionDTO dto = new SuggestionDTO();
@@ -57,9 +63,17 @@ public class SuggestionService {
 		int endRow = pageNum * pageSize;
 		
 		if(num == 1) {
-			model.addAttribute("list", mapper.allList(startRow, endRow, search));
+			List<SuggestionDTO> list = mapper.allList(startRow, endRow, search);
+			for(SuggestionDTO dto : list) {
+				dto.setName(memberMapper.getName(dto.getSuggId()));
+			}
+			model.addAttribute("list", list);
 		} else {
-			model.addAttribute("list", mapper.myList(startRow, endRow, search, userDto.getId()));
+			List<SuggestionDTO> list = mapper.myList(startRow, endRow, search, userDto.getId());
+			for(SuggestionDTO dto : list) {
+				dto.setName(memberMapper.getName(dto.getSuggId()));
+			}
+			model.addAttribute("list", list);
 		}
 		model.addAttribute("count", count);
 		model.addAttribute("pageNum", pageNum);
@@ -69,6 +83,7 @@ public class SuggestionService {
 	public void info(HttpServletRequest req, Model model) {
 		int num = Integer.parseInt(req.getParameter("num"));
 		SuggestionDTO dto = mapper.info(num);
+		dto.setName(memberMapper.getName(dto.getSuggId()));
 		model.addAttribute("dto", dto);
 	}
 	public int answer(HttpServletRequest req) {

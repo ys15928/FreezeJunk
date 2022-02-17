@@ -74,7 +74,7 @@
 <script src="${contextPath }/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script>
 $('#editor').summernote({
-	  height: 300,
+	  height: 350,
 	  // 에디터 한글 설정
 	  lang: "ko-KR",
 	  focus : false,
@@ -106,6 +106,7 @@ $('#editor').summernote({
 $('.note-editable').css("font-family", '"맑은 고딕"');
 $(".note-current-fontname").css("font-family", '"맑은 고딕"');
 $(".note-current-fontname").text("맑은 고딕");
+$('.note-editable').css("background-color", "white");
 </script>
 </body>
 </html>
