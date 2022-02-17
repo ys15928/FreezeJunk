@@ -1,31 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>FREEZEJUNK</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://apis.google.com/js/api.js"></script>
+<link rel="stylesheet" href="${contextPath }/resources/freezejunk/freezejunkStyle.css"/>
 </head>
 <body>
-	<form action='keywordFreezeResult' method="post">
-		== Input Viedo URL==<br> 
-		<input type="text" name="videoUrl" id="videoUrl"
-			size="50px"> <br><br>  
-			
-		== Input Keyowrds==<br>
-		<textarea name="keywords" id="keywords" rows="5" cols="50"> </textarea>
-		<input type='submit' value='Freeze'><br><br>
-		
-		== Input accounts==<br>
-		<textarea name="accounts" id="accounts" rows="5" cols="50"> </textarea>
-		<input type='submit' value='Freeze'><br><br>
-	</form><br><br>
-	
+	<jsp:include page="../default/header.jsp"/>
+	<div class="wrap">
+		<form action="keywordFreezeResult" method="post" id="form">
+			<div class="head-box">
+				<div class="head-text1">유튜브 URL과 키워드를 입력해주세요 !</div>
+				<div class="head-text2">해당 영상의 입력하신 키워드를 포함하는 모든 댓글들을 삭제해드립니다</div>
+			</div>
+			<div class="search-box">
+				<input type="text" class="search" name="videoUrl" placeholder="URL 입력"/>
+				<span class="search-img-box"><img src="${contextPath }/resources/image/search_white.png" width="30px"/></span>
+			</div>
+			<div class="keywords-box">
+				<textarea name="keywords" class="keywords-search" placeholder="키워드 입력(키워드가 여러개일시 ,로 구분)"></textarea>
+			</div>
+		</form>
+	</div>
+	<jsp:include page="../default/footer.jsp"/>
 </body>
 </html>
