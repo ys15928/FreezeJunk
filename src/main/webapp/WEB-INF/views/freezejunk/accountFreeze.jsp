@@ -15,7 +15,7 @@
 		<form action="accountFreezeResult" method="post" id="form">
 			<div class="head-box">
 				<div class="head-text1">유튜브 URL과 스팸계정을 입력해주세요 !</div>
-				<div class="head-text2">해당 영상에서 스팸계정들이 작성한 댓글 삭제 및 계정 차단을 해드립니다</div>
+				<div class="head-text2">해당 영상에서 스팸계정들이 작성한 계정을 차단하고 댓글을 삭제해드립니다</div>
 			</div>
 			<div class="search-box">
 				<input type="text" class="search" id="videoUrl" name="videoUrl" placeholder="URL 입력"/>

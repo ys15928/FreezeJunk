@@ -15,7 +15,7 @@
 		<form action="copyCommentFreezeResult" method="post" id="form">
 			<div class="head-box">
 				<div class="head-text1">유튜브 URL을 입력해주세요 !</div>
-				<div class="head-text2">해당 영상의 인기댓글 상위 50개 중 댓글을 복사한 봇의 계정을 차단 및 댓글을 삭제해드립니다</div>
+				<div class="head-text2">해당 영상의 인기댓글 상위 200개 중 댓글을 복사한 봇의 계정을 차단하고 댓글을 삭제해드립니다</div>
 			</div>
 			<div class="search-box">
 				<input type="text" class="search" id="videoUrl" name="videoUrl" placeholder="URL 입력"/>
