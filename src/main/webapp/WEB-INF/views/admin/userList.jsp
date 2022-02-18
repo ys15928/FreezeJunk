@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="../default/header.jsp"/>
 	
-	<div class="wrap">
+	<div class="wrap" style="margin-bottom: 125px;">
 		<div class="user-list-head">
 			<div class="user-list-title">회원목록</div>
 			<div class="user-list-head-search-box">

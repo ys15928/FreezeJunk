@@ -78,6 +78,7 @@
 <div><button type="button" class="xbtn" onclick="iddelete()">탈퇴하기</button></div>
 </div>
 </div>
+<div class="comment" id="chk-comment">인증번호입력해주세요.</div>
 <div><br>*인증번호를 받지 못했다면 이메일주소를 확인하세요.</div>
 <div>*또는 관리자에게 문의 바랍니다.</div>
 </div>
@@ -115,6 +116,7 @@ function TimerStart() {
 	tid=setInterval('msg_time()',1000);
 }
 
+
 var certifiedNum = "";
 function emaildel() {
 	if(confirm("정말로 탈퇴하시겠습니까?")) {
@@ -135,16 +137,22 @@ function emaildel() {
 
 function iddelete() {
 	if(SetTime < 0) {
-		alert("인증 시간이 지났습니다. 창 종료후 다시 진행해주세요.");
+	//	alert("인증 시간이 지났습니다. 창 종료후 다시 진행해주세요.");
+		document.getElementById("chk-comment").innerText = "인증 시간이 지났습니다. 창 종료후 다시 진행해주세요.";
+		$("#chk-comment").css("visibility", "visible");
 		return;
 	}
 	if(document.getElementById("certified").value == "" || document.getElementById("certified").value.replace(blank_pattern1, '') == "") {
-		alert("인증번호를 입력해 주세요.");
+	//	alert("인증번호를 입력해 주세요.");
+		document.getElementById("chk-comment").innerText = "인증번호를 입력해 주세요.";
+		$("#chk-comment").css("visibility", "visible");
 		document.getElementById("certified").focus();
 		return;
 	}
 	if(document.getElementById("certified").value != certifiedNum) {
-		alert("인증번호가 틀립니다.");
+	//	alert("인증번호가 틀립니다.");
+		document.getElementById("chk-comment").innerText = "인증번호가 틀립니다.";
+		$("#chk-comment").css("visibility", "visible");
 		return;
 	}
 	document.getElementById("modal-form").submit();
@@ -166,7 +174,7 @@ function modify(){
 	}else{
 		document.getElementById("pwd-comment").innerText = "올바르게 입력하셨습니다.";
 		$("#pwd-comment").css("visibility", "visible");
-		$("#pwd-comment").css("color", "blue");
+		$("#pwd-comment").css("color", "#368AFF");
 	}
 	
 	if(document.getElementById("pwd").value != document.getElementById("repwd").value) {
@@ -177,7 +185,7 @@ function modify(){
 	}else{
 		document.getElementById("repwd-comment").innerText = "비밀번호가 일치합니다.";
 		$("#repwd-comment").css("visibility", "visible");
-		$("#repwd-comment").css("color", "blue");
+		$("#repwd-comment").css("color", "#368AFF");
 	}
 	
 	if(document.getElementById("name").value == "" || document.getElementById("name").value.replace(blank_pattern1, '') == "") {
