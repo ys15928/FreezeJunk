@@ -169,11 +169,11 @@ function idCheck() {
 			url: "idcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
 			success: function(map){
 				if (map.idcheck!= null){
-					alert("중복된 ID입니다.");
+				//	alert("중복된 ID입니다.");
 					document.getElementById("id-comment").innerText = "중복된 ID입니다.";
 					$("#id-comment").css("visibility", "visible");
 				}else{
-					alert("사용 가능한 ID입니다.");
+				//	alert("사용 가능한 ID입니다.");
 					document.getElementById("id-comment").innerText = "사용 가능한 ID입니다.";
 					$("#id-comment").css("visibility", "visible");
 					$("#id-comment").css("color", "blue");
@@ -223,11 +223,11 @@ function emailCheck() {
 			url: "emailcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
 			success: function(map){
 				if (map.emailcheck!= null){
-					alert("중복된 이메일입니다.");
+			//		alert("중복된 이메일입니다.");
 					document.getElementById("email-comment").innerText = "중복된 이메일입니다.";
 					$("#email-comment").css("visibility", "visible");
 				}else{
-					alert("사용 가능한 이메일입니다.");
+			//		alert("사용 가능한 이메일입니다.");
 					document.getElementById("email-comment").innerText = "사용 가능한 이메일입니다.";
 					$("#email-comment").css("visibility", "visible");
 					$("#email-comment").css("color", "blue");

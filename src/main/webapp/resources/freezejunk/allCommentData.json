@@ -1,0 +1,47 @@
+{
+  "commentArray1": [
+    {
+      "authorName": "김진성",
+      "strDateToSec": "1644985028",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
+      "commentId": "Ugwy0CHyPDdWu1xhRF54AaABAg",
+      "text": "😃ㅎㅎㅎㅎㅎ"
+    }
+  ],
+  "commentArray4": [
+    {
+      "authorName": "김진성",
+      "strDateToSec": "1645072471",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
+      "commentId": "UgyrnER3DIyOqQCnkxd4AaABAg",
+      "text": "허세요"
+    }
+  ],
+  "commentArray5": [
+    {
+      "authorName": "김진성",
+      "strDateToSec": "1645072459",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCgWKvUVhB49E91satZOkGiA",
+      "commentId": "UgyHZzWAyqpLQg26uaZ4AaABAg",
+      "text": "hi"
+    }
+  ],
+  "commentArray2": [
+    {
+      "authorName": "신윤수",
+      "strDateToSec": "1645109122",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+      "commentId": "UgwjxJ8T0rc0AKUI1b94AaABAg",
+      "text": "commentArray \u003d new JSONArray();"
+    }
+  ],
+  "commentArray3": [
+    {
+      "authorName": "신윤수",
+      "strDateToSec": "1645109113",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCIySAp3z5U12HR-50Lsc6qA",
+      "commentId": "UgyiY6yBZ2Iy1g0Za1x4AaABAg",
+      "text": "String[] videoId, keywordList, accountList, authorChannelId;"
+    }
+  ]
+}

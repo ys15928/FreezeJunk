@@ -35,7 +35,7 @@ import com.care.root.mybatis.YoutubeMapper;
 import com.care.root.youtube.dto.YoutubeDTO;
 
 @Service
-public class YoutubeService {
+public class youtubeService {
 	@Autowired
 	YoutubeMapper mapper;
 	YoutubeDTO dto = new YoutubeDTO();
@@ -144,7 +144,7 @@ public class YoutubeService {
 		try {
 			gson = new GsonBuilder().setPrettyPrinting().create();
 			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\allCommentData.json");
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\allCommentData.json");
 			file.write(strResultCommentData);
 			file.flush();
 			file.close();
@@ -196,7 +196,7 @@ public class YoutubeService {
 		try {
 			gson = new GsonBuilder().setPrettyPrinting().create();
 			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\youtube\\top50CommentData.json");
+			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\top50CommentData.json");
 			file.write(strResultCommentData);
 			file.flush();
 			file.close();
@@ -209,35 +209,36 @@ public class YoutubeService {
 	public void filterForDelete(String videoUrl, String inputKeywords)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
-		if ((!inputKeywords.equals(" ")) && (!inputKeywords.equals(""))) {
-			crawlingAll(videoUrl);
-			junkCommentIdList = new String();
-			keywordList = inputKeywords.split(",");
+		crawlingAll(videoUrl);
+		junkCommentIdList = new String();
+		keywordList = inputKeywords.split(",");
 
-			for (int i = 1; i <= resultCommentData.size(); i++) {
-				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
-				commentArrayData = (JSONObject) commentArray.get(0);
-				commentId = (String) commentArrayData.get("commentId");
-				commentText = (String) commentArrayData.get("text");
+		for (int k = 0; k < keywordList.length; k++) {
 
-				for (int j = 0; j < keywordList.length; j++) {
+			if (keywordList[k].startsWith(" "))
+				keywordList[k] = keywordList[k].substring(1);
+			keywordList[k] = "(.*)" + keywordList[k] + "(.*)";
+		}
 
-					if (commentText.contains(keywordList[j])) {
-						junkCommentIdList += commentId + ", ";
-					}
+		for (int i = 1; i <= resultCommentData.size(); i++) {
+			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+			commentArrayData = (JSONObject) commentArray.get(0);
+			commentId = (String) commentArrayData.get("commentId");
+			commentText = (String) commentArrayData.get("text");
+
+			for (int j = 0; j < keywordList.length; j++) {
+
+				if (commentText.matches(keywordList[j])) {
+					junkCommentIdList += commentId + ", ";
 				}
-			}
-
-			if (junkCommentIdList.length() >= 2) {
-				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-				setSpamAndDelete(junkCommentIdList, false);
-			} else {
-				System.out.println("NO TARGET HERE");
 			}
 		}
 
-		else {
-			System.out.println("NO KEYOWRDS INPUT");
+		if (junkCommentIdList.length() >= 2) {
+			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+			setSpamAndDelete(junkCommentIdList, false);
+		} else {
+			System.out.println("NO TARGET HERE");
 		}
 	}
 
@@ -245,35 +246,30 @@ public class YoutubeService {
 	public void filterForSpamAccount(String videoUrl, String inputAccounts)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
-		if ((!inputAccounts.equals(" ")) && (!inputAccounts.equals(""))) {
-			crawlingAll(videoUrl);
-			junkCommentIdList = new String();
-			accountList = inputAccounts.split(",");
+		crawlingAll(videoUrl);
+		junkCommentIdList = new String();
+		accountList = inputAccounts.split(",");
 
-			for (int i = 1; i <= resultCommentData.size(); i++) {
-				commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
-				commentArrayData = (JSONObject) commentArray.get(0);
-				authorChannelUrl = (String) commentArrayData.get("authorChannelUrl");
-				authorChannelId = authorChannelUrl.split("channel/");
-				commentId = (String) commentArrayData.get("commentId");
+		for (int i = 1; i <= resultCommentData.size(); i++) {
+			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
+			commentArrayData = (JSONObject) commentArray.get(0);
+			authorChannelUrl = (String) commentArrayData.get("authorChannelUrl");
+			authorChannelId = authorChannelUrl.split("channel/");
+			commentId = (String) commentArrayData.get("commentId");
 
-				for (int j = 0; j < accountList.length; j++) {
+			for (int j = 0; j < accountList.length; j++) {
 
-					if (accountList[j].contains(authorChannelId[1])) {
-						junkCommentIdList += commentId + ", ";
-					}
+				if (accountList[j].contains(authorChannelId[1])) {
+					junkCommentIdList += commentId + ", ";
 				}
 			}
-
-			if (junkCommentIdList.length() >= 2) {
-				junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-				setSpamAndDelete(junkCommentIdList, true);
-			} else {
-				System.out.println("NO TARGET HERE");
-			}
 		}
-		else {
-			System.out.println("NO ACCOUNT INPUT");
+
+		if (junkCommentIdList.length() >= 2) {
+			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
+			setSpamAndDelete(junkCommentIdList, true);
+		} else {
+			System.out.println("NO TARGET HERE");
 		}
 	}
 
