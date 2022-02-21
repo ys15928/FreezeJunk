@@ -15,7 +15,7 @@
 	nav ul li { margin: 0 3px; padding: 10px 10px;}
 	nav ul li a { text-decoration: none; color: white; font-weight: bold; font-size: 15px; }
 	.ab:hover { color: #BDBDBD; padding-bottom: 3px; border-bottom: 1px solid #BDBDBD; transition: all 0.25s;}
-	.ad:hover { color: gray; padding-bottom: 3px;}
+	.ad:hover { color: gray; padding-bottom: 3px; font-weight: bold;}
 	.li{ background-color: black;}
 	.li:hover{ background-color: #353535; }
 	

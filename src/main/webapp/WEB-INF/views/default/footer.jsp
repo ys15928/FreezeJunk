@@ -25,19 +25,19 @@
 	</tr>
 	
 	<tr>
-	<td>대표자명 : Freeze</td>
+	<td>대표자명 : 신윤수</td>
 	</tr>
 	
 	<tr>
-	<td>주소 : 서울시 강남구</td>
+	<td>주소 : 서울시 금천구</td>
 	</tr>
 	
 	<tr>
-	<td>전화번호 : 02-123-1234</td>
+	<td>전화번호 : 010-4628-1383</td>
 	</tr>
 	
 	<tr>
-	<td>이메일 : freezejunk@naver.com</td>
+	<td>이메일 : freezejunk@gmail.com</td>
 	</tr>
 	
 	<tr style="height: 10px;"></tr>

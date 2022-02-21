@@ -49,7 +49,7 @@
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
-		<div style="margin-top: 20px; width: 1080px; height: 510px;">
+		<div style="margin-top: 25px; width: 1080px; height: 510px;">
 		<%
 			for(SuggestionDTO dto : list) {	
 				String id = dto.getSuggId().substring(0, 4);
@@ -58,7 +58,7 @@
 		%>
 		<div class="sugg-line">
 			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
+			<div style="width: 40%; text-align: center;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
 			<div style="width: 20%; text-align: center;"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
@@ -133,11 +133,11 @@
 			for(int i=startPage; i<=endPage; i++) {
 				if(i == pageNum) {
 			%>
-			<a href="#" class="current-page">[<%=i %>]</a>
+			<a href="#" class="current-page"><%=i %>&nbsp;</a>
 			<%
 			} else {
 			%>
-				<a href="suggestion-4?currentPage=<%=i %>&search=<%=search%>">[<%=i %>]</a>
+				<a href="suggestion-4?currentPage=<%=i %>&search=<%=search%>"><%=i %>&nbsp;</a>
 			<%
 				}
 			}
