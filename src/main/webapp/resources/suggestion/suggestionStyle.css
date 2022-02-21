@@ -167,6 +167,7 @@ button:hover {
     border: 1px solid gray;
     font-size: 17px;
     color:white;
+    
 }
 
 .non-list-select>a {
@@ -188,8 +189,9 @@ button:hover {
     align-items: center;
     border: 1px solid gray;
     font-size: 17px;
-	background-color: black;
-    color: #fff;
+	font-weight: bold;
+    color: black;
+    background-color: white;
 }
 .list-select:hover{ background-color: white; color:black; font-weight: bold; }
 /* -------------------------- info.jsp -------------------------------- */
@@ -249,3 +251,23 @@ button:hover {
     margin-bottom: -15px;
     margin-top: 15px;
 }
+
+ .container {
+    width: 1920px;
+    height: 968px;
+    overflow: auto;
+  }
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .container::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }

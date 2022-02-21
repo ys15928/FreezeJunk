@@ -27,11 +27,32 @@
 	
 	.xbtn{ border: none; color: white; background: #FF4848; width: 71px; height: 22px; border-radius: 2px; font-weight: bold;}
 	
+	 .container {
+    width: 1920px;
+    height: 968px;
+    overflow: auto;
+  }
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .container::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+	
 </style>
 <meta charset="UTF-8">
 <title>마이페이지</title>
 </head>
 <body style="width: 1920px; overflow-x: hidden; background-color: black;">
+<div class="container">
 <jsp:include page="../default/header.jsp"/>
 <div class="wrap">
 <div class="my">회원정보</div>
@@ -86,6 +107,7 @@
 </div>
 
 <jsp:include page="../default/footer.jsp"/>
+</div>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우

@@ -42,6 +42,16 @@ public class MemberController {
 		return "default/footer";
 	}
 	
+	@RequestMapping("policy_privacy")
+	public String information() {
+		return "default/policy_privacy";
+	}
+	
+	@RequestMapping("policy_service")
+	public String use() {
+		return "default/policy_service";
+	}
+	
 	@RequestMapping("membership")
 	public String membership() {
 		return "member/membership";

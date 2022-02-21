@@ -6,7 +6,7 @@ body {
 .wrap {
 	width: 1080px;
 	margin: 0 auto;
-	margin-bottom: 350px;
+	height: 800px;
 }
 .head-box {
 	margin-top: 75px;
@@ -22,6 +22,7 @@ body {
 	font-size: 18px;
     color: #A6A6A6;
     text-decoration: underline;
+    margin-top: 5px;
 }
 .search-box {
 	margin-top: 50px;
@@ -33,11 +34,15 @@ body {
 	width: 800px;
     height: 40px;
     font-size: 20px;
-    color: gray;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
 }
 .search-img-box {
 	border: 1px solid black;
-	margin-left: 35px;
+	margin-left: 5px;
 	padding: 5px 10px 5px 10px;
 }
 .search-img-box:hover {
@@ -53,5 +58,31 @@ body {
     font-weight: bold;
     color: gray;
     resize: none;
-        border-radius: 5px;
+    border-radius: 5px;
+    background-color: black;
 }
+
+video {     width: 600px;
+    height: 425px;
+    display: block;
+    margin: 0px auto; }
+
+ .container {
+    width: 1920px;
+    height: 968px;
+    overflow: auto;
+  }
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .container::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }

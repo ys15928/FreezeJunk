@@ -133,8 +133,8 @@ color: white; font-size: 15px;}
 			</form>
 		</div>
 	</div>
-	</div>
-	
+
+
 		
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
