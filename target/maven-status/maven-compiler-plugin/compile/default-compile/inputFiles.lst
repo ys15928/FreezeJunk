@@ -1,10 +1,9 @@
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\admin\AdminService.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\interceptor\AdminInterceptor.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionController.java
-C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\youtube\controller\YoutubeController.java
-C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\youtube\service\YoutubeService.java
+C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\youtube\controller\youtubeController.java
+C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\youtube\service\youtubeService.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\member\contoller\MemberController.java
-C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\freezejunk\FreezejunkController.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\interceptor\Interceptor.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\youtube\dto\YoutubeDTO.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\HomeController.java
