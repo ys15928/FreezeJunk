@@ -17,12 +17,12 @@ public class youtubeController {
 	@Autowired
 	youtubeService service;
 
-	@RequestMapping("/keywordFreeze")
+	@RequestMapping("/main/keywordFreeze")
 	public String keywordFreeze(HttpServletRequest request) {
 		return "freezejunk/keywordFreeze";
 	}
 
-	@RequestMapping(value = "/keywordFreezeResult", method = RequestMethod.POST)
+	@RequestMapping(value = "/main/keywordFreezeResult", method = RequestMethod.POST)
 	public String keywordFreezeResult(HttpServletRequest request) {
 		String videoUrl = request.getParameter("videoUrl");
 		String keywords = request.getParameter("keywords");
@@ -38,12 +38,12 @@ public class youtubeController {
 		return "member/main";
 	}
 
-	@RequestMapping("/accountFreeze")
+	@RequestMapping("/main/accountFreeze")
 	public String accountFreeze(HttpServletRequest request) {
 		return "freezejunk/accountFreeze";
 	}
 
-	@RequestMapping(value = "/accountFreezeResult", method = RequestMethod.POST)
+	@RequestMapping(value = "/main/accountFreezeResult", method = RequestMethod.POST)
 	public String accountFreezeResult(HttpServletRequest request) {
 		String videoUrl = request.getParameter("videoUrl");
 		String accounts = request.getParameter("accounts");
@@ -59,12 +59,12 @@ public class youtubeController {
 		return "member/main";
 	}
 
-	@RequestMapping("/copyCommentFreeze")
+	@RequestMapping("/main/copyCommentFreeze")
 	public String copyCommentFreeze(HttpServletRequest request) {
 		return "freezejunk/copyCommentFreeze";
 	}
 
-	@RequestMapping(value = "/copyCommentFreezeResult", method = RequestMethod.POST)
+	@RequestMapping(value = "/main/copyCommentFreezeResult", method = RequestMethod.POST)
 	public String copyCommentFreezeResult(HttpServletRequest request) {
 		String videoUrl = request.getParameter("videoUrl");
 

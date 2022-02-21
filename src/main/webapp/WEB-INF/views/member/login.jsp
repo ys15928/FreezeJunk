@@ -30,7 +30,7 @@ button:hover { cursor: pointer; }
 .ml-15 { margin-left: 15px; }
 
 .login{ color: gray; font-size: 27px;	margin-bottom: 40px; font-weight: bold;}
-.login-comment {	font-weight: bold;	color: red;	visibility: hidden; font-size: 5px; text-align: left; margin-bottom: 9px;}
+.login-comment { font-weight: bold;	color: red;	visibility: hidden; font-size: 5px; text-align: left; margin-bottom: 9px;}
 </style>
 </head>
 <body style="width: 1920px; overflow-x: hidden; background-color: black;">

@@ -37,6 +37,7 @@
 		endPage = pageCount;
 	}
 %>
+<div class="container">
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap" style="height: 780px; margin-top: 90px;">
 		<div class="list-head-box">
@@ -167,7 +168,7 @@
 	</div>
 	
 	<jsp:include page="../default/footer.jsp"/>
-	
+	</div>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
 <script>

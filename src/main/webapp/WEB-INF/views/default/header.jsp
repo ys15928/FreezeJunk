@@ -52,7 +52,9 @@
 		<div>
 			<nav style="">
 				<ul>
-					<li class="li"><a href="#" class="ab">키워드 추천</a></li>
+					<li class="li"><a href="${contextPath }/main/keywordFreeze" class="ab">키워드 삭제</a></li>
+					<li class="li"><a href="${contextPath }/main/accountFreeze" class="ab">스팸 계정 차단</a></li>
+					<li class="li"><a href="${contextPath }/main/copyCommentFreeze" class="ab">카피봇 차단</a></li>
 					<li class="li"><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
 					<li class="li"><a href="${contextPath }/mypage" class="ab">마이페이지</a></li>
 				<c:if test="${sessionScope.loginUser.id eq 'team03'}">

@@ -41,7 +41,7 @@ color: white; font-size: 15px;}
 				<div style="background-color: white; padding: 33px 8px; border-radius: 10px; width: 770px; margin: auto; margin-top:100px;">
 				
 				<div class="join-header">
-				<a href="${contextPath }/main"><img style="height: 50px;" src="${contextPath }/resources/login/logo.png"></a>
+				<a href="${contextPath }/main"><img style="height: 60px;" src="${contextPath }/resources/login/logo.png"></a>
 				</div>
 				
 				<table style="margin:auto; text-align:left; margin-left: 225px;">
@@ -133,8 +133,8 @@ color: white; font-size: 15px;}
 			</form>
 		</div>
 	</div>
-	</div>
-	
+
+
 		
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
