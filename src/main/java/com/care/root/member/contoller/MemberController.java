@@ -37,6 +37,12 @@ public class MemberController {
 	public String main() {
 		return "member/main";
 	}
+	
+	@RequestMapping("first")
+	public String first() {
+		return "default/first";
+	}
+	
 	@RequestMapping("footer")
 	public String footer() {
 		return "default/footer";
