@@ -9,7 +9,8 @@
 <title>FREEZEJUNK</title>
 <link rel="stylesheet" href="${contextPath }/resources/freezejunk/freezejunkStyle.css"/>
 </head>
-<body>
+<body style="width: 1920px; overflow-x: hidden; background-color: black;">
+<div class="container">
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<form action="keywordFreezeResult" method="post" id="form">
@@ -25,8 +26,16 @@
 				<textarea name="keywords" class="keywords-search" id="keywords" placeholder="키워드 입력(키워드가 여러개일시 ,로 구분해주세요)"></textarea>
 			</div>
 		</form>
+		<div>
+		  <video controls poster="${contextPath }/resources/login/logoblack.png">
+     		 <source src="${contextPath}/resources/freezejunk/jeju.mp4" type="video/mp4">
+     		 <strong>This is a video that is not supported by the web browser.</strong>
+   		 </video>  
+   		 </div>
 	</div>
+	
 	<jsp:include page="../default/footer.jsp"/>
+</div>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/freezejunk/freezejunkScript.js"></script>
 </body>

@@ -37,9 +37,25 @@ public class MemberController {
 	public String main() {
 		return "member/main";
 	}
+	
+	@RequestMapping("first")
+	public String first() {
+		return "default/first";
+	}
+	
 	@RequestMapping("footer")
 	public String footer() {
 		return "default/footer";
+	}
+	
+	@RequestMapping("policy_privacy")
+	public String information() {
+		return "default/policy_privacy";
+	}
+	
+	@RequestMapping("policy_service")
+	public String use() {
+		return "default/policy_service";
 	}
 	
 	@RequestMapping("membership")
