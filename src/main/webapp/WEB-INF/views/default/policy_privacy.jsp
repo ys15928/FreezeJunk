@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <c:set var="contextPath" value="<%=request.getContextPath() %>"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FreezeJunk</title>
+<link rel="stylesheet" href="${contextPath }/resources/default/privacyStyle.css"/>
 </head>
 <body>
-
 <jsp:include page="../default/header.jsp"/>
 
-<div style="background-color: black; color: white; width: 1080px; margin: 0 auto; margin-top: 30px; margin-bottom: 30px;">
-<div style="text-align: center; font-size: 30px; margin-bottom: 30px; font-weight: bold;">개인정보처리방침</div>
+<div class="privacywrap">
+<div class="privacy">개인정보처리방침</div>
 < FreezeJunk >('http://freezejunk.com'이하 'FreezeJunk')은(는) 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
 <br>
 ○ 이 개인정보처리방침은 2022년 2월 21부터 적용됩니다.
@@ -211,10 +213,6 @@
 ② 이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다.
 <br>
 </div>
-
-
-
-
 <jsp:include page="../default/footer.jsp"/>
 
 </body>

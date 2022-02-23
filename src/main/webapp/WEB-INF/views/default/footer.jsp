@@ -6,27 +6,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	.a{ text-decoration: none; color: gray; }
-	.a:hover{ border-bottom: 1px solid #BDBDBD; }
-	.span{ font-size: 15px; }
-</style>
+<title>FreezeJunk</title>
+
+<link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
 <body>
-<hr style="margin-top: 20px; border: 1px solid #353535;">
-<div style="background-color: black;">
-<table  style="display: flex; justify-content: center; align-items: center; height: 280px; color:gray; width:1080px; margin:auto; font-size: 15px;">
-
+<hr class="footerhr">
+<div class="background">
+<table class="table">
 	<tr>
-	<td style="width:650px">© 2022 All Rights Reserved. FreezeJunk</td><td></td>
+	<td class="he">© 2022 All Rights Reserved. FreezeJunk</td><td></td>
 	</tr>
 	
-	<tr style="height: 10px;"></tr>
+	<tr class="tr"></tr>
 	
 	<tr>
-	<td></td><td style="width:430px; text-align: center;"rowspan="5">
-					<a href="${contextPath }/main"><img style="height: 95px;" src="${contextPath}/resources/login/logoblack.png"></a></td>
+	<td></td><td class="imgse" rowspan="5">
+					<a href="${contextPath }/main"><img class="imgsize1" src="${contextPath}/resources/login/logoblack.png"></a></td>
 	</tr>
 	
 	<tr>
@@ -55,10 +51,16 @@
 	</td>
 	</tr>
 	
-	<tr style="height: 10px;"></tr>
+	<tr class="tr"></tr>
 	
 	<tr>
 	<td>FreezeJunk는 여러분의 고민을 얼려드립니다.</td><td></td>
+	</tr>
+	
+	<tr>
+	<td>
+	<!--- DO NOT EDIT - GlobalSign SSL Site Seal Code - DO NOT EDIT ---><table width=125 border=0 cellspacing=0 cellpadding=0 title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information." ><tr><td><span id="ss_img_wrapper_gmogs_image_100-40_en_dblue"><a href="https://www.globalsign.com/" target="_blank" title="GlobalSign Site Seal" rel="nofollow"><img alt="SSL" border=0 id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-40_en.gif"></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_100-40_en_dblue.js"></script></td></tr></table><!--- DO NOT EDIT - GlobalSign SSL Site Seal Code - DO NOT EDIT --->
+	</td>
 	</tr>
 	
 </table>
