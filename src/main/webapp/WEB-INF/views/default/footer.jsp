@@ -15,7 +15,7 @@
 <div class="background">
 <table class="table">
 	<tr>
-	<td class="he">© 2022 All Rights Reserved. FreezeJunk</td><td></td>
+	<td class="he">copyright © FreezeJunk All Rights Reserved.</td><td></td>
 	</tr>
 	
 	<tr class="tr"></tr>

@@ -15,7 +15,7 @@
 			<form action="memberSuc" method="post" id="form">
 				<div class="memberwrap1">
 				<div class="join-header">
-				<a href="${contextPath }/main"><img class="imgheight" src="${contextPath }/resources/login/logo.png"></a>
+				<a href="${contextPath }/first"><img class="imgheight" src="${contextPath }/resources/login/logo.png"></a>
 				</div>
 				
 				<table class="membertable">
