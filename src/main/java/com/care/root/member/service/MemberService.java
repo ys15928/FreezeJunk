@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -18,6 +19,7 @@ import com.care.root.mybatis.MemberMapper;
 public class MemberService {
 	@Autowired	MemberMapper mapper;
 	@Autowired JavaMailSender mailSender;
+	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
 	public MemberDTO idcheck(String id) {		// 아이디 중복체크
 		MemberDTO dto = mapper.idcheck(id);
@@ -31,7 +33,7 @@ public class MemberService {
 	public int register(HttpServletRequest req) {	// 회원가입 완료
 		MemberDTO dto = new MemberDTO();
 		dto.setId(req.getParameter("id"));
-		dto.setPwd(req.getParameter("pwd"));
+		dto.setPwd(encoder.encode(req.getParameter("pwd")));
 		dto.setName(req.getParameter("name"));
 		dto.setEmail(req.getParameter("email"));
 		return mapper.register(dto);
@@ -73,7 +75,7 @@ public class MemberService {
 		MemberDTO loDto = mapper.loginChk(dto);
 		if(loDto == null) {
 			return 0;
-		}if(loDto.getId().equals(dto.getId()) && loDto.getPwd().equals(dto.getPwd())) {
+		}if(loDto.getId().equals(dto.getId()) && encoder.matches(dto.getPwd(), loDto.getPwd())) {
 			session.setAttribute("loginUser", loDto);
 			return 1;
 		}
@@ -126,7 +128,7 @@ public class MemberService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		mapper.searchPwd(id,email,key);
+		mapper.searchPwd(id,email,encoder.encode(key));
 		return 1;
 	}
 	
@@ -138,7 +140,7 @@ public class MemberService {
 		MemberDTO dto = new MemberDTO();
 		HttpSession se = req.getSession();
 		dto.setId(id);
-		dto.setPwd(req.getParameter("pwd"));
+		dto.setPwd(encoder.encode(req.getParameter("pwd")));
 		dto.setName(req.getParameter("name"));
 		dto.setEmail(req.getParameter("email"));
 		int result = mapper.myupdate(dto);

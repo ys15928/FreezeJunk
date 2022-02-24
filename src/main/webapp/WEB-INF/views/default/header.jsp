@@ -6,51 +6,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>header</title>
-<style type="text/css">
-	*{margin: 0;}
-	.wrap1{width: 100%; background-color: black;}
-	.header{display: flex; justify-content: space-between;}
-	nav ul {list-style: none; display: flex; justify-content: flex-end;}
-	nav ul li { margin: 0 3px; padding: 10px 10px;}
-	nav ul li a { text-decoration: none; color: white; font-weight: bold; font-size: 15px; }
-	.ab:hover { color: #BDBDBD; padding-bottom: 3px; border-bottom: 1px solid #BDBDBD; transition: all 0.25s;}
-	.ad:hover { color: gray; padding-bottom: 3px; font-weight: bold;}
-	.li{ background-color: black;}
-	.li:hover{ background-color: #353535; }
-	
-</style>
+<title>FreezeJunk</title>
+<link rel="stylesheet" href="${contextPath }/resources/default/headerStyle.css"/>
 </head>
-<body style="width: 1920px; overflow-x: hidden; background-color: black;">
-	<div class="wrap1" style="width: 1180px; margin: auto; background: black; display: flex; justify-content: space-between; align-items: center;">
+<body>
+	<div class="wrap1">
 		<nav>
 			<ul>
-				<li><a href="${contextPath }/main"><img style="height: 50px;" src="${contextPath }/resources/login/logoblack.png"></a></li>
+				<li><a href="${contextPath }/main"><img class="imgsize" src="${contextPath }/resources/login/logoblack.png"></a></li>
 			</ul>
 		</nav>
 	<div>
 		<div>
-			<nav style="">
+			<nav>
 				<ul>
 				<c:if test="${sessionScope.loginUser.id == null }">
-					<li><a href="${contextPath }/login" class="ad" style="font-size: 10px;">로그인</a></li>
-					<span style="margin-top: 10px; color:white;">|</span>
+					<li><a href="${contextPath }/login" class="ad adfont">로그인</a></li>
+					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id != null }">
-					<li><a href="${contextPath }/mypage" class="ad" style="font-size: 10px;">${loginUser.name }님 환영합니다</a></li>
-					<span style="margin-top: 10px; color:white;">|</span>
+					<li><a href="${contextPath }/mypage" class="ad adfont">${loginUser.name }님 환영합니다</a></li>
+					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id == null }">
-					<li><a href="${contextPath }/membership" class="ad" style="font-size: 10px;">회원가입</a></li>
+					<li><a href="${contextPath }/membership" class="ad adfont">회원가입</a></li>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id != null }">
-					<li><a href="${contextPath }/main/logout" class="ad" style="font-size: 10px;">로그아웃</a></li>
+					<li><a href="${contextPath }/main/logout" class="ad adfont">로그아웃</a></li>
 				</c:if>
 				</ul>
 			</nav>
 		</div>
 		<div>
-			<nav style="">
+			<nav>
 				<ul>
 					<li class="li"><a href="${contextPath }/main/keywordFreeze" class="ab">키워드 삭제</a></li>
 					<li class="li"><a href="${contextPath }/main/accountFreeze" class="ab">스팸 계정 차단</a></li>
@@ -65,6 +53,6 @@
 		</div>
 	</div>
 	</div>
-	<hr style="border: 1px solid #353535;">
+	<hr>
 </body>
 </html>

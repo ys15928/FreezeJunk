@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden; background-color: black;">
 <%
 	SuggestionDTO dto = (SuggestionDTO) request.getAttribute("dto");
 	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");

@@ -24,7 +24,7 @@
 </insert>
 
 <select id="loginChk" resultMap="member">
-	select * from JUNK_USER where id=#{id} and pwd=#{pwd}
+	select * from JUNK_USER where id=#{id}
 </select>
 
 <select id="searchId" resultType="String">

@@ -28,7 +28,7 @@
 	MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
 %>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden; background-color: black;">
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<div class="info-head-title">

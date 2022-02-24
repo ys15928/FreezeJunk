@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>FREEZEJUNK</title>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden; background-color: black;">
 <jsp:include page="../default/header.jsp"/>
 MAIN
 <jsp:include page="../default/footer.jsp"/>
