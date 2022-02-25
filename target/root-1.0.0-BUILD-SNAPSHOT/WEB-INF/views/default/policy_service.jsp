@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <c:set var="contextPath" value="<%=request.getContextPath() %>"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FreezeJunk</title>
+<link rel="stylesheet" href="${contextPath }/resources/default/serviceStyle.css"/>
 </head>
 <body>
 
 <jsp:include page="../default/header.jsp"/>
 
-<div style="background-color: black; color: white; width: 1080px; margin: 0 auto; margin-top: 30px; margin-bottom: 30px;">
-<div style="text-align: center; font-size: 30px; margin-bottom: 30px; font-weight: bold;">서비스이용약관</div>
+<div class="servicewrap">
+<div class="service">서비스이용약관</div>
 제 1 장 총칙
 <br><br>
 제 1 조 (목적)<br>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden; background-color: black;">
 	<jsp:include page="../default/header.jsp"/>
 	<div style="height: 805px;">
 	<div class="wrap" style="margin-top: 75px;">
