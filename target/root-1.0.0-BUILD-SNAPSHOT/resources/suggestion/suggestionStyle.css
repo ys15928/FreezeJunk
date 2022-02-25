@@ -62,6 +62,66 @@ button:hover {
 }
 
 /* --------------------- list.jsp --------------------------- */
+.all-wrap {
+	height: 780px;
+	margin-top: 90px;
+}
+.bl-none {
+	border-left: none;
+}
+.list-table {
+	margin-top: 25px;
+	width: 1080px;
+	height: 510px;
+}
+.list-num {
+	width: 7%;
+	padding-left: 32px;
+}
+.list-title {
+	width: 40%;
+	text-align: center;
+}
+.list-name {
+	width: 20%;
+	text-align: center;
+}
+.list-date {
+	width: 10%;
+	text-align: center;
+}
+.status-waiting {
+	width: 10%;
+    text-align: center;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.status-success {
+	width: 10%; border-radius: 4px;
+    text-align: center;
+    background: #EAEAEA;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+}
+.list-all {
+	width: 10%;
+	text-align: center;
+}
+.list-non-all {
+	width: 10%; text-align: center; color: #368AFF;
+}
+.bb-none {
+	border-bottom: none;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
 .sugg-line {
 	display: flex;
     align-items: center;

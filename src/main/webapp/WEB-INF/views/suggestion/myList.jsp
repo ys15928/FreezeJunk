@@ -39,10 +39,10 @@
 %>
 <div class="container">
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap" style="height: 780px; margin-top: 90px;">
+	<div class="wrap all-wrap">
 		<div class="list-head-box">
 			<div class="non-list-select"><a href="suggestion-3">전체리스트</a></div>
-			<div class="list-select" style="border-left: none;">내가 작성한 건의사항</div>
+			<div class="list-select bl-none">내가 작성한 건의사항</div>
 		</div>
 		<div class="sugg-search-box">
 			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
@@ -50,7 +50,7 @@
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
-		<div style="margin-top: 25px; width: 1080px; height: 510px;">
+		<div class="list-table">
 		<%
 			for(SuggestionDTO dto : list) {	
 				String id = dto.getSuggId().substring(0, 4);
@@ -58,9 +58,9 @@
 				dto.setSuggId(id);
 		%>
 		<div class="sugg-line">
-			<div style="width: 7%; padding-left: 32px;"><%=dto.getNum() %></div>
-			<div style="width: 40%; text-align: center;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
-			<div style="width: 20%; text-align: center;"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
+			<div class="list-num"><%=dto.getNum() %></div>
+			<div class="list-title"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
+			<div class="list-name"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
@@ -69,22 +69,17 @@
 			Date date = sd.parse(dateStr);
 			if(date.before(sys)) {
 		%>
-			<div style="width: 10%; text-align: center;"><%=sdf1.format(dto.getSuggTime()) %></div>
+			<div class="list-date"><%=sdf1.format(dto.getSuggTime()) %></div>
 		<%
 			} else {
 		%>
-			<div style="width: 10%; text-align: center;"><%=sdf2.format(dto.getSuggTime()) %></div>
+			<div class="list-date"><%=sdf2.format(dto.getSuggTime()) %></div>
 		<%
 			}
 			
 			if(dto.getAnswContent() == null) {
 		%>
-			<div style="width: 10%;
-    text-align: center;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    justify-content: center;">답변대기</div>
+			<div class="status-waiting">답변대기</div>
 		<%
 			} else{
 		%>

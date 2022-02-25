@@ -19,13 +19,13 @@
 <table  style="display: flex; justify-content: center; align-items: center; height: 280px; color:gray; width:1080px; margin:auto; font-size: 15px;">
 
 	<tr>
-	<td style="width:650px">© 2022 All Rights Reserved. 주식회사 FreezeJunk</td><td></td>
+	<td style="width:650px">© 2022 All Rights Reserved. FreezeJunk</td><td></td>
 	</tr>
 	
 	<tr style="height: 10px;"></tr>
 	
 	<tr>
-	<td>사업자 등록 번호 : 123-45-67890</td><td style="width:430px; text-align: center;"rowspan="5">
+	<td></td><td style="width:430px; text-align: center;"rowspan="5">
 					<a href="${contextPath }/main"><img style="height: 95px;" src="${contextPath}/resources/login/logoblack.png"></a></td>
 	</tr>
 	

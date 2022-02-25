@@ -58,6 +58,7 @@ public class MemberService {
 			sb.append("<h2 style='color : blue'>'  "+ Certified +"  ' 입니다.</h2>");
 			helper.setText(sb.toString(), true);
 			mailSender.send(message);
+			System.out.println("das");
 			model.addAttribute("certified", Certified);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
