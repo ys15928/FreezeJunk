@@ -47,7 +47,7 @@ $(function(){
 					$('#id_value').text("회원 정보를 확인해주세요!");	
 				} else {
 					$("#background_modal").css('display', 'block');
-					$('#id_value').text("이메일을 확인하세요!");
+					$('#id_value').text("임시 비밀번호는 - freezejunk - 입니다.");
 				}
 			},
 			

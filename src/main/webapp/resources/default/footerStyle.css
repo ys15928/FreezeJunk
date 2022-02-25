@@ -4,20 +4,20 @@ body {
 	background-color: black;
 }
 
-.a {
+.footera {
 	text-decoration: none;
 	color: gray;
 }
 
-.a:hover {
+.footera:hover {
 	border-bottom: 1px solid #BDBDBD;
 }
 
-.span {
+.footerspan {
 	font-size: 15px;
 }
 
-.tr {
+.footertr {
 	height: 10px;
 }
 
@@ -26,7 +26,7 @@ body {
 	border: 1px solid #353535;
 }
 
-.table {
+.footertable {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -37,19 +37,19 @@ body {
 	font-size: 15px;
 }
 
-.he {
+.footerhe {
 	width: 650px;
 }
 
-.imgsize1 {
+.footerimgsize1 {
 	height: 95px;
 }
 
-.imgse {
+.footerimgse {
 	width: 430px;
 	text-align: center;
 }
 
-.background {
+.footerbackground {
 	background-color: black;
 }

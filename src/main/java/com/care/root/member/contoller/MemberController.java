@@ -132,7 +132,7 @@ public class MemberController {
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='../first';</script>");
 	}
 	
 	@RequestMapping(value="searchId", method = RequestMethod.POST)
