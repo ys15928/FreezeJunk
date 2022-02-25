@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 <title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/login/loginStyle.css"/>
 </head>
 <body>
+
 <div class="mainlogin">
 	<div class="mainheader">
     <div class="mainheight30"></div>
@@ -23,16 +23,8 @@
 				<input type="password" id="logPwd" name="pwd" placeholder="비밀번호" />
 				<span class="login-comment" id="login-comment">아이디 또는 비밀번호를 확인해 주세요.</span>
 			</div>
-			<!--  <form action="login/1" method="post" id="login-form"> -->
-			<div id="login-form">
-				<div class="login-input-box">
-					<input type="text" id="logId" name="id" placeholder="아이디" /> <input
-						type="password" id="logPwd" name="pwd" placeholder="비밀번호" /> <span
-						class="login-comment" id="login-comment">아이디 또는 비밀번호를 확인해
-						주세요.</span>
-				</div>
-			</div>
-			<div class="login-btn-box">
+		</div>
+		<div class="login-btn-box">
 				<button type="button" onclick="login();" id="login-btn">로그인</button>
 			</div>
 			
