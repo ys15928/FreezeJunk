@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${contextPath }/resources/admin/adminStyle.css"/>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden; background-color: black;">
 	<jsp:include page="../default/header.jsp"/>
 	
 	<div class="wrap" style="margin-bottom: 125px;">
