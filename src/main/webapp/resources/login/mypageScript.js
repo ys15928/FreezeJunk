@@ -1,7 +1,7 @@
 var blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
 var regType1 = /^[A-Za-z0-9+]*$/;
 
-
+/*
 function modalExit() {
 	$("#email-modal").css('display', 'none');
 	clearInterval(tid);
@@ -25,8 +25,9 @@ function TimerStart() {
 	timeChange();
 	tid=setInterval('msg_time()',1000);
 }
+*/
 
-
+/*
 var certifiedNum = "";
 function emaildel() {
 	if(confirm("정말로 탈퇴하시겠습니까?")) {
@@ -35,18 +36,26 @@ function emaildel() {
 			type : "GET",
 			dataType : "json",
 			success : function(list) {
-				$("#email-modal").css('display', 'block');
+			//	$("#email-modal").css('display', 'block');
 				certifiedNum = list[0];
-				TimerStart();
+			//	TimerStart();
+				
 			}, error : function() {
 				alert("문제 발생");
 			}
 		})
 	}
+}*/
+
+function emaildel(){
+	if(confirm("정말로 탈퇴하시겠습니까?")){
+		document.getElementById("exiddelete").submit();
+	}
+	
 }
 
 function iddelete() {
-	if(SetTime < 0) {
+/*	if(SetTime < 0) {
 	//	alert("인증 시간이 지났습니다. 창 종료후 다시 진행해주세요.");
 		document.getElementById("chk-comment").innerText = "인증 시간이 지났습니다. 창 종료후 다시 진행해주세요.";
 		$("#chk-comment").css("visibility", "visible");
@@ -64,7 +73,7 @@ function iddelete() {
 		document.getElementById("chk-comment").innerText = "인증번호가 틀립니다.";
 		$("#chk-comment").css("visibility", "visible");
 		return;
-	}
+	}*/
 	document.getElementById("modal-form").submit();
 }
 
