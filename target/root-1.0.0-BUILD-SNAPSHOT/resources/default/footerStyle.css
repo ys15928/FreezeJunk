@@ -1,0 +1,55 @@
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: black;
+}
+
+.a {
+	text-decoration: none;
+	color: gray;
+}
+
+.a:hover {
+	border-bottom: 1px solid #BDBDBD;
+}
+
+.span {
+	font-size: 15px;
+}
+
+.tr {
+	height: 10px;
+}
+
+.footerhr {
+	margin-top: 20px;
+	border: 1px solid #353535;
+}
+
+.table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 280px;
+	color: gray;
+	width: 1080px;
+	margin: auto;
+	font-size: 15px;
+}
+
+.he {
+	width: 650px;
+}
+
+.imgsize1 {
+	height: 95px;
+}
+
+.imgse {
+	width: 430px;
+	text-align: center;
+}
+
+.background {
+	background-color: black;
+}

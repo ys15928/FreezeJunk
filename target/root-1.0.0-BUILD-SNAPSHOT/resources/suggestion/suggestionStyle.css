@@ -1,0 +1,273 @@
+a {
+	text-decoration: none;
+}
+body {
+	width: 1920px;
+	overflow-x: hidden;
+}
+/* ------------------------- write.jsp ----------------------------- */
+.wrap {
+	width: 1080px;
+	margin: 0 auto;
+}
+.ck-editor__editable {
+	min-height: 300px;
+}
+#editor {
+	width: 100%;
+}
+#title {
+	width: 540px;
+    height: 30px;
+    font-size: 18px;
+    color: gray;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+}
+.note-editor {
+	margin-top: 30px;
+}
+.write-btn-box {
+	margin-top: 15px;
+    float: right;
+}
+#write-btn {
+	width: 90px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+}
+button:hover {
+	cursor: pointer;
+}
+.status-box {
+	margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.status-comment {
+	color: white;
+    font-weight: bold;
+    margin-right: 5px;
+}
+#status {
+	width: 17px;
+    height: 17px;
+}
+
+/* --------------------- list.jsp --------------------------- */
+.sugg-line {
+	display: flex;
+    align-items: center;
+	height: 50px;
+    border-top: 1px solid #F6F6F6;
+    color: #D5D5D5;
+}
+.sugg-line:hover {
+	background-color: #BDBDBD;
+	color: #4C4C4C;
+}
+.sugg-line:hover a {
+	color: #4C4C4C !important;
+}
+.sugg-line-non {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-top: 1px solid #F6F6F6;
+    color: #D5D5D5;
+    font-size: 18px;
+}
+.sugg-line-a {
+	color: #D5D5D5 !important;
+}
+.non-line {
+	
+}
+.non-line:hover {
+	background-color: #BDBDBD;
+}
+.sugg-line:last-child {
+	border-bottom: 1px solid #F6F6F6;
+}
+.sugg-search-box {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	margin-top: 15px;
+}
+.search-comment {
+	font-size: 15px;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+}
+#search {
+	width: 200px;
+    height: 17px;
+    margin-right: 10px;
+    border: 1px solid #A6A6A6;
+    background-color: #F6F6F6;
+    border-radius: 4px;
+}
+
+.search-btn-box:hover {
+	cursor: pointer;
+}
+.search-img {
+	width: 22px;
+}
+.pageing-box {
+	margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.pageing-box a {
+	color: gray;
+}
+.current-page {
+	color: #F6F6F6 !important;
+}
+.list-write-btn-box {
+	margin-top: 25px;
+    display: flex;
+    justify-content: end;
+}
+.list-write-btn {
+	background-color: #F6F6F6;
+    color: black;
+    border: none;
+    width: 80px;
+    height: 28px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-head-box {
+	display: flex;
+	margin-top: 50px;
+}
+.list-head-box>div:hover {
+	cursor: pointer;
+}
+.non-list-select {
+	width: 200px;
+    height: 50px;
+    border: 1px solid gray;
+    font-size: 17px;
+    color:white;
+    
+}
+
+.non-list-select>a {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.non-list-select>a:hover{ background-color: white; color:black; font-weight: bold; }
+
+.list-select {
+	width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    font-size: 17px;
+	font-weight: bold;
+    color: black;
+    background-color: white;
+}
+.list-select:hover{ background-color: white; color:black; font-weight: bold; }
+/* -------------------------- info.jsp -------------------------------- */
+.info-head-title {
+	display: flex;
+    padding: 15px 0 15px 5px;
+    margin-top: 25px;
+}
+.info-title {
+	font-size: 22px;
+    color: #F6F6F6;
+    
+}
+.info-head-sub {
+	display: flex;
+    font-size: 16px;
+    color: #F6F6F6;
+    border-top: 1px solid #F6F6F6;
+    border-bottom: 1px solid #F6F6F6;
+	padding: 15px 0 10px 5px;
+}
+.info-sub {
+	width: 4%;
+    text-align: center;
+}
+.info-content {
+	min-height: 350px;
+	padding: 15px 10px;
+	background-color: #EAEAEA;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+.info-btn-box {
+	margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 25px;
+}
+.info-btn-box>button {
+	width: 90px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+.info-btn-box>button:last-child {
+	margin-right: 0;
+}
+.answer-title {
+	font-size: 30px;
+    font-weight: bold;
+    color: #F6F6F6;
+    margin-bottom: -15px;
+    margin-top: 15px;
+}
+
+ .container {
+    width: 1920px;
+    height: 968px;
+    overflow: auto;
+  }
+  .container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .container::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
