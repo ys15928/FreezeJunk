@@ -40,10 +40,13 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 <form action="iddelete" method="post" id="exiddelete" class="iddelete">
 </form>
 
 <!--  
+=======
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 <div id="email-modal" class="email-modal">
 <form action="iddelete" method="post" id="modal-form">
 <div class="mymodalwrap">
@@ -67,7 +70,10 @@
 </div>
 </form>
 </div>
+<<<<<<< HEAD
 -->
+=======
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 
 <jsp:include page="../default/footer.jsp"/>
 </div>

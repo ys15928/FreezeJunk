@@ -96,6 +96,7 @@ body {
 
 .memberwrap1 {
 	background-color: white;
+<<<<<<< HEAD
 	padding: 60px 8px;
 	border-radius: 10px;
 	width: 770px;
@@ -105,6 +106,8 @@ body {
 
 .memberwrap2 { 
 	background-color: white;
+=======
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 	padding: 33px 8px;
 	border-radius: 10px;
 	width: 770px;

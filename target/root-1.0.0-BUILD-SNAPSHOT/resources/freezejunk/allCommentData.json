@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "commentArray1660": [
     {
       "authorName": "jype ggs supremacy",
@@ -25026,6 +25027,24 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCZVMJMqq1w7iD9-RvZKOFlA",
       "commentId": "UgxhDe7Q5ToblWQ-0UB4AaABAg",
       "text": "Jinni ♥️"
+=======
+  "commentArray1": [
+    {
+      "authorName": "프리즈01",
+      "strDateToSec": "1645428396",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCSScBaGgwcmNztC7DtC5Dow",
+      "commentId": "Ugz6DgFOJZcT6NPeZf14AaABAg",
+      "text": "normal_Comment01"
+    }
+  ],
+  "commentArray2": [
+    {
+      "authorName": "프리즈01",
+      "strDateToSec": "1645428402",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCSScBaGgwcmNztC7DtC5Dow",
+      "commentId": "Ugz6DgFOJZcT6NPeZf14AaABAg.9YhHhr5WD1l9YhHibElxTC",
+      "text": "normal_Reply01"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ]
 }

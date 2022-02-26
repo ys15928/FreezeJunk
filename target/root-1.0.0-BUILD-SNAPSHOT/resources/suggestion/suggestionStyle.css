@@ -62,6 +62,7 @@ button:hover {
 }
 
 /* --------------------- list.jsp --------------------------- */
+<<<<<<< HEAD
 .all-wrap {
 	height: 780px;
 	margin-top: 90px;
@@ -122,6 +123,8 @@ button:hover {
 .cursor-pointer {
 	cursor: pointer;
 }
+=======
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 .sugg-line {
 	display: flex;
     align-items: center;

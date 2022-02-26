@@ -82,7 +82,11 @@
 					</tr>
 					
 					
+<<<<<<< HEAD
 			<!-- 	<tr class="tr45">
+=======
+					<tr class="tr45">
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 					<th class="th">인증번호</th>
 					</tr>
 					<tr>
@@ -92,7 +96,12 @@
 					<tr class="trnum">
 					<td><div class="member-comment" id="email-num-comment">인증번호 입력해주세요.</div></td>
 					</tr>
+<<<<<<< HEAD
 			 -->		
+=======
+					
+					
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 					
 					<tr>
 					<td colspan="2">

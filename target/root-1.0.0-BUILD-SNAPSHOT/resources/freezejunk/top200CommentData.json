@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "commentArray63": [
     {
       "authorName": "이현지",
@@ -1059,10 +1060,20 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCOe0qtotZrsKmI7CoTu_tuA",
       "commentId": "UgxyhWA15CI3c_vmYgF4AaABAg",
       "text": "Thats our Kid Leader, Taengoo. She is our queen, our goddess, The one and only King Taeyeon! Human perfection personified!"
+=======
+  "commentArray1": [
+    {
+      "authorName": "프리즈02",
+      "strDateToSec": "1645536999",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCAOlTsR-tEaloEb59i_9Uzw",
+      "commentId": "UgzKpnFUjN37gYtA4qB4AaABAg",
+      "text": "Best_Comment!!"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ],
   "commentArray4": [
     {
+<<<<<<< HEAD
       "authorName": "박박박박이태리때수건",
       "strDateToSec": "1645200593",
       "authorChannelUrl": "http://www.youtube.com/channel/UC3boE0GUysu5WOmP5ZxBj5A",
@@ -1077,10 +1088,18 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCKYLTuHOLK7H8V1xTQSDa9A",
       "commentId": "UgxonMQLJ6-j1QopSQl4AaABAg",
       "text": "We need to work harder so she can win in music shows. Let\u0027s make this cb memorable for her and us."
+=======
+      "authorName": "프리즈01",
+      "strDateToSec": "1645536375",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCSScBaGgwcmNztC7DtC5Dow",
+      "commentId": "UgwPzV1BE75GfELa-1V4AaABAg",
+      "text": "Comment01"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ],
   "commentArray5": [
     {
+<<<<<<< HEAD
       "authorName": "BB",
       "strDateToSec": "1645188864",
       "authorChannelUrl": "http://www.youtube.com/channel/UC-GEvz4yR6DNWFZM8IlNN2w",
@@ -1095,10 +1114,18 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCctrz3Hg6d0dOUwo7_SMJyg",
       "commentId": "UgyXxS0-IaV0Uq3-xeN4AaABAg",
       "text": "ALBUM OF THE YEAR, SONG OF THE YEAR, ARTIST OF THE YEAR, BEST MUSIC VIDEO, BEST DANCE PERFORMANCE"
+=======
+      "authorName": "프리즈02",
+      "strDateToSec": "1645537019",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCAOlTsR-tEaloEb59i_9Uzw",
+      "commentId": "UgxrfclcXeh0hHggMG14AaABAg",
+      "text": "Comment03"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ],
   "commentArray2": [
     {
+<<<<<<< HEAD
       "authorName": "허현",
       "strDateToSec": "1645168792",
       "authorChannelUrl": "http://www.youtube.com/channel/UC-72h1fwnlY1CP7FtOlkhDA",
@@ -1113,10 +1140,18 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCKSgnsVcoCZk2YuiYFhM_Kg",
       "commentId": "UgxYENdRM2lk4Ast3rd4AaABAg",
       "text": "Currently listening nonstop. SOTY \u003c3"
+=======
+      "authorName": "프리즈01",
+      "strDateToSec": "1645536364",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCSScBaGgwcmNztC7DtC5Dow",
+      "commentId": "UgzJRyNyfrHs92s9Hnt4AaABAg",
+      "text": "Best_Comment!!"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ],
   "commentArray3": [
     {
+<<<<<<< HEAD
       "authorName": "영평티비 YPTV",
       "strDateToSec": "1645183250",
       "authorChannelUrl": "http://www.youtube.com/channel/UC71uyaLVBWqmW5oAn1YamIA",
@@ -1797,6 +1832,13 @@
       "authorChannelUrl": "http://www.youtube.com/channel/UCqfJIPCceT5_PLDPbQ8tQoA",
       "commentId": "UgwFvL9fFt0v9Uv9ceN4AaABAg",
       "text": "개인적인 의견인데 태연은 순수 한글가사노래불렀을때가 훨씬 나음..."
+=======
+      "authorName": "프리즈01",
+      "strDateToSec": "1645536381",
+      "authorChannelUrl": "http://www.youtube.com/channel/UCSScBaGgwcmNztC7DtC5Dow",
+      "commentId": "Ugzbdd9TpE_WBXTcnoV4AaABAg",
+      "text": "Comment02"
+>>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
     }
   ]
 }
