@@ -166,3 +166,7 @@ body {
 	align-items: center;
 	text-align: center;
 }
+
+.iddelete{
+	display: none;
+}

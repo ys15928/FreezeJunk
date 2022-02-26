@@ -82,8 +82,6 @@ public class MemberService {
 		return 2;
 	}
 	
-	
-	
 	public String searchId(String name, String email) {
 		String result = "";
 		try {
@@ -96,11 +94,11 @@ public class MemberService {
 	
 	
 	public int searchPwd(String id,String email, HttpServletRequest req) {	// 이메일로 인증번호 보내기
-		String key = "";
-		for(int i=1; i<=8; i++) {
+		String key = "freezejunk";
+/*		for(int i=1; i<=8; i++) {
 			int num = (int)(Math.random()*9)+1;
 			key += String.valueOf(num);
-		}
+		}*/
 		MemberDTO dto = mapper.mypage(id);
 		if(dto == null) {
 			return 0;
@@ -108,7 +106,7 @@ public class MemberService {
 		if(!(dto.getEmail().equals(email))) {
 			return 0;
 		}
-		MimeMessage message = mailSender.createMimeMessage();
+	/*	MimeMessage message = mailSender.createMimeMessage();
 		try {
 		//	System.out.println(email);
 			MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
@@ -127,7 +125,7 @@ public class MemberService {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		mapper.searchPwd(id,email,encoder.encode(key));
 		return 1;
 	}

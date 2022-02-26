@@ -40,6 +40,10 @@
 </div>
 </div>
 
+<form action="iddelete" method="post" id="exiddelete" class="iddelete">
+</form>
+
+<!--  
 <div id="email-modal" class="email-modal">
 <form action="iddelete" method="post" id="modal-form">
 <div class="mymodalwrap">
@@ -63,6 +67,7 @@
 </div>
 </form>
 </div>
+-->
 
 <jsp:include page="../default/footer.jsp"/>
 </div>
