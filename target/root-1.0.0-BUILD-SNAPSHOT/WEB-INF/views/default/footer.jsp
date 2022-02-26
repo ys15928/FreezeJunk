@@ -11,18 +11,18 @@
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
 <body>
-<hr class="footerhr">
-<div class="background">
-<table class="table">
+<hr class="footerfooterhr">
+<div class="footerbackground">
+<table class="footertable">
 	<tr>
-	<td class="he">copyright © FreezeJunk All Rights Reserved.</td><td></td>
+	<td class="footerhe">copyright © FreezeJunk All Rights Reserved.</td><td></td>
 	</tr>
 	
-	<tr class="tr"></tr>
+	<tr class="footertr"></tr>
 	
 	<tr>
-	<td></td><td class="imgse" rowspan="5">
-					<a href="${contextPath }/main"><img class="imgsize1" src="${contextPath}/resources/login/logoblack.png"></a></td>
+	<td></td><td class="footerimgse" rowspan="5">
+					<a href="${contextPath }/main"><img class="footerimgsize1" src="${contextPath}/resources/login/logoblack.png"></a></td>
 	</tr>
 	
 	<tr>
@@ -43,25 +43,20 @@
 	
 	<tr>
 	<td>
-	<a href="${contextPath }/policy_privacy" class="a">개인정보처리방침</a>
-	<span class="span">|</span>
-	<a href="${contextPath }/policy_service" class="a">서비스이용약관</a>
-	<span class="span">|</span>
-	<a href="${contextPath }/main/suggestion-3" class="a">고객센터</a>
+	<a href="${contextPath }/policy_privacy" class="footera">개인정보처리방침</a>
+	<span class="footerspan">|</span>
+	<a href="${contextPath }/policy_service" class="footera">서비스이용약관</a>
+	<span class="footerspan">|</span>
+	<a href="${contextPath }/main/suggestion-3" class="footera">고객센터</a>
 	</td>
 	</tr>
 	
-	<tr class="tr"></tr>
+	<tr class="footertr"></tr>
 	
 	<tr>
 	<td>FreezeJunk는 여러분의 고민을 얼려드립니다.</td><td></td>
 	</tr>
 	
-	<tr>
-	<td>
-	<!--- DO NOT EDIT - GlobalSign SSL Site Seal Code - DO NOT EDIT ---><table width=125 border=0 cellspacing=0 cellpadding=0 title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information." ><tr><td><span id="ss_img_wrapper_gmogs_image_100-40_en_dblue"><a href="https://www.globalsign.com/" target="_blank" title="GlobalSign Site Seal" rel="nofollow"><img alt="SSL" border=0 id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-40_en.gif"></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_100-40_en_dblue.js"></script></td></tr></table><!--- DO NOT EDIT - GlobalSign SSL Site Seal Code - DO NOT EDIT --->
-	</td>
-	</tr>
 	
 </table>
 </div>

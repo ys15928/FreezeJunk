@@ -28,6 +28,8 @@ body {
 	font-size: 15px;
 	align-items: center;
 	font-weight: lighter;
+	text-decoration: none;
+	color: #D5D5D5;
 }
 
 .qe {
@@ -43,12 +45,32 @@ body {
 	font-weight: lighter;
 }
 
-.qw:hover {
+.qea {
+	text-decoration: none;
+	color: #D5D5D5;
+}
+
+.qwa {
+	text-decoration: none;
+	color: #D5D5D5;
+}
+
+.qea:hover {
 	color: white;
+	font-weight: bold;
+}
+
+.qwa:hover {
+	color: white;
+	font-weight: bold;
+}
+
+.qw:hover {
+	background-color: gray;
 }
 
 .qe:hover {
-	color: white;
+	background-color: gray;
 }
 
 .btn222 {

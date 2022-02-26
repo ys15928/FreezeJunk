@@ -101,7 +101,7 @@ function emailCheck() {
 		})
 }
 var certifiedNum = null;
-
+/*
 function emailgoNum(){
 	
 	var email= document.getElementById("email").value
@@ -121,7 +121,7 @@ function emailgoNum(){
 			alert("error")
 		}
 })
-}
+}*/
 
 function emailChange() {
 	document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
@@ -192,6 +192,7 @@ function register() {
 		document.getElementById("email").focus();
 		return;
 	}
+	/*
 	if(document.getElementById("emailnum").value != certifiedNum){
 		document.getElementById("email-num-comment").innerText = "인증번호를 올바르게 입력하세요.";
 		$("#email-comment").css("visibility", "visible");
@@ -199,6 +200,6 @@ function register() {
 		document.getElementById("emailnum").focus();
 		return;
 	}
-	$("#email-num-comment").css("visibility", "hidden");
+	$("#email-num-comment").css("visibility", "hidden");*/
 	document.getElementById("form").submit();
 }
