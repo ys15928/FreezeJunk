@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
-<body style="width: 100%; overflow-x: hidden; background-color: black;">
+<body>
 <%
 	HttpSession se = request.getSession();
 	MemberDTO loginUser = (MemberDTO) se.getAttribute("loginUser");
@@ -50,16 +50,15 @@
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
 		</div>
-		<div style="display: flex; justify-content: center; align-items: center; height: 45px; margin-top: 20px; border-top: 1px solid #F6F6F6;
-    color: #D5D5D5; font-weight: bold;">
-		<div style="width: 7%; padding-left:32px; text-align: center;">글번호</div>
-		<div style="width: 40%; text-align: center;">제목</div>
-		<div style="width: 20%; text-align: center;">작성자</div>
-		<div style="width: 10%; text-align: center;">작성일</div>
-		<div style="width: 10%; text-align: center;">답변여부</div>
-		<div style="width: 10%; text-align: center;">공개여부</div>
+		<div class="list-head">
+		<div class="list-head-num">글번호</div>
+		<div class="list-head-title">제목</div>
+		<div class="list-head-id">작성자</div>
+		<div class="list-head-date">작성일</div>
+		<div class="list-head-status">답변여부</div>
+		<div class="list-head-status">공개여부</div>
 		</div>
-		<div style="width: 1080px; height: 510px;">
+		<div class="list-body">
 		<%
 			for(SuggestionDTO dto : list) {	
 				String id = dto.getSuggId().substring(0, 4);
@@ -67,9 +66,9 @@
 				dto.setSuggId(id);
 		%>
 		<div class="sugg-line">
-			<div style="width: 7%; padding-left: 32px; text-align: center;"><%=dto.getNum() %></div>
-			<div style="width: 40%; text-align: center;"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
-			<div style="width: 20%; text-align: center;"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
+			<div class="list-num"><%=dto.getNum() %></div>
+			<div class="list-title"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
+			<div class="list-name"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();
 			String sysStr = sd.format(sys);
@@ -92,25 +91,17 @@
 		<%
 			} else{
 		%>
-			<div style="width: 10%; border-radius: 4px;
-    text-align: center;
-    background: #EAEAEA;
-    height: 50px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    color: black;
-    font-weight: bold;">답변완료</div>
+			<div class="status-success">답변완료</div>
 		<%
 			}
 			
 			if(dto.getSuggStatus().equals("1")) {	
 		%>
-			<div style="width: 10%; text-align: center;">전체공개</div>
+			<div class="list-all">전체공개</div>
 		<%
 			} else {
 		%>
-			<div style="width: 10%; text-align: center; color: #368AFF;">비공개</div>
+			<div class="list-non-all">비공개</div>
 		<%
 			}
 		%>
@@ -120,7 +111,7 @@
 		
 			if(count == 0) {
 		%>
-			<div class="sugg-line-non" style="border-bottom: none;">검색된 결과가 없습니다.</div>
+			<div class="sugg-line-non bb-none">검색된 결과가 없습니다.</div>
 		<%
 			}
 		%>

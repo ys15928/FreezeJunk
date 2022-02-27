@@ -28,7 +28,7 @@
 	MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
 %>
 </head>
-<body style="width: 100%; overflow-x: hidden; background-color: black;">
+<body>
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap">
 		<div class="info-head-title">
@@ -76,7 +76,7 @@
 		<%
 			if(answer != null) {
 		%>
-		<div class="info-head-sub" style="margin: 25px 0;">
+		<div class="info-head-sub margin-25-0">
 			<div>관리자</div>
 			<div class="info-sub">|</div>
 			<div>
@@ -124,7 +124,7 @@
 			}
 		%>
 		</div>
-		<form action="suggestion-8" method="post" style="display: none;" id="delete-form">
+		<form action="suggestion-8" method="post" class="dp-none" id="delete-form">
 			<input type="hidden" name="num" value="${dto.num }"/>
 		</form>
 	</div>

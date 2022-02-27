@@ -2,8 +2,9 @@ a {
 	text-decoration: none;
 }
 body {
-	width: 1920px;
+	width: 1920px !important;
 	overflow-x: hidden;
+	background-color: black;
 }
 /* ------------------------- write.jsp ----------------------------- */
 .wrap {
@@ -61,6 +62,18 @@ button:hover {
     height: 17px;
 }
 
+/* 02-27 kjh */
+
+.mt-75 {
+	margin-top: 75px;
+}
+.mr-15 {
+	margin-right: 15px;
+}
+.write-container {
+	margin-top: 35px;
+	height: 805px;
+}
 /* --------------------- list.jsp --------------------------- */
 .all-wrap {
 	height: 780px;
@@ -77,6 +90,7 @@ button:hover {
 .list-num {
 	width: 7%;
 	padding-left: 32px;
+	text-align: center;
 }
 .list-title {
 	width: 40%;
@@ -116,6 +130,41 @@ button:hover {
 .list-non-all {
 	width: 10%; text-align: center; color: #368AFF;
 }
+.list-head {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	height: 45px;
+	margin-top: 20px;
+	border-top: 1px solid #F6F6F6;
+    color: #D5D5D5;
+    font-weight: bold;
+}
+.list-head-num {
+	width: 7%;
+	padding-left:32px;
+	text-align: center;
+}
+.list-head-title {
+	width: 40%;
+	text-align: center;
+}
+.list-head-id {
+	width: 20%;
+	text-align: center;
+}
+.list-head-date {
+	width: 10%;
+	text-align: center;
+}
+.list-head-status {
+	width: 10%;
+	text-align: center;
+}
+.list-body {
+	width: 1080px;
+	height: 510px;
+}
 .bb-none {
 	border-bottom: none;
 }
@@ -147,9 +196,6 @@ button:hover {
 }
 .sugg-line-a {
 	color: #D5D5D5 !important;
-}
-.non-line {
-	
 }
 .non-line:hover {
 	background-color: #BDBDBD;
@@ -315,7 +361,7 @@ button:hover {
  .container {
     width: 1920px;
     height: 968px;
-    overflow: auto;
+   /* overflow: auto; */
   }
   .container::-webkit-scrollbar {
     width: 10px;
@@ -331,3 +377,19 @@ button:hover {
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
+  
+  
+ /* info 02.27 kjh */
+ 
+ .margin-25-0 {
+ 	margin: 25px 0;
+ }
+ .dp-none {
+ 	display: none;
+ }
+ 
+ 
+ /* answer 02.27 kjh */
+ .ht-1030 {
+ 	height: 1030px;
+ }
