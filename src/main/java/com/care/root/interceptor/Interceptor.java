@@ -16,7 +16,8 @@ public class Interceptor extends HandlerInterceptorAdapter{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		HttpSession session = request.getSession();
+		final HttpSession session = request.getSession();
+		String path = request.getRequestURI();
 		MemberDTO dto = (MemberDTO) session.getAttribute("loginUser");
 		if(dto == null) {
 			response.setContentType("text/html; charset=utf-8");

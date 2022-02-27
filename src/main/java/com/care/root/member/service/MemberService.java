@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.care.root.member.config.SessionConfig;
 import com.care.root.member.dto.MemberDTO;
 import com.care.root.mybatis.MemberMapper;
 
@@ -77,6 +78,8 @@ public class MemberService {
 		if(loDto == null) {
 			return 0;
 		}if(loDto.getId().equals(dto.getId()) && encoder.matches(dto.getPwd(), loDto.getPwd())) {
+			SessionConfig.getSessionidCheck("loginUser", loDto.getId());
+			session.setMaxInactiveInterval(60 * 60);
 			session.setAttribute("loginUser", loDto);
 			return 1;
 		}

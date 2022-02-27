@@ -20,11 +20,7 @@ FreezeJunk는 영상의 불필요한 댓글과 스팸 계정 차단, 카피봇 �
 현재 FreezeJunk는 정식 서비스에 앞서 베타서비스로 먼저 출시되었습니다.<br><br>
 </div>
 <div>
-<<<<<<< HEAD
 서비스 사용 전 회원가입 후 사용방법 및 주의사항을 <span class="span">꼭!!!</span> 읽어주시기 바랍니다.
-=======
-서비스 사용 전 회원가입 후 사용방법 및 주의사항을 <span class="">꼭!!!</span> 읽어주시기 바랍니다.
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 </div>
 <div class="margin15">
 많은 관심과 사랑 부탁드립니다. 감사합니다.
@@ -33,13 +29,8 @@ FreezeJunk는 영상의 불필요한 댓글과 스팸 계정 차단, 카피봇 �
 - 프리즈 -
 </div>
 <div class="btn222">
-<<<<<<< HEAD
 <div class="qw"><a href="${contextPath }/login" class="qwa">로그인</a></div>
 <div class="qe"><a href="${contextPath }/membership" class="qea">회원가입</a></div>
-=======
-<div class="qw"><a href="${contextPath }/login" style="text-decoration: none; color: #D5D5D5;">로그인</a></div>
-<div class="qe"><a href="${contextPath }/membership" style="text-decoration: none; color: #D5D5D5;">회원가입</a></div>
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 
 </div>
 

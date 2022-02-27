@@ -101,11 +101,7 @@ function emailCheck() {
 		})
 }
 var certifiedNum = null;
-<<<<<<< HEAD
 /*
-=======
-
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 function emailgoNum(){
 	
 	var email= document.getElementById("email").value
@@ -125,11 +121,7 @@ function emailgoNum(){
 			alert("error")
 		}
 })
-<<<<<<< HEAD
 }*/
-=======
-}
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 
 function emailChange() {
 	document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
@@ -200,10 +192,7 @@ function register() {
 		document.getElementById("email").focus();
 		return;
 	}
-<<<<<<< HEAD
 	/*
-=======
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 	if(document.getElementById("emailnum").value != certifiedNum){
 		document.getElementById("email-num-comment").innerText = "인증번호를 올바르게 입력하세요.";
 		$("#email-comment").css("visibility", "visible");
@@ -211,10 +200,6 @@ function register() {
 		document.getElementById("emailnum").focus();
 		return;
 	}
-<<<<<<< HEAD
 	$("#email-num-comment").css("visibility", "hidden");*/
-=======
-	$("#email-num-comment").css("visibility", "hidden");
->>>>>>> fcf44284900983eeb798ad2cab3c442ecf7d8b91
 	document.getElementById("form").submit();
 }
