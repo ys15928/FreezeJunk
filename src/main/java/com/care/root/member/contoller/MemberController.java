@@ -39,7 +39,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping("first")
-	public String first() {
+	public String first(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		if(session.getAttribute("loginUser") != null) {
+			return "redirect:main";
+		}
 		return "default/first";
 	}
 	

@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="${contextPath }/resources/login/idpw_searchStyle.css"/>
 </head>
 <body>
+
+<c:if test="${loginUser != null }">
+	<script>
+		alert("이미 로그인 된 생타입니다.");
+		location.href="main";
+	</script>
+</c:if>
+
 <div class="checklogin">
 		<div>
 			<div >
