@@ -45,7 +45,7 @@ function login() {
 	$.ajax({
 		url: "loginChk", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
 		success: function(map) {
-			if(map.login == 0) {
+			if(map.login == 0 || map.login == 2) {
 				// alert("아이디 또는 비밀번호를 확인해 주세요.");
 				document.getElementById("login-comment").innerText = "아이디 또는 비밀번호를 확인해 주세요.";
 				$("#login-comment").css("visibility", "visible");
@@ -54,7 +54,7 @@ function login() {
 			//	alert("로그인 성공");
 				location.href="main";
 			} else{
-				alert("1")
+				alert("에러 발생");
 			}
 		}, error : function() {
 			alert("에러 발생");

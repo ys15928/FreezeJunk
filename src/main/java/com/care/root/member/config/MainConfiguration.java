@@ -17,6 +17,7 @@ public class MainConfiguration {
 		properties.put("mail.smtp.starttls.enable", true);
 		properties.put("mail.smtp.starttls.required", true);
 		properties.put("mail.debug", true);
+		properties.put("mail.smtp.port", 587);
 		
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");

@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
-<body style="width: 100%; overflow-x: hidden; background-color: black;">
+<body>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap" style="margin-top: 35px; height: 548px;">
+	<div class="wrap write-container">
 		<form action="suggestion-7" method="post" id="form">
 			<input type="hidden" name="num" value="${dto.num }"/>
 			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
@@ -29,7 +29,7 @@
 				</c:choose>
 			</div>
 			<div class="write-btn-box">
-				<button type="button" id="write-btn" onclick="history.back();" style="margin-right: 15px;">뒤로가기</button>
+				<button type="button" class="mr-15" id="write-btn" onclick="history.back();">뒤로가기</button>
 				<button type="button" id="write-btn" onclick="suggestionWrite();">수정</button>
 			</div>
 		</form>
@@ -42,7 +42,7 @@
 <script src="${contextPath }/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script>
 $('#editor').summernote({
-	  height: 350,
+	  height: 550,
 	  // 에디터 한글 설정
 	  lang: "ko-KR",
 	  focus : false,

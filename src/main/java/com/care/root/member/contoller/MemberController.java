@@ -39,7 +39,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping("first")
-	public String first() {
+	public String first(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		if(session.getAttribute("loginUser") != null) {
+			return "redirect:main";
+		}
 		return "default/first";
 	}
 	
@@ -151,7 +155,7 @@ public class MemberController {
 	
 	
 	
-	@RequestMapping("mypage")
+	@RequestMapping("main/mypage")
 	public String mypage(Model model, HttpServletRequest req) {
 		HttpSession se = req.getSession();
 		if(se.getAttribute("loginUser")==null) {
@@ -163,7 +167,7 @@ public class MemberController {
 		return "member/mypage";
 	}
 	
-	@PostMapping("myupdate")
+	@PostMapping("main/myupdate")
 	public void myupdate(HttpServletRequest req, HttpServletResponse res, Model model) throws IOException {
 		HttpSession se = req.getSession();
 		res.setContentType("text/html; charset=utf-8");
@@ -183,7 +187,7 @@ public class MemberController {
 	
 	
 		
-	@RequestMapping("emaildel")
+	@RequestMapping("main/emaildel")
 	@ResponseBody
 	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
 		ArrayList list = new ArrayList();
@@ -195,7 +199,7 @@ public class MemberController {
 		return list;
 	}
 	
-	@RequestMapping(value = "iddelete", method=RequestMethod.POST)
+	@RequestMapping(value = "main/iddelete", method=RequestMethod.POST)
 	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
@@ -206,7 +210,7 @@ public class MemberController {
 			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
 		} else {
 			se.invalidate();
-			out.print("<script> alert('탈퇴되었습니다.');location.href='main';</script>");
+			out.print("<script> alert('탈퇴되었습니다.');location.href='../main';</script>");
 		}
 	}
 	

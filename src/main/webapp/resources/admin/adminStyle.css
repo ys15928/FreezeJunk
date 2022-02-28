@@ -1,6 +1,7 @@
 body {
-    width: 1920px;
+    width: 1920px !important;
     overflow-x: hidden;
+    background-color: black;
 }
 
 .wrap {
@@ -111,4 +112,7 @@ body {
 }
 .user-list-box {
     margin-top: 25px;
+}
+.mb-125 {
+	margin-bottom: 125px;
 }
