@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>FreezeJunk</title>
+<style type="text/css"></style>
 <link rel="stylesheet" href="${contextPath }/resources/login/membershipStyle.css"/>
 </head>
 <body>
