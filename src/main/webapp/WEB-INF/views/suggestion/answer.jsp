@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
-<body style="width: 100%; overflow-x: hidden; background-color: black;">
+<body>
 <%
 	SuggestionDTO dto = (SuggestionDTO) request.getAttribute("dto");
 	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd");
@@ -22,7 +22,7 @@
 	
 %>
 	<jsp:include page="../default/header.jsp"/>
-	<div class="wrap" style="height: 1030px;">
+	<div class="wrap ht-1030">
 		<div class="info-head-title">
 			<div class="info-title">${dto.suggTitle }</div>
 		</div>
@@ -61,7 +61,7 @@
 			</form>
 		</div>
 		<div class="write-btn-box">
-			<button type="button" id="write-btn" onclick="history.back();" style="margin-right: 15px;">이전으로</button>
+			<button type="button" class="mr-15" id="write-btn" onclick="history.back();">이전으로</button>
 			<button type="button" id="write-btn" onclick="suggestionAnswerWrite();">등록</button>
 		</div>
 	</div>

@@ -1,3 +1,4 @@
+<%@page import="com.care.root.member.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -10,6 +11,13 @@
 <link rel="stylesheet" href="${contextPath }/resources/login/loginStyle.css"/>
 </head>
 <body>
+
+<c:if test="${loginUser != null }">
+	<script>
+		alert("이미 로그인 된 생타입니다.");
+		location.href="main";
+	</script>
+</c:if>
 
 <div class="mainlogin">
 	<div class="mainheader">
