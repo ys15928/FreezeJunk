@@ -140,18 +140,6 @@ public class youtubeService {
 			} else
 				break;
 		}
-
-		// commentArray을 확인하기 위한 commentArray.json 파일 생성
-		try {
-			gson = new GsonBuilder().setPrettyPrinting().create();
-			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\allCommentData.json");
-			file.write(strResultCommentData);
-			file.flush();
-			file.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	// 카피 댓글을 찾기 위한 인기순 상위 200개 댓글 크롤링
@@ -202,18 +190,6 @@ public class youtubeService {
 				tokenFlag = 1;
 			} else
 				break;
-		}
-
-		// commentArray을 확인하기 위한 commentArray.json 파일 생성
-		try {
-			gson = new GsonBuilder().setPrettyPrinting().create();
-			strResultCommentData = gson.toJson(resultCommentData);
-			file = new FileWriter("E:\\FreezeJunk\\src\\main\\webapp\\resources\\freezejunk\\top200CommentData.json");
-			file.write(strResultCommentData);
-			file.flush();
-			file.close();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
@@ -342,7 +318,6 @@ public class youtubeService {
 			setSpamAndDelete(junkCommentIdList, true);
 		} else
 			System.out.println("NO BOT HERE");
-
 	}
 
 	private static final String CLIENT_SECRETS = "client_secret.json";
