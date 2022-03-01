@@ -21,8 +21,6 @@ import com.google.api.services.youtube.model.Comment;
 import com.google.api.services.youtube.model.CommentSnippet;
 import com.google.api.services.youtube.model.CommentThreadListResponse;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
