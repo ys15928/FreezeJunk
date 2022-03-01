@@ -11,7 +11,7 @@
 	href="${contextPath }/resources/default/mainStyle.css" />
 </head>
 <body>
-
+<div class="container">
 	<jsp:include page="../default/header.jsp" />
 	<div class="remain">
 		<div class="remaincenter">
@@ -36,5 +36,6 @@
 	</div>
 
 	<jsp:include page="../default/footer.jsp" />
+</div>
 </body>
 </html>

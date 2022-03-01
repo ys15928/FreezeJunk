@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
 <body>
+<div class="container">
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap write-container">
 		<form action="suggestion-2" method="post" id="form">
@@ -26,6 +27,7 @@
 		</form>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
+</div>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/bootstrap.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
