@@ -67,13 +67,11 @@ public class youtubeController {
 	}
 
 	@RequestMapping(value = "/main/copyCommentFreezeResult", method = RequestMethod.POST)
-	public String copyCommentFreezeResult(@RequestBody String videoUrl) {
-		//String videoUrl = request.getParameter("videoUrl");
-		System.out.println("videoUrl = " + videoUrl);
+	public String copyCommentFreezeResult(HttpServletRequest request) {
+		String videoUrl = request.getParameter("videoUrl");
 		
 		try {
-			service.filterForcopyBot(URLDecoder.decode(videoUrl, "UTF-8"));
-
+			service.filterForcopyBot(videoUrl);
 
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
