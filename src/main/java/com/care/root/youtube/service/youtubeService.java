@@ -21,8 +21,6 @@ import com.google.api.services.youtube.model.Comment;
 import com.google.api.services.youtube.model.CommentSnippet;
 import com.google.api.services.youtube.model.CommentThreadListResponse;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -329,7 +327,7 @@ public class youtubeService {
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(httpTransport, JSON_FACTORY,
 				clientSecrets, SCOPES).build();
 		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
-
+		
 		return credential;
 	}
 
@@ -337,7 +335,7 @@ public class youtubeService {
 	public static YouTube getService() throws GeneralSecurityException, IOException {
 		final NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 		Credential credential = authorize(httpTransport);
-
+		
 		return new YouTube.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME)
 				.build();
 	}
@@ -346,10 +344,8 @@ public class youtubeService {
 	public void setSpamAndDelete(String commentId, boolean setBanAuthor)
 			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
 		YouTube youtubeService = getService();
-
 		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(commentId,
 				"rejected");
 		request.setBanAuthor(setBanAuthor).execute();
-
 	}
 }
