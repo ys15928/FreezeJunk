@@ -36,7 +36,6 @@ function videoUrlCheck() {
 	document.getElementById("form").submit();
 }
 
-
 function instruction(){
 	document.getElementById("insmodal").style.display="block";
 }

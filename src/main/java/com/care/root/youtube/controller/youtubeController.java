@@ -55,10 +55,10 @@ public class youtubeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return "member/main";
 	}
 
+	
 	@RequestMapping("/main/copyCommentFreeze")
 	public String copyCommentFreeze(HttpServletRequest request) {
 		return "freezejunk/copyCommentFreeze";

@@ -47,8 +47,11 @@
 			
 			<div class="search-box">
 				<input type="text" class="search" id="videoUrl" name="videoUrl" placeholder="URL 입력"/>
-				<span class="search-img-box"><img src="${contextPath }/resources/image/search_white.png" onclick="videoUrlCheck();"/></span>
+				<span class="search-img-box">
+				<img src="${contextPath }/resources/image/search_white.png" onclick="videoUrlCheck();"/>
+				</span>
 			</div>
+			
 		</form>
 		<div class="video">
 		  <video controls poster="${contextPath }/resources/login/logoblack.png">
