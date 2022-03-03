@@ -1,14 +1,12 @@
 package com.care.root.youtube.controller;
 
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.security.GeneralSecurityException;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,12 +23,12 @@ public class youtubeController {
 	}
 
 	@RequestMapping(value = "/main/keywordFreezeResult", method = RequestMethod.POST)
-	public String keywordFreezeResult(HttpServletRequest request) {
+	public String keywordFreezeResult(HttpServletRequest request, HttpServletResponse response) {
 		String videoUrl = request.getParameter("videoUrl");
 		String keywords = request.getParameter("keywords");
 
 		try {
-			service.filterForDelete(videoUrl, keywords);
+			service.filterForDelete(videoUrl, keywords, response);
 
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
@@ -46,12 +44,12 @@ public class youtubeController {
 	}
 
 	@RequestMapping(value = "/main/accountFreezeResult", method = RequestMethod.POST)
-	public String accountFreezeResult(HttpServletRequest request) {
+	public String accountFreezeResult(HttpServletRequest request, HttpServletResponse response) {
 		String videoUrl = request.getParameter("videoUrl");
 		String accounts = request.getParameter("accounts");
 
 		try {
-			service.filterForSpamAccount(videoUrl, accounts);
+			service.filterForSpamAccount(videoUrl, accounts, response);
 
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
@@ -67,11 +65,11 @@ public class youtubeController {
 	}
 
 	@RequestMapping(value = "/main/copyCommentFreezeResult", method = RequestMethod.POST)
-	public String copyCommentFreezeResult(HttpServletRequest request) {
+	public String copyCommentFreezeResult(HttpServletRequest request, HttpServletResponse response) {
 		String videoUrl = request.getParameter("videoUrl");
-		
+
 		try {
-			service.filterForcopyBot(videoUrl);
+			service.filterForcopyBot(videoUrl, response);
 
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
