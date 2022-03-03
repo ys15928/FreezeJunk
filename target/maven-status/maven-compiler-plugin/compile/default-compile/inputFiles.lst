@@ -10,7 +10,10 @@ E:\FreezeJunk\src\main\java\com\care\root\member\dto\MemberDTO.java
 E:\FreezeJunk\src\main\java\com\care\root\mybatis\SuggestionMapper.java
 E:\FreezeJunk\src\main\java\com\care\root\interceptor\Interceptor.java
 E:\FreezeJunk\src\main\java\com\care\root\mybatis\MemberMapper.java
+<<<<<<< HEAD
 E:\FreezeJunk\src\main\java\com\care\root\youtube\service\AuthorizationCodeInstalledApp.java
+=======
+>>>>>>> ysshin
 E:\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionService.java
 E:\FreezeJunk\src\main\java\com\care\root\member\config\MainConfiguration.java
 E:\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionDTO.java
