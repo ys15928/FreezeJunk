@@ -33,9 +33,7 @@ function videoUrlCheck() {
 		return;
 	}
 
-	oauth2();
-	//document.getElementById("form").submit();
-	//google_Oauth2();
+	document.getElementById("form").submit();
 }
 
 
@@ -54,23 +52,5 @@ function google_Oauth2() {
 
 }
 
-function oauth2() {
-	const videoUrl = document.getElementById("videoUrl").value
-	const data = new FormData()
-	data.append("videoUrl", videoUrl)
 
-	$.ajax({
-		url: "copyCommentFreezeResult", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
-		data: {"videoUrl": videoUrl},  // HTTP 요청과 함께 서버로 보낼 데이터
-		type: "post",   // HTTP 요청 메소드(GET, POST 등)
-		
-		success: function(json) {
-			console.log(json);
 
-		},
-		error: function(xhr, status, error){
-			console.log("error");
-			console.log(error);
-		}
-	})
-}
