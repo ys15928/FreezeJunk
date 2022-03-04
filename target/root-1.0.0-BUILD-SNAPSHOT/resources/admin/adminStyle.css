@@ -1,5 +1,5 @@
 body {
-    width: 1920px !important;
+    width: 100% !important;
     overflow-x: hidden;
     background-color: black;
 }
