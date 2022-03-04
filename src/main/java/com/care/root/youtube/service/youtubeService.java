@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
@@ -28,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import com.care.root.mybatis.YoutubeMapper;
@@ -192,7 +194,7 @@ public class youtubeService {
 	}
 
 	// keywords 포함한 댓글의 comment id 추출
-	public void filterForDelete(String videoUrl, String inputKeywords)
+	public void filterForDelete(String videoUrl, String inputKeywords, HttpServletResponse response)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
 		crawlingAll(videoUrl);
@@ -232,14 +234,14 @@ public class youtubeService {
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
 			System.out.println(junkCommentIdList);
-			setSpamAndDelete(junkCommentIdList, false);
+			setSpamAndDelete(junkCommentIdList, false, response);
 		} else {
 			System.out.println("NO TARGET HERE");
 		}
 	}
 
 	// 차단하고자하는 계정의 모든 댓글 comment id 추출
-	public void filterForSpamAccount(String videoUrl, String inputAccounts)
+	public void filterForSpamAccount(String videoUrl, String inputAccounts, HttpServletResponse response)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
 		crawlingAll(videoUrl);
@@ -264,14 +266,14 @@ public class youtubeService {
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
 			System.out.println(junkCommentIdList);
-			setSpamAndDelete(junkCommentIdList, true);
+			setSpamAndDelete(junkCommentIdList, true, response);
 		} else {
 			System.out.println("NO TARGET HERE");
 		}
 	}
 
 	// 같은 내용, 다른 계정, 더 늦게 달린 댓글의 comment id 추출
-	public void filterForcopyBot(String videoUrl)
+	public void filterForcopyBot(String videoUrl, HttpServletResponse response)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
 		crawlingTop200(videoUrl);
@@ -313,7 +315,7 @@ public class youtubeService {
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
 			System.out.println(junkCommentIdList);
-			setSpamAndDelete(junkCommentIdList, true);
+			setSpamAndDelete(junkCommentIdList, true, response);
 		} else
 			System.out.println("NO BOT HERE");
 	}
@@ -321,29 +323,28 @@ public class youtubeService {
 	private static final String CLIENT_SECRETS = "client_secret.json";
 	private static final Collection<String> SCOPES = Arrays.asList("https://www.googleapis.com/auth/youtube.force-ssl");
 
-	public static Credential authorize(final NetHttpTransport httpTransport) throws IOException {
+	public static Credential authorize(final NetHttpTransport httpTransport, HttpServletResponse response) throws IOException {
 		InputStream in = youtubeService.class.getResourceAsStream(CLIENT_SECRETS);
 		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(httpTransport, JSON_FACTORY,
 				clientSecrets, SCOPES).build();
-		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
-		
+		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver(), response).authorize("user", response);
 		return credential;
 	}
 
 	// 삭제 및 스팸 설정 하기 위한 Service 준비
-	public static YouTube getService() throws GeneralSecurityException, IOException {
+	public static YouTube getService(HttpServletResponse response) throws GeneralSecurityException, IOException {
 		final NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-		Credential credential = authorize(httpTransport);
+		Credential credential = authorize(httpTransport, response);
 		
 		return new YouTube.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME)
 				.build();
 	}
 
 	// 삭제 및 스팸 설정 실행
-	public void setSpamAndDelete(String commentId, boolean setBanAuthor)
+	public void setSpamAndDelete(String commentId, boolean setBanAuthor, HttpServletResponse response)
 			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
-		YouTube youtubeService = getService();
+		YouTube youtubeService = getService(response);
 		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(commentId,
 				"rejected");
 		request.setBanAuthor(setBanAuthor).execute();
