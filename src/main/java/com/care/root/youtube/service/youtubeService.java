@@ -326,6 +326,7 @@ public class youtubeService {
 		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 		GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(httpTransport, JSON_FACTORY,
 				clientSecrets, SCOPES).build();
+		
 		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver(), response).authorize("user", response);
 		return credential;
 	}
@@ -334,7 +335,7 @@ public class youtubeService {
 	public static YouTube getService(HttpServletResponse response) throws GeneralSecurityException, IOException {
 		final NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 		Credential credential = authorize(httpTransport, response);
-		
+		System.out.println("credential : " + credential);
 		return new YouTube.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME)
 				.build();
 	}

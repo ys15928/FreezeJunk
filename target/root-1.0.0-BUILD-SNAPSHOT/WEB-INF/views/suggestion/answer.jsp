@@ -21,6 +21,7 @@
 	SimpleDateFormat sdf2 = new SimpleDateFormat("a hh:mm");
 	
 %>
+<div class="container">
 	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap ht-1030">
 		<div class="info-head-title">
@@ -66,6 +67,7 @@
 		</div>
 	</div>
 	<jsp:include page="../default/footer.jsp"/>
+</div>
 
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/bootstrap.js"></script>

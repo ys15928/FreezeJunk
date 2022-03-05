@@ -107,6 +107,9 @@ public final class LocalServerReceiver implements VerificationCodeReceiver {
 		this.failureLandingPageUrl = failureLandingPageUrl;
 	}
 
+	
+	
+	// 중요할듯
 	@Override
 	public String getRedirectUri() throws IOException {
 
@@ -121,9 +124,13 @@ public final class LocalServerReceiver implements VerificationCodeReceiver {
 			Throwables.propagateIfPossible(e);
 			throw new IOException(e);
 		}
-		return "http://" + this.getHost() + ":" + port + callbackPath;
+//		return "http://" + this.getHost() + ":" + port + callbackPath;
+		return "https://freezejunk.com" + callbackPath;
 	}
 
+	
+	
+	
 	/*
 	 * Copied from Jetty findFreePort() as referenced by:
 	 * https://gist.github.com/vorburger/3429822
@@ -259,7 +266,7 @@ public final class LocalServerReceiver implements VerificationCodeReceiver {
 
 		@Override
 		public void handle(HttpExchange httpExchange) throws IOException {
-
+			System.out.println("httpExchange.getRequestURI().getPath() : " + httpExchange.getRequestURI().getPath() );
 			if (!callbackPath.equals(httpExchange.getRequestURI().getPath())) {
 				return;
 			}
