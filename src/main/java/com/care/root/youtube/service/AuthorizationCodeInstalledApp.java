@@ -20,23 +20,12 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.TokenResponse;
 import com.google.api.client.extensions.java6.auth.oauth2.VerificationCodeReceiver;
 import com.google.api.client.util.Preconditions;
-import com.sun.mail.iap.Response;
 
 import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.URL;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -121,17 +110,13 @@ public class AuthorizationCodeInstalledApp {
 			String redirectUri = receiver.getRedirectUri();
 			AuthorizationCodeRequestUrl authorizationUrl = flow.newAuthorizationUrl().setRedirectUri(redirectUri);
 			onAuthorization(authorizationUrl, res);
-			
+
 			// receive authorization code and exchange it for an access token
 			String code = receiver.waitForCode();
-			
-			/*res.setContentType("text/html; charset=UTF-8");
-			PrintWriter writer = res.getWriter();
-			writer.println("<script>window.close();</script>"); 
-			writer.close();*/
-			
+
 			TokenResponse response = flow.newTokenRequest(code).setRedirectUri(redirectUri).execute();
 			// store credential and return it
+			
 			return flow.createAndStoreCredential(response, userId);
 		} finally {
 			receiver.stop();
@@ -178,13 +163,21 @@ public class AuthorizationCodeInstalledApp {
 		// Ask user to open in their browser using copy-paste
 		System.out.println("Please open the following address in your browser:");
 		System.out.println("  " + url);
-		
+
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
-		writer.println("<script>window.open('"+url+"', \"Oauth2.0_Page\", \"width=600px, height=800px, top=50px\");</script>"); 
-		//writer.println("<form action=\"member/main.jsp\" method=\"post\">");
-		writer.close();
 		
+		//전체화면으로 띄우기
+		//writer.println("<script>var new_window = window.open('" + url + "');</script>");
+		writer.println("<script>window.open('" + url + "');</script>");
+		
+		
+		//완료후 페이지 이동
+		writer.println("<script>location.href='./';</script>");
+		
+		//writer.println("<script>new_window.close();</script>");
+		
+		writer.close();
 	}
 
 	/** Returns the authorization code flow. */

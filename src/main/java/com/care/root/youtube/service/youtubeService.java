@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -28,10 +27,12 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import com.care.root.mybatis.YoutubeMapper;
 import com.care.root.youtube.dto.YoutubeDTO;
 
@@ -176,7 +177,7 @@ public class youtubeService {
 				commentJsonObj.put("authorChannelUrl", authorChannelUrl);
 				commentJsonObj.put("strDateToSec", strDateToSec);
 				commentJsonObj.put("text", commentText);
-
+				
 				commentArray = new JSONArray();
 				commentArray.add(commentJsonObj);
 				commentCount++;
@@ -233,7 +234,6 @@ public class youtubeService {
 
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-			System.out.println(junkCommentIdList);
 			setSpamAndDelete(junkCommentIdList, false, response);
 		} else {
 			System.out.println("NO TARGET HERE");
@@ -265,7 +265,6 @@ public class youtubeService {
 
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
-			System.out.println(junkCommentIdList);
 			setSpamAndDelete(junkCommentIdList, true, response);
 		} else {
 			System.out.println("NO TARGET HERE");
@@ -273,12 +272,11 @@ public class youtubeService {
 	}
 
 	// 같은 내용, 다른 계정, 더 늦게 달린 댓글의 comment id 추출
-	public void filterForcopyBot(String videoUrl, HttpServletResponse response)
+	public void filterForcopyBot(String videoUrl, HttpServletResponse response, HttpServletRequest request)
 			throws GoogleJsonResponseException, GeneralSecurityException, IOException {
 
 		crawlingTop200(videoUrl);
 		junkCommentIdList = new String();
-
 		for (int i = 1; i <= resultCommentData.size(); i++) {
 			commentArray = (JSONArray) resultCommentData.get("commentArray" + i);
 			commentArrayData = (JSONObject) commentArray.get(0);
@@ -287,7 +285,7 @@ public class youtubeService {
 			commentText = (String) commentArrayData.get("text");
 			commentId = (String) commentArrayData.get("commentId");
 
-			for (int j = i; j < resultCommentData.size(); j++) {
+			for (int j = i+1 ; j <= resultCommentData.size(); j++) {
 
 				commentArrayTarget = (JSONArray) resultCommentData.get("commentArray" + j);
 				commentArrayDataTarget = (JSONObject) commentArrayTarget.get(0);
@@ -311,7 +309,7 @@ public class youtubeService {
 				}
 			}
 		}
-
+		
 		if (junkCommentIdList.length() >= 2) {
 			junkCommentIdList = junkCommentIdList.substring(0, junkCommentIdList.length() - 2);
 			System.out.println(junkCommentIdList);
@@ -345,6 +343,7 @@ public class youtubeService {
 	public void setSpamAndDelete(String commentId, boolean setBanAuthor, HttpServletResponse response)
 			throws GeneralSecurityException, IOException, GoogleJsonResponseException {
 		YouTube youtubeService = getService(response);
+		
 		YouTube.Comments.SetModerationStatus request = youtubeService.comments().setModerationStatus(commentId,
 				"rejected");
 		request.setBanAuthor(setBanAuthor).execute();
