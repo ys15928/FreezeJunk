@@ -44,10 +44,3 @@ function cl() {
 	document.getElementById("insmodal").style.display = "none";
 }
 
-function google_Oauth2() {
-	window.open("https://freezejunk.auth.ap-northeast-2.amazoncognito.com/login?client_id=5omtd6c4g1cotvmgddftfvnov9&response_type=token&scope=email+openid+profile&redirect_uri=https://freezejunk.com/main/copyCommentFreezeResult/", "Oauth2.0_Page", "width=400px, height=300px, top=50px"); 
-
-}
-
-
-

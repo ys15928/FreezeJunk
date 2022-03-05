@@ -69,13 +69,13 @@ public class youtubeController {
 		String videoUrl = request.getParameter("videoUrl");
 
 		try {
-			service.filterForcopyBot(videoUrl, response);
+			service.filterForcopyBot(videoUrl, response, request);
 
 		} catch (GeneralSecurityException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return "member/main";
+		return "freezejunk/copyCommentFreezeResult";
 	}
 }
