@@ -27,13 +27,15 @@
 			창을 닫고 처리결과 확인 <br> <br> <span class="modalspan">쉼표
 				구분과 키워드 설정 실수에 의한 댓글 삭제는 책임지지 않습니다.</span><br> 댓글이 과하게 많은 경우 할당량의 문제가
 			발생할 수 있기 때문에 시간순이 아닌 인기순으로 댓글들을 크롤링합니다.<br>(모든 댓글에 대해 삭제를 진행 하는
-			것이 아닙니다.)<br> 삭제될 댓글이 없는 경우 권한 부여 창이 뜨지 않습니다.<br>
+			것이 아닙니다.)<br> 삭제될 댓글이 없는 경우 권한 부여 창이 뜨지 않습니다.<br> 쿠키가 차단되어
+			있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br> 
+			<a href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0" 
+				style="color: #368AFF" target="_blank">쿠키허용 방법 보기</a>
 		</div>
 		<div class="modalfooter">
 			<button type="button" class="modalbtn" id="cl" onclick="cl()">확인</button>
 		</div>
 	</div>
-
 
 	<div class="container">
 		<jsp:include page="../default/header.jsp" />
@@ -56,7 +58,7 @@
 
 				<div class="search-box">
 					<input type="text" class="search" id="videoUrl" name="videoUrl"
-						placeholder="URL 입력"/> <span class="search-img-box"><img
+						placeholder="URL 입력" /> <span class="search-img-box"><img
 						src="${contextPath }/resources/image/search_white.png"
 						onclick="keywordFreeze();" /></span>
 				</div>
