@@ -4,25 +4,30 @@
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
-	 <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-      <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-      <property name="jdbcUrl" value="jdbc:oracle:thin:@210.221.253.215:1521:xe" />
-      <property name="username" value="Team03" />
-      <property name="password" value="3333" />
-   </bean>  
-	
-   <bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
-      <constructor-arg ref="hikariConfig"/>
-   </bean>
-    
-   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-      <property name="dataSource" ref="ds"/>
-      <property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml"/>
-   </bean>
-   
-   <mybatis-spring:scan base-package="com.care.root.mybatis"/> 
-		
+
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl"
+			value="jdbc:oracle:thin:@210.221.253.215:1521:xe" />
+		<property name="username" value="Team03" />
+		<property name="password" value="3333" />
+	</bean>
+
+	<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds" />
+		<property name="mapperLocations"
+			value="classpath:/mappers/**/*Mapper.xml" />
+	</bean>
+
+	<mybatis-spring:scan
+		base-package="com.care.root.mybatis" />
+
 </beans>

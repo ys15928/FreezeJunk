@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\member\config\SessionConfig.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\admin\AdminService.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\interceptor\AdminInterceptor.java
@@ -19,3 +20,22 @@ C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\suggestion\Su
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\admin\AdminController.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionDTO.java
 C:\Users\wnsgh\sp-workspace\FreezeJunk\src\main\java\com\care\root\mybatis\YoutubeMapper.java
+=======
+E:\FreezeJunk\src\main\java\com\care\root\admin\AdminController.java
+E:\FreezeJunk\src\main\java\com\care\root\member\contoller\MemberController.java
+E:\FreezeJunk\src\main\java\com\care\root\youtube\controller\YoutubeController.java
+E:\FreezeJunk\src\main\java\com\care\root\mybatis\YoutubeMapper.java
+E:\FreezeJunk\src\main\java\com\care\root\admin\AdminService.java
+E:\FreezeJunk\src\main\java\com\care\root\HomeController.java
+E:\FreezeJunk\src\main\java\com\care\root\member\dto\MemberDTO.java
+E:\FreezeJunk\src\main\java\com\care\root\mybatis\SuggestionMapper.java
+E:\FreezeJunk\src\main\java\com\care\root\interceptor\Interceptor.java
+E:\FreezeJunk\src\main\java\com\care\root\mybatis\MemberMapper.java
+E:\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionService.java
+E:\FreezeJunk\src\main\java\com\care\root\member\config\MainConfiguration.java
+E:\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionDTO.java
+E:\FreezeJunk\src\main\java\com\care\root\member\service\MemberService.java
+E:\FreezeJunk\src\main\java\com\care\root\suggestion\SuggestionController.java
+E:\FreezeJunk\src\main\java\com\care\root\interceptor\AdminInterceptor.java
+E:\FreezeJunk\src\main\java\com\care\root\member\config\SessionConfig.java
+>>>>>>> 41b1885e8cb0782bc0a8244588ddb870eef7e22c
