@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class YoutubeController {
 
@@ -14,12 +13,10 @@ public class YoutubeController {
 		return "freezejunk/keywordFreeze";
 	}
 
-
 	@RequestMapping("/main/accountFreeze")
 	public String accountFreeze(HttpServletRequest request) {
 		return "freezejunk/accountFreeze";
 	}
-
 
 	@RequestMapping("/main/copyCommentFreeze")
 	public String copyCommentFreeze(HttpServletRequest request) {
