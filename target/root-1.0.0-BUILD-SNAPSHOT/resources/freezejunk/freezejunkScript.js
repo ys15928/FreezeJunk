@@ -33,11 +33,8 @@ function videoUrlCheck() {
 		return;
 	}
 
-	oauth2();
-	//document.getElementById("form").submit();
-	//google_Oauth2();
+	document.getElementById("form").submit();
 }
-
 
 function instruction() {
 	document.getElementById("insmodal").style.display = "block";
@@ -47,30 +44,3 @@ function cl() {
 	document.getElementById("insmodal").style.display = "none";
 }
 
-//코그니토 사용시
-function google_Oauth2() {
-	location.href = "https://freezejunk.auth.ap-northeast-2.amazoncognito.com/login?client_id=5omtd6c4g1cotvmgddftfvnov9&response_type=token&scope=email+openid+profile&redirect_uri=https://freezejunk.com/main/copyCommentFreezeResult/"
-	//window.open("https://freezejunk.auth.ap-northeast-2.amazoncognito.com/login?client_id=5omtd6c4g1cotvmgddftfvnov9&response_type=token&scope=email+openid+profile&redirect_uri=https://freezejunk.com/main/copyCommentFreezeResult/", "Oauth2.0_Page", "width=400px, height=300px, top=50px"); 
-
-}
-
-function oauth2() {
-	const videoUrl = document.getElementById("videoUrl").value
-	const data = new FormData()
-	data.append("videoUrl", videoUrl)
-
-	$.ajax({
-		url: "copyCommentFreezeResult", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
-		data: {"videoUrl": videoUrl},  // HTTP 요청과 함께 서버로 보낼 데이터
-		type: "post",   // HTTP 요청 메소드(GET, POST 등)
-		
-		success: function(json) {
-			console.log(json);
-
-		},
-		error: function(xhr, status, error){
-			console.log("error");
-			console.log(error);
-		}
-	})
-}

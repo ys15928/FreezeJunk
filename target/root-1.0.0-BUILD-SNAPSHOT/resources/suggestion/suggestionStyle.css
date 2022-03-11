@@ -2,7 +2,7 @@ a {
 	text-decoration: none;
 }
 body {
-	width: 1920px !important;
+	width: 100% !important;
 	overflow-x: hidden;
 	background-color: black;
 }
@@ -359,9 +359,13 @@ button:hover {
 }
 
  .container {
-    width: 1920px;
-    height: 968px;
-   /* overflow: auto; */
+    width: 100%;
+<<<<<<< HEAD
+    height: 920px;
+=======
+    height: 100%;
+>>>>>>> 41b1885e8cb0782bc0a8244588ddb870eef7e22c
+   	overflow: auto;
   }
   .container::-webkit-scrollbar {
     width: 10px;

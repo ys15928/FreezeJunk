@@ -206,7 +206,7 @@ public class MemberController {
 			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
 		} else {
 			se.invalidate();
-			out.print("<script> alert('탈퇴되었습니다.');location.href='../main';</script>");
+			out.print("<script> alert('탈퇴되었습니다.');location.href='../first';</script>");
 		}
 	}
 	
