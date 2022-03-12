@@ -106,7 +106,14 @@
 			}
 		%>
 		<div class="info-btn-box">
-			<button type="button" onclick="location.href='suggestion-3'">목록으로</button>
+		<c:choose>
+			<c:when test="${type == 'all' }">
+				<button type="button" onclick="location.href='suggestion-3'">목록으로</button>
+			</c:when>
+			<c:otherwise>
+				<button type="button" onclick="location.href='suggestion-4'">목록으로</button>
+			</c:otherwise>
+		</c:choose>
 		<%
 			if(dto.getSuggId().equals(loginUser.getId()) && dto.getAnswContent() == null) {
 		%>
