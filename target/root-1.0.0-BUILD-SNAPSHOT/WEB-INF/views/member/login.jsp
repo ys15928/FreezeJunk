@@ -13,21 +13,12 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-<c:if test="${loginUser != null }">
-	<script>
-		alert("이미 로그인 된 상태입니다.");
-		location.href="main";
-	</script>
-</c:if>
-=======
 	<c:if test="${loginUser != null }">
 		<script>
 			alert("이미 로그인 된 상태입니다.");
 			location.href = "main";
 		</script>
 	</c:if>
->>>>>>> 41b1885e8cb0782bc0a8244588ddb870eef7e22c
 
 	<div class="mainlogin">
 		<div class="mainheader">
