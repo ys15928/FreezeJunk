@@ -45,7 +45,7 @@
 			<div class="list-select bl-none">내가 작성한 건의사항</div>
 		</div>
 		<div class="sugg-search-box">
-			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
+			<span class="search-comment">제목</span><input type="text" id="search" name="search" value="${search }"/>
 			<span class="search-btn-box" onclick="search(2);">
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
@@ -67,7 +67,7 @@
 		%>
 		<div class="sugg-line">
 			<div class="list-num"><%=dto.getNum() %></div>
-			<div class="list-title"><a href="suggestion-5?num=<%=dto.getNum()%>" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
+			<div class="list-title"><a href="suggestion-5?num=<%=dto.getNum()%>&type=my" class="sugg-line-a"><%=dto.getSuggTitle() %></a></div>
 			<div class="list-name"><%=dto.getName() %>(<%=dto.getSuggId() %>)</div>
 		<%
 			Date sys = new Date();

@@ -26,8 +26,7 @@
 			쿠키가 차단되어 있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br>
 			<a href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0" 
 				style="color: #368AFF" target="_blank">쿠키허용 방법 보기</a>
-
-		</div>
+				</div>
 		<div class="modalfooter">
 			<button type="button" class="modalbtn" id="cl" onclick="cl()">확인</button>
 		</div>
@@ -64,7 +63,7 @@
 			<div class="video">
 				<video controls
 					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/jeju.mp4"
+					<source src="${contextPath}/resources/freezejunk/copycomment.mp4"
 						type="video/mp4">
 					<strong>Your browser does not support the video tag.</strong>
 				</video>
