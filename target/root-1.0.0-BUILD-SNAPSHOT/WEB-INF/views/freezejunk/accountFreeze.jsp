@@ -72,7 +72,7 @@
 			<div class="video">
 				<video controls
 					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/jeju.mp4"
+					<source src="${contextPath}/resources/freezejunk/account.mp4"
 						type="video/mp4">
 					<strong>Your browser does not support the video tag.</strong>
 				</video>

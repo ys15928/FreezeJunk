@@ -45,7 +45,7 @@
 			<div class="non-list-select bl-none"><a href="suggestion-4">내가 작성한 건의사항</a></div>
 		</div>
 		<div class="sugg-search-box">
-			<span class="search-comment">제목</span><input type="text" id="search" name="search"/>
+			<span class="search-comment">제목</span><input type="text" id="search" name="search" value="${search }"/>
 			<span class="search-btn-box" onclick="search(1);">
 				<img src="${contextPath }/resources/image/search_white.png" class="search-img"/>
 			</span>
@@ -173,7 +173,7 @@
 		var loginId = "<%=loginUser.getId() %>";
 		var status = infoStatus;
 		if(status == 1 || loginId == "team03" || loginId == infoId) {
-			location.href="suggestion-5?num=" + infoNum;
+			location.href="suggestion-5?num=" + infoNum + "&type=all";
 		} else {
 			alert("비공개 글입니다.")
 		}

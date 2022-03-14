@@ -25,7 +25,7 @@
 					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id != null }">
-					<li><a href="${contextPath }/mypage" class="ad adfont">${loginUser.name }님 환영합니다</a></li>
+					<li><a href="${contextPath }/main/mypage" class="ad adfont">${loginUser.name }님 환영합니다</a></li>
 					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id == null }">
