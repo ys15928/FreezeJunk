@@ -39,8 +39,14 @@
 		class="com.care.root.interceptor.Interceptor" />
 	<interceptors>
 		<interceptor>
+
+			<mapping path="/main/suggestion-3" />
+	<!-- 	<mapping path="/main"/>  
 			<mapping path="/main/*" />
-			<mapping path="/main"/>
+						<mapping path="/main/keywordFreeze/*" />
+			<mapping path="/main/accountFreeze/*" />
+			<mapping path="/main/copyCommentFreeze/*" />
+	-->
 			<beans:ref bean="interceptor" />
 		</interceptor>
 	</interceptors>
