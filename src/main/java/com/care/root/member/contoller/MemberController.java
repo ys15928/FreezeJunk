@@ -38,10 +38,10 @@ public class MemberController {
 		return "member/main";
 	}
 	
-	@RequestMapping("first")
+/*	@RequestMapping("first")
 	public String first(){
 		return "default/first";
-	}
+	}*/
 	
 	@RequestMapping("footer")
 	public String footer() {
@@ -132,7 +132,7 @@ public class MemberController {
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='../first';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
 	}
 	
 	@RequestMapping(value="searchId", method = RequestMethod.POST)
@@ -154,12 +154,9 @@ public class MemberController {
 	@RequestMapping("main/mypage")
 	public String mypage(Model model, HttpServletRequest req) {
 		HttpSession se = req.getSession();
-		if(se.getAttribute("loginUser")==null) {
-			return "redirect:login";
-		}else {
 			MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
 			service.mypage(model,dto.getId());
-		}
+		
 		return "member/mypage";
 	}
 	
