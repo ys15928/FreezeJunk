@@ -18,7 +18,7 @@
 			<input type="text" id="title" name="title" placeholder="제목"/>
 			<textarea id="editor" name="content"></textarea>
 			<div class="status-box">
-				<span class="status-comment">비공개</span><input type="checkbox" name="status" value="1" id="status"/>
+				<span class="status-comment">전체공개</span><input type="checkbox" name="status" value="1" id="status"/>
 			</div>
 			<div class="write-btn-box">
 				<button type="button" class="mr-15" id="write-btn" onclick="location.href='suggestion-3'">목록으로</button>

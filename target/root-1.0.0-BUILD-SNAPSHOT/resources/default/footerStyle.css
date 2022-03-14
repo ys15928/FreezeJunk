@@ -23,7 +23,7 @@ body {
 
 .footerhr {
 	margin-top: 20px;
-	border: 1px solid #353535;
+	border: 1px solid #191919; width: 1180px; margin: 0 auto;
 }
 
 .footertable {

@@ -248,8 +248,8 @@ function extractCrawlingData_ForCopyBot(videoId, crawlingResult) {
 // <===============================삭 제 대 상 찾 기===============================>
 // 키워드
 function filterForDelete(commentDataAfterExtract) {
-	console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
-	console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
+	//console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
+	//console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
 
 	let keywords = document.getElementById('keywords').value
 	let keywordsList = keywords.split(",")
@@ -291,8 +291,8 @@ function filterForDelete(commentDataAfterExtract) {
 
 // 계정(차단하고자 하는 계정의 모든 댓글 id를 추출)
 function filterForSpamAccount(commentDataAfterExtract) {
-	console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
-	console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
+	//console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
+	//console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
 
 	let accounts = document.getElementById('accounts').value;
 	let accountList = accounts.split(",")
@@ -302,7 +302,6 @@ function filterForSpamAccount(commentDataAfterExtract) {
 	for (let i = 0; i < Object.keys(commentDataAfterExtract).length; i++) {
 		let authorChannelUrl = commentDataAfterExtract[i].authorChannelUrl
 		let authorChannelId = authorChannelUrl.split("channel/")
-		//let channelId = authorChannelId[1].substring(0, authorChannelId[1].length - 1)
 		let commentId = commentDataAfterExtract[i].commentId
 
 		for (let j = 0; j < accountList.length; j++) {
@@ -326,8 +325,8 @@ function filterForSpamAccount(commentDataAfterExtract) {
 
 // 카피봇
 function filterForcopyBot(commentDataAfterExtract) {
-	console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
-	console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
+	//console.log("commentDataAfterExtract : " + JSON.stringify(commentDataAfterExtract));
+	//console.log("commentDataAfterExtract.len : " + Object.keys(commentDataAfterExtract).length);
 
 	let deleteFreezeCommentId = []
 	let deleteCnt = 0
@@ -344,7 +343,8 @@ function filterForcopyBot(commentDataAfterExtract) {
 			let authorNameB = commentDataAfterExtract[j].authorName
 			let publishedAtToSecB = commentDataAfterExtract[j].publishedAtToSec
 
-			if ((commentTextA == commentTextB) && (commentIdA != commentIdB) && (authorNameA != authorNameB)) {
+			if ((commentTextA == commentTextB) && (commentIdA != commentIdB) && (authorNameA != authorNameB)
+				&& (!deleteFreezeCommentId.includes(commentIdA)) && (!deleteFreezeCommentId.includes(commentIdB))) {
 				deleteCnt++
 
 				if (publishedAtToSecA > publishedAtToSecB) {
@@ -358,6 +358,9 @@ function filterForcopyBot(commentDataAfterExtract) {
 	}
 
 	if (deleteFreezeCommentId.length > 0) {
+		console.log("deleteFreezeCommentId : " + deleteFreezeCommentId);
+		console.log("deleteCnt : " + deleteCnt);
+
 		authenticate_googleOauth2(deleteCnt, true, deleteFreezeCommentId).then(loadClient_googleOauth2)
 	}
 	else {
