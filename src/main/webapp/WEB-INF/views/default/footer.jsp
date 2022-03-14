@@ -38,7 +38,7 @@
 	</tr>
 	
 	<tr>
-	<td>이메일 : freezejunk@gmail.com</td>
+	<td>이메일 : freezejunk01@gmail.com</td>
 	</tr>
 	
 	<tr>

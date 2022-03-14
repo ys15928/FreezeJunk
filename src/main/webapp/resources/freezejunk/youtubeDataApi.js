@@ -393,7 +393,7 @@ spinnerOff()
 
 function keywordFreeze() {
 	blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
-
+	
 	if (document.getElementById("videoUrl").value == "" || document.getElementById("videoUrl").value.replace(blank_pattern1, '') == "") {
 		alert("유튜브 url을 입력해주세요.");
 		return;
