@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FREEZEJUNK</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/freezejunk/freezejunkStyle.css" />
 </head>
