@@ -108,6 +108,11 @@ body {
 }
 
 .video {
-	width: 750px;
 	z-index: -1;
+}
+video {
+	width: 600px;
+    height: 425px;
+    display: block;
+    margin: 0px auto;
 }
