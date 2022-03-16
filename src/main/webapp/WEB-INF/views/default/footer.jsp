@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
-
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
 <body>

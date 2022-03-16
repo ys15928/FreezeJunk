@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FREEZEJUNK</title>
+<link rel="shortcut icon" type="image⁄x-icon"
+	href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/default/mainStyle.css" />
 </head>
@@ -21,10 +23,9 @@
 				</div>
 				<div class="remainmargin15">안녕하세요.</div>
 				<div class="remainmargin15">
-					FreezeJunk는 유튜브 영상의 댓글을 보다 쉽고 편하게 관리할 수 있게 도와주는 사이트입니다.<br> <br>영상의
-					url과 키워드 또는 스팸에 등록할 계정 등을 입력하여 <br> <br>영상에 불필요한 댓글과 스팸
-					계정 차단, 카피봇 계정을 차단할 수 있습니다.<br>
-					<br>
+					FreezeJunk는 유튜브 영상의 댓글을 보다 쉽고 편하게 관리할 수 있게 도와주는 사이트입니다.<br><br>
+					영상의 url과 키워드 또는 스팸에 등록할 계정 등을 입력하여 <br><br>
+					영상의 댓글 삭제와 스팸 계정 차단, 카피봇 계정을 차단할 수 있습니다.<br><br>
 				</div>
 				<div>
 					서비스를 사용하기 전 사용방법 및 주의사항을 <span class="remainspan">꼭!!!</span> 읽어주시기
