@@ -1,3 +1,4 @@
+<%@page import="com.care.root.member.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -62,7 +63,7 @@
 					<input type="text" class="search" id="videoUrl" name="videoUrl"
 						placeholder="URL 입력" /> <span class="search-img-box"><img
 						src="${contextPath }/resources/image/search_white.png"
-						onclick="accountFreeze();" /></span>
+						onclick="loginsession();" /></span>
 				</div>
 				<div class="keywords-box">
 					<textarea name="accounts" class="keywords-search" id="accounts"
@@ -72,7 +73,7 @@
 			<div class="video">
 				<video controls
 					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/jeju.mp4"
+					<source src="${contextPath}/resources/freezejunk/account.mp4"
 						type="video/mp4">
 					<strong>Your browser does not support the video tag.</strong>
 				</video>
@@ -88,6 +89,23 @@
 		<jsp:include page="../default/footer.jsp" />
 	</div>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+	<% MemberDTO dto = (MemberDTO)session.getAttribute("loginUser");
+	   String uid = null;	
+	   if(dto != null){
+		   uid = dto.getId();
+	   }
+	%>
+	var session = '<%= uid %>';
+	function loginsession(){
+		if(session != "null"){
+			accountFreeze();
+		}else{
+			alert("로그인 후 이용해주세요.")
+			location.href="${contextPath}/login";
+		}
+	}
+	</script>
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>
 </body>

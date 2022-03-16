@@ -77,7 +77,7 @@ button:hover {
 /* --------------------- list.jsp --------------------------- */
 .all-wrap {
 	height: 780px;
-	margin-top: 90px;
+	margin-top: 55px;
 }
 .bl-none {
 	border-left: none;
@@ -360,11 +360,7 @@ button:hover {
 
  .container {
     width: 100%;
-<<<<<<< HEAD
     height: 920px;
-=======
-    height: 100%;
->>>>>>> 41b1885e8cb0782bc0a8244588ddb870eef7e22c
    	overflow: auto;
   }
   .container::-webkit-scrollbar {

@@ -24,7 +24,7 @@
 		<div class="mainheader">
 			<div class="mainheight30"></div>
 			<div class="login">
-				<a href="${contextPath }/first"><img class="mainheight60"
+				<a href="${contextPath }/main"><img class="mainheight60"
 					src="${contextPath }/resources/login/logoblack.png"></a>
 			</div>
 			<div id="login-form">

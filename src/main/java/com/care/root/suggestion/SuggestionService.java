@@ -82,9 +82,17 @@ public class SuggestionService {
 	
 	public void info(HttpServletRequest req, Model model) {
 		int num = Integer.parseInt(req.getParameter("num"));
+		String type = req.getParameter("type");
+		if(type == null) {
+			type = "all";
+		}
+		if(!(type.equals("all")) && !(type.equals("my"))) {
+			type = "all";
+		}
 		SuggestionDTO dto = mapper.info(num);
 		dto.setName(memberMapper.getName(dto.getSuggId()));
 		model.addAttribute("dto", dto);
+		model.addAttribute("type", type);
 	}
 	public int answer(HttpServletRequest req) {
 		SuggestionDTO dto = new SuggestionDTO();

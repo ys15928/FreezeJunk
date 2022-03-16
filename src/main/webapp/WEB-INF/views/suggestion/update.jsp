@@ -19,7 +19,7 @@
 			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
 			<textarea id="editor" name="content">${dto.suggContent }</textarea>
 			<div class="status-box">
-				<span class="status-comment">비공개</span>
+				<span class="status-comment">전체공개</span>
 				<c:choose>
 					<c:when test="${dto.suggStatus == 0}">
 						<input type="checkbox" name="status" value="1" id="status"/>

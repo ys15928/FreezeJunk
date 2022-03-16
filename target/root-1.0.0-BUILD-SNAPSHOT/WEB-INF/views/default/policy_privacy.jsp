@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/default/privacyStyle.css"/>
 </head>
 <body>
+<div class="container">
 <jsp:include page="../default/header.jsp"/>
 
 <div class="privacywrap">
@@ -214,6 +215,6 @@
 <br>
 </div>
 <jsp:include page="../default/footer.jsp"/>
-
+</div>
 </body>
 </html>

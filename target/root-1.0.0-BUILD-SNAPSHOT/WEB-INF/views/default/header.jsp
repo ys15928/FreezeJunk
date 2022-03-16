@@ -25,7 +25,7 @@
 					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id != null }">
-					<li><a href="${contextPath }/mypage" class="ad adfont">${loginUser.name }님 환영합니다</a></li>
+					<li><a href="${contextPath }/main/mypage" class="ad adfont">${loginUser.name }님 환영합니다</a></li>
 					<span class="margin10">|</span>
 				</c:if>
 				<c:if test="${sessionScope.loginUser.id == null }">
@@ -44,7 +44,9 @@
 					<li class="li"><a href="${contextPath }/main/accountFreeze" class="ab">스팸 계정 차단</a></li>
 					<li class="li"><a href="${contextPath }/main/copyCommentFreeze" class="ab">카피봇 차단</a></li>
 					<li class="li"><a href="${contextPath }/main/suggestion-3" class="ab">건의사항</a></li>
+				<c:if test="${sessionScope.loginUser.id != null }">
 					<li class="li"><a href="${contextPath }/main/mypage" class="ab">마이페이지</a></li>
+				</c:if>
 				<c:if test="${sessionScope.loginUser.id eq 'team03'}">
 						<li class="li"><a href="${contextPath }/main/admin/admin-1" class="ab">회원목록</a></li>
 					</c:if>

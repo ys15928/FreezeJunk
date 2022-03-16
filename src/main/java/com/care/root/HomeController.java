@@ -27,11 +27,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest req) {
-		HttpSession session = req.getSession();
-		if(session.getAttribute("loginUser") != null) {
-			return "/member/main";
-		}
-		return "/default/first";
+		
+		return "/member/main";
 	}
 	
 }
