@@ -10,7 +10,7 @@
 	href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet"
-	href="${contextPath }/resources/default/mainStyle.css" />
+	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
 </head>
 <body>
 	<div class="container">
