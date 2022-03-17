@@ -5,13 +5,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="naver-site-verification" content="f7ece45a4f55594768823cfd58a9f1a6567b3dec" />
+<meta property="og:type" content="website"> 
+<meta property="og:title" content="FreezeJunk">
+<meta property="og:description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸& 카피봇 계정 차단이 가능합니다.">
+<meta property="og:url" content="https://freezejunk.com/main">
+
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image⁄x-icon"
-	href="${contextPath }/resources/login/logo.png">
+	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
+<meta name="description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸& 카피봇 계정 차단이 가능합니다.">
 <link rel="stylesheet"
-	href="${contextPath }/resources/default/mainStyle.css" />
+	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
 </head>
+
 <body>
 	<div class="container">
 		<jsp:include page="../default/header.jsp" />
@@ -33,7 +41,7 @@
 				<div class="remaincenter_A_content">
 					<h2>
 						<a href="${contextPath }/main/keywordFreeze"
-							style="text-decoration: none; color: #3F0099"> 키워드 삭제 > </a>
+							style="text-decoration: none; color: #368AFF"> 키워드 삭제 > </a>
 					</h2>
 					<br>
 					<h3>유튜브 동영상의 URL과 키워드들을 입력하여</h3>
@@ -59,7 +67,7 @@
 				<div class="remaincenter_B_content">
 					<h2>
 						<a href="${contextPath }/main/accountFreeze"
-							style="text-decoration: none; color: #3F0099"> < 스팸 계정 차단 </a>
+							style="text-decoration: none; color: #368AFF"> < 스팸 계정 차단 </a>
 					</h2>
 					<br>
 					<h3>유튜브 동영상의 URL과 차단하고자 하는 계정의 댓글을 드래그하여</h3>
@@ -86,7 +94,7 @@
 				<div class="remaincenter_A_content">
 					<h2>
 						<a href="${contextPath }/main/copyCommentFreeze"
-							style="text-decoration: none; color: #3F0099"> 카피봇 차단 > </a>
+							style="text-decoration: none; color: #368AFF"> 카피봇 차단 > </a>
 					</h2>
 					<br>
 					<h3>유튜브 동영상의 URL을 입력하여</h3>

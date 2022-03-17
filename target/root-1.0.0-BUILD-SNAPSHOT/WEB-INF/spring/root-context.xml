@@ -29,5 +29,4 @@
 
 	<mybatis-spring:scan
 		base-package="com.care.root.mybatis" />
-
 </beans>
