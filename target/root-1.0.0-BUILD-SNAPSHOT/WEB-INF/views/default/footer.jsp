@@ -25,6 +25,10 @@
 	</tr>
 	
 	<tr>
+	<td>FreezeJunk 프리즈정크</td>
+	</tr>
+	
+	<tr>
 	<td>대표자명 : 신윤수</td>
 	</tr>
 	

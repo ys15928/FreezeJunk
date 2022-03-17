@@ -8,14 +8,15 @@
 <meta name="naver-site-verification" content="f7ece45a4f55594768823cfd58a9f1a6567b3dec" />
 <meta property="og:type" content="website"> 
 <meta property="og:title" content="FreezeJunk">
-<meta property="og:description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸& 카피봇 계정 차단이 가능합니다.">
+<meta property="og:description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸 & 카피봇 계정 차단이 가능합니다.">
 <meta property="og:url" content="https://freezejunk.com/main">
+<link rel="canonical" href="https://freezejunk.com/">
 
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image⁄x-icon"
 	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
-<meta name="description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸& 카피봇 계정 차단이 가능합니다.">
+<meta name="description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 영상의 댓글 삭제와 스팸 & 카피봇 계정 차단이 가능합니다.">
 <link rel="stylesheet"
 	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
 </head>
