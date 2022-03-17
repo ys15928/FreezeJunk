@@ -46,7 +46,7 @@
 
 				<div class="inswrap">
 					<div>
-						사용 전 설명서 <span class="insspan">필독</span> 부탁드립니다.
+						사용 전 설명서를 클릭하여 <span class="insspan">필독</span> 부탁드립니다.
 					</div>
 					<div>
 						<button type="button" onclick="instruction()" id="ins"

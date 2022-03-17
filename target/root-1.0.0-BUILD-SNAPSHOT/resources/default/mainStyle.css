@@ -1,21 +1,59 @@
 body {
 	width: 100%;
 	overflow-x: hidden;
-	background-color: black;
+	background-color: white;
 }
 
-.remain{margin-top: 110px;
-    margin-bottom: 110px;}
+.remain {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 
-.remaincenter {
-	color: black;
+.remaincenter_main {
 	text-align: center;
 	background-color: white;
-    width: 830px;
-    margin: 0 auto;
-    height: 324px;
-    border-radius: 17px;
-    font-weight: bold;
+	width: 100%;
+	height: 200px;
+	margin-bottom: 100px;
+}
+
+.remaincenter_main_content {
+	display: inline-block;
+	color: black;
+	text-align: right;
+	width: 70%;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.remaincenter_A {
+	text-align: center;
+	background-color: #F6F6F6;
+	width: 100%;
+}
+
+.remaincenter_A_content {
+	display: inline-block;
+	color: black;
+	text-align: left;
+	width: 70%;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.remaincenter_B {
+	text-align: center;
+	background-color: white;
+	width: 100%;
+}
+
+.remaincenter_B_content {
+	display: inline-block;
+	color: black;
+	text-align: right;
+	width: 70%;
+	margin-top: 20px;
+	font-weight: bold;
 }
 
 .remainqw {
@@ -77,6 +115,7 @@ body {
 	width: 100%;
 	height: 920px;
 	overflow: auto;
+	background-color: white;
 }
 
 .container::-webkit-scrollbar {
@@ -95,3 +134,12 @@ body {
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 5px white;
 }
+
+video {
+	width: 600px;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+

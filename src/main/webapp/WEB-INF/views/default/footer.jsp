@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
 <body>
-<hr class="footerfooterhr">
 <div class="footerbackground">
 <table class="footertable">
 	<tr>
@@ -52,10 +51,6 @@
 	</tr>
 	
 	<tr class="footertr"></tr>
-	
-	<tr>
-	<td>FreezeJunk는 여러분의 고민을 얼려드립니다.</td><td></td>
-	</tr>
 	
 	
 </table>
