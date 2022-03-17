@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
 <style type="text/css"></style>
 <link rel="stylesheet" href="${contextPath }/resources/login/membershipStyle.css"/>

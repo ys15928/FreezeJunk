@@ -1,3 +1,4 @@
+<%@page import="com.care.root.member.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FREEZEJUNK</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/freezejunk/freezejunkStyle.css" />
 </head>
@@ -43,14 +45,14 @@
 		<div class="wrap">
 			<form action="./" method="post" id="form">
 				<div class="head-box">
-					<div class="head-text1">유튜브 URL과 스팸계정을 입력해주세요 !</div>
-					<div class="head-text2">해당 영상에서 스팸계정들이 작성한 계정을 차단하고 댓글을
-						삭제해드립니다</div>
+					<div class="head-text1">유튜브 URL과 차단할 계정을 입력해주세요 !</div>
+					<div class="head-text2">해당 영상에서 대상 계정들이 작성한 댓글을 삭제하고 계정을
+						차단해드립니다</div>
 				</div>
 
 				<div class="inswrap">
 					<div>
-						사용 전 설명서 <span class="insspan">필독</span> 부탁드립니다.
+						사용 전 설명서를 클릭하여 <span class="insspan">필독</span> 부탁드립니다.
 					</div>
 					<div>
 						<button type="button" onclick="instruction()" id="ins"
@@ -62,7 +64,7 @@
 					<input type="text" class="search" id="videoUrl" name="videoUrl"
 						placeholder="URL 입력" /> <span class="search-img-box"><img
 						src="${contextPath }/resources/image/search_white.png"
-						onclick="accountFreeze();" /></span>
+						onclick="loginsession();" /></span>
 				</div>
 				<div class="keywords-box">
 					<textarea name="accounts" class="keywords-search" id="accounts"
@@ -88,6 +90,23 @@
 		<jsp:include page="../default/footer.jsp" />
 	</div>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+	<% MemberDTO dto = (MemberDTO)session.getAttribute("loginUser");
+	   String uid = null;	
+	   if(dto != null){
+		   uid = dto.getId();
+	   }
+	%>
+	var session = '<%= uid %>';
+	function loginsession(){
+		if(session != "null"){
+			accountFreeze();
+		}else{
+			alert("로그인 후 이용해주세요.")
+			location.href="${contextPath}/login";
+		}
+	}
+	</script>
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>
 </body>

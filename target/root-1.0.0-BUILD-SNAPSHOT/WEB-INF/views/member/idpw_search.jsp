@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/login/idpw_searchStyle.css"/>
 </head>
@@ -22,7 +23,7 @@
 		<div>
 			<div >
 				<div class="checkheader">
-					<a href="${contextPath }/first"><img class="checkimg" src="${contextPath }/resources/login/logoblack.png"></a>
+					<a href="${contextPath }/main"><img class="checkimg" src="${contextPath }/resources/login/logoblack.png"></a>
 					<p class="checkcolor">인증된 이메일만 정보 찾기가 가능합니다 :)</p>
 				</div>
 				<div class="checkidpw_chk">

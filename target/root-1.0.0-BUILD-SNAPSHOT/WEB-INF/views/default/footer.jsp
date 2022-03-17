@@ -6,12 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
-
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
 <body>
-<hr class="footerfooterhr">
 <div class="footerbackground">
 <table class="footertable">
 	<tr>
@@ -38,7 +37,7 @@
 	</tr>
 	
 	<tr>
-	<td>이메일 : freezejunk@gmail.com</td>
+	<td>이메일 : freezejunk01@gmail.com</td>
 	</tr>
 	
 	<tr>
@@ -52,10 +51,6 @@
 	</tr>
 	
 	<tr class="footertr"></tr>
-	
-	<tr>
-	<td>FreezeJunk는 여러분의 고민을 얼려드립니다.</td><td></td>
-	</tr>
 	
 	
 </table>

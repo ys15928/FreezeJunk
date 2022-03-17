@@ -11,7 +11,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
@@ -65,23 +66,9 @@
 				id += "****";
 				//dto.setSuggId(id);
 		%>
-		<%
-			if(dto.getSuggStatus().equals("1")) {
-		%>
+		
 		<div class="sugg-line">
-		<%
-			} else {
-				if(loginUser.getId().equals("team03")) {
-		%>
-		<div class="sugg-line">
-		<%
-				} else {
-		%>
-		<div class="sugg-line non-line">
-		<%
-				}
-			}
-		%>
+		
 			<div class="list-num"><%=dto.getNum() %></div>
 			<div class="list-title"><span class="<%=dto.getNum() %>" id="<%=dto.getSuggId()%>" style="cursor: pointer;" onclick="info(this, <%=dto.getSuggStatus() %>);"><%=dto.getSuggTitle() %></span></div>
 			<div class="list-name"><%=dto.getName() %>(<%=id%>)</div>
@@ -170,13 +157,33 @@
 	function info(info, infoStatus) {
 		var infoId = info.id;
 		var infoNum = info.className;
-		var loginId = "<%=loginUser.getId() %>";
+		var login = "<%= loginUser %>"
+		var loginId = null
+		var null2 = "null"
+
+	 if(login === null2){
+			
+			loginId = "1234554321"
+		}else{
+		 
+		  <% 
+		  String id = null;
+		  if(loginUser != null){
+			  id = loginUser.getId();
+		  }  else{
+			  id = "1234554321";
+		  }
+			  %>
+			  loginId = "<%= id %>"
+		}
+
 		var status = infoStatus;
-		if(status == 1 || loginId == "team03" || loginId == infoId) {
+		if(status == 1 || loginId == "team03" || loginId == infoId ) {
 			location.href="suggestion-5?num=" + infoNum + "&type=all";
 		} else {
 			alert("비공개 글입니다.")
 		}
+		
 	}
 </script>
 </body>

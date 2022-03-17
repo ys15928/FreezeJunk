@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
@@ -18,7 +19,7 @@
 			<input type="text" id="title" name="title" placeholder="제목"/>
 			<textarea id="editor" name="content"></textarea>
 			<div class="status-box">
-				<span class="status-comment">비공개</span><input type="checkbox" name="status" value="1" id="status"/>
+				<span class="status-comment">전체공개</span><input type="checkbox" name="status" value="1" id="status"/>
 			</div>
 			<div class="write-btn-box">
 				<button type="button" class="mr-15" id="write-btn" onclick="location.href='suggestion-3'">목록으로</button>

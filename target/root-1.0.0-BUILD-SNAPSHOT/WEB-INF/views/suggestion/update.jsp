@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/suggestion/suggestionStyle.css"/>
 <link rel="stylesheet" href="${contextPath }/resources/summernote/summernote-lite.css"/>
 </head>
@@ -19,7 +20,7 @@
 			<input type="text" id="title" name="title" placeholder="제목" value="${dto.suggTitle }"/>
 			<textarea id="editor" name="content">${dto.suggContent }</textarea>
 			<div class="status-box">
-				<span class="status-comment">비공개</span>
+				<span class="status-comment">전체공개</span>
 				<c:choose>
 					<c:when test="${dto.suggStatus == 0}">
 						<input type="checkbox" name="status" value="1" id="status"/>

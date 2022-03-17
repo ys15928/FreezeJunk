@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/login/loginStyle.css" />
@@ -24,7 +25,7 @@
 		<div class="mainheader">
 			<div class="mainheight30"></div>
 			<div class="login">
-				<a href="${contextPath }/first"><img class="mainheight60"
+				<a href="${contextPath }/main"><img class="mainheight60"
 					src="${contextPath }/resources/login/logoblack.png"></a>
 			</div>
 			<div id="login-form">
