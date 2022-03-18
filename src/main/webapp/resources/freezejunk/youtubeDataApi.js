@@ -35,7 +35,7 @@ function loadClient_googleOauth2() {
 		},
 			function(err) {
 				console.error("Error loading GAPI client for API", err);
-				alert("구글 계정 로그인 과정에서 에러가 발생하였습니다.");
+				alert("구글 계정 로그인 과정에서 에러가 발생하였습니다.\n구글 계정 로그인창이 뜨지 않았다면 팝업을 허용해 주세요.");
 				history.go(0)
 			});
 }
