@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
+<link rel="shortcut icon" type="image⁄x-icon"
+	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/freezejunk/freezejunkStyle.css" />
@@ -25,10 +26,10 @@
 			유튜브 댓글 수정 권한 부여 승인<br> 5. 처리 완료 창을 닫고 처리결과 확인 <br> <br>
 			댓글이 과하게 많은 경우 할당량의 문제가 발생할 수 있기 때문에 시간순이 아닌 인기순으로 댓글들을 크롤링합니다.<br>(모든
 			댓글에 대해 삭제를 진행 하는 것이 아닙니다.)<br> 삭제될 댓글이 없는 경우 권한 부여 창이 뜨지 않습니다.<br>
-			쿠키가 차단되어 있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br>
-			<a href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0" 
+			쿠키가 차단되어 있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br> <a
+				href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0"
 				style="color: #368AFF" target="_blank">쿠키허용 방법 보기</a>
-				</div>
+		</div>
 		<div class="modalfooter">
 			<button type="button" class="modalbtn" id="cl" onclick="cl()">확인</button>
 		</div>
@@ -40,8 +41,8 @@
 			<form action="./" method="post" id="form">
 				<div class="head-box">
 					<div class="head-text1">유튜브 URL을 입력해주세요 !</div>
-					<div class="head-text2">해당 영상의 인기댓글 최대 상위 500개 중 댓글을 복사한 봇의 계정을
-						차단하고 댓글을 삭제해드립니다</div>
+					<div class="head-text2">해당 영상의 인기댓글 최대 상위 500개 중 댓글을 복사한 봇의
+						계정을 차단하고 댓글을 삭제해드립니다</div>
 				</div>
 
 				<div class="inswrap">
@@ -62,14 +63,14 @@
 				</div>
 
 			</form>
-			<div class="video">
-				<video controls
-					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/copycomment.mp4"
-						type="video/mp4">
-					<strong>Your browser does not support the video tag.</strong>
-				</video>
-			</div>
+			<br> <br>
+			<p align="middle">
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/8fZ-BPgb0lo"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</p>
 		</div>
 
 		<div id='mask'
@@ -80,24 +81,24 @@
 		</div>
 		<jsp:include page="../default/footer.jsp" />
 	</div>
-	
+
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
-	<% MemberDTO dto = (MemberDTO)session.getAttribute("loginUser");
-	   String uid = null;	
-	   if(dto != null){
-		   uid = dto.getId();
-	   }
-	%>
-	var session = '<%= uid %>';
-	function loginsession(){
-		if(session != "null"){
-			copyCommentFreeze();
-		}else{
-			alert("로그인 후 이용해주세요.")
-			location.href="${contextPath}/login";
+	<%MemberDTO dto = (MemberDTO) session.getAttribute("loginUser");
+String uid = null;
+if (dto != null) {
+	uid = dto.getId();
+}%>
+	var session = '<%=uid%>
+		';
+		function loginsession() {
+			if (session != "null") {
+				copyCommentFreeze();
+			} else {
+				alert("로그인 후 이용해주세요.")
+				location.href = "${contextPath}/login";
+			}
 		}
-	}
 	</script>
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>

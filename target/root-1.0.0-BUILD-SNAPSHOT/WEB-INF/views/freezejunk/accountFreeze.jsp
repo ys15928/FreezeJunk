@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
+<link rel="shortcut icon" type="image⁄x-icon"
+	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/freezejunk/freezejunkStyle.css" />
@@ -29,9 +30,9 @@
 			5. 처리 완료 창을 닫고 처리결과 확인 <br> <br> <span class="modalspan">쉼표
 				구분과 키워드 설정 실수에 의한 댓글 삭제는 책임지지 않습니다.</span><br> 댓글이 과하게 많은 경우 할당량의 문제가
 			발생할 수 있기 때문에 시간순이 아닌 인기순으로 댓글들을 크롤링합니다.<br>(모든 댓글에 대해 삭제를 진행 하는
-			것이 아닙니다.)<br> 삭제될 댓글이 없는 경우 권한 부여 창이 뜨지 않습니다.<br>
-			쿠키가 차단되어 있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br>
-			<a href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0" 
+			것이 아닙니다.)<br> 삭제될 댓글이 없는 경우 권한 부여 창이 뜨지 않습니다.<br> 쿠키가 차단되어
+			있는 브라우저의 경우 로그인 과정에서 에러가 발생합니다. 쿠키를 허용해 주세요.<br> <a
+				href="https://support.google.com/accounts/answer/61416?hl=ko&co=GENIE.Platform%3DDesktop&oco=0"
 				style="color: #368AFF" target="_blank">쿠키허용 방법 보기</a>
 
 		</div>
@@ -71,14 +72,14 @@
 						placeholder="차단 및 삭제하고자 한 영상의 댓글을 드래그하여 넣어주세요.(여러개일시 ,로 구분해주세요)"></textarea>
 				</div>
 			</form>
-			<div class="video">
-				<video controls
-					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/account.mp4"
-						type="video/mp4">
-					<strong>Your browser does not support the video tag.</strong>
-				</video>
-			</div>
+			<br> <br>
+			<p align="middle">
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/iMXTXC5VfGw"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</p>
 		</div>
 
 		<div id='mask'
@@ -91,21 +92,21 @@
 	</div>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
-	<% MemberDTO dto = (MemberDTO)session.getAttribute("loginUser");
-	   String uid = null;	
-	   if(dto != null){
-		   uid = dto.getId();
-	   }
-	%>
-	var session = '<%= uid %>';
-	function loginsession(){
-		if(session != "null"){
-			accountFreeze();
-		}else{
-			alert("로그인 후 이용해주세요.")
-			location.href="${contextPath}/login";
+	<%MemberDTO dto = (MemberDTO) session.getAttribute("loginUser");
+String uid = null;
+if (dto != null) {
+	uid = dto.getId();
+}%>
+	var session = '<%=uid%>
+		';
+		function loginsession() {
+			if (session != "null") {
+				accountFreeze();
+			} else {
+				alert("로그인 후 이용해주세요.")
+				location.href = "${contextPath}/login";
+			}
 		}
-	}
 	</script>
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>

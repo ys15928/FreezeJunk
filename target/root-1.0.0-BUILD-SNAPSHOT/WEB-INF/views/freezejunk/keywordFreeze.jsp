@@ -46,7 +46,8 @@
 			<form action="./" method="post" id="form">
 				<div class="head-box">
 					<div class="head-text1">유튜브 URL과 삭제하고자 하는 키워드를 입력 해주세요!</div>
-					<div class="head-text2">해당 영상의 댓글들 중 입력하신 키워드를 포함하는 댓글들을 삭제해 드립니다.</div>
+					<div class="head-text2">해당 영상의 댓글들 중 입력하신 키워드를 포함하는 댓글들을 삭제해
+						드립니다.</div>
 				</div>
 
 				<div class="inswrap">
@@ -70,15 +71,15 @@
 						placeholder="키워드 입력(키워드가 여러개일시 ,로 구분해주세요)"></textarea>
 				</div>
 			</form>
-			<div class="video">
-				<video controls
-					poster="${contextPath }/resources/login/logoblack.png">
-					<source src="${contextPath}/resources/freezejunk/keyword.mp4"
-						type="video/mp4">
-					<strong>This is a video that is not supported by the web
-						browser.</strong>
-				</video>
-			</div>
+			<br>
+			<br>
+			<p align="middle">
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/vVUqpbH3VRQ"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</p>
 		</div>
 		<div id='mask'
 			style='position: absolute; z-index: 5000; background-color: #000000; display: none;'></div>
@@ -97,8 +98,9 @@ String uid = null;
 if (dto != null) {
 	uid = dto.getId();
 }%>
-	var session = '<%=uid%>';
-		
+	var session = '<%=uid%>
+		';
+
 		function loginsession() {
 			if (session != "null") {
 				keywordFreeze();
