@@ -71,8 +71,7 @@
 						placeholder="키워드 입력(키워드가 여러개일시 ,로 구분해주세요)"></textarea>
 				</div>
 			</form>
-			<br>
-			<br>
+			<br> <br>
 			<p align="middle">
 				<iframe width="560" height="315"
 					src="https://www.youtube.com/embed/vVUqpbH3VRQ"
@@ -94,12 +93,13 @@
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
 	<%MemberDTO dto = (MemberDTO) session.getAttribute("loginUser");
+	
+	// ctrl+shift+f로 라인 정리시 var session = uid 뒤 작은따옴표와 세미콜론 줄바뀜 되어 실행 안되는 현상 생김
 String uid = null;
 if (dto != null) {
 	uid = dto.getId();
 }%>
-	var session = '<%=uid%>
-		';
+	var session = '<%=uid%>';
 
 		function loginsession() {
 			if (session != "null") {
