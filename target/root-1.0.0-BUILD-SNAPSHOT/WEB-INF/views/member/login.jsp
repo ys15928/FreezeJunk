@@ -17,7 +17,7 @@
 	<c:if test="${loginUser != null }">
 		<script>
 			alert("이미 로그인 된 상태입니다.");
-			location.href = "main";
+			location.href = "./";
 		</script>
 	</c:if>
 
@@ -25,7 +25,7 @@
 		<div class="mainheader">
 			<div class="mainheight30"></div>
 			<div class="login">
-				<a href="${contextPath }/main"><img class="mainheight60"
+				<a href="${contextPath }/"><img class="mainheight60"
 					src="${contextPath }/resources/login/logoblack.png"></a>
 			</div>
 			<div id="login-form">

@@ -1,5 +1,5 @@
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="com.care.root.suggestion.SuggestionDTO"%>
+<%@page import="com.care.root.suggestion.dto.SuggestionDTO"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

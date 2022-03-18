@@ -5,10 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="naver-site-verification" content="f7ece45a4f55594768823cfd58a9f1a6567b3dec" />
-<meta property="og:type" content="website"> 
+<meta name="naver-site-verification"
+	content="f7ece45a4f55594768823cfd58a9f1a6567b3dec" />
+<meta property="og:type" content="website">
 <meta property="og:title" content="프리즈정크">
-<meta property="og:description" content="영상의 댓글 삭제와 스팸 & 카피봇 계정 차단이 가능합니다. 댓글을 보다 쉽고 효율적으로 관리하세요.">
+<meta property="og:description"
+	content="영상의 댓글 삭제와 스팸 & 카피봇 계정 차단이 가능합니다. 댓글을 보다 쉽고 효율적으로 관리하세요.">
 <meta property="og:url" content="https://freezejunk.com/">
 <link rel="canonical" href="https://freezejunk.com/">
 
@@ -16,7 +18,8 @@
 <link rel="shortcut icon" type="image⁄x-icon"
 	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
-<meta name="description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 보다 쉽고 효율적으로 댓글을 관리하세요.">
+<meta name="description"
+	content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 보다 쉽고 효율적으로 댓글을 관리하세요.">
 <meta name="keywords" content="유튜브, 댓글관리, 카피봇, 댓글봇, 댓글삭제, 계정차단">
 <link rel="stylesheet"
 	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
@@ -28,6 +31,7 @@
 		<div class="remain">
 			<div class="remaincenter_main">
 				<div class="remaincenter_main_content">
+					<br>
 					<h1>유튜브 댓글을 보다 쉽고 편하게 효율적으로 관리하세요</h1>
 					<br>
 					<h2>영상의 URL과 키워드 또는 스팸에 등록할 계정으로</h2>
@@ -42,7 +46,7 @@
 			<div class="remaincenter_A">
 				<div class="remaincenter_A_content">
 					<h2>
-						<a href="${contextPath }/main/keywordFreeze"
+						<a href="${contextPath }/keywordFreeze"
 							style="text-decoration: none; color: #368AFF"> 키워드 삭제 > </a>
 					</h2>
 					<br>
@@ -51,15 +55,12 @@
 					<h3>해당 동영상의 인기순 댓글에서 키워드를 포함하는 댓글들을 모두 삭제합니다.</h3>
 					<br> <br>
 
-					<div align="left">
-						<video controls
-							poster="${contextPath }/resources/login/logoblack.png">
-							<source src="${contextPath}/resources/freezejunk/keyword.mp4"
-								type="video/mp4">
-							<strong>This is a video that is not supported by the web
-								browser.</strong>
-						</video>
-					</div>
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/vVUqpbH3VRQ"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>
@@ -68,7 +69,7 @@
 			<div class="remaincenter_B">
 				<div class="remaincenter_B_content">
 					<h2>
-						<a href="${contextPath }/main/accountFreeze"
+						<a href="${contextPath }/accountFreeze"
 							style="text-decoration: none; color: #368AFF"> < 스팸 계정 차단 </a>
 					</h2>
 					<br>
@@ -77,25 +78,21 @@
 					<h3>해당 동영상의 인기순 댓글에서 해당 계정의 댓글들을 모두 삭제 및 차단합니다.</h3>
 					<br> <br>
 
-					<div align="right">
-						<video controls
-							poster="${contextPath }/resources/login/logoblack.png">
-							<source src="${contextPath}/resources/freezejunk/account.mp4"
-								type="video/mp4">
-							<strong>This is a video that is not supported by the web
-								browser.</strong>
-						</video>
-					</div>
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/iMXTXC5VfGw"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>
-
 
 		<div class="remain">
 			<div class="remaincenter_A">
 				<div class="remaincenter_A_content">
 					<h2>
-						<a href="${contextPath }/main/copyCommentFreeze"
+						<a href="${contextPath }/copyCommentFreeze"
 							style="text-decoration: none; color: #368AFF"> 카피봇 차단 > </a>
 					</h2>
 					<br>
@@ -104,18 +101,12 @@
 					<h3>해당 영상의 인기순 상위 500개 중 댓글을 카피한 봇의 계정을 차단하고 댓글을 삭제합니다.</h3>
 					<br> <br>
 
-					<div align="left">
-						<video controls
-							poster="${contextPath }/resources/login/logoblack.png">
-							<source src="${contextPath}/resources/freezejunk/copycomment.mp4"
-								type="video/mp4">
-							<strong>This is a video that is not supported by the web
-								browser.</strong>
-						</video>
-					</div>
-					<br>
-					<h4>** FreezeJunk는 구글 계정의 로그인 정보를 저장하지 않습니다.</h4>
-					<br>
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/8fZ-BPgb0lo"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>

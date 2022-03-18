@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.care.root.mybatis.SuggestionMapper">
-	<resultMap type="com.care.root.suggestion.SuggestionDTO" id="suggestion">
+	<resultMap type="com.care.root.suggestion.dto.SuggestionDTO" id="suggestion">
 		<id property="num" column="num"/>
 		<result property="suggTitle" column="suggTitle"/>
 		<result property="suggContent" column="suggContent"/>

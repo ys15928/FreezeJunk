@@ -31,6 +31,7 @@
 		<div class="remain">
 			<div class="remaincenter_main">
 				<div class="remaincenter_main_content">
+					<br>
 					<h1>유튜브 댓글을 보다 쉽고 편하게 효율적으로 관리하세요</h1>
 					<br>
 					<h2>영상의 URL과 키워드 또는 스팸에 등록할 계정으로</h2>
@@ -54,6 +55,12 @@
 					<h3>해당 동영상의 인기순 댓글에서 키워드를 포함하는 댓글들을 모두 삭제합니다.</h3>
 					<br> <br>
 
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/vVUqpbH3VRQ"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>
@@ -71,6 +78,12 @@
 					<h3>해당 동영상의 인기순 댓글에서 해당 계정의 댓글들을 모두 삭제 및 차단합니다.</h3>
 					<br> <br>
 
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/iMXTXC5VfGw"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>
@@ -87,7 +100,13 @@
 					<br>
 					<h3>해당 영상의 인기순 상위 500개 중 댓글을 카피한 봇의 계정을 차단하고 댓글을 삭제합니다.</h3>
 					<br> <br>
-				
+
+					<iframe width="560" height="315"
+						src="https://www.youtube.com/embed/8fZ-BPgb0lo"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<br> <br>
 				</div>
 			</div>
 		</div>
