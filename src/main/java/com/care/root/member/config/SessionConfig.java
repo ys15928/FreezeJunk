@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSessionListener;
 import com.care.root.member.dto.MemberDTO;
 
 @WebListener
-public class SessionConfig implements HttpSessionListener {
+public class SessionConfig implements HttpSessionListener {	// 중복로그인 방지
 	private static final Map<String, HttpSession> sessions = new ConcurrentHashMap<>();
 	
 	public synchronized static String getSessionidCheck(String type, String compareId){

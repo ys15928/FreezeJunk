@@ -39,17 +39,15 @@
 		class="com.care.root.interceptor.Interceptor" />
 	<interceptors>
 		<interceptor>
-			<mapping path="/main/suggestion-1" />
-			<mapping path="/main/suggestion-2" />
-			<mapping path="/main/suggestion-4" />
-			<mapping path="/main/suggestion-5" />
-			<mapping path="/main/suggestion-6" />
-			<mapping path="/main/suggestion-7" />
-			<mapping path="/main/suggestion-8" />
-			<mapping path="/main/mypage" />
-	<!-- 	<mapping path="/main"/>  
-			<mapping path="/main/*" />
-	-->
+			<mapping path="/suggestion-1" />
+			<mapping path="/suggestion-2" />
+			<mapping path="/suggestion-4" />
+			<mapping path="/suggestion-5" />
+			<mapping path="/suggestion-6" />
+			<mapping path="/suggestion-7" />
+			<mapping path="/suggestion-8" />
+			<mapping path="/mypage" />
+
 			<beans:ref bean="interceptor" />
 		</interceptor>
 	</interceptors>
@@ -58,12 +56,8 @@
 		class="com.care.root.interceptor.AdminInterceptor" />
 	<interceptors>
 		<interceptor>
-			<mapping path="/main/admin/*" />
+			<mapping path="/admin/*" />
 			<beans:ref bean="adminInterceptor" />
 		</interceptor>
 	</interceptors>
-
-
-
-
 </beans:beans>

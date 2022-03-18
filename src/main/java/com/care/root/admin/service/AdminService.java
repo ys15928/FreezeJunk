@@ -1,4 +1,4 @@
-package com.care.root.admin;
+package com.care.root.admin.service;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class AdminService {
 	@Autowired
 	MemberMapper mapper;
 	
-	public void userList(Model model, HttpServletRequest req) {
+	public void userList(Model model, HttpServletRequest req) {	// user List 보기
 		String search = req.getParameter("search");
 		if(search == null) {
 			search = "";

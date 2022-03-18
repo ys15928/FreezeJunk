@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.care.root.suggestion.SuggestionDTO;
+import com.care.root.suggestion.dto.SuggestionDTO;
 
 public interface SuggestionMapper {
 	public int write(SuggestionDTO dto);

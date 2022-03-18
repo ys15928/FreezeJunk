@@ -44,13 +44,11 @@
 	<span class="footerspan">|</span>
 	<a href="${contextPath }/policy_service" class="footera">서비스이용약관</a>
 	<span class="footerspan">|</span>
-	<a href="${contextPath }/main/suggestion-3" class="footera">고객센터</a>
+	<a href="${contextPath }/suggestion-3" class="footera">고객센터</a>
 	</td>
 	</tr>
 
-	
 	<tr class="footertr"></tr>
-	
 	
 </table>
 </div>

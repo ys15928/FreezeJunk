@@ -1,9 +1,8 @@
-package com.care.root.suggestion;
+package com.care.root.suggestion.service;
 
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.ui.Model;
 import com.care.root.member.dto.MemberDTO;
 import com.care.root.mybatis.MemberMapper;
 import com.care.root.mybatis.SuggestionMapper;
+import com.care.root.suggestion.dto.SuggestionDTO;
 
 @Service
 public class SuggestionService {

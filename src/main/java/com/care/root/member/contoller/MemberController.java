@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,15 +32,6 @@ public class MemberController {
 	public String header() {
 		return "default/header";
 	}
-
-	@RequestMapping("main")
-	public String main() {
-		return "member/main";
-	}
-
-	/*
-	 * @RequestMapping("first") public String first(){ return "default/first"; }
-	 */
 
 	@RequestMapping("footer")
 	public String footer() {
@@ -126,13 +116,13 @@ public class MemberController {
 		return map;
 	}
 
-	@RequestMapping(value = "main/logout")
+	@RequestMapping(value = "logout")
 	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
-		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
+		out.print("<script>alert('로그아웃 완료');location.href='./';</script>");
 	}
 
 	@RequestMapping(value = "searchId", method = RequestMethod.POST)
@@ -149,7 +139,7 @@ public class MemberController {
 		return result;
 	}
 
-	@RequestMapping("main/mypage")
+	@RequestMapping("mypage")
 	public String mypage(Model model, HttpServletRequest req) {
 		HttpSession se = req.getSession();
 		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
@@ -158,7 +148,7 @@ public class MemberController {
 		return "member/mypage";
 	}
 
-	@PostMapping("main/myupdate")
+	@PostMapping("myupdate")
 	public void myupdate(HttpServletRequest req, HttpServletResponse res, Model model) throws IOException {
 		HttpSession se = req.getSession();
 		res.setContentType("text/html; charset=utf-8");
@@ -176,7 +166,7 @@ public class MemberController {
 		}
 	}
 
-	@RequestMapping("main/emaildel")
+	@RequestMapping("emaildel")
 	@ResponseBody
 	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res, Model model) {
 		ArrayList list = new ArrayList();
@@ -188,7 +178,7 @@ public class MemberController {
 		return list;
 	}
 
-	@RequestMapping(value = "main/iddelete", method = RequestMethod.POST)
+	@RequestMapping(value = "iddelete", method = RequestMethod.POST)
 	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
@@ -199,7 +189,7 @@ public class MemberController {
 			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
 		} else {
 			se.invalidate();
-			out.print("<script> alert('탈퇴되었습니다.');location.href='../first';</script>");
+			out.print("<script> alert('탈퇴되었습니다.');location.href='./';</script>");
 		}
 	}
 
