@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
@@ -21,6 +21,7 @@
 	<tr class="footertr"></tr>
 	
 	<tr>
+
 	<td>대표자명 : 신윤수</td>
 	<td class="footerhe">** FreezeJunk는 구글 계정의 로그인 정보를 저장하지 않습니다.</td>
 	</tr>

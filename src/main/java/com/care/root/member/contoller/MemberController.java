@@ -28,191 +28,184 @@ import com.care.root.member.service.MemberService;
 public class MemberController {
 	@Autowired
 	MemberService service;
-	
+
 	@RequestMapping("header")
 	public String header() {
 		return "default/header";
 	}
+
 	@RequestMapping("main")
 	public String main() {
 		return "member/main";
 	}
-	
-/*	@RequestMapping("first")
-	public String first(){
-		return "default/first";
-	}*/
-	
+
+	/*
+	 * @RequestMapping("first") public String first(){ return "default/first"; }
+	 */
+
 	@RequestMapping("footer")
 	public String footer() {
 		return "default/footer";
 	}
-	
+
 	@RequestMapping("policy_privacy")
 	public String information() {
 		return "default/policy_privacy";
 	}
-	
+
 	@RequestMapping("policy_service")
 	public String use() {
 		return "default/policy_service";
 	}
-	
+
 	@RequestMapping("membership")
 	public String membership() {
 		return "member/membership";
 	}
-	
+
 	@RequestMapping("login")
 	public String login() {
 		return "member/login";
 	}
-	
+
 	@RequestMapping("idpwsearch")
 	public String idpwsearch() {
 		return "member/idpw_search";
 	}
-	
-	@RequestMapping(value="memberSuc", method=RequestMethod.POST)
+
+	@RequestMapping(value = "memberSuc", method = RequestMethod.POST)
 	public void resister(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8"); // 응답 설정 변경
-        PrintWriter out = res.getWriter(); // 화면 출력용 객체
-        int result= service.register(req);
-        if(result==0) {
-        	out.print("<script> alert('회원가입에 실패하셨습니다.');location.href='membership';</script>");    	
-        }else {
-        	out.print("<script> alert('회원가입이 완료되었습니다.');location.href='login';</script>");
-        }
+		PrintWriter out = res.getWriter(); // 화면 출력용 객체
+		int result = service.register(req);
+		if (result == 0) {
+			out.print("<script> alert('회원가입에 실패하셨습니다.');location.href='membership';</script>");
+		} else {
+			out.print("<script> alert('회원가입이 완료되었습니다.');location.href='login';</script>");
+		}
 	}
-	
-	@RequestMapping(value="idcheck", method=RequestMethod.POST, produces="application/json; charset=utf-8")
+
+	@RequestMapping(value = "idcheck", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map idcheck(@RequestBody Map dto) {
 		System.out.println(dto.get("id"));
-		String id= (String)dto.get("id");
+		String id = (String) dto.get("id");
 		Map map = new HashMap();
 		map.put("idcheck", service.idcheck(id));
 		return map;
 	}
-	@RequestMapping(value="emailcheck", method=RequestMethod.POST, produces = "application/json; charset=utf-8")
+
+	@RequestMapping(value = "emailcheck", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map emailcheck(@RequestBody Map dto) {
-		String email = (String)dto.get("email");
+		String email = (String) dto.get("email");
 		Map map = new HashMap();
 		map.put("emailcheck", service.emailcheck(email));
 		return map;
 	}
-	
-	@RequestMapping(value="emailgoNum", method=RequestMethod.POST, produces = "application/json; charset=utf-8")
+
+	@RequestMapping(value = "emailgoNum", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public Map emailgoNum(@RequestBody Map dto,Model model) {
-		String email = (String)dto.get("email");
+	public Map emailgoNum(@RequestBody Map dto, Model model) {
+		String email = (String) dto.get("email");
 		System.out.println(email);
 		Map map = new HashMap();
-		service.emailgoNum(email,model);
+		service.emailgoNum(email, model);
 		map.put("certified", model.getAttribute("certified"));
 		return map;
 	}
-	
-	@RequestMapping(value="loginChk", method=RequestMethod.POST, produces = "application/json; charset=utf-8")
+
+	@RequestMapping(value = "loginChk", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public Map loginChk(@RequestBody Map dto, HttpServletRequest req) {
-		String id = (String)dto.get("id");
-		String pwd = (String)dto.get("pwd");
+		String id = (String) dto.get("id");
+		String pwd = (String) dto.get("pwd");
 		Map map = new HashMap();
-		int result = service.loginChk(id,pwd,req);
+		int result = service.loginChk(id, pwd, req);
 		map.put("login", result);
 		return map;
 	}
-	
-	
-	@RequestMapping(value="main/logout")
-	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException{
+
+	@RequestMapping(value = "main/logout")
+	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		session.invalidate();
 		out.print("<script>alert('로그아웃 완료');location.href='../main';</script>");
 	}
-	
-	@RequestMapping(value="searchId", method = RequestMethod.POST)
+
+	@RequestMapping(value = "searchId", method = RequestMethod.POST)
 	@ResponseBody
-	public String searchId(@RequestParam("inputName_1") String name,@RequestParam("inputEmail_1")String email) {
+	public String searchId(@RequestParam("inputName_1") String name, @RequestParam("inputEmail_1") String email) {
 		String result = service.searchId(name, email);
 		return result;
 	}
-	
+
 	@RequestMapping(value = "searchPwd", method = RequestMethod.POST)
 	@ResponseBody
-	public int searchPwd(@RequestParam("id")String id, @RequestParam("email")String email, HttpServletRequest req) {
+	public int searchPwd(@RequestParam("id") String id, @RequestParam("email") String email, HttpServletRequest req) {
 		int result = service.searchPwd(id, email, req);
 		return result;
 	}
-	
-	
-	
+
 	@RequestMapping("main/mypage")
 	public String mypage(Model model, HttpServletRequest req) {
 		HttpSession se = req.getSession();
-			MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
-			service.mypage(model,dto.getId());
-		
+		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
+		service.mypage(model, dto.getId());
+
 		return "member/mypage";
 	}
-	
+
 	@PostMapping("main/myupdate")
 	public void myupdate(HttpServletRequest req, HttpServletResponse res, Model model) throws IOException {
 		HttpSession se = req.getSession();
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
-		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
-		if(dto==null) {
+		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
+		if (dto == null) {
 			out.print("<script> locetion.href='login';</script>");
-		}else {
-			int result = service.myupdate(req,dto.getId());
-			if(result == 0) {
+		} else {
+			int result = service.myupdate(req, dto.getId());
+			if (result == 0) {
 				out.print("<script> alert('회원 정보 수정을 실패했습니다');location.href='mypage';</script>");
-			}else {
+			} else {
 				out.print("<script> alert('회원 정보 수정이 완료되었습니다');location.href='mypage';</script>");
 			}
 		}
 	}
-	
-	
-		
+
 	@RequestMapping("main/emaildel")
 	@ResponseBody
-	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res,Model model) {
+	public ArrayList emaildel(HttpServletRequest req, HttpServletResponse res, Model model) {
 		ArrayList list = new ArrayList();
-		
+
 		HttpSession se = req.getSession();
-		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
 		service.emaildel(dto, model, res);
 		list.add(model.getAttribute("certified"));
 		return list;
 	}
-	
-	@RequestMapping(value = "main/iddelete", method=RequestMethod.POST)
+
+	@RequestMapping(value = "main/iddelete", method = RequestMethod.POST)
 	public void iddelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		res.setContentType("text/html; charset=utf-8");
 		PrintWriter out = res.getWriter();
 		HttpSession se = req.getSession();
-		MemberDTO dto = (MemberDTO)se.getAttribute("loginUser");
+		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
 		int result = service.iddelete(dto.getId());
-		if(result == 0) {
+		if (result == 0) {
 			out.print("<script> alert('회원 탈퇴에 실패했습니다');location.href='mypage';</script>");
 		} else {
 			se.invalidate();
 			out.print("<script> alert('탈퇴되었습니다.');location.href='../first';</script>");
 		}
 	}
-	
-	
-	
-	
-	
-	
+
+	@RequestMapping(value = "/robots.txt")
+	@ResponseBody
+	public String robots() {
+		return "User-Agent : *\nDisallow : /\nUser-Agent : Googlebot\nUser-Agent : Yeti\nUser-Agent : Daumoa\nAllow : /\nDisallow: /admin/";
+	}
 }
-
-
-

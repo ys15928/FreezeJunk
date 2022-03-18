@@ -5,13 +5,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="naver-site-verification" content="f7ece45a4f55594768823cfd58a9f1a6567b3dec" />
+<meta property="og:type" content="website"> 
+<meta property="og:title" content="프리즈정크">
+<meta property="og:description" content="영상의 댓글 삭제와 스팸 & 카피봇 계정 차단이 가능합니다. 댓글을 보다 쉽고 효율적으로 관리하세요.">
+<meta property="og:url" content="https://freezejunk.com/">
+<link rel="canonical" href="https://freezejunk.com/">
+
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image⁄x-icon"
-	href="${contextPath }/resources/login/logo.png">
+	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
+<meta name="description" content="FreezeJunk는 유튜버의 댓글 관리를 돕는 웹사이트입니다. 보다 쉽고 효율적으로 댓글을 관리하세요.">
+<meta name="keywords" content="유튜브, 댓글관리, 카피봇, 댓글봇, 댓글삭제, 계정차단">
 <link rel="stylesheet"
-	href="${contextPath }/resources/default/mainStyle.css" />
+	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
 </head>
+
 <body>
 	<div class="container">
 		<jsp:include page="../default/header.jsp" />

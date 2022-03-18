@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/logo.png">
+<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/default/footerStyle.css"/>
 </head>
@@ -22,6 +22,10 @@
 	<tr>
 	<td></td><td class="footerimgse" rowspan="5">
 					<a href="${contextPath }/main"><img class="footerimgsize1" src="${contextPath}/resources/login/logoblack.png"></a></td>
+	</tr>
+	
+	<tr>
+	<td>FreezeJunk 프리즈정크</td>
 	</tr>
 	
 	<tr>
