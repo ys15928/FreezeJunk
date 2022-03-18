@@ -28,6 +28,11 @@ public class MemberController {
 	@Autowired
 	MemberService service;
 
+	@RequestMapping("")
+	public String goMain() {
+		return "member/main";
+	}
+	
 	@RequestMapping("header")
 	public String header() {
 		return "default/header";
