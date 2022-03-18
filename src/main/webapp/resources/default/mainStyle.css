@@ -115,13 +115,3 @@ body {
 	overflow: auto;
 	background-color: white;
 }
-
-
-video {
-	width: 600px;
-	display: block;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-

@@ -1,50 +1,98 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<c:set var="contextPath" value="<%=request.getContextPath() %>"/>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
+<link rel="shortcut icon" type="image⁄x-icon"
+	href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
-<link rel="stylesheet" href="${contextPath }/resources/login/mypageStyle.css"/>
+<link rel="stylesheet"
+	href="${contextPath }/resources/login/mypageStyle.css" />
 </head>
 <body>
-<div class="container">
-<jsp:include page="../default/header.jsp"/>
-<div class="mywrap">
-<div class="my">회원정보</div>
-<div class="myw">
-<form action="myupdate" method="post" id="modi">
-	<table >
-		<tr><th class="myth">아이디</th></tr>
-		<tr><td ><input type="text" id="id" name="id" class="input" value="${loginUser.id }" readonly="readonly"></td></tr>
-		<tr><td><div class="comment">비밀번호를 입력해 주세요.</div></td></tr>
-		<tr><th class="myth">비밀번호</th></tr>
-		<tr><td ><input type="password" id="pwd" name="pwd" class="input" placeholder="비밀번호"></td></tr>
-		<tr><td><div class="comment" id="pwd-comment">비밀번호를 입력해 주세요.</div></td></tr>
-		<tr><th class="myth">비밀번호 확인</th></tr>
-		<tr><td ><input type="password" id="repwd" name="repwd" class="input" placeholder="비밀번호 확인"></td></tr>
-		<tr><td><div class="comment" id="repwd-comment">비밀번호가 일치하지 않습니다.</div></td></tr>
-		<tr><th class="myth">이름</th></tr>
-		<tr><td ><input type="text" id="name" name="name" class="input" value="${loginUser.name }"></td></tr>
-		<tr><td><div class="comment" id="name-comment">이름을 입력해 주세요.</div></td></tr>
-		<tr><th class="myth">이메일</th></tr>
-		<tr><td ><input type="text" id="email" name="email" class="input" value="${loginUser.email }" readonly="readonly"></td></tr>
-		<tr><td><div class="comment">비밀번호를 입력해 주세요.</div></td></tr>
-		<tr><td><button type="button" class="btn btn1" onClick="modify()">회원정보수정</button></td></tr>
-		<tr><td><div class="myhe"></div></td></tr>
-		<tr><td><button type="button" class="btn btn2" onClick="emaildel()">회원탈퇴</button></td></tr>
-	</table>
-	</form>
-</div>
-</div>
+	<div class="container">
+		<jsp:include page="../default/header.jsp" />
+		<div class="mywrap">
+			<div class="my">회원정보</div>
+			<div class="myw">
+				<form action="myupdate" method="post" id="modi">
+					<table>
+						<tr>
+							<th class="myth">아이디</th>
+						</tr>
+						<tr>
+							<td><input type="text" id="id" name="id" class="input"
+								value="${loginUser.id }" readonly="readonly"></td>
+						</tr>
+						<tr>
+							<td><div class="comment">비밀번호를 입력해 주세요.</div></td>
+						</tr>
+						<tr>
+							<th class="myth">비밀번호</th>
+						</tr>
+						<tr>
+							<td><input type="password" id="pwd" name="pwd"
+								class="input" placeholder="비밀번호"></td>
+						</tr>
+						<tr>
+							<td><div class="comment" id="pwd-comment">비밀번호를 입력해
+									주세요.</div></td>
+						</tr>
+						<tr>
+							<th class="myth">비밀번호 확인</th>
+						</tr>
+						<tr>
+							<td><input type="password" id="repwd" name="repwd"
+								class="input" placeholder="비밀번호 확인"></td>
+						</tr>
+						<tr>
+							<td><div class="comment" id="repwd-comment">비밀번호가 일치하지
+									않습니다.</div></td>
+						</tr>
+						<tr>
+							<th class="myth">이름</th>
+						</tr>
+						<tr>
+							<td><input type="text" id="name" name="name" class="input"
+								value="${loginUser.name }"></td>
+						</tr>
+						<tr>
+							<td><div class="comment" id="name-comment">이름을 입력해
+									주세요.</div></td>
+						</tr>
+						<tr>
+							<th class="myth">이메일</th>
+						</tr>
+						<tr>
+							<td><input type="text" id="email" name="email"
+								class="input" value="${loginUser.email }" readonly="readonly"></td>
+						</tr>
+						<tr>
+							<td><div class="comment">비밀번호를 입력해 주세요.</div></td>
+						</tr>
+						<tr>
+							<td><button type="button" class="btn btn1"
+									onClick="modify()">회원정보수정</button></td>
+						</tr>
+						<tr>
+							<td><div class="myhe"></div></td>
+						</tr>
+						<tr>
+							<td><button type="button" class="btn btn2"
+									onClick="emaildel()">회원탈퇴</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
 
-<form action="iddelete" method="post" id="exiddelete" class="iddelete">
-</form>
+		<form action="iddelete" method="post" id="exiddelete" class="iddelete">
+		</form>
 
-<!--  
+		<!--  
 <div id="email-modal" class="email-modal">
 <form action="iddelete" method="post" id="modal-form">
 <div class="mymodalwrap">
@@ -70,9 +118,9 @@
 </div>
 -->
 
-<jsp:include page="../default/footer.jsp"/>
-</div>
-<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
-<script src="${contextPath }/resources/login/mypageScript.js"></script>
+		<jsp:include page="../default/footer.jsp" />
+	</div>
+	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+	<script src="${contextPath }/resources/login/mypageScript.js"></script>
 </body>
 </html>

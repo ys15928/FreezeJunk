@@ -150,13 +150,6 @@ body {
 	background-color: black;
 }
 
-video {
-	width: 600px;
-	height: 425px;
-	display: block;
-	margin: 0px auto;
-}
-
 .container {
 	width: 100%;
 	overflow: auto;
