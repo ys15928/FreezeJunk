@@ -1,6 +1,4 @@
 body {
-	background-color: black;
-	width: 100%;
 	overflow-x: hidden;
 }
 
@@ -13,7 +11,7 @@ body {
 	text-align: center;
 	font-size: 24px;
 	color: black;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	font-weight: bold;
 }
 
@@ -21,7 +19,7 @@ body {
 	width: 1000px;
 	height: 600px;
 	margin: auto;
-	margin-top: 0px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .freeze {
@@ -35,13 +33,20 @@ body {
 .input {
 	background-color: white;
 	width: 300px;
-	height: 25px;
+	height: 30px;
+	font-size: 16px;
 	border: 1px solid white;
 	border-bottom: 2px solid gainsboro;
 }
 
+.input::placeholder {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+
 .th {
 	color: black;
+	font-size: 20px;
 }
 
 .chkbtn {
@@ -50,6 +55,7 @@ body {
 	height: 30px;
 	margin-left: 10px;
 	background-color: white;
+	font-size: 16px;
 	font-weight: bold;
 }
 
@@ -61,7 +67,7 @@ body {
 
 .memberbtn {
 	border: 1px solid white;
-	width: 313px;
+	width: 100%;
 	height: 40px;
 	border-radius: 4px;
 	margin-top: 10px;
@@ -83,31 +89,21 @@ body {
 }
 
 .memberlogin {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	height: 800px;
+	width: 100%;
+	height: 900px;
+	background-color: white;
 }
 
 .memberwrap1 {
-	background-color: white;
-	padding: 60px 8px;
 	border-radius: 10px;
-	width: 770px;
+	width: 800px;
 	margin: auto;
-	margin-top: 30px;
 }
 
 .memberwrap2 { 
-	background-color: white;
-	padding: 33px 8px;
+	padding: 30px 8px;
 	border-radius: 10px;
-	width: 770px;
+	width: 800px;
 	margin: auto;
 	margin-top: 10px;
 }
@@ -120,6 +116,10 @@ body {
 	margin: auto;
 	text-align: left;
 	margin-left: 225px;
+}
+
+.mainheight100 {
+	height: 100px;
 }
 
 .tr45 {

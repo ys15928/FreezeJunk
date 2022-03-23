@@ -9,6 +9,13 @@
 <link rel="shortcut icon" type="image⁄x-icon" href="${contextPath }/resources/login/icon.png">
 <title>FreezeJunk</title>
 <link rel="stylesheet" href="${contextPath }/resources/login/idpw_searchStyle.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+
 </head>
 <body>
 
@@ -23,7 +30,7 @@
 		<div>
 			<div >
 				<div class="checkheader">
-					<a href="${contextPath }/main"><img class="checkimg" src="${contextPath }/resources/login/logoblack.png"></a>
+					<a href="${contextPath }/"><img class="checkimg" src="${contextPath }/resources/login/logoblack.png"></a>
 					<p class="checkcolor">인증된 이메일만 정보 찾기가 가능합니다 :)</p>
 				</div>
 				<div class="checkidpw_chk">
@@ -51,15 +58,12 @@
 						</div>
 					</div>
 				
-					
 					<div class="checkmargin25">
 					<div><button id="searchBtn1" type="button" class="yesbtn" onclick="idSearch_click();">확인</button></div>
 					
 					</div>
 				</div>
 				</div>
-				
-				
 				
 				<div id="searchP" class="checksearchpw">
 				<div class="search">비밀번호 찾기</div>
@@ -80,8 +84,6 @@
 					
 					<div class="checkmargin25">
 					<div><button id="searchBtn2" type="button" class="yesbtn" onclick="">확인</button></div>
-					
-			
 				</div>
 				</div>
 				</div>
@@ -108,7 +110,6 @@
 		</div>
 	</div>
 </div>
-
 
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/login/idpw_searchScript.js"></script>

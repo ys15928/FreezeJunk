@@ -11,9 +11,17 @@
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/login/loginStyle.css" />
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">	
+	
 </head>
 <body>
-
+	<jsp:include page="../default/header.jsp" />
+	
 	<c:if test="${loginUser != null }">
 		<script>
 			alert("이미 로그인 된 상태입니다.");
@@ -23,10 +31,10 @@
 
 	<div class="mainlogin">
 		<div class="mainheader">
-			<div class="mainheight30"></div>
+			<div class="mainheight100"></div>
 			<div class="login">
 				<a href="${contextPath }/"><img class="mainheight60"
-					src="${contextPath }/resources/login/logoblack.png"></a>
+					src="${contextPath }/resources/login/logo.png"></a>
 			</div>
 			<div id="login-form">
 				<div class="login-input-box">
@@ -54,7 +62,8 @@
 			</div>
 		</div>
 	</div>
-
+	
+	<jsp:include page="../default/footer.jsp" />
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script src="${contextPath }/resources/login/loginScript.js"></script>
 </body>

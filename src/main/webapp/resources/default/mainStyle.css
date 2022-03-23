@@ -114,4 +114,5 @@ body {
 .container {
 	overflow: auto;
 	background-color: white;
+	font-family: 'Noto Sans KR', sans-serif;
 }

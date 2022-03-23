@@ -11,6 +11,13 @@
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/login/mypageStyle.css" />
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">	
+	
 </head>
 <body>
 	<div class="container">
