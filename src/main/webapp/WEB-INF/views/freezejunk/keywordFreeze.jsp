@@ -118,7 +118,6 @@ if (dto != null) {
 	uid = dto.getId();
 }%>
 	var session = '<%=uid%>';
-		
 
 		function loginsession() {
 			if (session != "null") {

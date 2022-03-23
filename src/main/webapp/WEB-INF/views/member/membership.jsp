@@ -43,6 +43,7 @@
 						<tr class="tr45">
 							<th class="th">아이디</th>
 						</tr>
+
 						<tr>
 							<th><input class="input" type="text" name="id" id="id"
 								onchange="memberIdChange();" placeholder="아이디" /> <input
@@ -52,6 +53,7 @@
 								<button class="chkbtn" type="button" onclick="idCheck();">중복확인</button>
 							</td>
 						</tr>
+
 						<tr class="trnum">
 							<td><div class="member-comment" id="id-comment">아이디를
 									입력해주세요.</div></td>
@@ -60,30 +62,32 @@
 						<tr class="tr45">
 							<th class="th">비밀번호</th>
 						</tr>
+
 						<tr>
 							<th><input class="input" type="password" name="pwd" id="pwd"
 								placeholder="비밀번호" /></th>
 							<td></td>
 						</tr>
+
 						<tr class="trnum">
 							<td><div class="member-comment" id="pwd-comment">비밀번호를
 									입력해주세요.</div></td>
 						</tr>
 
-
 						<tr class="tr45">
 							<th class="th">비밀번호 확인</th>
 						</tr>
+
 						<tr>
 							<th><input class="input" type="password" id="repwd"
 								placeholder="비밀번호 확인" /></th>
 							<td></td>
 						</tr>
+
 						<tr class="trnum">
 							<td><div class="member-comment" id="repwd-comment">비밀번호를
 									입력해주세요.</div></td>
 						</tr>
-
 
 						<tr class="tr45">
 							<th class="th">이름</th>
@@ -97,7 +101,6 @@
 							<td><div class="member-comment" id="name-comment">이름을
 									입력해주세요.</div></td>
 						</tr>
-
 
 						<tr class="tr45">
 							<th class="th">이메일</th>
@@ -142,10 +145,9 @@
 			</form>
 		</div>
 	</div>
-	<jsp:include page="../default/footer.jsp" />
 
+	<jsp:include page="../default/footer.jsp" />
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script src="${contextPath }/resources/login/membershipScript.js"></script>
-
 </body>
 </html>

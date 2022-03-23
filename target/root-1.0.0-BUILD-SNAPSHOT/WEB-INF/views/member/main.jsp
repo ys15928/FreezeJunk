@@ -23,11 +23,18 @@
 <meta name="keywords" content="유튜브, 댓글관리, 카피봇, 댓글봇, 댓글삭제, 계정차단">
 <link rel="stylesheet"
 	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">	
+	
 </head>
 
 <body>
+	<jsp:include page="../default/header.jsp" />
 	<div class="container">
-		<jsp:include page="../default/header.jsp" />
 		<div class="remain">
 			<div class="remaincenter_main">
 				<div class="remaincenter_main_content">
@@ -110,7 +117,7 @@
 				</div>
 			</div>
 		</div>
-		<jsp:include page="../default/footer.jsp" />
 	</div>
+	<jsp:include page="../default/footer.jsp" />
 </body>
 </html>

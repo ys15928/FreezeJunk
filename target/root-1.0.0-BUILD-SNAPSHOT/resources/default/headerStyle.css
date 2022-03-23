@@ -9,6 +9,7 @@ body {
 }
 
 .wrap1 {
+	font-family: 'Noto Sans KR', sans-serif;
 	width: 1180px;
 	margin: auto;
 	background: black;
@@ -36,8 +37,7 @@ nav ul li {
 nav ul li a {
 	text-decoration: none;
 	color: white;
-	font-weight: bold;
-	font-size: 15px;
+	font-size: 16px;
 }
 
 .ab:hover {
@@ -71,7 +71,7 @@ nav ul li a {
 }
 
 .adfont {
-	font-size: 10px;
+	font-size: 14px;
 }
 
 hr {

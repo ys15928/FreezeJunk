@@ -140,7 +140,6 @@ button:hover {
 	width: 10%;
 	border-radius: 4px;
 	text-align: center;
-	background: #EAEAEA;
 	height: 50px;
 	align-items: center;
 	display: flex;
@@ -234,7 +233,7 @@ button:hover {
 	justify-content: center;
 	height: 50px;
 	border-top: 1px solid #F6F6F6;
-	color: #D5D5D5;
+	color: black;
 	font-size: 18px;
 }
 
@@ -248,6 +247,10 @@ button:hover {
 
 .sugg-line:last-child {
 	border-bottom: 1px solid #F6F6F6;
+}
+
+.sugg-line:nth-child(even) {
+	background-color: #D5D5D5;
 }
 
 .sugg-search-box {
@@ -354,7 +357,7 @@ button:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid gray;
+	border: 2px solid black;
 	font-size: 17px;
 	font-weight: bold;
 	color: black;
@@ -375,15 +378,15 @@ button:hover {
 
 .info-title {
 	font-size: 22px;
-	color: #F6F6F6;
+	color: black;
 }
 
 .info-head-sub {
 	display: flex;
 	font-size: 16px;
-	color: #F6F6F6;
-	border-top: 1px solid #F6F6F6;
-	border-bottom: 1px solid #F6F6F6;
+	color: black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	padding: 15px 0 10px 5px;
 }
 
@@ -412,7 +415,7 @@ button:hover {
 	height: 30px;
 	font-size: 15px;
 	background-color: #fff;
-	border: none;
+	border: 1px solid black;
 	color: black;
 	font-weight: bold;
 	border-radius: 4px;
@@ -426,7 +429,7 @@ button:hover {
 .answer-title {
 	font-size: 30px;
 	font-weight: bold;
-	color: #F6F6F6;
+	color: black;
 	margin-bottom: -15px;
 	margin-top: 15px;
 }
@@ -448,6 +451,6 @@ button:hover {
 }
 
 /* answer 02.27 kjh */
-.ht-1030 {
-	height: 1030px;
+.ht-1100 {
+	height: 1100px;
 }

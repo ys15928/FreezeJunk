@@ -1,12 +1,10 @@
 body {
 	width: 100%;
 	overflow-x: hidden;
-	background-color: black;
 }
 
 .privacywrap {
-	background-color: black;
-	color: white;
+	color: black;
 	width: 1080px;
 	margin: 0 auto;
 	margin-top: 30px;
@@ -20,7 +18,9 @@ body {
 	font-weight: bold;
 }
 .container {
+	background-color: white;
 	width: 100%;
 	overflow: auto;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 

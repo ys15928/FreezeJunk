@@ -1,7 +1,6 @@
 body {
 	width: 100%;
 	overflow-x: hidden;
-	background-color: black;
 }
 
 .input {
@@ -9,8 +8,6 @@ body {
 	height: 30px;
 	font-weight: bold;
 	font-size: 16px;
-	color: black;
-	background-color: white;
 	border: none;
 	border-bottom: 1px solid black;
 }
@@ -26,6 +23,7 @@ body {
 }
 
 .btn1 {
+	margin-top:30px;
 	background-color: #368AFF;
 }
 
@@ -47,6 +45,7 @@ body {
 }
 
 .my {
+	margin-top: 30px;
 	display: inline-block;
 	text-align: center;
 	font-size: 30px;
