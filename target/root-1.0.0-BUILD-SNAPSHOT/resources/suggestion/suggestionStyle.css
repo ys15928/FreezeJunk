@@ -91,7 +91,7 @@ button:hover {
 }
 /* --------------------- list.jsp --------------------------- */
 .all-wrap {
-	height: 780px;
+	height: 820px;
 	margin-top: 55px;
 	background-color: white;
 }
@@ -291,11 +291,11 @@ button:hover {
 }
 
 .pageing-box a {
-	color: gray;
+	color: black;
 }
 
 .current-page {
-	color: #F6F6F6 !important;
+	color: black !important;
 }
 
 .list-write-btn-box {
@@ -330,7 +330,7 @@ button:hover {
 
 .non-list-select {
 	width: 200px;
-	height: 50px;
+	height: 52px;
 	border: 1px solid gray;
 	font-size: 17px;
 	color: white;

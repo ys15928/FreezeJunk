@@ -47,7 +47,7 @@
 
 					</select> <input type="text" class="search-input" name="search" id="search"
 						value="${search }" /> <span onclick="search();"> <img
-						src="${contextPath }/resources/image/search_white.png"
+						src="${contextPath }/resources/image/search_black.png"
 						class="search-img" />
 					</span>
 				</div>
