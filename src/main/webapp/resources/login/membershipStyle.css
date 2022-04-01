@@ -91,7 +91,7 @@ body {
 
 .memberlogin {
 	width: 100%;
-	height: 900px;
+	height: 1000px;
 	background-color: white;
 }
 
@@ -116,7 +116,6 @@ body {
 .membertable {
 	margin: auto;
 	text-align: left;
-	margin-left: 225px;
 }
 
 .mainheight100 {

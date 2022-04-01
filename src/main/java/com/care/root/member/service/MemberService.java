@@ -35,6 +35,7 @@ public class MemberService {
 		MemberDTO dto = new MemberDTO();
 		dto.setId(req.getParameter("id"));
 		dto.setPwd(encoder.encode(req.getParameter("pwd")));
+		dto.setChannelid(req.getParameter("channelid"));
 		dto.setName(req.getParameter("name"));
 		dto.setEmail(req.getParameter("email"));
 		return mapper.register(dto);
@@ -143,6 +144,7 @@ public class MemberService {
 		HttpSession se = req.getSession();
 		dto.setId(id);
 		dto.setPwd(encoder.encode(req.getParameter("pwd")));
+		dto.setEmail(req.getParameter("channelid"));
 		dto.setName(req.getParameter("name"));
 		dto.setEmail(req.getParameter("email"));
 		int result = mapper.myupdate(dto);
@@ -151,8 +153,6 @@ public class MemberService {
 		}
 		return result;
 	}
-	
-
 	
 	public void emaildel(MemberDTO dto,Model model, HttpServletResponse res) {
 		String Certified = "";

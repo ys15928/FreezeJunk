@@ -3,13 +3,31 @@ body {
 	overflow-x: hidden;
 }
 
-.input {
+.input1 {
 	width: 430px;
 	height: 30px;
 	font-weight: bold;
 	font-size: 16px;
 	border: none;
 	border-bottom: 1px solid black;
+}
+
+.input1:focus {
+	outline: 1px solid gray;
+}
+
+.input2 {
+	width: 430px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 16px;
+	border: none;
+	border-bottom: 1px solid gray;
+	color: gray;
+}
+
+.input2:focus {
+	outline: none;
 }
 
 .btn {
@@ -23,7 +41,7 @@ body {
 }
 
 .btn1 {
-	margin-top:30px;
+	margin-top: 30px;
 	background-color: #368AFF;
 }
 
@@ -32,17 +50,27 @@ body {
 }
 
 .comment {
+	height: 25px;
 	visibility: hidden;
 	text-align: left;
 	color: red;
 	font-weight: bold;
 	font-size: 14px;
+	visibility: hidden;
 }
 
-.myth {
+.myth1 {
 	text-align: left;
-	height: 33px;
+	height: 35px;
+	font-size: 20px;
 	color: black;
+}
+
+.myth2 {
+	text-align: left;
+	height: 35px;
+	font-size: 20px;
+	color: gray;
 }
 
 .my {
@@ -56,7 +84,7 @@ body {
 .mywrap {
 	text-align: center;
 	width: 100%;
-	height: 815px;
+	height: 940px;
 	background-color: white;
 	margin-top: 30px;
 }
@@ -89,7 +117,6 @@ body {
 }
 
 .myw {
-	display: inline-block;
 	display: flex;
 	justify-content: center;
 	margin-top: 15px;

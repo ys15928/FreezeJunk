@@ -11,13 +11,13 @@
 <title>FreezeJunk</title>
 <link rel="stylesheet"
 	href="${contextPath }/resources/login/mypageStyle.css" />
-	
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">	
-	
+	rel="stylesheet">
+
 </head>
 <body>
 	<div class="container">
@@ -28,57 +28,69 @@
 				<form action="myupdate" method="post" id="modi">
 					<table>
 						<tr>
-							<th class="myth">아이디</th>
+							<th class="myth2">아이디</th>
 						</tr>
 						<tr>
-							<td><input type="text" id="id" name="id" class="input"
+							<td><input type="text" id="id" name="id" class="input2"
 								value="${loginUser.id }" readonly="readonly"></td>
 						</tr>
 						<tr>
-							<td><div class="comment">비밀번호를 입력해 주세요.</div></td>
+							<td><div class="comment"></div></td>
 						</tr>
 						<tr>
-							<th class="myth">비밀번호</th>
+							<th class="myth1">비밀번호</th>
 						</tr>
 						<tr>
-							<td><input type="password" id="pwd" name="pwd"
-								class="input" placeholder="비밀번호"></td>
+							<td><input type="password" id="pwd" name="pwd" class="input1"
+								placeholder="비밀번호"></td>
 						</tr>
 						<tr>
 							<td><div class="comment" id="pwd-comment">비밀번호를 입력해
 									주세요.</div></td>
 						</tr>
 						<tr>
-							<th class="myth">비밀번호 확인</th>
+							<th class="myth1">비밀번호 확인</th>
 						</tr>
 						<tr>
 							<td><input type="password" id="repwd" name="repwd"
-								class="input" placeholder="비밀번호 확인"></td>
+								class="input1" placeholder="비밀번호 확인"></td>
 						</tr>
 						<tr>
 							<td><div class="comment" id="repwd-comment">비밀번호가 일치하지
 									않습니다.</div></td>
 						</tr>
+
 						<tr>
-							<th class="myth">이름</th>
+							<th class="myth2">유튜브 채널 ID</th>
 						</tr>
 						<tr>
-							<td><input type="text" id="name" name="name" class="input"
+							<td><input type="text" id="channelid" name="channelid" class="input2"
+								value="${loginUser.channelid }" readonly="readonly"></td>
+						</tr>
+						<tr>
+							<td><div class="comment"></div></td>
+						</tr>
+
+						<tr>
+							<th class="myth1">닉네임</th>
+						</tr>
+						<tr>
+							<td><input type="text" id="name" name="name" class="input1"
 								value="${loginUser.name }"></td>
 						</tr>
 						<tr>
-							<td><div class="comment" id="name-comment">이름을 입력해
+							<td><div class="comment" id="name-comment">닉네임을 입력해
 									주세요.</div></td>
 						</tr>
 						<tr>
-							<th class="myth">이메일</th>
+							<th class="myth2">이메일</th>
 						</tr>
 						<tr>
-							<td><input type="text" id="email" name="email"
-								class="input" value="${loginUser.email }" readonly="readonly"></td>
+							<td><input type="text" id="email" name="email" class="input2"
+								value="${loginUser.email }" readonly="readonly"></td>
 						</tr>
 						<tr>
-							<td><div class="comment">비밀번호를 입력해 주세요.</div></td>
+							<td><div class="comment"></div></td>
 						</tr>
 						<tr>
 							<td><button type="button" class="btn btn1"

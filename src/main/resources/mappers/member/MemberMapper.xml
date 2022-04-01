@@ -10,6 +10,7 @@
 		<result property="pwd" column="pwd"/>
 		<result property="name" column="name"/>
 		<result property="email" column="email"/>
+		<result property="channelid" column="channelid"/>
 	</resultMap>
 
 	<select id="idcheck" resultMap="member">
@@ -20,7 +21,7 @@
 	</select>
 
 <insert id="register">
-	insert into JUNK_USER values(#{id}, #{pwd}, #{name}, #{email})
+	insert into JUNK_USER values(#{id}, #{pwd}, #{name}, #{email}, #{channelid})
 </insert>
 
 <select id="loginChk" resultMap="member">

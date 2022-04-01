@@ -32,7 +32,7 @@ public class MemberController {
 	public String goMain() {
 		return "member/main";
 	}
-	
+
 	@RequestMapping("header")
 	public String header() {
 		return "default/header";
@@ -161,11 +161,16 @@ public class MemberController {
 		MemberDTO dto = (MemberDTO) se.getAttribute("loginUser");
 		if (dto == null) {
 			out.print("<script> locetion.href='login';</script>");
-		} else {
+		} 
+		
+		else {
 			int result = service.myupdate(req, dto.getId());
+			
 			if (result == 0) {
 				out.print("<script> alert('회원 정보 수정을 실패했습니다');location.href='mypage';</script>");
-			} else {
+			} 
+			
+			else {
 				out.print("<script> alert('회원 정보 수정이 완료되었습니다');location.href='mypage';</script>");
 			}
 		}

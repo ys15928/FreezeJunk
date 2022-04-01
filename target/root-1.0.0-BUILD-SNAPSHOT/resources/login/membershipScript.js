@@ -3,51 +3,61 @@ var regType1 = /^[A-Za-z0-9+]*$/;
 var regType2 = /^[A-Za-z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣+]*$/;
 var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 function idCheck() {
-	if(document.getElementById("id").value == "" || document.getElementById("id").value.replace(blank_pattern1, '') == "") {
-			//alert("아이디를 입력해 주세요.");
-			document.getElementById("id-comment").innerText = "아이디를 입력해 주세요.";
-			$("#id-comment").css("visibility", "visible");
-			document.getElementById("id").focus();
-			return;
-		}
+
+	if (document.getElementById("id").value == "" || document.getElementById("id").value.replace(blank_pattern1, '') == "") {
+		//alert("아이디를 입력해 주세요.");
+		document.getElementById("id-comment").innerText = "아이디를 입력해 주세요.";
+		$("#id-comment").css("visibility", "visible");
+		document.getElementById("id").focus();
 		
-		if(document.getElementById("id").value.length > 8 || 4 > document.getElementById("id").value.length) {
-			document.getElementById("id-comment").innerText = "아이디는 4~8글자 사이로 입력해 주세요.";
-			$("#id-comment").css("visibility", "visible");
-			document.getElementById("id").focus();
-			return;
-		} 
-		if(!(regType1.test(document.getElementById("id").value))) {
-			document.getElementById("id-comment").innerText = "아이디에 한글, 특수문자는 입력하실 수 없습니다.";
-			$("#id-comment").css("visibility", "visible");
-			document.getElementById("id").focus();
-			return;
-		}
-		var id= document.getElementById("id").value
-		var form={id:id}
-		$.ajax({
-			url: "idcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
-			success: function(map){
-				if (map.idcheck!= null){
+		return;
+	}
+
+	if (document.getElementById("id").value.length > 20 || 8 > document.getElementById("id").value.length) {
+		document.getElementById("id-comment").innerText = "아이디는 8 ~ 20글자 사이로 입력해 주세요.";
+		$("#id-comment").css("visibility", "visible");
+		document.getElementById("id").focus();
+		
+		return;
+	}
+
+	if (!(regType1.test(document.getElementById("id").value))) {
+		document.getElementById("id-comment").innerText = "아이디에 한글, 특수문자는 입력하실 수 없습니다.";
+		$("#id-comment").css("visibility", "visible");
+		document.getElementById("id").focus();
+		
+		return;
+	}
+
+	var id = document.getElementById("id").value
+	var form = { id: id }
+
+	$.ajax({
+		url: "idcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType: "application/json; charset=utf-8",
+		success: function(map) {
+			if (map.idcheck != null) {
 				//	alert("중복된 ID입니다.");
-					document.getElementById("id-comment").innerText = "중복된 ID입니다.";
-					$("#id-comment").css("visibility", "visible");
-				}else{
-				//	alert("사용 가능한 ID입니다.");
-					document.getElementById("id-comment").innerText = "사용 가능한 ID입니다.";
-					$("#id-comment").css("visibility", "visible");
-					$("#id-comment").css("color", "blue");
-					document.getElementById("idcheck").value = document.getElementById("id").value
-					document.getElementById("idCk").value = "1";
-				}
-			}, error: function(){
-				alert("error")
-			}
+				document.getElementById("id-comment").innerText = "중복된 ID입니다.";
+				$("#id-comment").css("visibility", "visible");
+			} 
 			
-		})
+			else {
+				//	alert("사용 가능한 ID입니다.");
+				document.getElementById("id-comment").innerText = "사용 가능한 ID입니다.";
+				$("#id-comment").css("visibility", "visible");
+				$("#id-comment").css("color", "blue");
+				document.getElementById("idcheck").value = document.getElementById("id").value
+				document.getElementById("idCk").value = "1";
+			}
+		}, error: function() {
+			alert("error")
+		}
+
+	})
 }
 
 function memberIdChange() {
+
 	document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
 	$("#id-comment").css("visibility", "visible");
 	$("#id-comment").css("color", "red");
@@ -55,50 +65,57 @@ function memberIdChange() {
 }
 
 function emailCheck() {
-		if(document.getElementById("email").value == "" || document.getElementById("email").value.replace(blank_pattern1, '') == "") {
-			document.getElementById("email-comment").innerText = "이메일을 입력해 주세요.";
-			$("#email-comment").css("visibility", "visible");
-			document.getElementById("email").focus();
-			return;
-		}
+
+	if (document.getElementById("email").value == "" || document.getElementById("email").value.replace(blank_pattern1, '') == "") {
+		document.getElementById("email-comment").innerText = "이메일을 입력해 주세요.";
+		$("#email-comment").css("visibility", "visible");
+		document.getElementById("email").focus();
 		
-		if(!(reg_email.test(document.getElementById("email").value))) {
-			document.getElementById("email-comment").innerText = "이메일 형식에 맞게 입력해 주세요.";
-			$("#email-comment").css("visibility", "visible");
-			document.getElementById("email").focus();
-			return;
-		}
+		return;
+	}
+
+	if (!(reg_email.test(document.getElementById("email").value))) {
+		document.getElementById("email-comment").innerText = "이메일 형식에 맞게 입력해 주세요.";
+		$("#email-comment").css("visibility", "visible");
+		document.getElementById("email").focus();
 		
+		return;
+	}
+
+
+	if (document.getElementById("email").value.length > 30 || 10 > document.getElementById("email").value.length) {
+		document.getElementById("email-comment").innerText = "이메일은 10~30글자 사이로 입력해 주세요.";
+		$("#email-comment").css("visibility", "visible");
+		document.getElementById("email").focus();
 		
-		if(document.getElementById("email").value.length > 30 || 10 > document.getElementById("email").value.length) {
-			document.getElementById("email-comment").innerText = "이메일은 10~30글자 사이로 입력해 주세요.";
-			$("#email-comment").css("visibility", "visible");
-			document.getElementById("email").focus();
-			return;
-		}
-		
-		var email= document.getElementById("email").value
-		var form={email:email}
-		$.ajax({
-			url: "emailcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType : "application/json; charset=utf-8",
-			success: function(map){
-				if (map.emailcheck!= null){
-			//		alert("중복된 이메일입니다.");
-					document.getElementById("email-comment").innerText = "중복된 이메일입니다.";
-					$("#email-comment").css("visibility", "visible");
-				}else{
-			//		alert("사용 가능한 이메일입니다.");
-					document.getElementById("email-comment").innerText = "사용 가능한 이메일입니다.";
-					$("#email-comment").css("visibility", "visible");
-					$("#email-comment").css("color", "blue");
-					document.getElementById("emailcheck").value = document.getElementById("email").value
-					document.getElementById("emailCk").value = "1";
-				}
-			}, error: function(){
-				alert("error")
+		return;
+	}
+
+	var email = document.getElementById("email").value
+	var form = { email: email }
+
+	$.ajax({
+		url: "emailcheck", type: "post", data: JSON.stringify(form), dataType: "json", contentType: "application/json; charset=utf-8",
+		success: function(map) {
+
+			if (map.emailcheck != null) {
+				//		alert("중복된 이메일입니다.");
+				document.getElementById("email-comment").innerText = "중복된 이메일입니다.";
+				$("#email-comment").css("visibility", "visible");
 			}
-			
-		})
+
+			else {
+				//		alert("사용 가능한 이메일입니다.");
+				document.getElementById("email-comment").innerText = "사용 가능한 이메일입니다.";
+				$("#email-comment").css("visibility", "visible");
+				$("#email-comment").css("color", "blue");
+				document.getElementById("emailcheck").value = document.getElementById("email").value
+				document.getElementById("emailCk").value = "1";
+			}
+		}, error: function() {
+			alert("error")
+		}
+	})
 }
 var certifiedNum = null;
 /*
@@ -125,71 +142,96 @@ function emailgoNum(){
 
 function emailChange() {
 	document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
+	
 	$("#email-comment").css("visibility", "visible");
 	$("#email-comment").css("color", "red");
 	document.getElementById("emailCk").value = "";
-}	
-
-
+}
 
 function register() {
-	if(document.getElementById("idCk").value != "1") {
+
+	if (document.getElementById("idCk").value != "1") {
 		document.getElementById("id-comment").innerText = "ID 중복확인을 진행해 주세요.";
 		$("#id-comment").css("visibility", "visible");
 		$("#id-comment").css("color", "red");
 		document.getElementById("id").focus();
+		
 		return;
 	}
-	if(document.getElementById("pwd").value == "") {
+
+	if (document.getElementById("pwd").value == "") {
 		document.getElementById("pwd-comment").innerText = "비밀번호를 입력해 주세요.";
 		$("#pwd-comment").css("visibility", "visible");
 		$("#pwd-comment").css("color", "red");
 		document.getElementById("pwd").focus();
+		
 		return;
 	}
-	if(document.getElementById("pwd").value.length > 16 || document.getElementById("pwd").value.length < 8) {
+
+	if (document.getElementById("pwd").value.length > 16 || document.getElementById("pwd").value.length < 8) {
 		document.getElementById("pwd-comment").innerText = "비밀번호는 8~16자 사이로 주세요.";
 		$("#pwd-comment").css("visibility", "visible");
 		$("#pwd-comment").css("color", "red");
 		document.getElementById("pwd").focus();
+		
 		return;
 	}
+
 	$("#pwd-comment").css("visibility", "hidden");
-	if(document.getElementById("pwd").value != document.getElementById("repwd").value) {
+	if (document.getElementById("pwd").value != document.getElementById("repwd").value) {
 		document.getElementById("repwd-comment").innerText = "비밀번호가 일치하지 않습니다.";
 		$("#repwd-comment").css("visibility", "visible");
 		$("#repwd-comment").css("color", "red");
 		document.getElementById("repwd").focus();
+		
 		return;
 	}
+
 	$("#repwd-comment").css("visibility", "hidden");
-	if(document.getElementById("name").value == "" || document.getElementById("name").value.replace(blank_pattern1, '') == "") {
-		document.getElementById("name-comment").innerText = "이름을 입력해 주세요.";
+	if (document.getElementById("channelid").value == "" || document.getElementById("channelid").value.replace(blank_pattern1, '') == "") {
+		document.getElementById("channelid-comment").innerText = "유튜브 채널 ID를 입력해 주세요.";
+		$("#channelid-comment").css("visibility", "visible");
+		$("#channelid-comment").css("color", "red");
+		document.getElementById("channelid").focus();
+		
+		return;
+	}
+	
+	$("#channelid-comment").css("visibility", "hidden");
+	if (document.getElementById("name").value == "" || document.getElementById("name").value.replace(blank_pattern1, '') == "") {
+		document.getElementById("name-comment").innerText = "닉네임을 입력해 주세요.";
 		$("#name-comment").css("visibility", "visible");
 		$("#name-comment").css("color", "red");
 		document.getElementById("name").focus();
+		
 		return;
 	}
-	if(document.getElementById("name").value.length > 10 || 2 > document.getElementById("name").value.length) {
-		document.getElementById("name-comment").innerText = "이름은 2 ~ 10자 사이로 입력해 주세요.";
+
+	if (document.getElementById("name").value.length > 10 || 2 > document.getElementById("name").value.length) {
+		document.getElementById("name-comment").innerText = "닉네임은 2 ~ 10자 사이로 입력해 주세요.";
 		$("#name-comment").css("visibility", "visible");
 		$("#name-comment").css("color", "red");
 		document.getElementById("name").focus();
+		
 		return;
 	}
-	if(!(regType2.test(document.getElementById("name").value))) {
-		document.getElementById("name-comment").innerText = "이름에 특수문자는 입력하실 수 없습니다.";
+
+	if (!(regType2.test(document.getElementById("name").value))) {
+		document.getElementById("name-comment").innerText = "닉네임에 특수문자는 입력하실 수 없습니다.";
 		$("#name-comment").css("visibility", "visible");
 		$("#name-comment").css("color", "red");
 		document.getElementById("name").focus();
+		
 		return;
 	}
+
 	$("#name-comment").css("visibility", "hidden");
-	if(document.getElementById("emailCk").value == "") {
+	if (document.getElementById("emailCk").value == "") {
 		document.getElementById("email-comment").innerText = "이메일 중복확인을 진행해 주세요.";
 		$("#email-comment").css("visibility", "visible");
 		$("#email-comment").css("color", "red");
 		document.getElementById("email").focus();
+		
 		return;
 	}
 	/*
@@ -202,4 +244,8 @@ function register() {
 	}
 	$("#email-num-comment").css("visibility", "hidden");*/
 	document.getElementById("form").submit();
+}
+
+function check_Channel_Id()  {
+  window.open('https://support.google.com/youtube/answer/3250431?hl=ko');
 }

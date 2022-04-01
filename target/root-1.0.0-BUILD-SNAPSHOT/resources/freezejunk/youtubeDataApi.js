@@ -392,6 +392,28 @@ function setSpamAndDelete(deleteFreezeCommentId, setBanAuthor) {
 			});
 }
 
+function check_channel(videoId) {
+
+	console.log("check_channel 실행");
+	
+	return gapi.client.youtube.videos.list({
+		"part": [
+			"snippet",
+		],
+		
+		"id": videoId,
+	})
+		.then(function(crawlingResult) {
+			console.log("완료 완료 완료");
+		},
+			function(err) {
+				console.error("Execute error", err);
+				alert("크롤링 과정에서 에러가 발생하였습니다.");
+				history.go(0)
+			});
+}
+
+
 spinnerOff()
 
 function keywordFreeze() {
@@ -409,9 +431,12 @@ function keywordFreeze() {
 
 	document.getElementById("keywords").value = document.getElementById("keywords").value.replace(blank_pattern1, '');
 
+	
+	
 	loadClient_googleOauth2()
 	setTimeout(function() {
-		crawlingFirst(1)
+		check_channel();
+		//crawlingFirst(1)
 	}, 1000);
 
 }

@@ -90,15 +90,31 @@
 						</tr>
 
 						<tr class="tr45">
-							<th class="th">이름</th>
+							<th class="th">유튜브 채널 ID</th>
+						</tr>
+						<tr>
+							<th><input class="input" type="text" name="channelid"
+								id="channelid" placeholder="유튜브 채널 ID" /></th>
+							<td>
+								<button class="chkbtn" type="button"
+									onclick="check_Channel_Id();">채널 ID란?</button>
+							</td>
+						</tr>
+						<tr class="trnum">
+							<td><div class="member-comment" id="channelid-comment">유튜브
+									채널 ID를 입력해주세요.</div></td>
+						</tr>
+
+						<tr class="tr45">
+							<th class="th">닉네임</th>
 						</tr>
 						<tr>
 							<th><input class="input" type="text" name="name" id="name"
-								placeholder="이름" /></th>
+								placeholder="닉네임" /></th>
 							<td></td>
 						</tr>
 						<tr class="trnum">
-							<td><div class="member-comment" id="name-comment">이름을
+							<td><div class="member-comment" id="name-comment">닉네임을
 									입력해주세요.</div></td>
 						</tr>
 
@@ -120,7 +136,6 @@
 							</td>
 						</tr>
 
-
 						<!-- 	<tr class="tr45">
 					<th class="th">인증번호</th>
 					</tr>
@@ -132,20 +147,19 @@
 					<td><div class="member-comment" id="email-num-comment">인증번호 입력해주세요.</div></td>
 					</tr>
 			 -->
-
+						<tr class="tr45"></tr>
 						<tr>
 							<td colspan="2">
+
 								<button type="button" class="memberbtn" onclick="register();">회원가입</button>
 							</td>
 							<td></td>
 						</tr>
-
 					</table>
 				</div>
 			</form>
 		</div>
 	</div>
-
 	<jsp:include page="../default/footer.jsp" />
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script src="${contextPath }/resources/login/membershipScript.js"></script>
