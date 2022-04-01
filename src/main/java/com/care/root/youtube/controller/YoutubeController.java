@@ -23,4 +23,8 @@ public class YoutubeController {
 		return "freezejunk/copyCommentFreeze";
 	}
 
+	@RequestMapping("/test")
+	public String test(HttpServletRequest request) {
+		return "freezejunk/test";
+	}
 }

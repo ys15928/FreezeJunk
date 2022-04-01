@@ -23,13 +23,13 @@
 <meta name="keywords" content="유튜브, 댓글관리, 카피봇, 댓글봇, 댓글삭제, 계정차단">
 <link rel="stylesheet"
 	href="${contextPath }/resources/default/mainStyle.css?ver=2" />
-	
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">	
-	
+	rel="stylesheet">
+
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 					<br>
 					<h1>유튜브 댓글을 보다 쉽고 편하게 효율적으로 관리하세요</h1>
 					<br>
-					<h2>영상의 URL과 키워드 또는 스팸에 등록할 계정으로</h2>
+					<h2>영상의 URL과 키워드 또는 스팸에 등록할 계정을 입력해</h2>
 					<br>
 					<h2>영상의 댓글 삭제와 스팸 계정 차단, 카피봇 계정 차단까지</h2>
 					<br> <br>
@@ -63,7 +63,7 @@
 					<br> <br>
 
 					<iframe width="560" height="315"
-						src="https://www.youtube.com/embed/vVUqpbH3VRQ"
+						src="https://www.youtube.com/embed/D6Pq3Gpv_d0"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
@@ -86,7 +86,7 @@
 					<br> <br>
 
 					<iframe width="560" height="315"
-						src="https://www.youtube.com/embed/iMXTXC5VfGw"
+						src="https://www.youtube.com/embed/WTkdCEMALbI"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
@@ -109,7 +109,7 @@
 					<br> <br>
 
 					<iframe width="560" height="315"
-						src="https://www.youtube.com/embed/8fZ-BPgb0lo"
+						src="https://www.youtube.com/embed/q00DbRKVJrY"
 						title="YouTube video player" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
