@@ -51,12 +51,20 @@ body {
 
 .comment {
 	height: 25px;
-	visibility: hidden;
 	text-align: left;
 	color: red;
 	font-weight: bold;
 	font-size: 14px;
 	visibility: hidden;
+}
+
+.channelIdComment{
+	height: 40px;
+	text-align: left;
+	color: blue;
+	font-weight: bold;
+	font-size: 14px;
+	
 }
 
 .myth1 {

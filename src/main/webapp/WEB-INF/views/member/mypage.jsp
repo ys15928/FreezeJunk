@@ -41,8 +41,8 @@
 							<th class="myth1">비밀번호</th>
 						</tr>
 						<tr>
-							<td><input type="password" id="pwd" name="pwd" class="input1"
-								placeholder="비밀번호"></td>
+							<td><input type="password" id="pwd" name="pwd"
+								class="input1" placeholder="비밀번호"></td>
 						</tr>
 						<tr>
 							<td><div class="comment" id="pwd-comment">비밀번호를 입력해
@@ -64,11 +64,14 @@
 							<th class="myth2">유튜브 채널 ID</th>
 						</tr>
 						<tr>
-							<td><input type="text" id="channelid" name="channelid" class="input2"
-								value="${loginUser.channelid }" readonly="readonly"></td>
+							<td><input type="text" id="channelid" name="channelid"
+								class="input2" value="${loginUser.channelid }"
+								readonly="readonly"></td>
 						</tr>
 						<tr>
-							<td><div class="comment"></div></td>
+							<td><div class="channelIdComment">유튜브 채널 ID를 변경하시려면 건의사항에
+									요청해주세요.</div></td>
+
 						</tr>
 
 						<tr>
@@ -86,8 +89,8 @@
 							<th class="myth2">이메일</th>
 						</tr>
 						<tr>
-							<td><input type="text" id="email" name="email" class="input2"
-								value="${loginUser.email }" readonly="readonly"></td>
+							<td><input type="text" id="email" name="email"
+								class="input2" value="${loginUser.email }" readonly="readonly"></td>
 						</tr>
 						<tr>
 							<td><div class="comment"></div></td>
