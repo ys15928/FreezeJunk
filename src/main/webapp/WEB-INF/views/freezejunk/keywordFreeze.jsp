@@ -32,7 +32,7 @@
 			댓글에서 키워드를 포함하는 댓글들을 모두 삭제합니다.<br>(차단된 단어 설정을 해주지는 않습니다.) <br>
 			<br> * 본인 pc의 기본 브라우저에 유튜브 채널의 계정이 로그인 되어있어야 합니다. <br> <br>
 			1. 동영상의 URL 입력<br> 2. 삭제하고자 하는 키워드를 입력(입력한 키워드가 여러 개일 경우 쉼표로 구분)<br>
-			3. 구글로그인 버튼을 클릭<br> 4. 유튜브 댓글 수정 권한 부여 승인<br> 5. 처리 완료 창을
+			3. <img src="${contextPath }/resources/image/logo_light_smallest.png"/> 클릭<br> 4. 유튜브 댓글 수정 및 유튜브 계정 보기 권한 승인<br> 5. 처리 완료 창을
 			닫고 처리결과 확인 <br> <br> <span class="modalspan">쉼표 구분과
 				키워드 설정 실수에 의한 댓글 삭제는 책임지지 않습니다.</span><br> 댓글이 과하게 많은 경우 할당량의 문제가 발생할
 			수 있기 때문에<br> 시간순이 아닌 인기순으로 댓글들을 크롤링합니다.<br>(모든 댓글에 대해 삭제를
@@ -72,13 +72,13 @@
 
 					<div class="search-box">
 						<input type="text" class="search" id="videoUrl" name="videoUrl"
-							placeholder="&nbsp; URL 입력" /> <span class="search-img-box">
-							<img
-							src="${contextPath }/resources/image/btn_google_light_normal_ios.svg"
-							onmouseover="this.src='${contextPath }/resources/image/btn_google_light_pressed_ios.svg'"
-							onmouseout="this.src='${contextPath }/resources/image/btn_google_light_normal_ios.svg'"
-							onclick="loginsession();" />
-						</span>
+							placeholder="&nbsp; URL 입력" /> 
+							<span class="search-img-box">
+								<img src="${contextPath }/resources/image/logo_light_small.png"
+								onmouseover="this.src='${contextPath }/resources/image/logo_dark_small.png'"
+								onmouseout="this.src='${contextPath }/resources/image/logo_light_small.png'"
+								onclick="loginsession();" />
+							</span>
 					</div>
 
 					<div class="keywords-box">
@@ -117,11 +117,12 @@ String uid = null;
 if (dto != null) {
 	uid = dto.getId();
 }%>
-	var session = '<%=uid%>';
-
+	const session = '<%=uid%>';
+	const channelId = "${loginUser.channelid }";
+	
 		function loginsession() {
 			if (session != "null") {
-				keywordFreeze();
+				keywordFreeze(channelId);
 			} else {
 				alert("로그인 후 이용해주세요.")
 				location.href = "${contextPath}/login";
@@ -130,7 +131,7 @@ if (dto != null) {
 	</script>
 
 	<script src="https://apis.google.com/js/api.js"></script>
-	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>
+	<script src="${contextPath }/resources/freezejunk/youtubeDataApi.js"></script>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 </body>
 </html>

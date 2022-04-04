@@ -2,8 +2,6 @@ package com.care.root.mybatis;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.ibatis.annotations.Param;
 
 import com.care.root.member.dto.MemberDTO;
@@ -18,6 +16,7 @@ public interface MemberMapper {
 	public MemberDTO mypage(String id);
 	public int myupdate(MemberDTO dto);
 	public String getName(String id);
+	
 	public ArrayList<MemberDTO> userListId(String search);
 	public ArrayList<MemberDTO> userListName(String search);
 	public ArrayList<MemberDTO> userListEmail(String search);

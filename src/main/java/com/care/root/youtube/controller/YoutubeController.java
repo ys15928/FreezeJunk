@@ -8,23 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class YoutubeController {
 
-	@RequestMapping("/keywordFreeze")
+	@RequestMapping("keywordFreeze")
 	public String keywordFreeze(HttpServletRequest request) {
+		
 		return "freezejunk/keywordFreeze";
 	}
 
-	@RequestMapping("/accountFreeze")
+	@RequestMapping("accountFreeze")
 	public String accountFreeze(HttpServletRequest request) {
+		
 		return "freezejunk/accountFreeze";
 	}
 
-	@RequestMapping("/copyCommentFreeze")
+	@RequestMapping("copyCommentFreeze")
 	public String copyCommentFreeze(HttpServletRequest request) {
+		
 		return "freezejunk/copyCommentFreeze";
-	}
-
-	@RequestMapping("/test")
-	public String test(HttpServletRequest request) {
-		return "freezejunk/test";
 	}
 }

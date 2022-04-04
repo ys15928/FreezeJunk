@@ -6,7 +6,9 @@ function authenticate_googleOauth2(deleteCnt, func, deleteFreezeCommentId) {
 	spinnerOff()
 
 	return gapi.auth2.getAuthInstance()
-		.signIn({ scope: "https://www.googleapis.com/auth/youtube.force-ssl" })
+		.signIn({
+			scope: "https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.readonly",
+		})
 		.then(function() {
 			console.log("Sign-in successful");
 
@@ -358,9 +360,6 @@ function filterForcopyBot(commentDataAfterExtract) {
 	}
 
 	if (deleteFreezeCommentId.length > 0) {
-		console.log("deleteFreezeCommentId : " + deleteFreezeCommentId);
-		console.log("deleteCnt : " + deleteCnt);
-
 		authenticate_googleOauth2(deleteCnt, true, deleteFreezeCommentId).then(loadClient_googleOauth2)
 	}
 	else {
@@ -372,7 +371,7 @@ function filterForcopyBot(commentDataAfterExtract) {
 
 // excute setSpamAndDelete
 function setSpamAndDelete(deleteFreezeCommentId, setBanAuthor) {
-	console.log("삭제 및 스팸 처리 시작");
+	console.log("삭제 및 스팸 처리 시작...");
 
 	return gapi.client.youtube.comments.setModerationStatus({
 
@@ -392,31 +391,74 @@ function setSpamAndDelete(deleteFreezeCommentId, setBanAuthor) {
 			});
 }
 
-function check_channel(videoId) {
-
-	console.log("check_channel 실행");
-	
-	return gapi.client.youtube.videos.list({
+function channelsList(channelId, crawlingType) {	// 내 정보의 Channel ID를 통해 모든 동영상이 담긴 플레이리스트 ID를 추출함
+	return gapi.client.youtube.channels.list({
 		"part": [
-			"snippet",
+			"contentDetails"
 		],
-		
-		"id": videoId,
+		"id": [
+			channelId
+		]
 	})
-		.then(function(crawlingResult) {
-			console.log("완료 완료 완료");
+		.then(function(channelsListResult) {
+			getUploadPlaylist(channelsListResult, crawlingType)
+
 		},
 			function(err) {
-				console.error("Execute error", err);
-				alert("크롤링 과정에서 에러가 발생하였습니다.");
-				history.go(0)
+				console.error("Execute channelsList error", err);
+				alert("마이페이지에 등록된 유튜브 채널 ID로\n 플레이리스트를 조회하는데 에러가 발생했습니다.\n마이페이지에서 유튜브 채널 ID가 올바른지 확인해 주세요");
 			});
 }
 
+function getUploadPlaylist(channelsListResult, crawlingType) {
+	// 모든 동영상이 담긴 플레이리스트 ID 안에 댓글을 관리하려 하는 비디오의 ID가 있는지 확인
+
+	let videoUrl = document.getElementById('videoUrl').value;
+	let videoId = videoUrl.split("?v=");
+
+	let playListID = channelsListResult.result.items[0].contentDetails.relatedPlaylists.uploads
+
+	return gapi.client.youtube.playlistItems.list({
+		"part": [
+			"snippet"
+		],
+		"playlistId": playListID,
+		"videoId": videoId
+	})
+		.then(function(playListItemsResult) {
+			checkVideoAndChannelId(playListItemsResult, crawlingType)
+		},
+			function(err) { console.error("Execute getUploadPlaylist error", err); });
+}
+
+function checkVideoAndChannelId(playListItemsResult, crawlingType) {
+	// 등록된 채널 아이디의 동영상이 아닐경우 checkVidOwnerResult = 0
+	
+	let checkVidOwnerResult = playListItemsResult.result.pageInfo.totalResults
+
+	if (checkVidOwnerResult == 0) {
+		alert("마이페이지의 유튜브 채널 ID와\n입력한 동영상 URL의 소유자가 불일치 합니다.\n회원가입시 등록한 유튜브 채널ID의 동영상만 댓글 관리가 가능합니다.")
+		history.go(0)
+	}
+	
+	// 할당량을 절약하기 위해 채널 ID 체크 후 크롤링 시작
+	else {
+		
+		if (crawlingType == 1) {
+			crawlingFirst(1)
+		}
+		else if (crawlingType == 2) {
+			crawlingFirst(2)
+		}
+		else if (crawlingType == 3){
+			crawlingFirst_ForCopyBot()
+		}
+	}
+}
 
 spinnerOff()
 
-function keywordFreeze() {
+function keywordFreeze(channelId) {
 	blank_pattern1 = /^\s+|\s+$/g; // 공백만 있을 경우
 
 	if (document.getElementById("videoUrl").value == "" || document.getElementById("videoUrl").value.replace(blank_pattern1, '') == "") {
@@ -431,12 +473,9 @@ function keywordFreeze() {
 
 	document.getElementById("keywords").value = document.getElementById("keywords").value.replace(blank_pattern1, '');
 
-	
-	
 	loadClient_googleOauth2()
 	setTimeout(function() {
-		check_channel();
-		//crawlingFirst(1)
+		channelsList(channelId, 1)
 	}, 1000);
 
 }
@@ -458,7 +497,7 @@ function accountFreeze() {
 
 	loadClient_googleOauth2()
 	setTimeout(function() {
-		crawlingFirst(2)
+		channelsList(channelId, 2)
 	}, 1000);
 }
 
@@ -472,7 +511,7 @@ function copyCommentFreeze() {
 
 	loadClient_googleOauth2()
 	setTimeout(function() {
-		crawlingFirst_ForCopyBot()
+		channelsList(channelId, 3)
 	}, 1000);
 }
 

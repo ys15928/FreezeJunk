@@ -1,7 +1,6 @@
 com\care\root\suggestion\dto\SuggestionDTO.class
 com\care\root\member\service\MemberService.class
 com\care\root\youtube\controller\YoutubeController.class
-com\care\root\mybatis\YoutubeMapper.class
 com\care\root\HomeController.class
 com\care\root\mybatis\MemberMapper.class
 com\care\root\mybatis\SuggestionMapper.class
