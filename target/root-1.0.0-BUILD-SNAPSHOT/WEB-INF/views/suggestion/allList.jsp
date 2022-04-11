@@ -38,8 +38,9 @@
 		endPage = pageCount;
 	}
 %>
+
+<jsp:include page="../default/header.jsp"/>
 <div class="container">
-	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap all-wrap">
 		<div class="list-head-box">
 			<div class="list-select">전체리스트</div>
@@ -148,11 +149,9 @@
 			%>
 		</div>
 	</div>
-	
-	<jsp:include page="../default/footer.jsp"/>
-	</div>
-<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
-<script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
+</div>
+<jsp:include page="../default/footer.jsp"/>
+
 <script>
 	function info(info, infoStatus) {
 		var infoId = info.id;
@@ -178,13 +177,14 @@
 		}
 
 		var status = infoStatus;
-		if(status == 1 || loginId == "team03" || loginId == infoId ) {
+		if(status == 1 || loginId == "freezejunkadminacc" || loginId == infoId ) {
 			location.href="suggestion-5?num=" + infoNum + "&type=all";
 		} else {
 			alert("비공개 글입니다.")
 		}
-		
 	}
 </script>
 </body>
+<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+<script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
 </html>

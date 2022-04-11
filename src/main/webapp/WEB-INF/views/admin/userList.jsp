@@ -30,17 +30,17 @@
 						<c:choose>
 							<c:when test="${option == 1 }">
 								<option value="1" selected>ID</option>
-								<option value="2">이름</option>
+								<option value="2">닉네임</option>
 								<option value="3">이메일</option>
 							</c:when>
 							<c:when test="${option == 2 }">
 								<option value="1">ID</option>
-								<option value="2" selected>이름</option>
+								<option value="2" selected>닉네임</option>
 								<option value="3">이메일</option>
 							</c:when>
 							<c:when test="${option == 3 }">
 								<option value="1">ID</option>
-								<option value="2">이름</option>
+								<option value="2">닉네임</option>
 								<option value="3" selected>이메일</option>
 							</c:when>
 						</c:choose>
@@ -79,19 +79,19 @@
 					<c:choose>
 						<c:when test="${nameSort == 'asc' }">
 							<div id="head-name" class="1" onclick="sort(this);">
-								이름<img src="${contextPath }/resources/image/asc.png"
+								닉네임<img src="${contextPath }/resources/image/asc.png"
 									id="name-btn">
 							</div>
 						</c:when>
 						<c:when test="${nameSort == 'desc' }">
 							<div id="head-name" class="-1" onclick="sort(this);">
-								이름<img src="${contextPath }/resources/image/desc.png"
+								닉네임<img src="${contextPath }/resources/image/desc.png"
 									id="name-btn">
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div id="head-name" class="1" onclick="sort(this);">
-								이름<img src="${contextPath }/resources/image/asc.png"
+								닉네임<img src="${contextPath }/resources/image/asc.png"
 									id="name-btn">
 							</div>
 						</c:otherwise>

@@ -24,8 +24,8 @@
 	SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd");
 	SimpleDateFormat sdf2 = new SimpleDateFormat("a hh:mm");
 	%>
+	<jsp:include page="../default/header.jsp" />
 	<div class="container">
-		<jsp:include page="../default/header.jsp" />
 		<div class="wrap ht-1100">
 			<div class="info-head-title">
 				<div class="info-title">${dto.suggTitle }</div>
@@ -67,9 +67,8 @@
 					onclick="suggestionAnswerWrite();">등록</button>
 			</div>
 		</div>
-		<jsp:include page="../default/footer.jsp" />
 	</div>
-
+	<jsp:include page="../default/footer.jsp" />
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 	<script src="${contextPath }/resources/bootstrap.js"></script>
 	<script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>

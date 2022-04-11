@@ -124,7 +124,7 @@
 						<tr>
 							<th><input class="input" type="text"
 								onchange="emailChange();" name="email" id="email"
-								placeholder="이메일" /></th>
+								placeholder="유튜브 계정의 이메일이 아니어도 됩니다" /></th>
 							<td><button class="chkbtn" type="button"
 									onclick="emailCheck();">중복확인</button></td>
 						</tr>

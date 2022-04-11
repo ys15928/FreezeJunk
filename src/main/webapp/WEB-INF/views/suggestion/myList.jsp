@@ -38,8 +38,9 @@
 		endPage = pageCount;
 	}
 %>
+
+<jsp:include page="../default/header.jsp"/>
 <div class="container">
-	<jsp:include page="../default/header.jsp"/>
 	<div class="wrap all-wrap">
 		<div class="list-head-box">
 			<div class="non-list-select"><a href="suggestion-3">전체리스트</a></div>
@@ -146,10 +147,10 @@
 			%>
 		</div>
 	</div>
-	
-	<jsp:include page="../default/footer.jsp"/>
-	</div>
+</div>
+<jsp:include page="../default/footer.jsp"/>
+</body>
 <script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 <script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
-</body>
+
 </html>

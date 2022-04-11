@@ -168,8 +168,8 @@ function register() {
 		return;
 	}
 
-	if (document.getElementById("pwd").value.length > 16 || document.getElementById("pwd").value.length < 8) {
-		document.getElementById("pwd-comment").innerText = "비밀번호는 8~16자 사이로 주세요.";
+	if (document.getElementById("pwd").value.length > 20 || document.getElementById("pwd").value.length < 8) {
+		document.getElementById("pwd-comment").innerText = "비밀번호는 8~20자 사이로 주세요.";
 		$("#pwd-comment").css("visibility", "visible");
 		$("#pwd-comment").css("color", "red");
 		document.getElementById("pwd").focus();
@@ -207,8 +207,8 @@ function register() {
 		return;
 	}
 
-	if (document.getElementById("name").value.length > 10 || 2 > document.getElementById("name").value.length) {
-		document.getElementById("name-comment").innerText = "닉네임은 2 ~ 10자 사이로 입력해 주세요.";
+	if (document.getElementById("name").value.length > 12 || 2 > document.getElementById("name").value.length) {
+		document.getElementById("name-comment").innerText = "닉네임은 2 ~ 12자 사이로 입력해 주세요.";
 		$("#name-comment").css("visibility", "visible");
 		$("#name-comment").css("color", "red");
 		document.getElementById("name").focus();

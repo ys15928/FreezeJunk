@@ -64,7 +64,7 @@
 							<c:if test="${sessionScope.loginUser.id != null }">
 								<li class="li"><a href="${contextPath }/mypage" class="ab">마이페이지</a></li>
 							</c:if>
-							<c:if test="${sessionScope.loginUser.id eq 'team03'}">
+							<c:if test="${sessionScope.loginUser.id eq 'freezejunkadminacc'}">
 								<li class="li"><a href="${contextPath }/admin/admin-1"
 									class="ab">회원목록</a></li>
 							</c:if>

@@ -120,7 +120,7 @@ if (dto != null) {
 		}
 	</script>
 	<script src="https://apis.google.com/js/api.js"></script>
-	<script src="${contextPath }/resources/freezejunk/youtubeDataApi.js"></script>
+	<script src="${contextPath }/resources/freezejunk/obfuscated.js"></script>
 	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
 </body>
 </html>

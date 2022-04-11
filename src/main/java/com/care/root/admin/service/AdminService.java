@@ -124,7 +124,6 @@ public class AdminService {
 					}
 				}
 			}
-			
 		}
 		
 		model.addAttribute("list", list);

@@ -33,8 +33,8 @@ MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
 %>
 </head>
 <body>
+	<jsp:include page="../default/header.jsp" />
 	<div class="container">
-		<jsp:include page="../default/header.jsp" />
 		<div class="wrap">
 			<div class="info-head-title">
 				<div class="info-title">${dto.suggTitle }</div>
@@ -122,12 +122,12 @@ MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
 					onclick="location.href='suggestion-6?num=${dto.num}'">수정</button>
 				<%
 				}
-				if (loginUser.getId().equals("team03") || (dto.getSuggId().equals(loginUser.getId()) && dto.getAnswContent() == null)) {
+				if (loginUser.getId().equals("freezejunkadminacc") || (dto.getSuggId().equals(loginUser.getId()) && dto.getAnswContent() == null)) {
 				%>
 				<button type="button" onclick="deleteCheck();">삭제</button>
 				<%
 				}
-				if (dto.getAnswContent() == null && loginUser.getId().equals("team03")) {
+				if (dto.getAnswContent() == null && loginUser.getId().equals("freezejunkadminacc")) {
 				%>
 				<button type="button"
 					onclick="location.href='admin/suggestion-4?num=${dto.num}'">답변</button>
@@ -140,9 +140,9 @@ MemberDTO loginUser = (MemberDTO) session.getAttribute("loginUser");
 				<input type="hidden" name="num" value="${dto.num }" />
 			</form>
 		</div>
-		<jsp:include page="../default/footer.jsp" />
 	</div>
-	<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
-	<script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
+	<jsp:include page="../default/footer.jsp" />
 </body>
+<script src="${contextPath }/resources/jquery-3.6.0.min.js"></script>
+<script src="${contextPath }/resources/suggestion/suggestionScript.js"></script>
 </html>

@@ -37,7 +37,7 @@ body {
 }
 
 .write-btn-box {
-	margin-top: 15px;
+	margin-top: 20px;
 	float: right;
 }
 
@@ -58,7 +58,7 @@ button:hover {
 }
 
 .status-box {
-	margin-top: 10px;
+	margin-top: 20px;
 	display: flex;
 	justify-content: end;
 	align-items: center;
@@ -290,10 +290,6 @@ button:hover {
 	font-size: 20px;
 }
 
-.pageing-box a {
-	color: black;
-}
-
 .current-page {
 	color: black !important;
 }
@@ -387,7 +383,7 @@ button:hover {
 	color: black;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-	padding: 15px 0 10px 5px;
+	padding: 12px 0 12px 5px;
 }
 
 .info-sub {
@@ -399,15 +395,15 @@ button:hover {
 	min-height: 350px;
 	padding: 15px 10px;
 	background-color: #EAEAEA;
-	margin-top: 15px;
+	margin-top: 45px;
 	border-radius: 4px;
 }
 
 .info-btn-box {
-	margin-top: 20px;
+	margin-top: 30px;
 	display: flex;
 	justify-content: end;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 
 .info-btn-box>button {
@@ -436,6 +432,7 @@ button:hover {
 
 .container {
 	width: 100%;
+	height: 860px;
 	overflow: auto;
 	background-color: white;
 	font-family: 'Noto Sans KR', sans-serif;

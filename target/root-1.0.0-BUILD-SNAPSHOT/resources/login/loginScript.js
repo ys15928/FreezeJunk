@@ -12,9 +12,9 @@ function login() {
 		return;
 	}
 	
-	if(document.getElementById("logId").value.length > 12 || 4 > document.getElementById("logId").value.length) {
+	if(document.getElementById("logId").value.length > 20 || 8 > document.getElementById("logId").value.length) {
 	//	alert("아이디는 4~12자 사이로 입력해 주세요.");
-		document.getElementById("login-comment").innerText = "아이디는 4~12자 사이로 입력해 주세요.";
+		document.getElementById("login-comment").innerText = "아이디는 8~20자 사이로 입력해 주세요.";
 		$("#login-comment").css("visibility", "visible");
 		document.getElementById("logId").focus();
 		return;
@@ -36,9 +36,9 @@ function login() {
 		return;
 	}
 	
-	if(document.getElementById("logPwd").value.length > 16 || document.getElementById("logPwd").value.length < 8) {
+	if(document.getElementById("logPwd").value.length > 20 || document.getElementById("logPwd").value.length < 8) {
 	//	alert("비밀번호는 8~16사 사이로 입력해 주세요.");
-		document.getElementById("login-comment").innerText = "비밀번호는 8~16사 사이로 입력해 주세요.";
+		document.getElementById("login-comment").innerText = "비밀번호는 8~20사 사이로 입력해 주세요.";
 		$("#login-comment").css("visibility", "visible");
 		document.getElementById("logPwd").focus();
 		return;

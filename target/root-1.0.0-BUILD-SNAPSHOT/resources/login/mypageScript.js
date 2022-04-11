@@ -86,8 +86,8 @@ function modify(){
 		return;
 	}
 	
-	if(document.getElementById("pwd").value.length > 16 || 8 > document.getElementById("pwd").value.length) {
-		document.getElementById("pwd-comment").innerText = "비밀번호는 8~16자 사이로 입력해 주세요.";
+	if(document.getElementById("pwd").value.length > 20 || 8 > document.getElementById("pwd").value.length) {
+		document.getElementById("pwd-comment").innerText = "비밀번호는 8~20자 사이로 입력해 주세요.";
 		$("#pwd-comment").css("visibility", "visible");
 		document.getElementById("pwd").focus();
 		

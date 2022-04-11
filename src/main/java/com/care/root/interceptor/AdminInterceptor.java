@@ -18,7 +18,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 		HttpSession session = request.getSession();
 		MemberDTO dto = (MemberDTO) session.getAttribute("loginUser");
 		if(dto != null) {
-			if(dto.getId().equals("team03")) {
+			if(dto.getId().equals("freezejunkadminacc")) {
 				return true;
 			}
 		}
