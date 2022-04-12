@@ -11,10 +11,9 @@
 		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- config파일 자동 로드 location="classpath:database.properties"  /!-->
-	<context:property-placeholder location="config/*.properties" /> 
-	
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:property-placeholder location="WEB-INF//config/*.properties" /> 
 
+	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
 			value="${spring.hikariConfig.driverClassname}" />
